@@ -1,0 +1,29 @@
+changelog:
+  exclude:
+    labels:
+      - "exclude from release notes"
+  categories:
+    - title: "Breaking Changes"
+      labels:
+        - "breaking change"
+    - title: "Deprecated"
+      labels:
+        - "deprecated"
+    - title: "Features"
+      labels:
+        - "feature"
+    - title: "Improvements"
+      labels:
+        - "improvement"
+    - title: "Fixes"
+      labels:
+        - "bug fix"
+    - title: "Chore"
+      labels:
+        - "chore"
+    - title: "Dependencies"
+      labels:
+        - "dependencies"
+    - title: "Other"
+      labels:
+        - "*"
