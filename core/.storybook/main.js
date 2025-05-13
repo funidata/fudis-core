@@ -1,4 +1,7 @@
-export const stories = ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"];
+export const stories = [
+  "../src/**/*.mdx",
+  "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+];
 
 export const staticDirs = [{ from: "./../src/assets/fonts/woff", to: "/woff" }];
 
