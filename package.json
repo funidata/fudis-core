@@ -2,6 +2,7 @@
   "name": "@funidata/fudis-core",
   "version": "0.0.1",
   "scripts": {
+    "build": "docker build -t fudis-core:latest ./core && docker cp $(docker create fudis-core:latest):/usr/src/app/dist ./core/dist",
     "stylelint": "stylelint '**/*.{css,scss}'",
     "format:check": "prettier --check",
     "format": "prettier --write ."
