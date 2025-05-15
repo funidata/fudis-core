@@ -8,8 +8,8 @@
   ],
   "scripts": {
     "start": "storybook dev -p 6007",
-    "build-storybook": "storybook build",
-    "build": "scripts/copy-files.sh",
+    "build:storybook": "storybook build",
+    "build:dist": "scripts/copy-files.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

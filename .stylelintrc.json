@@ -4,7 +4,11 @@
     "stylelint-config-sass-guidelines",
     "stylelint-config-concentric-order"
   ],
-  "ignoreFiles": ["core/dist/**/*", "core/.storybook/style.scss"],
+  "ignoreFiles": [
+    "core/dist/**/*",
+    "storybook-static/**/*",
+    "core/.storybook/style.scss"
+  ],
   "rules": {
     "order/properties-alphabetical-order": null,
     "color-no-hex": true,
