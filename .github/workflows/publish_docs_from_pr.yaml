@@ -40,7 +40,7 @@ jobs:
       - name: Build docs
         run: npm run build:storybook
       - name: Copy docs to S3 bucket
-        run: aws s3 sync static s3://${{ vars.AWS_S3_BUCKET_NAME }}/branch/${{ github.ref_name }} --delete --cache-control max-age=5
+        run: aws s3 sync storybook-static s3://${{ vars.AWS_S3_BUCKET_NAME }}/branch/${{ github.ref_name }} --delete --cache-control max-age=5
       - name: Finish deployment
         uses: bobheadxi/deployments@648679e8e4915b27893bd7dbc35cb504dc915bc8
         if: always()
