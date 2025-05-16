@@ -3,7 +3,7 @@ export const stories = [
   "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
 ];
 
-export const staticDirs = [{ from: "./../src/assets/fonts/woff", to: "/woff" }];
+export const staticDirs = [{ from: "../src/assets/fonts/woff", to: "/woff" }];
 
 export const addons = [
   {
