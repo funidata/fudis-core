@@ -3,7 +3,9 @@ export const stories = [
   "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
 ];
 
-export const staticDirs = [{ from: "./../src/assets/fonts/woff", to: "/" }];
+export const staticDirs = [
+  { from: "./../src/assets/fonts/woff", to: "/assets" },
+];
 
 export const addons = [
   {
@@ -22,7 +24,7 @@ export const framework = {
   options: {},
 };
 
-export const viteFinal = async (config) => {
+export const viteFinal = async (config, { configType }) => {
   config.plugins = config.plugins || [];
   config.plugins.push({
     name: "scss-font-url-rewrite",
@@ -30,7 +32,7 @@ export const viteFinal = async (config) => {
       if (id.includes(".storybook/style.scss")) {
         return code.replace(
           /url\(['"]?.*\/([\w-]+\.woff2)['"]?\)/g,
-          "url('$1')",
+          `url(${configType === "DEVELOPMENT" ? "assets/$1" : "$1"})`,
         );
       }
       return null;
