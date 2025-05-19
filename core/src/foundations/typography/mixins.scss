@@ -208,7 +208,9 @@
 
   text-transform: uppercase;
   line-height: tokens.$body-text-sm-line-height;
-  font-family: tokens.$font-family, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /* stylelint-disable-next-line @stylistic/declaration-colon-space-after */
+  font-family:
+    tokens.$font-family, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: tokens.$body-text-md-font-size;
   font-weight: tokens.$font-weight-bold;
 }

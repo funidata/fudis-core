@@ -1,0 +1,63 @@
+name: Release new version
+
+on:
+  release:
+    types:
+      - released
+      - prereleased
+
+jobs:
+
+  publish:
+    name: Publish library to NPM
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      # Recent Node.js is included in `ubuntu-latest` but `setup-node` is still required to setup NPM auth via token.
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          # Specifying `registry-url` triggers `setup-node` to setup NPM authentication.
+          registry-url: https://registry.npmjs.org/
+      - name: Copy root README.md to library
+        run: cp README.md core/README.md
+      - name: Build fudis-core
+        run: npm run build:dist
+        working-directory: core
+      - run: npm publish --access public
+        working-directory: core/dist
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  publish-docs:
+    name: Publish docs to AWS
+    runs-on: ubuntu-22.04
+    needs:
+      - publish
+    defaults:
+      run:
+        working-directory: core
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ vars.AWS_REGION }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      - name: Parse library version number
+        run: echo "VERSION=$(npm pkg get version | tr -d '\"')" >> "$GITHUB_ENV"
+      - name: Install dependencies
+        run: npm ci
+      - name: Build docs
+        run: npm run build:storybook
+      - name: Copy docs to S3 bucket
+        run: aws s3 sync storybook-static s3://${{ vars.AWS_S3_BUCKET_NAME }}/core/v/$VERSION
+
