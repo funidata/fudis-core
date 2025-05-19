@@ -1,6 +1,11 @@
-export const stories = ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"];
+export const stories = [
+  "../src/**/*.mdx",
+  "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+];
 
-export const staticDirs = [{ from: "./../src/assets/fonts/woff", to: "/woff" }];
+export const staticDirs = [
+  { from: "./../src/assets/fonts/woff", to: "/assets" },
+];
 
 export const addons = [
   {
@@ -17,4 +22,22 @@ export const addons = [
 export const framework = {
   name: "@storybook/html-vite",
   options: {},
+};
+
+export const viteFinal = async (config, { configType }) => {
+  config.plugins = config.plugins || [];
+  config.plugins.push({
+    name: "scss-font-url-rewrite",
+    transform(code, id) {
+      if (id.includes(".storybook/style.scss")) {
+        return code.replace(
+          /url\(['"]?.*\/([\w-]+\.woff2)['"]?\)/g,
+          `url(${configType === "DEVELOPMENT" ? "assets/$1" : "$1"})`,
+        );
+      }
+      return null;
+    },
+  });
+
+  return config;
 };
