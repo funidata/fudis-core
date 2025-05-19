@@ -7,6 +7,7 @@
 /core/bazel-out
 **/.storybook/target
 /core/static
+/core/storybook-static
 
 # Node
 node_modules
