@@ -23,11 +23,9 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - name: Copy root README.md to library
         run: cp README.md core/README.md
-      - name: Create dist directory
+      - name: Build fudis-core
         run: npm run build:dist
         working-directory: core
-      - name: Build fudis-core
-        run: npm run build
       - run: npm publish --access public
         working-directory: core/dist
         env:
