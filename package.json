@@ -6,7 +6,8 @@
     "stylelint": "stylelint '**/*.{css,scss}'",
     "format:check": "prettier --check",
     "format": "prettier --write .",
-    "version": "scripts/version_sub_projects.sh $npm_package_version"
+    "version": "scripts/version_sub_projects.sh $npm_package_version",
+    "postversion": "git commit --amend -m \"Bump to version v$npm_package_version\""
   },
   "devDependencies": {
     "prettier": "^3.5.3",
