@@ -7,7 +7,6 @@ on:
       - prereleased
 
 jobs:
-
   publish:
     name: Publish library to NPM
     runs-on: ubuntu-22.04
@@ -60,6 +59,9 @@ jobs:
         run: npm run build:storybook
       - name: Copy docs to S3 bucket
         run: aws s3 sync storybook-static s3://${{ vars.AWS_S3_BUCKET_NAME }}/core/v/$VERSION
+      - name: Log Github event object
+        if: github.event.release != null
+        run: echo '${{toJSON(github.event.release)}}'
       - name: Update root redirect to this version
         run: |
           echo "<html>
@@ -68,4 +70,3 @@ jobs:
           </head>
           </html>" > /tmp/index.html
           aws s3 cp /tmp/index.html s3://${{ vars.AWS_S3_BUCKET_NAME }}/core --cache-control max-age=5
-
