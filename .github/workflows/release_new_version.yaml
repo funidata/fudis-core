@@ -60,4 +60,12 @@ jobs:
         run: npm run build:storybook
       - name: Copy docs to S3 bucket
         run: aws s3 sync storybook-static s3://${{ vars.AWS_S3_BUCKET_NAME }}/core/v/$VERSION
+      - name: Update root redirect to this version
+        run: |
+          echo "<html>
+          <head>
+          <meta http-equiv='refresh' content='0; url=https://fudis.funidata.fi/core/v/$VERSION/index.html' />
+          </head>
+          </html>" > /tmp/index.html
+          aws s3 cp /tmp/index.html s3://${{ vars.AWS_S3_BUCKET_NAME }}/core --cache-control max-age=5
 
