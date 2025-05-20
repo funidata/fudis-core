@@ -59,10 +59,16 @@ jobs:
         run: npm run build:storybook
       - name: Copy docs to S3 bucket
         run: aws s3 sync storybook-static s3://${{ vars.AWS_S3_BUCKET_NAME }}/core/v/$VERSION
-      - name: Log Github event object
-        if: github.event.release != null
-        run: echo '${{toJSON(github.event.release)}}'
+      - name: Get previous tag
+        run: echo "PREV_VERSION=$(git describe --tags --abbrev=0 ${{$VERSION}}^)" >> $GITHUB_ENV
+      - name: Check semver
+        id: check-semver
+        run: |
+          if [[ $VERSION -gt $PREV_VERSION && $VERSION =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "set-as-latest=true" >> $GITHUB_OUTPUT
+          fi
       - name: Update root redirect to this version
+        if: steps.check-semver.outputs.set-as-latest == 'true'
         run: |
           echo "<html>
           <head>
