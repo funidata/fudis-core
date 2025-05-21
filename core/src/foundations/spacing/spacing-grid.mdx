@@ -1,0 +1,103 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Foundations/Spacing/Grid" />
+
+# Spacing for Grid
+
+If you are using grid-like layouts, Fudis offers spacing tokens and mixins for defining grid widths.
+
+**Table of Contents**
+
+1. [Tokens](#tokens)
+2. [Max-width mixin](#max-width-mixin)
+
+## Tokens
+
+There are 6 different widths, varying from `xs` to `xxl`.
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>String value</th>
+        <th>Px value</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td>$grid-width-xxl</td>
+        <td>xxl</td>
+        <td>1540px</td>
+    </tr>
+
+    <tr>
+        <td>$grid-width-xl</td>
+        <td>xl</td>
+        <td>1040px</td>
+    </tr>
+
+    <tr>
+        <td>$grid-width-xxl</td>
+        <td>lg</td>
+        <td>960px</td>
+    </tr>
+
+    <tr>
+        <td>$grid-width-md</td>
+        <td>md</td>
+        <td>720px</td>
+    </tr>
+
+    <tr>
+        <td>$grid-width-sm</td>
+        <td>sm</td>
+        <td>544px</td>
+    </tr>
+
+    <tr>
+        <td>$grid-width-xs</td>
+        <td>xs</td>
+        <td>544px</td>
+    </tr>
+
+    </tbody>
+</table>
+
+### Usage
+
+Load Fudis mixins and tokens to your SCSS file with:
+
+```
+@use "@funidata/fudis-core" as core;
+```
+
+```
+.grid-container {
+  // set a max-width to grid container by using a token
+  max-width: core.$grid-width-lg;
+
+  gap: core.$spacing-xxs;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+```
+
+## Max-width mixin
+
+Load Fudis mixins and tokens to your SCSS file with:
+
+```
+@use "@funidata/fudis-core" as core;
+```
+
+Mixin will set selected element's CSS max-width to given Grid token width
+
+```
+.my-element {
+  @include fudis.grid-max-width('lg');
+}
+```
+
+
+

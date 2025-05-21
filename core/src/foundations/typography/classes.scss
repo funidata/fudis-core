@@ -1,0 +1,122 @@
+@use './mixins.scss' as typography;
+@use './../colors/mixins.scss' as colorMixins;
+@use './../focus/mixins.scss' as focus;
+@use './../utilities/mixins.scss' as utilities;
+
+.fudis-heading {
+  @include colorMixins.text-color('gray-dark');
+
+  box-sizing: border-box;
+  margin-top: 0;
+
+  // For keyboard users, where Heading tag is focused manually
+  &:focus-visible {
+    @include focus.focus-generic;
+  }
+
+  &__variant {
+    &__xxs {
+      @include typography.heading-xxs;
+    }
+
+    &__xs {
+      @include typography.heading-xs;
+    }
+
+    &__sm {
+      @include typography.heading-sm;
+    }
+
+    &__md {
+      @include typography.heading-md;
+    }
+
+    &__lg {
+      @include typography.heading-lg;
+    }
+
+    &__xl {
+      @include typography.heading-xl;
+    }
+
+    &__xxl {
+      @include typography.heading-xxl;
+    }
+  }
+
+  &__align {
+    &__left {
+      text-align: left;
+    }
+
+    &__right {
+      text-align: right;
+    }
+
+    &__center {
+      text-align: center;
+    }
+  }
+}
+
+.fudis-body-text {
+  @include utilities.box-reset;
+  @include colorMixins.text-color('gray-dark');
+
+  &__sm-regular {
+    @include typography.body-text-sm-regular;
+  }
+
+  &__md-regular {
+    @include typography.body-text-md-regular;
+  }
+
+  &__lg-regular {
+    @include typography.body-text-lg-regular;
+  }
+
+  &__md-light {
+    @include typography.body-text-md-light;
+  }
+
+  &__lg-light {
+    @include typography.body-text-lg-light;
+  }
+
+  &__left {
+    text-align: left;
+  }
+
+  &__right {
+    text-align: right;
+  }
+
+  &__center {
+    text-align: center;
+  }
+}
+
+.fudis-link {
+  &__size {
+    &__inherit {
+      @include typography.link-inherit;
+    }
+
+    &__md {
+      @include typography.link-md;
+    }
+
+    &__lg {
+      @include typography.link-lg;
+    }
+  }
+}
+
+.fudis-text-emptystate {
+  @include typography.text-emptystate;
+}
+
+.fudis-table-caption {
+  @include typography.table-caption();
+}
+
