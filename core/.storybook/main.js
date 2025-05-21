@@ -1,6 +1,7 @@
 export const stories = [
   "../src/**/*.mdx",
   "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+  "../documentation/**/*.mdx",
 ];
 
 export const staticDirs = [
