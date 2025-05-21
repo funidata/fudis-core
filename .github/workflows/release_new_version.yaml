@@ -10,6 +10,8 @@ jobs:
   publish:
     name: Publish library to NPM
     runs-on: ubuntu-22.04
+    outputs:
+      set-as-latest: ${{ steps.generate_output.outputs.SET-AS-LATEST }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -22,10 +24,31 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - name: Copy root README.md to library
         run: cp README.md core/README.md
+      - name: Generate output
+        id: generate_output
+        run: echo "SET-AS-LATEST=true" >> $GITHUB_OUTPUT
+      - name: Check for latest version
+        id: check_latest
+        run: |
+          IS_LATEST=$(curl -L \
+            -H "Authorization: Bearer ${{ github.token }}" \
+            https://api.github.com/repos/${{ github.repository }}/releases/latest \
+            | jq -r '.tag_name')
+
+          if [[ "${IS_LATEST}" == "${{ github.event.release.tag_name }}" ]]; then
+            echo ${{ steps.generate_output.outputs.SET-AS-LATEST }}
+            echo "npm-tag=latest" >> $GITHUB_ENV
+          else
+            if [[ "${{ github.event.release.prerelease }}" == "true" ]]; then
+              echo "npm-tag=prerelease" >> $GITHUB_ENV
+            else
+              echo "npm-tag=patch" >> $GITHUB_ENV
+            fi
+          fi
       - name: Build fudis-core
         run: npm run build:dist
         working-directory: core
-      - run: npm publish --access public
+      - run: npm publish --access public --tag ${{ steps.check_latest.outputs.npm-tag }}
         working-directory: core/dist
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -59,19 +82,8 @@ jobs:
         run: npm run build:storybook
       - name: Copy docs to S3 bucket
         run: aws s3 sync storybook-static s3://${{ vars.AWS_S3_BUCKET_NAME }}/core/v/$VERSION
-      - name: Check for latest version
-        id: check_latest
-        run: |
-          LATEST_TAG=$(curl -L \
-            -H "Authorization: Bearer ${{ github.token }}" \
-            https://api.github.com/repos/${{ github.repository }}/releases/latest \
-            | jq -r '.tag_name')
-
-          if [[ "${LATEST_TAG}" == "${{ github.event.release.tag_name }}" && $VERSION =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-            echo "set-as-latest=true" >> $GITHUB_ENV
-          fi
       - name: Update root redirect to this version
-        if: steps.check_latest.outputs.set-as-latest == 'true'
+        if: ${{ needs.publish.outputs.set-as-latest }} == 'true' && $VERSION =~ ^[0-9]+\.[0-9]+\.[0-9]+$
         run: |
           echo "<html>
           <head>
