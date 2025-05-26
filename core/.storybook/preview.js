@@ -45,6 +45,7 @@ const preview = {
             "Text Input",
             "Typography",
             ["BodyText", "Heading", "Miscellaneous"],
+            "Icon",
           ],
         ],
       },
