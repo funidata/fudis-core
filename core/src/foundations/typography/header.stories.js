@@ -17,7 +17,7 @@ export const ExtraLarge = () => `
  I am a level 2 header, but I could be something else too!
  </h2>
  `;
- 
+
 export const Large = () => `
 <h3 class="fudis-heading fudis-heading__variant__lg">
 I am a level 3 header, but I could be something else too!
@@ -32,20 +32,20 @@ I am a level 4 header, but I could be something else too!
 
 export const Small = () => `
 <h5 class="fudis-heading fudis-heading__variant__sm">
-I am a level 3 header, but I could be something else too!
+I am a level 5 header, but I could be something else too!
 </h5>
 `;
 
 export const ExtraSmall = () => `
 <h6 class="fudis-heading fudis-heading__variant__xs">
-I am a level 2 header, but I could be something else too!
+I am a level 6 header, but I could be something else too!
 </h6>
 `;
 
 export const DoubleExtraSmall = () => `
-<p class="fudis-heading fudis-heading__variant__xxs">
-I am a paragraph and used as a subheader, but I could be something else too!
-</p>
+<h6 class="fudis-heading fudis-heading__variant__xxs">
+I am a level 6 header, but I could be something else too!
+</h6>
 `;
 
 export const Aligned = () => `
