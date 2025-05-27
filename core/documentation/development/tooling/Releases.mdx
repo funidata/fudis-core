@@ -33,8 +33,7 @@ Release notes for each release can be found from [Github Core Releases](https://
 
 ### Create New Release
 
-- Navigate to the release branch you want to make a new version update from. Release branches should be named `release-{major.minor.patch}`
-- Create new branch from the release branch
+- Create new release branch from main with respective naming `release-{major.minor.patch}`
 - Increment version by running `npm version <major.minor.patch>` in project root
   > This will increment version number in `package.json` files and do automatic commit of the changed files
 - Create Pull Request
@@ -43,7 +42,6 @@ Release notes for each release can be found from [Github Core Releases](https://
 - Select **Draft a new release**
 - Select **Choose a tag**. Create new tag in the format of `v{major.minor.patch}`
 - If necessary choose from **Previous tag** dropdown, the version you want to compare to. Otherwise use default 'Previous tag: auto'
-- Choose **Target** branch according to the release you are updating
 - Select **Generate release notes**
 - Replace **What's Changed** heading with a current date
 - Check from **Preview** that everything looks correct
@@ -53,10 +51,19 @@ Release notes for each release can be found from [Github Core Releases](https://
 
   > Set as latest if it is the newest stable release
 
-  > Uncheck both checkboxes if it is e.g. patch for previously released major
-
 - Publish release
 - Check that [Fudis Core NPM package](https://www.npmjs.com/package/@funidata/fudis-core) has updated the newly released version
+
+### Patch Previous Major
+
+- Checkout to the existing **tag** and create new branch with respective naming `release-{major.minor.patch}`
+- Create another branch from the release branch where the issue is fixed
+- We also recommend that version increment `npm version <major.minor.patch>` is done in its own branch
+- Create pull requests and merge
+- Make the release from GitHub UI with the same steps as when creating new release but remember to choose correct comparison tags
+- Choose **Target** branch according to the release you are updating
+- Uncheck both release checkboxes since this is a fix for previously released version
+- Publish release and check that the release is listen in [NPM](https://www.npmjs.com/package/@funidata/fudis-core)
 
 ### Problems After Releasing
 
