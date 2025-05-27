@@ -50,6 +50,6 @@ export const viteFinal = async (config, { configType }) => {
 export function managerHead(head) {
   return `
     ${head}
-    <link rel="icon" type="image/svg+xml" href="./assets/fudis-logo-favicon-black.png">
+    <link rel="icon" type="image/svg+xml" href="./assets/fudis-logo-mini-black.svg">
   `;
 }
