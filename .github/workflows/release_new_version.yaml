@@ -11,7 +11,7 @@ jobs:
     name: Publish library to NPM
     runs-on: ubuntu-22.04
     outputs:
-      set-as-latest: ${{ steps.generate_output.outputs.is-latest }}
+      set-as-latest: ${{ steps.check_latest.outputs.is-latest }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -24,9 +24,6 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - name: Copy root README.md to library
         run: cp README.md core/README.md
-      - name: Generate output
-        id: generate_output
-        run: echo "is-latest=true" >> $GITHUB_OUTPUT
       - name: Check for latest version
         id: check_latest
         run: |
@@ -36,23 +33,22 @@ jobs:
             | jq -r '.tag_name')
 
           if [[ "${LATEST_RELEASE}" == "${{ github.event.release.tag_name }}" ]]; then
-            echo "npm-tag=latest" >> $GITHUB_OUTPUT
+            echo "is-latest=true" >> "$GITHUB_OUTPUT"
           else
             echo "is-latest=false" >> "$GITHUB_OUTPUT"
-            echo "npm-tag=fudis-core-${{ github.event.release.tag_name }}" >> $GITHUB_OUTPUT
           fi
       - name: Build fudis-core
         run: npm run build:dist
         working-directory: core
       - name: Publish latest
-        if: steps.check_latest.outputs.npm-tag == 'latest'
+        if: steps.check_latest.outputs.is-latest == 'true'
         run: npm publish --access public
         working-directory: core/dist
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Publish patch or pre-release
-        if: steps.check_latest.outputs.npm-tag != 'latest'
-        run: npm publish --access public --tag ${{ steps.check_latest.outputs.npm-tag }}
+        if: steps.check_latest.outputs.is-latest == 'false'
+        run: npm publish --access public --tag fudis-core-${{ github.event.release.tag_name }}
         working-directory: core/dist
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
