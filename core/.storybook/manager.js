@@ -9,7 +9,7 @@ addons.setConfig({
     base: "light",
     brandTitle: "Core style library for Fudis",
     brandUrl: "https://github.com/funidata/fudis-core",
-    brandImage: "../src/assets/images/fudis-logo-regular-black.svg",
+    brandImage: "./assets/fudis-logo-regular-black.svg",
     brandTarget: "_self",
   }),
 });

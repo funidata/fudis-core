@@ -6,7 +6,7 @@ export const stories = [
 
 export const staticDirs = [
   { from: "./../src/assets/fonts/woff", to: "/assets" },
-  "./../src/assets/images",
+  { from: "./../src/assets/images", to: "/assets" },
 ];
 
 export const addons = [
@@ -50,6 +50,6 @@ export const viteFinal = async (config, { configType }) => {
 export function managerHead(head) {
   return `
     ${head}
-    <link rel="shortcut icon" href="fudis-logo-favicon-black.png">
+    <link rel="icon" type="image/svg+xml" href="./assets/fudis-logo-favicon-black.png">
   `;
 }
