@@ -1,6 +1,6 @@
 {
   "name": "@funidata/fudis-core",
-  "version": "0.0.3-alpha.7",
+  "version": "0.0.3-alpha.8",
   "scripts": {
     "build": "docker build -t fudis-core:latest ./core && docker cp $(docker create fudis-core:latest):/usr/src/app/dist ./core/dist",
     "stylelint": "stylelint '**/*.{css,scss}'",
