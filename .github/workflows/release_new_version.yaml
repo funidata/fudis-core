@@ -39,11 +39,7 @@ jobs:
             echo ${{ steps.generate_output.outputs.is-latest }}
             echo "npm-tag=latest" >> $GITHUB_ENV
           else
-            if [[ "${{ github.event.release.prerelease }}" == "true" ]]; then
-              echo "npm-tag=prerelease" >> $GITHUB_ENV
-            else
-              echo "npm-tag=patch" >> $GITHUB_ENV
-            fi
+            echo "npm-tag=${{ github.event.release.tag_name }}" >> $GITHUB_ENV
           fi
       - name: Build fudis-core
         run: npm run build:dist
@@ -82,8 +78,14 @@ jobs:
         run: npm run build:storybook
       - name: Copy docs to S3 bucket
         run: aws s3 sync storybook-static s3://${{ vars.AWS_S3_BUCKET_NAME }}/core/v/$VERSION
+      - name: Check for Storybook redirect
+        id: check-storybook-redirect
+        run: |
+          if [[ "${{ needs.publish.outputs.set-as-latest }}" == 'true' && "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+              echo "REDIRECT_STORYBOOK=true" >> $GITHUB_ENV
+          fi
       - name: Update root redirect to this version
-        if: ${{ needs.publish.outputs.set-as-latest }} == 'true' && $VERSION =~ ^[0-9]+\.[0-9]+\.[0-9]+$
+        if: env.REDIRECT_STORYBOOK == 'true'
         run: |
           echo "<html>
           <head>
