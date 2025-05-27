@@ -37,9 +37,9 @@ jobs:
 
           if [[ "${LATEST_RELEASE}" == "${{ github.event.release.tag_name }}" ]]; then
             echo ${{ steps.generate_output.outputs.is-latest }}
-            echo "npm-tag=latest" >> $GITHUB_ENV
+            echo "npm-tag=latest" >> $GITHUB_OUTPUT
           else
-            echo "npm-tag=fudis-core-${{ github.event.release.tag_name }}" >> $GITHUB_ENV
+            echo "npm-tag=fudis-core-${{ github.event.release.tag_name }}" >> $GITHUB_OUTPUT
           fi
       - name: Build fudis-core
         run: npm run build:dist
@@ -56,6 +56,7 @@ jobs:
         working-directory: core/dist
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
   publish-docs:
     name: Publish docs to AWS
     runs-on: ubuntu-22.04
