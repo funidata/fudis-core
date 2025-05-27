@@ -39,7 +39,7 @@ jobs:
             echo ${{ steps.generate_output.outputs.is-latest }}
             echo "npm-tag=latest" >> $GITHUB_ENV
           else
-            echo "npm-tag=${{ github.event.release.tag_name }}" >> $GITHUB_ENV
+            echo "npm-tag=fudis-core-${{ github.event.release.tag_name }}" >> $GITHUB_ENV
           fi
       - name: Build fudis-core
         run: npm run build:dist
