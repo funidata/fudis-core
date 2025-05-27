@@ -1,0 +1,186 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Foundations/Borders" />
+
+# Borders
+
+Fudis offers tokens and mixins for defining borders.
+
+**Table of Contents**
+
+1. [Tokens](#tokens)
+2. [Border](#border)
+3. [Border None](#border-none)
+4. [Border Radius](#border-radius)
+5. [Outline](#outline)
+6. [Outline None](#outline-none)
+
+## Tokens
+
+There are two supported border styles, defined below:
+
+<table>
+    <thead>
+    <tr>
+        <th>$border-styles</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td>solid</td>
+    </tr>
+
+    <tr>
+        <td>dashed</td>
+    </tr>
+
+    <tr>
+        <td>none</td>
+    </tr>
+
+    </tbody>
+</table>
+
+## Border
+
+Set border of an element.
+
+```
+@include core.border($width, $style, $color)
+```
+
+<table>
+    <thead>
+    <tr>
+        <th>$width</th>
+        <th>$style</th>
+        <th>$color</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td>string value from spacing tokens map (**$pixel-tokens**)</td>
+        <td>string value from border tokens map (**$border-styles**)</td>
+        <td>string value from colors tokens map (**$colors**)</td>
+    </tr>
+    </tbody>
+</table>
+
+### Example
+
+Load Fudis mixins and tokens to your SCSS file with:
+```
+@use "@funidata/fudis-core" as core;
+```
+
+```
+.my-element {
+  @include core.border('2px', 'solid', 'primary');
+}
+```
+
+## Border None
+
+Remove or set the border to none. Border none doesn't need any parameters.
+
+Load Fudis mixins and tokens to your SCSS file with:
+```
+@use "@funidata/fudis-core" as core;
+```
+
+```
+.my-element {
+  @include core.border-none;
+}
+```
+
+## Border Radius
+
+Set border radius of an element.
+
+```
+@include core.border-radius($width)
+```
+
+<table>
+    <thead>
+    <tr>
+        <th>$width</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td>string value from spacing tokens map (**$pixel-tokens**)</td>
+    </tr>
+    </tbody>
+</table>
+
+### Example
+
+Load Fudis mixins and tokens to your SCSS file with:
+```
+@use "@funidata/fudis-core" as core;
+```
+
+```
+.my-element {
+  @include core.border-radius('2px');
+}
+```
+
+## Outline
+
+Set outline of an element.
+
+```
+@include core.outline($width, $style, $color)
+```
+
+<table>
+    <thead>
+    <tr>
+        <th>$width</th>
+        <th>$style</th>
+        <th>$color</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td>string value from spacing tokens map (**$pixel-tokens**)</td>
+        <td>string value from border tokens map (**$border-styles**)</td>
+        <td>string value from colors tokens map (**$colors**)</td>
+    </tr>
+    </tbody>
+</table>
+
+### Example
+
+Load Fudis mixins and tokens to your SCSS file with:
+```
+@use "@funidata/fudis-core" as core;
+```
+
+```
+.my-element {
+  @include core.outline('1px', 'dashed', 'gray-middle');
+}
+```
+
+## Outline None
+
+Outline none doesn't need any parameters.
+
+Load Fudis mixins and tokens to your SCSS file with:
+```
+@use "@funidata/fudis-core" as core;
+```
+
+```
+.my-element {
+@include core.outline-none;
+}
+```

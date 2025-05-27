@@ -1,0 +1,60 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Foundations/Focus" />
+
+# Focus
+
+[Figma for Focus](https://www.figma.com/file/a6G6ZD6W3tlq0qmUkdvdp1/Fudis-DS-Foundations?node-id=133%3A130&t=Z8j4NL4q9I5h7OMD-0)
+
+**Table of Contents**
+
+1. [Generic Focus Rectangle](#generic-focus-rectangle)
+2. [Form Element Focus](#form-element-focus)
+
+## Generic Focus Rectangle
+
+Load Fudis mixins and tokens to your SCSS file with:
+
+```
+@use "@funidata/fudis-core" as core;
+```
+
+Generic focus style for e.g. buttons and tabs:
+
+```
+.my-element {
+  @include core.focus-generic;
+}
+```
+
+## Form Element Focus
+
+Load Fudis mixins and tokens to your SCSS file with:
+
+```
+@use "@funidata/fudis-core" as core;
+```
+
+Focus style for form elements such as text-input and select:
+
+```
+.my-element {
+  @include core.focus-form-field;
+}
+```
+
+Focus style for form checkbox element:
+
+```
+.my-element {
+  @include core.focus-checkbox;
+}
+```
+
+Focus style for various dropdown elements:
+
+```
+.my-element {
+  @include core.focus-dropdown;
+}
+```

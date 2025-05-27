@@ -1,0 +1,161 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Foundations/Spacing/Classes" />
+
+# Classes
+
+Fudis helper classes allow you to add responsive margin and paddings to components and to any other native UI elements. With CSS Helper Classes you can add more space to the elements right, left, top or bottom. Fudis CSS Helper Classes also include class names for adding horizontal and vertical space simultaneously.
+When class is used with a varying breakpoint value, note that the chosen breakpoint refers to the smallest screen size when the style takes affect.
+
+**Table of Contents**
+
+1. [Values](#values)
+2. [Simple spacing](#simple-spacing)
+3. [Spacing with breakpoints](#spacing-with-breakpoints)
+
+## Values
+
+There are three types of tokens that you can make use of when forming the right spacing class for your use case:
+
+- [Breakpoint tokens](/docs/foundations-breakpoints--docs): Screen min widths values from `xs` to `xxl`.
+- **Direction attributes:** Name identifiers for margin and padding directions.
+- [Spacing tokens](/docs/foundations-spacing-tokens--docs): Sizes from `xxs` to `xxl`, including `none`.
+
+Direction attributes are defined below. Use the following direction attributes to define where spacing is applied.
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>CSS attribute</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td>m</td>
+        <td>margin</td>
+    </tr>
+
+    <tr>
+        <td>mt</td>
+        <td>margin-top</td>
+    </tr>
+
+    <tr>
+        <td>mb</td>
+        <td>margin-bottom</td>
+    </tr>
+
+    <tr>
+        <td>ml</td>
+        <td>margin-left</td>
+    </tr>
+
+    <tr>
+        <td>mr</td>
+        <td>margin-right</td>
+    </tr>
+
+    <tr>
+        <td>mx</td>
+        <td>margin-right, margin-left</td>
+    </tr>
+
+    <tr>
+        <td>my</td>
+        <td>margin-top, margin-bottom</td>
+    </tr>
+
+    <tr>
+        <td>p</td>
+        <td>padding</td>
+    </tr>
+
+    <tr>
+        <td>pt</td>
+        <td>padding-top</td>
+    </tr>
+
+    <tr>
+        <td>pb</td>
+        <td>padding-bottom</td>
+    </tr>
+
+    <tr>
+        <td>pl</td>
+        <td>padding-left</td>
+    </tr>
+
+    <tr>
+        <td>pr</td>
+        <td>padding-right</td>
+    </tr>
+
+    <tr>
+        <td>px</td>
+        <td>padding-right, padding-left</td>
+    </tr>
+
+    <tr>
+        <td>py</td>
+        <td>padding-top, padding-bottom</td>
+    </tr>
+
+    </tbody>
+</table>
+
+## Simple spacing
+
+If you want to add margin or padding to an element with a class without breakpoints, you can use simplified spacing classes.
+
+### Usage
+
+Responsive class name formation start with a prefix 'fudis' and follows a pattern with respective **Fudis Foundation tokens:**<br />
+
+- **Direction attributes:** Name identifiers for margin and padding directions.
+- [Spacing tokens](/docs/foundations-spacing-tokens--docs): Sizes from `xxs` to `xxl`, including `none`.
+
+```
+fudis - $direction-attribute - $spacing-token
+```
+
+#### Examples
+
+This example adds medium size margin (1.5rem) around the button element.
+```
+<button class="fudis-m-md">I am a button</button>
+```
+
+This example adds small size padding (1rem) and a medium size left margin (1.5rem) to the button element.
+```
+<button class="fudis-p-sm fudis-ml-md">I am a button</button>
+```
+
+## Spacing with breakpoints
+
+If you want to add margin or padding to an element with a class and target certain screen sizes, you can use spacing classes with breakpoints.
+
+### Usage
+
+Responsive class name formation start with a prefix 'fudis' and follows a pattern with respective **Fudis Foundation tokens:**<br />
+
+- [Breakpoint tokens](/docs/foundations-breakpoints--docs): Screen min widths values from `xs` to `xxl`.
+- **Direction attributes:** Name identifiers for margin and padding directions.
+- [Spacing tokens](/docs/foundations-spacing-tokens--docs): Sizes from `xxs` to `xxl`, including `none`.
+
+```
+fudis - $breakpoint - $direction-attribute - $spacing-token
+```
+
+#### Examples
+
+This example adds medium size margin top (1.5rem) around the button element **when the screen width is equal or wider than 768px**.
+```
+<button class="fudis-md-mt-md">I am a button</button>
+```
+
+This example adds small padding (1rem) to the button element **when the screen width is equal or wider than 0px** AND **when the screen width goes up to 768px and beyond** the padding is changed to medium size padding (1.5rem).
+```
+<button class="fudis-xs-p-sm fudis-md-p-md">I am a button</button>
+```
