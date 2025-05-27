@@ -36,9 +36,9 @@ jobs:
             | jq -r '.tag_name')
 
           if [[ "${LATEST_RELEASE}" == "${{ github.event.release.tag_name }}" ]]; then
-            echo ${{ steps.generate_output.outputs.is-latest }}
             echo "npm-tag=latest" >> $GITHUB_OUTPUT
           else
+            echo "is-latest=false" >> "$GITHUB_OUTPUT"
             echo "npm-tag=fudis-core-${{ github.event.release.tag_name }}" >> $GITHUB_OUTPUT
           fi
       - name: Build fudis-core
