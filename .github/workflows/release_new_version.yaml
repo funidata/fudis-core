@@ -11,7 +11,7 @@ jobs:
     name: Publish library to NPM
     runs-on: ubuntu-22.04
     outputs:
-      set-as-latest: ${{ steps.generate_output.outputs.SET-AS-LATEST }}
+      set-as-latest: ${{ steps.generate_output.outputs.is-latest }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -26,17 +26,17 @@ jobs:
         run: cp README.md core/README.md
       - name: Generate output
         id: generate_output
-        run: echo "SET-AS-LATEST=true" >> $GITHUB_OUTPUT
+        run: echo "is-latest=true" >> $GITHUB_OUTPUT
       - name: Check for latest version
         id: check_latest
         run: |
-          IS_LATEST=$(curl -L \
+          LATEST_RELEASE=$(curl -L \
             -H "Authorization: Bearer ${{ github.token }}" \
             https://api.github.com/repos/${{ github.repository }}/releases/latest \
             | jq -r '.tag_name')
 
-          if [[ "${IS_LATEST}" == "${{ github.event.release.tag_name }}" ]]; then
-            echo ${{ steps.generate_output.outputs.SET-AS-LATEST }}
+          if [[ "${LATEST_RELEASE}" == "${{ github.event.release.tag_name }}" ]]; then
+            echo ${{ steps.generate_output.outputs.is-latest }}
             echo "npm-tag=latest" >> $GITHUB_ENV
           else
             if [[ "${{ github.event.release.prerelease }}" == "true" ]]; then
