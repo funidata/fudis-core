@@ -1,10 +1,16 @@
 export const stories = [
   "../src/**/*.mdx",
   "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+  "../documentation/**/*.mdx",
 ];
 
 export const staticDirs = [
   { from: "./../src/assets/fonts/woff", to: "/assets" },
+  { from: "./../src/assets/images", to: "/assets" },
+  {
+    from: "./../src/assets/images/fudis-logo-mini-black.svg",
+    to: "/favicon.svg",
+  },
 ];
 
 export const addons = [
