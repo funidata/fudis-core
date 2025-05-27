@@ -7,6 +7,10 @@ export const stories = [
 export const staticDirs = [
   { from: "./../src/assets/fonts/woff", to: "/assets" },
   { from: "./../src/assets/images", to: "/assets" },
+  {
+    from: "./../src/assets/images/fudis-logo-mini-black.svg",
+    to: "/favicon.svg",
+  },
 ];
 
 export const addons = [
@@ -43,13 +47,3 @@ export const viteFinal = async (config, { configType }) => {
 
   return config;
 };
-
-/**
- * Manage favicon
- */
-export function managerHead(head) {
-  return `
-    ${head}
-    <link rel="icon" type="image/svg+xml" href="./assets/fudis-logo-mini-black.svg">
-  `;
-}
