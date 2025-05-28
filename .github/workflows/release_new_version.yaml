@@ -26,15 +26,21 @@ jobs:
         run: cp README.md core/README.md
       - name: Check for latest version
         id: check_latest
-        # When testing for release is done, change the if-statement to: if [[ "${LATEST_RELEASE}" == "${{ github.event.release.tag_name }}" && "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
         run: |
           LATEST_RELEASE=$(curl -L \
             -H "Authorization: Bearer ${{ github.token }}" \
             https://api.github.com/repos/${{ github.repository }}/releases/latest \
             | jq -r '.tag_name')
 
+          CURRENT_VERSION=$(echo "${{ github.event.release.tag_name }}" | cut -c2-)
+
           if [[ "${LATEST_RELEASE}" == "${{ github.event.release.tag_name }}" ]]; then
-            echo "is-latest=true" >> "$GITHUB_OUTPUT"
+            if [[ "$CURRENT_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+              echo "is-latest=true" >> "$GITHUB_OUTPUT"
+            else
+              echo "::error::When publishing a latest release, the version has to respect the major.minor.patch-format."
+              exit 1
+            fi
           else
             echo "is-latest=false" >> "$GITHUB_OUTPUT"
             if ${{ github.event.release.prerelease }}; then
