@@ -30,6 +30,7 @@
 /**
 * Component styles
 */
+@forward './src/components/alert/alert';
 @forward './src/components/button/button';
 @forward './src/components/badge/badge';
 @forward './src/components/checkbox/checkbox';
