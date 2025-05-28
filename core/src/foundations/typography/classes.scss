@@ -96,27 +96,11 @@
   }
 }
 
-.fudis-link {
-  &__size {
-    &__inherit {
-      @include typography.link-inherit;
-    }
-
-    &__md {
-      @include typography.link-md;
-    }
-
-    &__lg {
-      @include typography.link-lg;
-    }
-  }
-}
-
 .fudis-text-emptystate {
   @include typography.text-emptystate;
 }
 
 .fudis-table-caption {
-  @include typography.table-caption();
+  @include typography.table-caption;
 }
 
