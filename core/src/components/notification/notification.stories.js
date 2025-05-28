@@ -1,6 +1,8 @@
 export default {
-  title: "Components/Notification",
+  title: "Components/Notification (WIP)",
 };
+
+// TODO: Add respective visual indicators after icons are available
 
 export const Danger = () => `
   <article class="fudis-notification fudis-notification__danger">

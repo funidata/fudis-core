@@ -1,5 +1,5 @@
 export default {
-  title: "Components/Alert",
+  title: "Components/Alert (WIP)",
 };
 
 // TODO: Finish close buttons after icons are available

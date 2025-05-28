@@ -1,5 +1,5 @@
 export default {
-  title: "Components/Checkbox",
+  title: "Components/Checkbox (WIP)",
 };
 
 // TODO: Add Selected and SelectedAndDisabled stories after icons are available
