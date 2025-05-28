@@ -1,0 +1,69 @@
+@use '../../foundations/spacing/tokens.scss' as spacing;
+@use '../../foundations/typography/mixins.scss' as typography;
+@use '../../foundations/colors/mixins.scss' as colorMixin;
+
+.fudis-guidance {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  &__help-text {
+    @include colorMixin.text-color('gray-dark');
+    @include typography.body-text-sm-regular;
+
+    margin-top: spacing.$spacing-none;
+    margin-bottom: spacing.$spacing-xs;
+  }
+
+  &__errors {
+    display: flex;
+    /* stylelint-disable-next-line unit-disallowed-list */
+    transform: translateX(calc(-1 * calc(0.4rem / var(--fudis-rem-multiplier))));
+    opacity: 0;
+    height: spacing.$spacing-xs;
+    animation-name: delay-appearance;
+    animation-delay: 0.2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    &__list {
+      min-height: spacing.$spacing-xs;
+    }
+  }
+
+  &__character-limit-indicator {
+    @include colorMixin.text-color('gray-dark');
+    @include typography.body-text-sm-regular;
+
+    margin-top: spacing.$spacing-xs;
+    text-align: end;
+
+    &__sm {
+      min-width: spacing.$spacing-md;
+    }
+
+    &__md {
+      min-width: spacing.$spacing-xl;
+    }
+
+    &__lg {
+      min-width: spacing.$spacing-xxl;
+    }
+
+    &__float-right {
+      margin-left: auto;
+    }
+  }
+}
+
+@keyframes delay-appearance {
+  0% {
+    opacity: 0;
+    height: spacing.$spacing-xs;
+  }
+
+  100% {
+    opacity: 1;
+    height: auto;
+  }
+}
