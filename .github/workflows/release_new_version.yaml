@@ -37,6 +37,11 @@ jobs:
             echo "is-latest=true" >> "$GITHUB_OUTPUT"
           else
             echo "is-latest=false" >> "$GITHUB_OUTPUT"
+            if ${{ github.event.release.prerelease }}; then
+              echo "NPM_TAG=prerelease" >> $GITHUB_ENV
+            else
+              echo "NPM_TAG=patch" >> $GITHUB_ENV
+            fi
           fi
       - name: Build fudis-core
         run: npm run build:dist
@@ -49,7 +54,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Publish patch or pre-release
         if: steps.check_latest.outputs.is-latest == 'false'
-        run: npm publish --access public --tag fudis-core-${{ github.event.release.tag_name }}
+        run: npm publish --access public --tag ${{ env.NPM_TAG }}
         working-directory: core/dist
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
