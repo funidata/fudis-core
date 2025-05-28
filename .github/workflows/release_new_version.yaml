@@ -26,6 +26,7 @@ jobs:
         run: cp README.md core/README.md
       - name: Check for latest version
         id: check_latest
+        # When testing for release is done, change the if-statement to: if [[ "${LATEST_RELEASE}" == "${{ github.event.release.tag_name }}" && "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
         run: |
           LATEST_RELEASE=$(curl -L \
             -H "Authorization: Bearer ${{ github.token }}" \
@@ -84,10 +85,8 @@ jobs:
         run: aws s3 sync storybook-static s3://${{ vars.AWS_S3_BUCKET_NAME }}/core/v/$VERSION
       - name: Check for Storybook redirect
         id: check-storybook-redirect
-        run: |
-          if [[ "${{ needs.publish.outputs.set-as-latest }}" == 'true' && "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-              echo "REDIRECT_STORYBOOK=true" >> $GITHUB_ENV
-          fi
+        if: needs.publish.outputs.set-as-latest == 'true'
+        run: echo "REDIRECT_STORYBOOK=true" >> $GITHUB_ENV
       - name: Update root redirect to this version
         if: env.REDIRECT_STORYBOOK == 'true'
         run: |
