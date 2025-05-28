@@ -1,9 +1,5 @@
 export default {
   title: "Components/Button",
-  decorators: [
-    (storyFn) =>
-      `<div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-start;">${storyFn()}</div>`,
-  ],
 };
 
 export const Primary = () => `
