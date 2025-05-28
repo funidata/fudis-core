@@ -1,0 +1,7 @@
+@use '../../foundations/utilities/mixins.scss' as utilities;
+
+.fudis-text-area {
+  &__input {
+    @include utilities.text-area;
+  }
+}
