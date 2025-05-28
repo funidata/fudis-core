@@ -11,28 +11,31 @@ const preview = {
     options: {
       storySort: {
         order: [
-          "Foundations", [
+          "Foundations",
+          [
             "Introduction",
             "Colors",
             "Typography",
-            "Spacing", [
-              "Tokens",
-              "Classes",
-              "Grid"
-            ],
+            "Spacing",
+            ["Tokens", "Classes", "Grid"],
             "Breakpoints",
             "Focus",
             "Borders",
             "Utilities",
           ],
-          "Components", [
-            "Button",
-            "Typography", [
-              "Header",
-              "BodyText",
-              "Link",
-              "Miscellaneous",
-            ],
+          "Components",
+          [
+            "Alert (WIP)",
+            "Badge",
+            "Button (WIP)",
+            "Checkbox (WIP)",
+            "Link (WIP)",
+            "Notification (WIP)",
+            "Radio Button",
+            "Text Area",
+            "Text Input",
+            "Typography",
+            ["BodyText", "Header", "Miscellaneous"],
           ],
         ],
       },
