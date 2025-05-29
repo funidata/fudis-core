@@ -17,3 +17,12 @@ export const TableCaption = () => `
 Fudis table caption
 </p>
 `;
+
+export const test = () => `
+<p class="fudis-text-emptystate">
+Fudis empty state text
+</p>
+<p class="fudis-table-caption">
+Fudis table caption
+</p>
+`;

@@ -20,29 +20,53 @@ export const Secondary = () => `
 
 export const Tertiary = () => `
   <button class="fudis-button fudis-button__tertiary fudis-button__size__medium">
-  Tertiary
+    Tertiary
   </button>
 `;
 
 export const Primary_Small = () => `
   <button class="fudis-button fudis-button__primary fudis-button__size__small">
-  Primary Small
+    Primary Small
   </button>
 `;
 
 export const Secondary_Small = () => `
   <button class="fudis-button fudis-button__secondary fudis-button__size__small">
-  Secondary Small
+    Secondary Small
   </button>
 `;
 
 export const Tertiary_Small = () => `
   <button class="fudis-button fudis-button__tertiary fudis-button__size__small">
-  Tertiary Small
+    Tertiary Small
   </button>
 `;
 
 export const Disabled = () => `
+  <button aria-disabled="true" class="fudis-button fudis-button__primary fudis-button__size__medium">
+    Disabled
+  </button>
+`;
+
+export const test = () => `
+  <button class="fudis-button fudis-button__primary fudis-button__size__medium">
+    Primary
+  </button>
+   <button class="fudis-button fudis-button__secondary fudis-button__size__medium">
+    Secondary
+  </button>
+  <button class="fudis-button fudis-button__tertiary fudis-button__size__medium">
+    Tertiary
+  </button>
+  <button class="fudis-button fudis-button__primary fudis-button__size__small">
+    Primary Small
+  </button>
+  <button class="fudis-button fudis-button__secondary fudis-button__size__small">
+    Secondary Small
+  </button>
+  <button class="fudis-button fudis-button__tertiary fudis-button__size__small">
+    Tertiary Small
+  </button>
   <button aria-disabled="true" class="fudis-button fudis-button__primary fudis-button__size__medium">
     Disabled
   </button>
