@@ -18,7 +18,7 @@ Fudis table caption
 </p>
 `;
 
-export const test = () => `
+export const Test = () => `
 <p class="fudis-text-emptystate">
 Fudis empty state text
 </p>

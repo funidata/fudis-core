@@ -62,7 +62,7 @@ Header aligned right
 </h3>
 `;
 
-export const test = () => `
+export const Test = () => `
   <h1 class="fudis-heading fudis-heading__variant__xxl">
     I am a level 1 header, but I could be something else too!
   </h1>

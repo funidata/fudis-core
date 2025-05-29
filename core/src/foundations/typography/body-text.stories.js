@@ -50,7 +50,7 @@ Medium regular text aligned right
 </p>
 `;
 
-export const test = () => `
+export const Test = () => `
 <p class="fudis-body-text fudis-body-text__lg-regular">
 Large regular text
 </p>

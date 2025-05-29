@@ -18,7 +18,7 @@ I am a large sized link
 </a>
 `;
 
-export const test = () => `
+export const Test = () => `
 <a class="fudis-link fudis-link__size__md">
 I am a medium sized link
 </a>
