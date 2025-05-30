@@ -7,7 +7,8 @@
     "tests"
   ],
   "scripts": {
-    "build": "docker build -t fudis-core:latest ./core && docker cp $(docker create fudis-core:latest):/usr/src/app/dist ./core/dist",
+    "start:storybook": "docker compose up --build -d core-storybook",
+    "start:e2e": "docker compose run --service-ports core-e2e",
     "stylelint": "stylelint '**/*.{css,scss}'",
     "format:check": "prettier --check",
     "format": "prettier --write .",
