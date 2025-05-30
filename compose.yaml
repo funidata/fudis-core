@@ -11,16 +11,16 @@ services:
     volumes:
       - ./core/src:/usr/src/app/src
       - ./core/_index.scss:/usr/src/app/_index.scss
-  core-e2e:
+  core-vr:
     build:
       context: ./tests/
-    image: e2e
-    container_name: core-e2e
+    image: vr
+    container_name: core-vr
     tty: true
     environment:
       - PLAYWRIGHT_BASE_URL=http://core-storybook:6007
       - CI=${CI:-false}
     volumes:
-      - ./tests/e2e:/usr/src/app/e2e
+      - ./tests/visual-regression:/usr/src/app/visual-regression
       - ./tests/playwright-report:/usr/src/app/playwright-report
       - ./tests/test-results:/usr/src/app/test-results

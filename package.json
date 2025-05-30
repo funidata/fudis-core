@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "start:storybook": "docker compose up --build -d core-storybook",
-    "start:e2e": "docker compose run --service-ports core-e2e",
+    "start:vr": "docker compose run --service-ports core-vr",
     "stylelint": "stylelint '**/*.{css,scss}'",
     "format:check": "prettier --check .",
     "format": "prettier --write .",

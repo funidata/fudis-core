@@ -7,4 +7,4 @@ RUN npm ci
 
 COPY . .
 
-CMD ["npx","storybook", "dev", "-p", "6007", "--no-open"]
+CMD ["npx","storybook", "dev", "-p", "6007", "--no-open", "--host", "0.0.0.0", "--host", "core-storybook"]
