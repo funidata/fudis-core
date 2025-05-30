@@ -48,7 +48,7 @@ export default defineConfig({
     },
     {
       name: "Mobile Chrome Big Landscape",
-      use: {...devices["Pixel 7 landscape"]},
-    }
+      use: { ...devices["Pixel 7 landscape"] },
+    },
   ],
 });
