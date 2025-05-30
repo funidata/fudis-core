@@ -3,7 +3,7 @@ services:
   core-storybook:
     build:
       context: ./core/
-    image: core
+    image: storybook
     container_name: core-storybook
     tty: true
     ports:
@@ -19,7 +19,7 @@ services:
     tty: true
     environment:
       - PLAYWRIGHT_BASE_URL=http://core-storybook:6007
-      - CONTAINER=true
+      - CI=${CI:-false}
     volumes:
       - ./tests/e2e:/usr/src/app/e2e
       - ./tests/playwright-report:/usr/src/app/playwright-report
