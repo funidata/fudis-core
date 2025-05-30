@@ -11,3 +11,16 @@ services:
     volumes:
       - ./core/src:/usr/src/app/src
       - ./core/_index.scss:/usr/src/app/_index.scss
+  core-e2e:
+    build:
+      context: ./tests/
+    image: e2e
+    container_name: core-e2e
+    tty: true
+    environment:
+      - PLAYWRIGHT_BASE_URL=http://core-storybook:6007
+      - CONTAINER=true
+    volumes:
+      - ./tests/e2e:/usr/src/app/e2e
+      - ./tests/playwright-report:/usr/src/app/playwright-report
+      - ./tests/test-results:/usr/src/app/test-results
