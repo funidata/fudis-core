@@ -63,26 +63,26 @@ jobs:
       - name: Wait for Storybook server to be up
         run: curl --head -X GET --retry 10 --retry-connrefused --retry-delay 5 http://localhost:6007
       - name: Create test output directories for mounts
-        run: mkdir test/test-results test/playwright-report
+        run: mkdir tests/test-results tests/playwright-report
       - name: Run visual regression tests
         run: |
           docker run -t \
             -e CI=true \
             -e PLAYWRIGHT_BASE_URL=http://localhost:6007 \
             --network=host \
-            --mount type=bind,source=./test/test-results,target=/usr/src/app/test-results \
-            --mount type=bind,source=./test/playwright-report,target=/usr/src/app/playwright-report \
+            --mount type=bind,source=./tests/test-results,target=/usr/src/app/test-results \
+            --mount type=bind,source=./tests/playwright-report,target=/usr/src/app/playwright-report \
             fudis-core-pw
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report
-          path: test/playwright-report/
+          path: tests/playwright-report/
           retention-days: 7
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: test-results
-          path: test/test-results/
+          path: tests/test-results/
           retention-days: 7
 
