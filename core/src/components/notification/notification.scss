@@ -1,0 +1,49 @@
+@use '../../foundations/colors/mixins.scss' as color;
+@use '../../foundations/borders/mixins.scss' as border;
+@use '../../foundations/spacing/tokens.scss' as spacing;
+@use '../../foundations/focus/mixins.scss' as focus;
+
+.fudis-notification {
+  @include border.border-radius('2px');
+
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  padding: 0 spacing.$spacing-sm 0 spacing.$spacing-xxs;
+  width: 100%;
+  min-height: spacing.$spacing-md;
+
+  &__content {
+    display: inline-block;
+    align-self: center;
+    margin: calc(spacing.$spacing-xxs + spacing.$pixel-2) 0;
+  }
+
+  &__warning {
+    @include color.bg-color('yellow-light');
+    @include border.border('1px', 'solid', 'yellow');
+
+    border-left-width: spacing.$spacing-xs;
+  }
+
+  &__danger {
+    @include color.bg-color('red-light');
+    @include border.border('1px', 'solid', 'red');
+
+    border-left-width: spacing.$spacing-xs;
+  }
+
+  &__success {
+    @include color.bg-color('green-light');
+    @include border.border('1px', 'solid', 'green');
+
+    border-left-width: spacing.$spacing-xs;
+  }
+
+  &__info {
+    @include color.bg-color('primary-light');
+    @include border.border('1px', 'solid', 'primary-dark');
+
+    border-left-width: spacing.$spacing-xs;
+  }
+}

@@ -1,25 +1,25 @@
 /* stylelint-disable property-disallowed-list */
 @use './../spacing/tokens.scss' as spacing;
-@use './../borders/mixins.scss' as borders;
-@use './../colors/tokens' as colors;
-@use './tokens' as tokens;
+@use './../borders/mixins.scss' as border;
+@use './../colors/tokens' as color;
+@use './tokens';
 
 @mixin focus-generic {
   outline: tokens.$focus-generic-outline;
   outline-offset: spacing.$pixel-1;
-  box-shadow: 0 0 0 spacing.$spacing-xxs colors.$color-white;
+  box-shadow: 0 0 0 spacing.$spacing-xxs color.$color-white;
 }
 
 @mixin focus-form-field {
-  @include borders.border('1px', 'solid', 'focus-primary');
+  @include border.border('1px', 'solid', 'focus-primary');
 
   outline: tokens.$focus-form-field-outline;
   outline-offset: -(spacing.$pixel-2);
-  box-shadow: 0 0 0 spacing.$pixel-1 colors.$color-white;
+  box-shadow: 0 0 0 spacing.$pixel-1 color.$color-white;
 }
 
 @mixin focus-checkbox {
-  @include borders.outline('2px', 'solid', 'primary');
+  @include border.outline('2px', 'solid', 'primary');
 
   outline-offset: -(spacing.$pixel-1);
   width: spacing.$checkbox-size;
@@ -29,5 +29,5 @@
 @mixin focus-dropdown {
   outline: tokens.$focus-generic-outline;
   outline-offset: -(spacing.$pixel-2);
-  box-shadow: 0 0 0 spacing.$spacing-xxs colors.$color-white;
+  box-shadow: 0 0 0 spacing.$spacing-xxs color.$color-white;
 }

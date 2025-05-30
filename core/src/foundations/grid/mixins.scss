@@ -1,5 +1,5 @@
 @use 'sass:map';
-@use './tokens' as tokens;
+@use './tokens';
 @use './../spacing/tokens.scss' as spacing;
 
 @mixin grid-max-width($width) {

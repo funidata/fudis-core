@@ -1,0 +1,75 @@
+@use '../../foundations/spacing/tokens.scss' as spacing;
+@use '../../foundations/colors/mixins.scss' as colorMixin;
+@use '../../foundations/colors/tokens.scss' as color;
+@use '../../foundations/focus/mixins.scss' as focus;
+@use '../../foundations/borders/mixins.scss' as border;
+
+.fudis-alert {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: spacing.$spacing-lg;
+  text-align: center;
+
+  &__link {
+    margin-left: spacing.$spacing-xxs;
+  }
+
+  &__text {
+    flex-grow: 1;
+  }
+
+  &__close {
+    @include border.border-none;
+    @include colorMixin.bg-color('transparent');
+    @include border.outline('1px', 'solid', 'white');
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: spacing.$spacing-xxs;
+    margin-left: auto;
+    box-shadow: none;
+    width: spacing.$spacing-md;
+    height: spacing.$spacing-md;
+
+    &:focus {
+      @include focus.focus-generic;
+    }
+
+    &__warning {
+      @include border.outline('1px', 'solid', 'gray-dark');
+    }
+  }
+
+  &__info {
+    @include colorMixin.bg-color('primary');
+
+    p {
+      /* stylelint-disable-next-line property-disallowed-list, declaration-no-important */
+      color: color.$color-white !important;
+    }
+  }
+
+  &__success {
+    @include colorMixin.bg-color('green');
+
+    p {
+      /* stylelint-disable-next-line property-disallowed-list, declaration-no-important */
+      color: color.$color-white !important;
+    }
+  }
+
+  &__danger {
+    @include colorMixin.bg-color('red');
+
+    p {
+      /* stylelint-disable-next-line property-disallowed-list, declaration-no-important */
+      color: color.$color-white !important;
+    }
+  }
+
+  &__warning {
+    @include colorMixin.bg-color('yellow');
+  }
+}
