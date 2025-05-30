@@ -35,6 +35,7 @@ const preview = {
             "Link (WIP)",
             "Notification (WIP)",
             "Radio Button",
+            "Radio Button Group (WIP)",
             "Text Area",
             "Text Input",
             "Typography",
