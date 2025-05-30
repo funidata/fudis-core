@@ -35,6 +35,7 @@ const preview = {
             "Link (WIP)",
             "Loading Spinner",
             "Notification (WIP)",
+            "Popover",
             "Radio Button",
             "Radio Button Group (WIP)",
             "Text Area",
