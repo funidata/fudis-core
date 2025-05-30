@@ -10,6 +10,8 @@ jobs:
   publish:
     name: Publish library to NPM
     runs-on: ubuntu-22.04
+    outputs:
+      set-as-latest: ${{ steps.check_latest.outputs.is-latest }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -22,10 +24,43 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - name: Copy root README.md to library
         run: cp README.md core/README.md
+      - name: Check for latest version
+        id: check_latest
+        run: |
+          LATEST_RELEASE=$(curl -L \
+            -H "Authorization: Bearer ${{ github.token }}" \
+            https://api.github.com/repos/${{ github.repository }}/releases/latest \
+            | jq -r '.tag_name')
+
+          CURRENT_VERSION=$(echo "${{ github.event.release.tag_name }}" | cut -c2-)
+
+          if [[ "${LATEST_RELEASE}" == "${{ github.event.release.tag_name }}" ]]; then
+            if [[ "$CURRENT_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+              echo "is-latest=true" >> "$GITHUB_OUTPUT"
+            else
+              echo "::error::When publishing a latest release, the version has to respect the major.minor.patch-format."
+              exit 1
+            fi
+          else
+            echo "is-latest=false" >> "$GITHUB_OUTPUT"
+            if ${{ github.event.release.prerelease }}; then
+              echo "NPM_TAG=prerelease" >> $GITHUB_ENV
+            else
+              echo "NPM_TAG=patch" >> $GITHUB_ENV
+            fi
+          fi
       - name: Build fudis-core
         run: npm run build:dist
         working-directory: core
-      - run: npm publish --access public
+      - name: Publish latest
+        if: steps.check_latest.outputs.is-latest == 'true'
+        run: npm publish --access public
+        working-directory: core/dist
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish patch or pre-release
+        if: steps.check_latest.outputs.is-latest == 'false'
+        run: npm publish --access public --tag ${{ env.NPM_TAG }}
         working-directory: core/dist
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -59,19 +94,12 @@ jobs:
         run: npm run build:storybook
       - name: Copy docs to S3 bucket
         run: aws s3 sync storybook-static s3://${{ vars.AWS_S3_BUCKET_NAME }}/core/v/$VERSION
-      - name: Check for latest version
-        id: check_latest
-        run: |
-          LATEST_TAG=$(curl -L \
-            -H "Authorization: Bearer ${{ github.token }}" \
-            https://api.github.com/repos/${{ github.repository }}/releases/latest \
-            | jq -r '.tag_name')
-
-          if [[ "${LATEST_TAG}" == "${{ github.event.release.tag_name }}" && $VERSION =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-            echo "set-as-latest=true" >> $GITHUB_ENV
-          fi
+      - name: Check for Storybook redirect
+        id: check-storybook-redirect
+        if: needs.publish.outputs.set-as-latest == 'true'
+        run: echo "REDIRECT_STORYBOOK=true" >> $GITHUB_ENV
       - name: Update root redirect to this version
-        if: steps.check_latest.outputs.set-as-latest == 'true'
+        if: env.REDIRECT_STORYBOOK == 'true'
         run: |
           echo "<html>
           <head>
