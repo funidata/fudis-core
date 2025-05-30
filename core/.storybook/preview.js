@@ -33,6 +33,7 @@ const preview = {
             "Error Summary (WIP)",
             "Horizontal Rule",
             "Link (WIP)",
+            "Loading Spinner",
             "Notification (WIP)",
             "Radio Button",
             "Radio Button Group (WIP)",
