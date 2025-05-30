@@ -1,9 +1,6 @@
 export default {
-    title: "Components/Typography/Miscellaneous",
-    decorators: [
-        (storyFn) =>
-            `<div>${storyFn()}</div>`,
-    ],
+  title: "Components/Typography/Miscellaneous",
+  decorators: [(storyFn) => `<div>${storyFn()}</div>`],
 };
 
 export const EmptyState = () => `

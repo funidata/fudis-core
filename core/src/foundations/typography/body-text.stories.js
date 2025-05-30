@@ -1,9 +1,6 @@
 export default {
-    title: "Components/Typography/BodyText",
-    decorators: [
-        (storyFn) =>
-            `<div>${storyFn()}</div>`,
-    ],
+  title: "Components/Typography/BodyText",
+  decorators: [(storyFn) => `<div>${storyFn()}</div>`],
 };
 
 export const LargeRegular = () => `

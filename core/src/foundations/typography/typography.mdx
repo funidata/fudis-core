@@ -25,52 +25,52 @@ There are 7 heading variants that are showcased below. You can implement them wi
 ### Variants
 
 <Typeset
-    fontSizes={[Number(36)]}
-    fontWeight="500"
-    sampleText="Fudis heading XXL (2.25rem) 500"
-    fontFamily="Fira Sans"
+  fontSizes={[Number(36)]}
+  fontWeight="500"
+  sampleText="Fudis heading XXL (2.25rem) 500"
+  fontFamily="Fira Sans"
 />
 
 <Typeset
-    fontSizes={[Number(28)]}
-    fontWeight="500"
-    sampleText="Fudis heading XL (1.75rem) 500"
-    fontFamily="Fira Sans"
+  fontSizes={[Number(28)]}
+  fontWeight="500"
+  sampleText="Fudis heading XL (1.75rem) 500"
+  fontFamily="Fira Sans"
 />
 
 <Typeset
-    fontSizes={[Number(24)]}
-    fontWeight="500"
-    sampleText="Fudis heading LG (1.5rem) 500"
-    fontFamily="Fira Sans"
+  fontSizes={[Number(24)]}
+  fontWeight="500"
+  sampleText="Fudis heading LG (1.5rem) 500"
+  fontFamily="Fira Sans"
 />
 
 <Typeset
-    fontSizes={[Number(20)]}
-    fontWeight="500"
-    sampleText="Fudis heading MD (1.25rem) 500"
-    fontFamily="Fira Sans"
+  fontSizes={[Number(20)]}
+  fontWeight="500"
+  sampleText="Fudis heading MD (1.25rem) 500"
+  fontFamily="Fira Sans"
 />
 
 <Typeset
-    fontSizes={[Number(18)]}
-    fontWeight="500"
-    sampleText="Fudis heading SM (1.125rem) 500"
-    fontFamily="Fira Sans"
+  fontSizes={[Number(18)]}
+  fontWeight="500"
+  sampleText="Fudis heading SM (1.125rem) 500"
+  fontFamily="Fira Sans"
 />
 
 <Typeset
-    fontSizes={[Number(16)]}
-    fontWeight="600"
-    sampleText="Fudis heading XS (1rem) 600"
-    fontFamily="Fira Sans"
+  fontSizes={[Number(16)]}
+  fontWeight="600"
+  sampleText="Fudis heading XS (1rem) 600"
+  fontFamily="Fira Sans"
 />
 
 <Typeset
-    fontSizes={[Number(14)]}
-    fontWeight="600"
-    sampleText="Fudis heading XXS (0.857rem) 600"
-    fontFamily="Fira Sans"
+  fontSizes={[Number(14)]}
+  fontWeight="600"
+  sampleText="Fudis heading XXS (0.857rem) 600"
+  fontFamily="Fira Sans"
 />
 
 ### Usage
@@ -82,6 +82,7 @@ When using the headers with mixins, load core to your SCSS file:
 ```
 
 The mixins for headings are:
+
 - heading-xxl
 - heading-xl
 - heading-lg
@@ -90,8 +91,8 @@ The mixins for headings are:
 - heading-xs
 - heading-xxs
 
-
 #### Example
+
 ```
 .my-element {
   @include core.heading-xxl;
@@ -99,29 +100,29 @@ The mixins for headings are:
 ```
 
 export const body_sm =
-    'Fudis body-text sm-regular (0.75rem) 400: "The quick brown fox jumps over the lazy dog."';
+  'Fudis body-text sm-regular (0.75rem) 400: "The quick brown fox jumps over the lazy dog."';
 export const body_md =
-    'Fudis body-text md-regular (0.875rem) 400: "The quick brown fox jumps over the lazy dog."';
+  'Fudis body-text md-regular (0.875rem) 400: "The quick brown fox jumps over the lazy dog."';
 export const body_md_light =
-    'Fudis body-text md-light (0.875rem) 300: "The quick brown fox jumps over the lazy dog."';
+  'Fudis body-text md-light (0.875rem) 300: "The quick brown fox jumps over the lazy dog."';
 export const body_lg =
-    'Fudis body-text lg-regular (1rem) 400: "The quick brown fox jumps over the lazy dog."';
+  'Fudis body-text lg-regular (1rem) 400: "The quick brown fox jumps over the lazy dog."';
 export const body_lg_light =
-    'Fudis body-text lg-light (1rem) 300: "The quick brown fox jumps over the lazy dog."';
+  'Fudis body-text lg-light (1rem) 300: "The quick brown fox jumps over the lazy dog."';
 
 export const body = {
-    type: {
-        primary: "Fira Sans",
-    },
-    weight: {
-        light: "300",
-        regular: "400",
-    },
-    size: {
-        lg: 16,
-        md: 14,
-        sm: 12,
-    },
+  type: {
+    primary: "Fira Sans",
+  },
+  weight: {
+    light: "300",
+    regular: "400",
+  },
+  size: {
+    lg: 16,
+    md: 14,
+    sm: 12,
+  },
 };
 
 ## Body text
@@ -133,38 +134,38 @@ There are 5 body-text variants that are showcased below. You can implement them 
 ### Variants
 
 <Typeset
-    fontSizes={[Number(body.size.lg)]}
-    fontWeight={Number(body.weight.regular)}
-    sampleText={body_lg}
-    fontFamily={body.type.primary}
+  fontSizes={[Number(body.size.lg)]}
+  fontWeight={Number(body.weight.regular)}
+  sampleText={body_lg}
+  fontFamily={body.type.primary}
 />
 
 <Typeset
-    fontSizes={[Number(body.size.lg)]}
-    fontWeight={Number(body.weight.light)}
-    sampleText={body_lg_light}
-    fontFamily={body.type.primary}
+  fontSizes={[Number(body.size.lg)]}
+  fontWeight={Number(body.weight.light)}
+  sampleText={body_lg_light}
+  fontFamily={body.type.primary}
 />
 
 <Typeset
-    fontSizes={[Number(body.size.md)]}
-    fontWeight={Number(body.weight.regular)}
-    sampleText={body_md}
-    fontFamily={body.type.primary}
+  fontSizes={[Number(body.size.md)]}
+  fontWeight={Number(body.weight.regular)}
+  sampleText={body_md}
+  fontFamily={body.type.primary}
 />
 
 <Typeset
-    fontSizes={[Number(body.size.md)]}
-    fontWeight={Number(body.weight.light)}
-    sampleText={body_md_light}
-    fontFamily={body.type.primary}
+  fontSizes={[Number(body.size.md)]}
+  fontWeight={Number(body.weight.light)}
+  sampleText={body_md_light}
+  fontFamily={body.type.primary}
 />
 
 <Typeset
-    fontSizes={[Number(body.size.sm)]}
-    fontWeight={Number(body.weight.regular)}
-    sampleText={body_sm}
-    fontFamily={body.type.primary}
+  fontSizes={[Number(body.size.sm)]}
+  fontWeight={Number(body.weight.regular)}
+  sampleText={body_sm}
+  fontFamily={body.type.primary}
 />
 
 ### Usage
@@ -176,14 +177,15 @@ When using the body-text with mixins, load core to your SCSS file:
 ```
 
 The mixins for body-text are:
+
 - body-text-lg-light
 - body-text-lg-regular
 - body-text-md-light
 - body-text-md-regular
 - body-text-sm-regular
 
-
 #### Example
+
 ```
 .my-element {
   @include core.body-text-md-regular;
@@ -199,16 +201,26 @@ There are 2 link variants that are showcased below. The actual text color depend
 ### Variants
 
 <Typeset
-    fontSizes={[Number(body.size.md)]}
-    fontWeight={Number(body.weight.regular)}
-    sampleText={<a style={{ textDecoration: 'underline', color: '#1d65b8' }}>Fudis link md (0.857rem) 400</a>}
-    fontFamily={body.type.primary}/>
+  fontSizes={[Number(body.size.md)]}
+  fontWeight={Number(body.weight.regular)}
+  sampleText={
+    <a style={{ textDecoration: "underline", color: "#1d65b8" }}>
+      Fudis link md (0.857rem) 400
+    </a>
+  }
+  fontFamily={body.type.primary}
+/>
 
 <Typeset
-    fontSizes={[Number(body.size.lg)]}
-    fontWeight={Number(body.weight.regular)}
-    sampleText={<a style={{ textDecoration: 'underline', color: '#1d65b8' }}>Fudis link lg (1rem) 400</a>}
-    fontFamily={body.type.primary}/>
+  fontSizes={[Number(body.size.lg)]}
+  fontWeight={Number(body.weight.regular)}
+  sampleText={
+    <a style={{ textDecoration: "underline", color: "#1d65b8" }}>
+      Fudis link lg (1rem) 400
+    </a>
+  }
+  fontFamily={body.type.primary}
+/>
 
 ### Usage
 
@@ -219,10 +231,12 @@ When using the link with mixins, load core to your SCSS file:
 ```
 
 The mixins for links are:
+
 - link-md
 - link-lg
 
 #### Example
+
 ```
 .my-element {
   @include core.link-md;
@@ -234,10 +248,12 @@ The mixins for links are:
 Table caption is meant to be used with the corresponding `caption` HTML-element to provide the table an accessible description. You can implement this with a mixin that is documented on this page or with a class that is documented in the [Miscellaneous-section](/story/components-typography-miscellaneous--table-caption).
 
 <Typeset
-    fontSizes={[Number(body.size.md)]}
-    fontWeight={Number(body.weight.regular)}
-    sampleText={<p style={{ textTransform: 'uppercase'}}>Fudis table caption text</p>}
-    fontFamily={body.type.primary}
+  fontSizes={[Number(body.size.md)]}
+  fontWeight={Number(body.weight.regular)}
+  sampleText={
+    <p style={{ textTransform: "uppercase" }}>Fudis table caption text</p>
+  }
+  fontFamily={body.type.primary}
 />
 
 ### Usage
@@ -249,6 +265,7 @@ When using the table caption, load core to your SCSS file:
 ```
 
 Include the mixin to your class:
+
 ```
 .my-element {
   @include core.table-caption;
@@ -260,10 +277,14 @@ Include the mixin to your class:
 Empty state is used to express that there is no information available. You can implement this with a mixin that is documented on this page or with a class that is documented in the [Miscellaneous-section](/story/components-typography-miscellaneous--empty-state).
 
 <Typeset
-    fontSizes={[Number(body.size.md)]}
-    fontWeight={Number(body.weight.regular)}
-    sampleText={<p style={{ fontStyle: 'italic', color: "#727272"}}>Fudis empty state text</p>}
-    fontFamily={body.type.primary}
+  fontSizes={[Number(body.size.md)]}
+  fontWeight={Number(body.weight.regular)}
+  sampleText={
+    <p style={{ fontStyle: "italic", color: "#727272" }}>
+      Fudis empty state text
+    </p>
+  }
+  fontFamily={body.type.primary}
 />
 
 ### Usage
@@ -275,9 +296,9 @@ When using the empty-state, load core to your SCSS file:
 ```
 
 Include the mixin to your class:
+
 ```
 .my-element {
   @include core.text-emptystate;
 }
 ```
-

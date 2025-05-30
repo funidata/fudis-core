@@ -1,9 +1,6 @@
 export default {
-    title: "Components/Typography/Header",
-    decorators: [
-        (storyFn) =>
-            `<div>${storyFn()}</div>`,
-    ],
+  title: "Components/Typography/Header",
+  decorators: [(storyFn) => `<div>${storyFn()}</div>`],
 };
 
 export const DoubleExtraLarge = () => `
