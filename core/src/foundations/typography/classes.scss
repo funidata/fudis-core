@@ -117,6 +117,5 @@
 }
 
 .fudis-table-caption {
-  @include typography.table-caption();
+  @include typography.table-caption;
 }
-

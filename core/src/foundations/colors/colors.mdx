@@ -18,41 +18,41 @@ Primary colors are defined in the application stylesheet, using the predefined v
 ## Primary colors
 
 <ColorPalette>
-    <ColorItem
-        title="Sisu primary colors"
-        colors={{
-            "$color-primary-light": "#daedff",
-            "$color-primary": "#1076db",
-            "$color-primary-dark": "#1d65b8",
-        }}
-    />
+  <ColorItem
+    title="Sisu primary colors"
+    colors={{
+      "$color-primary-light": "#daedff",
+      "$color-primary": "#1076db",
+      "$color-primary-dark": "#1d65b8",
+    }}
+  />
 </ColorPalette>
 
 <ColorPalette>
-    <ColorItem
-        title="Into primary colors"
-        colors={{
-            "$color-primary-light": "#e0f4fd",
-            "$color-primary": "#0a729e",
-            "$color-primary-dark": "#0e5d81",
-            "$color-primary-extra-dark": "#1b2e36",
-        }}
-    />
+  <ColorItem
+    title="Into primary colors"
+    colors={{
+      "$color-primary-light": "#e0f4fd",
+      "$color-primary": "#0a729e",
+      "$color-primary-dark": "#0e5d81",
+      "$color-primary-extra-dark": "#1b2e36",
+    }}
+  />
 </ColorPalette>
 
 ## Secondary colors
 
 <ColorPalette>
-    <ColorItem
-        title="Grays"
-        colors={{
-            "$color-white": "#ffffff",
-            "$color-gray-extra-light": "#f1f1f1",
-            "$color-gray-light": "#d4d4d4",
-            "$color-gray-middle": "#727272",
-            "$color-gray-dark": "#484848",
-        }}
-    />
+  <ColorItem
+    title="Grays"
+    colors={{
+      "$color-white": "#ffffff",
+      "$color-gray-extra-light": "#f1f1f1",
+      "$color-gray-light": "#d4d4d4",
+      "$color-gray-middle": "#727272",
+      "$color-gray-dark": "#484848",
+    }}
+  />
 </ColorPalette>
 
 ## Accent colors
@@ -72,6 +72,7 @@ Primary colors are defined in the application stylesheet, using the predefined v
     <ColorItem title="Green" colors={{ "$color-green": "#1e874b", "$color-green-light": "#c6ecd6" }} />
 
     <ColorItem title="Focus primary" colors={{ "$color-focus-primary": "#1076db" }} />
+
 </ColorPalette>
 
 ## Color tokens
@@ -79,11 +80,13 @@ Primary colors are defined in the application stylesheet, using the predefined v
 You can access the colours in your application stylesheet when needed by using tokens.
 
 Start by loading the core assets to your stylesheet:
+
 ```
 @use "@funidata/fudis-core" as core;
 ```
 
 Then you can start using the tokens:
+
 ```
 .my-element {
   background-color: core.$color-primary-extra-dark;

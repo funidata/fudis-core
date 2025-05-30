@@ -8,6 +8,11 @@
 **/.storybook/target
 /core/storybook-static
 
+/tests/test-results/
+/tests/playwright-report/
+/tests/blob-report/
+/tests/playwright/.cache/
+
 # Node
 node_modules
 npm-debug.log
