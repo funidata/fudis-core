@@ -29,6 +29,7 @@ const preview = {
             "Badge",
             "Button (WIP)",
             "Checkbox (WIP)",
+            "Error Summary (WIP)",
             "Link (WIP)",
             "Notification (WIP)",
             "Radio Button",
