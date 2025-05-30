@@ -30,6 +30,7 @@ const preview = {
             "Button (WIP)",
             "Checkbox (WIP)",
             "Error Summary (WIP)",
+            "Horizontal Rule",
             "Link (WIP)",
             "Notification (WIP)",
             "Radio Button",
