@@ -10,7 +10,7 @@
     "start:storybook": "docker compose up --build -d core-storybook",
     "start:e2e": "docker compose run --service-ports core-e2e",
     "stylelint": "stylelint '**/*.{css,scss}'",
-    "format:check": "prettier --check",
+    "format:check": "prettier --check .",
     "format": "prettier --write .",
     "version": "scripts/version_sub_projects.sh $npm_package_version",
     "postversion": "git commit --amend -m \"Bump to version v$npm_package_version\""
