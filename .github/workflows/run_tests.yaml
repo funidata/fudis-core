@@ -57,7 +57,7 @@ jobs:
       - name: Load image
         run: docker load --input /tmp/fudis-core.image.tar
       - name: Start Storybook
-        run: docker run -d -p 6007:6007 --workdir /usr/src/app/core fudis-core npm run storybook
+        run: docker run -d --network=host --workdir /usr/src/app/core fudis-core npm run storybook
       - name: Build Playwright image
         run: docker build -t fudis-core-pw tests/
       - name: Wait for Storybook server to be up
