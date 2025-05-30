@@ -35,7 +35,7 @@ const preview = {
             "Text Area",
             "Text Input",
             "Typography",
-            ["BodyText", "Header", "Miscellaneous"],
+            ["BodyText", "Heading", "Miscellaneous"],
           ],
         ],
       },
