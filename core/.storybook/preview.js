@@ -38,6 +38,7 @@ const preview = {
             "Popover",
             "Radio Button",
             "Radio Button Group (WIP)",
+            "Tab Navigation (WIP)",
             "Text Area",
             "Text Input",
             "Typography",
