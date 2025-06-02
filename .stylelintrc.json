@@ -7,7 +7,11 @@
   "ignoreFiles": [
     "core/dist/**/*",
     "storybook-static/**/*",
-    "core/.storybook/style.scss"
+    "core/.storybook/style.scss",
+    "node_modules/**/*",
+    "core/node_modules/**/*",
+    "tests/node_modules/**/*",
+    "tests/**/*"
   ],
   "rules": {
     "order/properties-alphabetical-order": null,
