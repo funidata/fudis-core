@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-test("visual regression", async ({ page }) => {
+test("visual regression for Miscellaneous", async ({ page }) => {
   await page.goto(
     "/iframe.html?globals=&id=components-typography-miscellaneous--test&viewMode=story",
   );
