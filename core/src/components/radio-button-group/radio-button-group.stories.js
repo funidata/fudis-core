@@ -1,5 +1,5 @@
 export default {
-    title: "Components/Radio Button Group (WIP)",
+  title: "Components/Radio Button Group (WIP)",
 };
 
 // TODO: Should probably figure out interactive-friendly way so that one can choose/toggle between radio-buttons?

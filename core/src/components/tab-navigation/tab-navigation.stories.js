@@ -3,7 +3,7 @@ export default {
 };
 
 // TODO: Add content scroll indicators (if they are considered necessary) after icons are available.
-// Also we should think how interactive examples have to be, e.g. now Storybook user can't navigate betweem tabs 
+// Also we should think how interactive examples have to be, e.g. now Storybook user can't navigate betweem tabs
 
 export const Primary = () => `
   <div class="fudis-tab-navigation-bar">

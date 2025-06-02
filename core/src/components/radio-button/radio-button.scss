@@ -89,7 +89,9 @@ $radio-indicator-size: calc(0.75rem / var(--fudis-rem-multiplier));
     }
 
     /* stylelint-disable-next-line */
-    &:focus + .fudis-radio-button__content .fudis-radio-button__content__control {
+    &:focus
+      + .fudis-radio-button__content
+      .fudis-radio-button__content__control {
       @include focus.focus-form-field;
     }
   }

@@ -84,5 +84,3 @@ export const LiteOpen = () => `
     </div>
   </section>
 `;
-
-

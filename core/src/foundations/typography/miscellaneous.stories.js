@@ -1,5 +1,5 @@
 export default {
-    title: "Components/Typography/Miscellaneous",
+  title: "Components/Typography/Miscellaneous",
 };
 
 export const EmptyState = () => `

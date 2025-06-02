@@ -51,4 +51,3 @@ export const Large = () => `
     </div>
   </div>
 `;
-

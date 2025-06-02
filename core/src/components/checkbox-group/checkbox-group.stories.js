@@ -197,4 +197,3 @@ export const Invalid = () => `
     </div>
   </fieldset>
 `;
-
