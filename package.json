@@ -9,6 +9,7 @@
   "scripts": {
     "start:storybook": "docker compose up --build -d core-storybook",
     "start:vr": "docker compose run --service-ports core-vr",
+    "stop": "docker compose down",
     "stylelint": "stylelint '**/*.{css,scss}'",
     "format:check": "prettier --check .",
     "format": "prettier --write .",

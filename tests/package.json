@@ -9,7 +9,6 @@
   },
   "author": "Funidata Ltd",
   "license": "CC-BY-NC-SA-4.0",
-  "type": "commonjs",
   "description": "Tests for Fudis Core",
   "devDependencies": {
     "@playwright/test": "^1.52.0",
