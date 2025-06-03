@@ -19,29 +19,44 @@
 }
 
 .fudis-icon {
+  box-sizing: border-box;
   position: relative;
+  display: inline-flex;
+  align-items: center;
   transition: all 0.6s ease;
   color: colors.$color-gray-dark;
 
   &__color {
-    &--primary {
-      color: colors.$color-primary;
-    }
-
-    &--white {
-      color: colors.$color-white;
-    }
-
-    &--success {
-      color: colors.$color-green;
-    }
-
-    &--warning {
+    &__yellow {
       color: colors.$color-yellow;
     }
 
-    &--danger {
+    &__red {
       color: colors.$color-red;
+    }
+
+    &__gray-dark {
+      color: colors.$color-gray-dark;
+    }
+
+    &__gray-light {
+      color: colors.$color-gray-light;
+    }
+
+    &__primary {
+      color: colors.$color-primary;
+    }
+
+    &__primary-dark {
+      color: colors.$color-primary-dark;
+    }
+
+    &__green {
+      color: colors.$color-green;
+    }
+
+    &__white {
+      color: colors.$color-white;
     }
 
   }
@@ -61,6 +76,20 @@
     &--sm {
       width: spacing.$spacing-sm;
       height: spacing.$spacing-sm;
+    }
+  }
+
+  &__rotate {
+    &__flip-180 {
+      transform: rotate(180deg);
+    }
+
+    &__cw-90 {
+      transform: rotate(90deg);
+    }
+
+    &__ccw-90 {
+      transform: rotate(-90deg);
     }
   }
 
