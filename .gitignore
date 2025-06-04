@@ -8,6 +8,14 @@
 **/.storybook/target
 /core/storybook-static
 
+/tests/test-results/
+/tests/playwright-report/
+/tests/blob-report/
+/tests/playwright/.cache/
+# Ignore everything but the Linux snapshots
+/tests/visual-regression/**/*.png
+!/tests/visual-regression/**/*-linux.png
+
 # Node
 node_modules
 npm-debug.log

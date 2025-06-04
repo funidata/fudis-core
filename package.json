@@ -1,10 +1,17 @@
 {
   "name": "@funidata/fudis-core",
   "version": "0.0.2",
+  "private": "true",
+  "workspaces": [
+    "core",
+    "tests"
+  ],
   "scripts": {
-    "build": "docker build -t fudis-core:latest ./core && docker cp $(docker create fudis-core:latest):/usr/src/app/dist ./core/dist",
+    "start:storybook": "docker compose up --build -d core-storybook",
+    "test": "docker compose run --service-ports core-vr npx playwright test",
+    "stop": "docker compose down",
     "stylelint": "stylelint '**/*.{css,scss}'",
-    "format:check": "prettier --check",
+    "format:check": "prettier --check .",
     "format": "prettier --write .",
     "version": "scripts/version_sub_projects.sh $npm_package_version",
     "postversion": "git commit --amend -m \"Bump to version v$npm_package_version\""

@@ -11,15 +11,10 @@ const preview = {
     options: {
       storySort: {
         order: [
-          "Documentation", [
-            "Introduction", 
-            "Development", [
-              "Tooling", [
-                "Releases"
-              ]
-            ]
-          ],
-          "Foundations", [
+          "Documentation",
+          ["Introduction", "Development", ["Tooling", ["Releases"]]],
+          "Foundations",
+          [
             "Introduction",
             "Colors",
             "Typography",

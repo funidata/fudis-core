@@ -1,12 +1,28 @@
+name: fudis-core
 services:
   core-storybook:
     build:
       context: ./core/
-    image: core
+    image: storybook
     container_name: core-storybook
     tty: true
     ports:
-      - 6007:6007
+      - "6007:6007"
     volumes:
       - ./core/src:/usr/src/app/src
       - ./core/_index.scss:/usr/src/app/_index.scss
+  core-vr:
+    build:
+      context: ./tests/
+    image: vr
+    container_name: core-vr
+    tty: true
+    ports:
+      - "9323:9323"
+    environment:
+      - PLAYWRIGHT_BASE_URL=http://core-storybook:6007
+      - CI=${CI:-false}
+    volumes:
+      - ./tests/visual-regression:/usr/src/app/visual-regression
+      - ./tests/playwright-report:/usr/src/app/playwright-report
+      - ./tests/test-results:/usr/src/app/test-results
