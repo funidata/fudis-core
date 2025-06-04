@@ -130,6 +130,8 @@
 // Table caption
 
 @mixin table-caption {
+  @include colors.text-color('gray-dark');
+
   text-transform: uppercase;
   line-height: tokens.$text-input-line-height;
   font-family: tokens.$font-family;

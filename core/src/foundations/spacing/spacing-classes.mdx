@@ -103,6 +103,7 @@ Direction attributes are defined below. Use the following direction attributes t
     </tr>
 
     </tbody>
+
 </table>
 
 ## Simple spacing
@@ -123,11 +124,13 @@ fudis - $direction-attribute - $spacing-token
 #### Examples
 
 This example adds medium size margin (1.5rem) around the button element.
+
 ```
 <button class="fudis-m-md">I am a button</button>
 ```
 
 This example adds small size padding (1rem) and a medium size left margin (1.5rem) to the button element.
+
 ```
 <button class="fudis-p-sm fudis-ml-md">I am a button</button>
 ```
@@ -151,11 +154,13 @@ fudis - $breakpoint - $direction-attribute - $spacing-token
 #### Examples
 
 This example adds medium size margin top (1.5rem) around the button element **when the screen width is equal or wider than 768px**.
+
 ```
 <button class="fudis-md-mt-md">I am a button</button>
 ```
 
 This example adds small padding (1rem) to the button element **when the screen width is equal or wider than 0px** AND **when the screen width goes up to 768px and beyond** the padding is changed to medium size padding (1.5rem).
+
 ```
 <button class="fudis-xs-p-sm fudis-md-p-md">I am a button</button>
 ```

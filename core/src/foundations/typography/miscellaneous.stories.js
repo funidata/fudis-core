@@ -1,9 +1,6 @@
 export default {
-    title: "Components/Typography/Miscellaneous",
-    decorators: [
-        (storyFn) =>
-            `<div>${storyFn()}</div>`,
-    ],
+  title: "Components/Typography/Miscellaneous",
+  decorators: [(storyFn) => `<div>${storyFn()}</div>`],
 };
 
 export const EmptyState = () => `
@@ -13,6 +10,15 @@ Fudis empty state text
 `;
 
 export const TableCaption = () => `
+<p class="fudis-table-caption">
+Fudis table caption
+</p>
+`;
+
+export const Test = () => `
+<p class="fudis-text-emptystate">
+Fudis empty state text
+</p>
 <p class="fudis-table-caption">
 Fudis table caption
 </p>

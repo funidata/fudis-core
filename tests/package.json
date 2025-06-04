@@ -1,0 +1,17 @@
+{
+  "name": "tests",
+  "version": "0.0.2",
+  "private": "true",
+  "scripts": {
+    "start": "npx playwright test",
+    "start:ui": "npx playwright test --ui",
+    "postinstall": "npx playwright install --with-deps"
+  },
+  "author": "Funidata Ltd",
+  "license": "CC-BY-NC-SA-4.0",
+  "description": "Tests for Fudis Core",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.15.23"
+  }
+}
