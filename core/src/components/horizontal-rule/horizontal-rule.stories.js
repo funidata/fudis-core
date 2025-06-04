@@ -3,5 +3,5 @@ export default {
 };
 
 export const Default = () => `
-  <hr class="fudis-hr aria-hidden="true"></hr>
+  <hr class="fudis-hr" aria-hidden="true"></hr>
 `;
