@@ -5,13 +5,13 @@
     "stylelint-config-concentric-order"
   ],
   "ignoreFiles": [
-    "core/dist/**/*",
-    "storybook-static/**/*",
-    "core/.storybook/style.scss",
     "node_modules/**/*",
-    "core/node_modules/**/*",
     "tests/node_modules/**/*",
-    "tests/**/*"
+    "tests/**/*",
+    "core/dist/**/*",
+    "core/storybook-static/**/*",
+    "core/.storybook/style.scss",
+    "core/node_modules/**/*"
   ],
   "rules": {
     "order/properties-alphabetical-order": null,
