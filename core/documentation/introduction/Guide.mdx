@@ -1,0 +1,58 @@
+import { Meta } from "@storybook/blocks";
+import { Source } from "@storybook/addon-docs/blocks";
+
+<Meta title="Documentation/Introduction/How to start using Fudis Core" />
+
+## 1. Install Fudis Core
+
+Fudis Core is available as an [NPM package](https://www.npmjs.com/package/@funidata/fudis-core).
+
+Install it to your project using npm:
+
+<Source code={`npm i @funidata/fudis-core`} />
+
+## 2. Import Core Styles
+
+The core styles must be imported to your application's styles for them to work properly.
+
+The recommended way is to add the following lines your project's root SCSS style file, which is often named styles.scss or index.scss or similar:
+
+<Source code={`@use '@funidata/fudis-core' as core;`} />
+
+## 3. Define Application's Root Styles
+
+Fudis Core uses CSS variables to define "theming" of your application. Setting following variables define your Application's primary colors and rem base value, which Fudis Core then refers to in component styling.
+
+
+### Set Primary Colors
+
+<Source code={`
+:root {
+	--fudis-color-primary-light: #hex;
+	--fudis-color-primary: #hex;
+	--fudis-color-primary-dark: #hex;
+	--fudis-color-primary-extra-dark: #hex;
+}`} />
+
+You can read more about colors [here](/docs/foundations-colors--docs).
+
+### Set Rem Base Value
+
+By default, Fudis Core rem values follow 8px base values. When having default browser CSS font-size of 100%, 1 rem equals 2 * 8px = 16px. To apply this to your application, add to the root CSS style file:
+
+<Source code={`
+:root {
+  --fudis-rem-multiplier: 1;
+}`} />
+
+If application uses other rem base value by setting font-size to e. g. 62.5% . Adjust --fudis-rem-multiplier accordingly.
+
+<Source code={`
+html {
+ 	font-size: 62.5%; // this sets 1rem to equal 10px
+}
+
+:root {
+ 	--fudis-rem-multiplier: 0.625;
+}`} />
+
