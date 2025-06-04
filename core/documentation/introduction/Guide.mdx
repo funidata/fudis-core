@@ -1,4 +1,4 @@
-import { Meta } from "@storybook/blocks";
+import { Meta, Unstyled } from "@storybook/blocks";
 import { Source } from "@storybook/addon-docs/blocks";
 
 <Meta title="Documentation/Introduction/How to start using Fudis Core" />
@@ -56,3 +56,49 @@ html {
  	--fudis-rem-multiplier: 0.625;
 }`} />
 
+## 4. Download fonts
+
+Fudis is using **Fira Sans** font with weights **300, 400, 500 and 600**. The application is responsible for loading the required fonts. You can download the fonts from here or acquire them elsewhere.
+
+<Unstyled>
+  <a href="/downloads/fonts.zip" download style={{
+    color: 'var(--fudis-color-primary)',
+    fontFamily: 'Nunito Sans',
+    display: 'inline-block !important',
+  }}>
+    Download All Fonts (ZIP)
+  </a>
+</Unstyled>
+
+When you have aquired the fonts, declare the fonts in a separate stylesheet or in your root stylesheet:
+
+<Source code={`
+@font-face {
+font-family: 'Fira Sans';
+src: url('path-to-font-file');
+font-weight: 300;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'Fira Sans';
+src: url('path-to-font-file');
+font-weight: 400;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'Fira Sans';
+src: url('path-to-font-file');
+font-weight: 500;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'Fira Sans';
+src: url('path-to-font-file');
+font-weight: 600;
+font-style: normal;
+}`} />
+
+You can read more about typography in [here](/docs/foundations-typography--docs).

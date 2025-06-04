@@ -5,7 +5,8 @@ export const stories = [
 ];
 
 export const staticDirs = [
-  { from: "./../src/assets/fonts/woff", to: "/assets" },
+  { from: "./assets/fonts", to: "/assets" },
+  { from: "./downloads", to: "/downloads" },
   { from: "./../src/assets/images", to: "/assets" },
   {
     from: "./../src/assets/images/fudis-logo-mini-black.svg",
@@ -28,22 +29,4 @@ export const addons = [
 export const framework = {
   name: "@storybook/html-vite",
   options: {},
-};
-
-export const viteFinal = async (config, { configType }) => {
-  config.plugins = config.plugins || [];
-  config.plugins.push({
-    name: "scss-font-url-rewrite",
-    transform(code, id) {
-      if (id.includes(".storybook/style.scss")) {
-        return code.replace(
-          /url\(['"]?.*\/([\w-]+\.woff2)['"]?\)/g,
-          `url(${configType === "DEVELOPMENT" ? "assets/$1" : "$1"})`,
-        );
-      }
-      return null;
-    },
-  });
-
-  return config;
 };
