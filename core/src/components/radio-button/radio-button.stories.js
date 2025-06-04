@@ -4,7 +4,7 @@ export default {
 
 export const Default = () => `
   <label class="fudis-radio-button">
-    <input type="radio" class="fudis-radio-button__input"></input>
+    <input type="radio" class="fudis-radio-button__input" value="foo" />
     <div class="fudis-radio-button__content">
       <div class="fudis-radio-button__content-wrapper">
         <div class="fudis-radio-button__content__control"></div>
@@ -16,7 +16,7 @@ export const Default = () => `
 
 export const Selected = () => `
   <label class="fudis-radio-button">
-    <input type="radio" class="fudis-radio-button__input"></input>
+    <input type="radio" class="fudis-radio-button__input" value="foo" />
     <div class="fudis-radio-button__content">
       <div class="fudis-radio-button__content-wrapper">
         <div class="fudis-radio-button__content__control">
@@ -30,7 +30,7 @@ export const Selected = () => `
 
 export const Disabled = () => `
   <label class="fudis-radio-button fudis-radio-button--disabled">
-    <input type="radio" class="fudis-radio-button__input fudis-radio-button__input--disabled" aria-disabled="true" disabled></input>
+    <input type="radio" class="fudis-radio-button__input fudis-radio-button__input--disabled" aria-disabled="true" disabled value="foo" />
     <div class="fudis-radio-button__content">
       <div class="fudis-radio-button__content-wrapper">
         <div class="fudis-radio-button__content__control fudis-radio-button__content__control--disabled"></div>
@@ -42,7 +42,7 @@ export const Disabled = () => `
 
 export const Invalid = () => `
   <label class="fudis-radio-button">
-    <input type="radio" class="fudis-radio-button__input" aria-invalid="true"></input>
+    <input type="radio" class="fudis-radio-button__input" aria-invalid="true" value="foo" />
     <div class="fudis-radio-button__content">
       <div class="fudis-radio-button__content-wrapper">
         <div class="fudis-radio-button__content__control fudis-radio-button__content__control--invalid"></div>
