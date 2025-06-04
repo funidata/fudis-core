@@ -17,6 +17,8 @@ services:
     image: vr
     container_name: core-vr
     tty: true
+    ports:
+      - "9323:9323"
     environment:
       - PLAYWRIGHT_BASE_URL=http://core-storybook:6007
       - CI=${CI:-false}
