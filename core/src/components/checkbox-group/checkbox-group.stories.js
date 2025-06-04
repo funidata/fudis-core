@@ -17,30 +17,30 @@ export const Default = () => `
     </legend>
     <div class="fudis-fieldset-content">
       <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input"></input>
+        <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox-1" value="foo" />
         <div class="fudis-checkbox__content">
           <div class="fudis-checkbox__content-wrapper">
             <span class="fudis-checkbox__content__box"></span>
           </div>
-          <div class="fudis-checkbox__content__label">Option 1</div>
+          <span class="fudis-checkbox__content__label">Option 1</span>
         </div>
       </label>
       <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input"></input>
+        <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox-2" value="bar" />
         <div class="fudis-checkbox__content">
           <div class="fudis-checkbox__content-wrapper">
             <span class="fudis-checkbox__content__box"></span>
           </div>
-          <div class="fudis-checkbox__content__label">Option 2</div>
+          <span class="fudis-checkbox__content__label">Option 2</span>
         </div>
       </label>
       <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input"></input>
+        <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox-3" value="baz" />
         <div class="fudis-checkbox__content">
           <div class="fudis-checkbox__content-wrapper">
             <span class="fudis-checkbox__content__box"></span>
           </div>
-          <div class="fudis-checkbox__content__label">Option 3</div>
+          <span class="fudis-checkbox__content__label">Option 3</span>
         </div>
       </label>
     </div>
@@ -62,30 +62,30 @@ export const Required = () => `
     </legend>
     <div class="fudis-fieldset-content">
       <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input"></input>
+        <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox-1" value="foo" />
         <div class="fudis-checkbox__content">
           <div class="fudis-checkbox__content-wrapper">
             <span class="fudis-checkbox__content__box"></span>
           </div>
-          <div class="fudis-checkbox__content__label">Option 1</div>
+          <span class="fudis-checkbox__content__label">Option 1</span>
         </div>
       </label>
       <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input"></input>
+        <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox-2" value="bar" />
         <div class="fudis-checkbox__content">
           <div class="fudis-checkbox__content-wrapper">
             <span class="fudis-checkbox__content__box"></span>
           </div>
-          <div class="fudis-checkbox__content__label">Option 2</div>
+          <span class="fudis-checkbox__content__label">Option 2</span>
         </div>
       </label>
       <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input"></input>
+        <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox-3" value="baz" />
         <div class="fudis-checkbox__content">
           <div class="fudis-checkbox__content-wrapper">
             <span class="fudis-checkbox__content__box"></span>
           </div>
-          <div class="fudis-checkbox__content__label">Option 3</div>
+          <span class="fudis-checkbox__content__label">Option 3</span>
         </div>
       </label>
     </div>
@@ -105,30 +105,30 @@ export const Guidance = () => `
     </legend>
     <div id="fudis-fieldset-id" class="fudis-fieldset-content">
       <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input"></input>
+        <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox-1" value="foo" aria-describedby="fudis-guidance-id" />
         <div class="fudis-checkbox__content">
           <div class="fudis-checkbox__content-wrapper">
             <span class="fudis-checkbox__content__box"></span>
           </div>
-          <div class="fudis-checkbox__content__label">Option 1</div>
+          <span class="fudis-checkbox__content__label">Option 1</span>
         </div>
       </label>
       <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input"></input>
+        <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox-2" value="bar" />
         <div class="fudis-checkbox__content">
           <div class="fudis-checkbox__content-wrapper">
             <span class="fudis-checkbox__content__box"></span>
           </div>
-          <div class="fudis-checkbox__content__label">Option 2</div>
+          <span class="fudis-checkbox__content__label">Option 2</span>
         </div>
       </label>
       <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input"></input>
+        <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox-3" value="baz" />
         <div class="fudis-checkbox__content">
           <div class="fudis-checkbox__content-wrapper">
             <span class="fudis-checkbox__content__box"></span>
           </div>
-          <div class="fudis-checkbox__content__label">Option 3</div>
+          <span class="fudis-checkbox__content__label">Option 3</span>
         </div>
       </label>
       <div id="fudis-guidance-id" class="fudis-guidance">
@@ -156,30 +156,30 @@ export const Invalid = () => `
     </legend>
     <div id="fudis-fieldset-id" class="fudis-fieldset-content">
       <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input" aria-invalid="true"></input>
+        <input type="checkbox" class="fudis-checkbox__input" aria-invalid="true" name="fudis-checkbox-1" value="foo" aria-describedby="fudis-guidance-id" />
         <div class="fudis-checkbox__content">
           <div class="fudis-checkbox__content-wrapper">
             <span class="fudis-checkbox__content__box fudis-checkbox__content__box--invalid"></span>
           </div>
-          <div class="fudis-checkbox__content__label">Option 1</div>
+          <span class="fudis-checkbox__content__label">Option 1</span>
         </div>
       </label>
       <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input" aria-invalid="true"></input>
+        <input type="checkbox" class="fudis-checkbox__input" aria-invalid="true" name="fudis-checkbox-2" value="bar" />
         <div class="fudis-checkbox__content">
           <div class="fudis-checkbox__content-wrapper">
             <span class="fudis-checkbox__content__box fudis-checkbox__content__box--invalid"></span>
           </div>
-          <div class="fudis-checkbox__content__label">Option 2</div>
+          <span class="fudis-checkbox__content__label">Option 2</span>
         </div>
       </label>
       <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input" aria-invalid="true"></input>
+        <input type="checkbox" class="fudis-checkbox__input" aria-invalid="true" name="fudis-checkbox-3" value="baz" />
         <div class="fudis-checkbox__content">
           <div class="fudis-checkbox__content-wrapper">
             <span class="fudis-checkbox__content__box fudis-checkbox__content__box--invalid"></span>
           </div>
-          <div class="fudis-checkbox__content__label">Option 3</div>
+          <span class="fudis-checkbox__content__label">Option 3</span>
         </div>
       </label>
       <div id="fudis-guidance-id" class="fudis-guidance">
