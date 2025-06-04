@@ -38,7 +38,6 @@ const preview = {
             "Checkbox (WIP)",
             "Checkbox Group (WIP)",
             "Error Summary (WIP)",
-            "Expandable (WIP)",
             "Horizontal Rule",
             "Link (WIP)",
             "Loading Spinner",
