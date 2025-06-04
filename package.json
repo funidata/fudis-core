@@ -8,7 +8,8 @@
   ],
   "scripts": {
     "start:storybook": "docker compose up --build -d core-storybook",
-    "start:vr": "docker compose run --service-ports core-vr",
+    "test": "docker compose run --service-ports core-vr",
+    "test:generate-snapshots": "docker compose run --service-ports core-vr npx playwright test -u",
     "stop": "docker compose down",
     "stylelint": "stylelint '**/*.{css,scss}'",
     "format:check": "prettier --check .",
