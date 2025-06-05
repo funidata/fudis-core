@@ -26,5 +26,6 @@ If you want to remove the global symlink, go back to the **core/dist** folder an
 
 These instructions are for Yarn v4. If you are using any other version, please check the corresponding documentation to see how symlinking is done.
 
-1. Navigate to your project where you want to use the Fudis Core-package. The directory that contains the node_modules folder containing the project dependencies is the correct place to execute linking.
-2. In this project directory run `yarn add @funidata/fudis-core@portal:./{your-path-to-core-directory}/core/dist`
+1. Navigate to **core** directory and run `npm run build:dist:watch`. This starts up Nodemon daemon that builds the dist-folder every time you make changes to any scss-files.
+2. Navigate to your project where you want to use the Fudis Core-package. The directory that contains the node_modules folder containing the project dependencies is the correct place to execute linking.
+3. In this project directory run `yarn add @funidata/fudis-core@portal:./{your-path-to-core-directory}/core/dist`
