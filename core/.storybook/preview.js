@@ -16,7 +16,18 @@ const preview = {
             "Introduction",
             ["Introduction", "How to start using Fudis Core"],
             "Development",
-            ["Getting Started", "Tooling", ["Git and GitHub Conventions", "Releases"], "Practises", ["Ways of Working", "Project Structure", "Naming Conventions", "Testing practises"]],
+            [
+              "Getting Started",
+              "Tooling",
+              ["Git and GitHub Conventions", "Releases"],
+              "Practises",
+              [
+                "Ways of Working",
+                "Project Structure",
+                "Naming Conventions",
+                "Testing practises",
+              ],
+            ],
           ],
           "Foundations",
           [
