@@ -7,6 +7,13 @@ import { Source } from "@storybook/addon-docs/blocks";
 
 Setting up your local development environment according to these instructions is highly recommended for a smooth and uniform development experience accross the team (and 3rd parties, too).
 
+**Table of Contents**
+
+1. [Requirements](#requirements)
+2. [Set Up Local Repository](#set-up-local-repository)
+3. [Install Dependencies](#install-dependencies)
+4. [Development](#development)
+
 ## Requirements
 
 - MacOS or Linux
@@ -49,6 +56,36 @@ The First startup takes a while as Docker fetches and builds the necessary image
 
 To run all tests, run the next command in the root folder:
 
-<Source code={`npm run test:storybook`} />
+<Source code={`npm run test`} />
+
+If you want to run a single test, add the spec file prefix in the run command. For example:
+
+<Source code={`npm run test -- button`} />
+
+If you want to update snapshots, run
+
+<Source code={`npm run test -- -u`} />
 
 ### Without Containers
+
+To start storybook, navigate to **core** directory and run
+
+<Source code={`npm run start`} />
+
+#### Testing
+
+To run tests, navigate to **tests** folder.
+
+**Important!** When running tests locally without a container, the snapshots might differ from the base images, if your operating system is not Linux-based. For example, if you have a mac, the playwright tests fail first, because there are no darwin images generated. However, on the second run the tests should run smoothly. Only Linux-based images are kept in the remote code repository, as the tests are run in Ubuntu container in the pipeline.
+
+To run all tests, use the command:
+
+<Source code={`npm run test`} />
+
+If you want to run a single test, add the spec file prefix in the run command. For example:
+
+<Source code={`npm run test -- button`} />
+
+To run tests by using the Playwright UI, use the command:
+
+<Source code={`npm run test:ui`} />

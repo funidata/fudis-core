@@ -3,8 +3,8 @@
   "version": "0.0.2",
   "private": "true",
   "scripts": {
-    "start": "npx playwright test",
-    "start:ui": "npx playwright test --ui",
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test --ui",
     "postinstall": "npx playwright install --with-deps"
   },
   "author": "Funidata Ltd",
