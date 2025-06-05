@@ -11,19 +11,15 @@ const preview = {
     options: {
       storySort: {
         order: [
-          "Documentation", [
-            "Introduction", [
-              "Introduction",
-              "How to start using Fudis Core"
-            ],
-            "Development", [
-              "Getting Started",
-              "Tooling", [
-                "Releases"
-              ]
-            ]
+          "Documentation",
+          [
+            "Introduction",
+            ["Introduction", "How to start using Fudis Core"],
+            "Development",
+            ["Getting Started", "Tooling", ["Releases"]],
           ],
-          "Foundations", [
+          "Foundations",
+          [
             "Introduction",
             "Colors",
             "Typography",
