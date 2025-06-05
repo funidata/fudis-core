@@ -36,7 +36,7 @@ If you do not have write access and are not working for Funidata, you need to fi
 
 ## Install Dependencies
 
-To install project dependencies, in the root folder run:
+To install project dependencies, in the **root** directory run:
 
 <Source code={`npm ci`} />
 
@@ -48,7 +48,7 @@ Testing is done by Playwright, and it is used mainly for snapshot-testing.
 
 ### With containers
 
-Make sure Docker daemon is running, then in the root folder run:
+Make sure Docker daemon is running, then in the **root** directory run:
 
 <Source code={`npm run start:storybook`} />
 
@@ -56,7 +56,7 @@ The First startup takes a while as Docker fetches and builds the necessary image
 
 #### Testing
 
-To run all tests, run the next command in the root folder:
+To run all tests, run the next command in the **root** directory:
 
 <Source code={`npm run test`} />
 
@@ -64,19 +64,19 @@ If you want to run a single test, add the spec file prefix in the run command. F
 
 <Source code={`npm run test -- button`} />
 
-If you want to update snapshots, run
+If you want to update snapshots, run:
 
 <Source code={`npm run test -- -u`} />
 
 ### Without Containers
 
-To start storybook, navigate to **core** directory and run
+To start storybook, navigate to **core** directory and run:
 
 <Source code={`npm run start`} />
 
 #### Testing
 
-To run tests, navigate to **tests** folder.
+To run tests, navigate to **tests** directory.
 
 **Important!** When running tests locally without a container, the snapshots might differ from the base images, if your operating system is not Linux-based. For example, if you have a mac, the playwright tests fail first, because there are no darwin images generated. However, on the second run the tests should run smoothly. Only Linux-based images are kept in the remote code repository, as the tests are run in Ubuntu container in the pipeline.
 
@@ -96,7 +96,7 @@ To run tests by using the Playwright UI, use the command:
 
 ### Format
 
-To format code, in the root directory run:
+To format code, in the **root** directory run:
 
 <Source code={`npm run format`} />
 
@@ -106,7 +106,7 @@ To check formatting, run:
 
 ### Lint
 
-To lint styles, in the root directory run:
+To lint styles, in the **root** directory run:
 
 <Source code={`npm run stylelint`} />
 
@@ -118,7 +118,7 @@ Here are some other commands that are useful in development.
 
 To build the deployable version of Storybook, in the **core** directory run:
 
-<Source code={`npm run build:storybook"`} />
+<Source code={`npm run build:storybook`} />
 
 This creates a **storybook-static** folder under the **core** directory.
 
@@ -126,6 +126,6 @@ This creates a **storybook-static** folder under the **core** directory.
 
 To build the distributable package, in the **core** folder run:
 
-<Source code={`npm run build:dist"`} />
+<Source code={`npm run build:dist`} />
 
 This creates a **dist** folder under the **core** directory.
