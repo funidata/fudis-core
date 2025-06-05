@@ -1,5 +1,55 @@
 import { Meta } from "@storybook/blocks";
+import { Source } from "@storybook/addon-docs/blocks";
 
 <Meta title="Documentation/Development/Getting Started" />
 
 # Getting Started
+
+Setting up your local development environment according to these instructions is highly recommended for a smooth and uniform development experience accross the team (and 3rd parties, too).
+
+## Requirements
+
+- MacOS or Linux
+- Git
+- Docker
+  - Any fairly recent version should work. Originally developed with Docker Engine v24.
+- Node.js and NPM
+  - For just running Storybook locally, any version will do as the containers will internally use correct versions anyway. If you plan to do anything else, using the version specified in .nvmrc is highly recommended (v20.17.0 at the time of writing this doc).
+  - In general, using NVM and setting your terminal to automatically switch Node.js versions based on .nvmrc files is highly recommended.
+
+## Set Up Local Repository
+
+Clone the upstream repository to your machine:
+
+<Source code={`git@github.com:funidata/fudis-core.git`} />
+
+If you do not have write access and are not working for Funidata, you need to first fork our repository to your own account and use that for development.
+
+## Install Dependencies
+
+To install project dependencies, in the root folder run:
+<Source code={`npm ci`} />
+
+## Development
+
+The development is done in the Storybook environment. Fudis Core uses the html/vite-version. You can read more about storybook from the [official Storybook site](https://storybook.js.org/).
+
+Testing is done by Playwright, and it is used mainly for snapshot-testing.
+
+### With containers
+
+Make sure Docker daemon is running, then in the root folder run:
+
+<Source code={`npm run start:storybook`} />
+
+The First startup takes a while as Docker fetches and builds the necessary image. Once complete, Storybook is accessible at [http://localhost:6007](http://localhost:6007).
+
+#### Testing
+
+To run all tests, run the next command in the root folder:
+
+<Source code={`npm run test:storybook`} />
+
+
+
+### Without Containers
