@@ -85,7 +85,7 @@ export const Invalid = () => `
       <span class="fudis-label__content__text">Text area label</span>
     </span>
   </label>
-  <textarea id="fudis-text-area-id" class="fudis-form-input fudis-form-input--touched fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance" aria-invalid="true"></textarea>
+  <textarea id="fudis-text-area-id" class="fudis-form-input fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance" aria-invalid="true"></textarea>
   <div id="fudis-guidance-id" class="fudis-guidance">
     <div id="fudis-text-area-id_guidance">
       <div id="fudis-guidance-id-errors">

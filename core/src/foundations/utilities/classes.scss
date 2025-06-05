@@ -17,12 +17,8 @@
   @include border.border('1px', 'solid', 'gray-middle');
   @include colorMixin.bg-color('white');
 
-  /* stylelint-disable-next-line selector-class-pattern */
-  &.ng-touched,
-  &--touched {
-    &[aria-invalid='true'] {
-      @include border.border('1px', 'solid', 'red');
-    }
+  &[aria-invalid='true'] {
+    @include border.border('1px', 'solid', 'red');
   }
 
   &[aria-disabled='true'] {

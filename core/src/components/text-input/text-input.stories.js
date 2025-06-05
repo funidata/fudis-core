@@ -104,7 +104,7 @@ export const Invalid = () => `
       <span class="fudis-label__content__text">Text input label</span>
     </span>
   </label>
-  <input id="fudis-text-input-id" class="fudis-form-input fudis-text-input__input fudis-form-input--touched" type="text" aria-describedby="fudis-text-input-id_guidance" aria-invalid="true"></input>
+  <input id="fudis-text-input-id" class="fudis-form-input fudis-text-input__input" type="text" aria-describedby="fudis-text-input-id_guidance" aria-invalid="true"></input>
   <div class="fudis-guidance">
     <div id="fudis-text-input-id_guidance">
       <div id="fudis-guidance-id-errors">
