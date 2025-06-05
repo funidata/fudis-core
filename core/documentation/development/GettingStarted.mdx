@@ -13,6 +13,8 @@ Setting up your local development environment according to these instructions is
 2. [Set Up Local Repository](#set-up-local-repository)
 3. [Install Dependencies](#install-dependencies)
 4. [Development](#development)
+5. [Format and lint](#format-and-lint)
+6. [Additional command reference](#additional-command-reference)
 
 ## Requirements
 
@@ -89,3 +91,42 @@ If you want to run a single test, add the spec file prefix in the run command. F
 To run tests by using the Playwright UI, use the command:
 
 <Source code={`npm run test:ui`} />
+
+## Format and Lint
+
+### Format
+
+To format code, in the root directory run:
+
+<Source code={`npm run format`} />
+
+To check formatting, run:
+
+<Source code={`npm run format:check`} />
+
+### Lint
+
+To lint styles, in the root directory run:
+
+<Source code={`npm run stylelint`} />
+
+## Additional command reference
+
+Here are some other commands that are useful in development.
+
+#### Build storybook
+
+To build the deployable version of Storybook, in the **core** directory run:
+
+<Source code={`npm run build:storybook"`} />
+
+This creates a **storybook-static** folder under the **core** directory.
+
+#### Build Fudis Core
+
+To build the distributable package, in the **core** folder run:
+
+<Source code={`npm run build:dist"`} />
+
+This creates a **dist** folder under the **core** directory.
+
