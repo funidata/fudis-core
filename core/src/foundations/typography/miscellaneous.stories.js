@@ -14,7 +14,7 @@ export const TableCaption = () => `
   </p>
 `;
 
-export const Test = () => `
+export const PwAll = () => `
 <p class="fudis-text-emptystate">
 Fudis empty state text
 </p>
