@@ -19,7 +19,11 @@ const preview = {
             [
               "Getting Started",
               "Tooling",
-              ["Git and GitHub Conventions", "Releases", "Testing Local Changes with Symlink"],
+              [
+                "Git and GitHub Conventions",
+                "Releases",
+                "Testing Local Changes with Symlink",
+              ],
               "Practises",
               [
                 "Ways of Working",
