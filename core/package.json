@@ -10,6 +10,7 @@
     "start": "storybook dev -p 6007",
     "build:storybook": "storybook build",
     "build:dist": "scripts/copy-files.sh",
+    "build:dist:watch": "nodemon --watch src --watch _index.scss --ext scss --exec \"npm run build:dist\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -36,6 +37,7 @@
     "@storybook/html": "^8.6.12",
     "@storybook/html-vite": "^8.6.12",
     "@storybook/test": "^8.6.12",
+    "nodemon": "^3.1.10",
     "sass-embedded": "^1.86.3",
     "storybook": "^8.6.12"
   }
