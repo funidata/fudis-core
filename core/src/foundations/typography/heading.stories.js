@@ -90,4 +90,3 @@ export const Test = () => `
     Heading aligned right
   </h3>
 `;
-

@@ -17,9 +17,9 @@
 
   &__errors {
     display: flex;
-    /* stylelint-disable-next-line unit-disallowed-list */
     transform: translateX(
-      calc(-1 * calc(0.4rem / var(--fudis-rem-multiplier)))
+      /* stylelint-disable unit-disallowed-list */
+        calc(-1 * calc(0.4rem / var(--fudis-rem-multiplier)))
     );
     opacity: 0;
     height: spacing.$spacing-xs;
