@@ -15,15 +15,8 @@
     margin: spacing.$spacing-xxs 0;
     min-height: spacing.$spacing-md;
 
-    // white-space: break-spaces; // TODO: This causes issues in e.g. TextInput native HTML story + scss styling. Should this be removed or fixed somehow?
-
     &__text {
       margin-right: spacing.$spacing-xs;
-    }
-
-    &__space {
-      display: inline-block;
-      width: 0;
     }
 
     &__required {

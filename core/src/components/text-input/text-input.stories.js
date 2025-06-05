@@ -145,7 +145,6 @@ export const Required = () => `
   <label class="fudis-label" for="fudis-text-input-id">
     <span class="fudis-label__content">
       <span class="fudis-label__content__text">Text input label</span>
-      <span class="fudis-label__content__space"></span>
       <span class="fudis-label__content__required">(Required)</span>
     </span>
   </label>

@@ -57,7 +57,6 @@ export const Required = () => `
           <span class="fudis-fieldset__legend__main__text">
             Legend
           </span>
-          <span class="fudis-fieldset__legend__main__space"></span>
           <span class="fudis-fieldset__legend__main__required">(Required)</span>
         </div>
       </div>
