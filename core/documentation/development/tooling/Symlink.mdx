@@ -4,5 +4,27 @@ import { Meta } from "@storybook/blocks";
 
 # Testing Local Changes with Symlink
 
+Sometimes you need to test your local changes straight away in the application, for this you can use package manager of your choice that supports symlinking. This page covers NPM and Yarn.
+
+In some projects you might have to do some additional configuration to enable symlinks. Check your project configurations if problems occur.
+
 **Table of Contents**
 
+1. [Symlink with NPM](#symlink-with-npm)
+2. [Symlink with Yarn](#symlink-with-yarn)
+
+## Symlink with NPM
+
+1. Navigate to **core** directory and run `npm run build:dist:watch`. This starts up Nodemon daemon that builds the dist-folder every time you make changes to any scss-files.
+2. Go to the **core/dist** directory and run `npm link` that creates a global symlink to the Fudis Core package, making it available system-wide.
+3. Then navigate to your project where you want to link the Fudis core package. The directory that contains the node_modules folder containing the project dependencies is the correct place to execute linking. In this project directory run `npm link @funidata/fudis-core`
+4. When you want to unlink the package from your project, run the command `npm unlink @funidata/fudis-core`. This is done in the same directory in your consuming project, where you linked the package.
+
+If you want to remove the global symlink, go back to the **core/dist** folder and run `npm unlink`.
+
+## Symlink with Yarn
+
+These instructions are for Yarn v4. If you are using any other version, please check the corresponding documentation to see how symlinking is done.
+
+1. Navigate to your project where you want to use the Fudis Core-package. The directory that contains the node_modules folder containing the project dependencies is the correct place to execute linking.
+2. In this project directory run `yarn add @funidata/fudis-core@portal:./{your-path-to-core-directory}/core/dist`
