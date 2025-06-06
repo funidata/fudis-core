@@ -12,7 +12,7 @@ find "$PROJECT_ROOT" \
   -path "$PROJECT_ROOT/storybook-static" -prune -o \
   -path "$PROJECT_ROOT/node_modules" -prune -o \
   -path "$DIST_DIR" -prune -o \
-  \( -name "*.scss" -o -name "*.woff2" \) -type f -print | while read -r file; do
+  \( -name "*.scss" \) -type f -print | while read -r file; do
     rel_path="${file#"$PROJECT_ROOT"/}"
     target_dir="$DIST_DIR/$(dirname "$rel_path")"
     mkdir -p "$target_dir"
