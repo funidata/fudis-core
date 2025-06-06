@@ -29,7 +29,7 @@ const preview = {
                 "Ways of Working",
                 "Project Structure",
                 "Naming Conventions",
-                "Testing practises",
+                "Testing",
               ],
             ],
           ],

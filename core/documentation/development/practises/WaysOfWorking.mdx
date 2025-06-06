@@ -1,0 +1,38 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Documentation/Development/Practises/Ways of Working" />
+
+# Ways of Working
+
+**Table of Contents**
+
+1. [Naming Conventions](#naming-conventions)
+1. [Styles](#styles)
+
+<br />
+
+## Naming Conventions
+
+Currently documented conventions for naming CSS classes, mixins etc. can be found in [Naming Conventions Documentation](/docs/documentation-development-practises-naming-conventions--docs).
+
+## Styles
+
+Fudis uses SCSS as its tool for defining styles. In addition various linting rules are forced through Stylelint. Stylelint quite aggressively will throw errors if there are unallowed values or attributes such as `px` values or if there are unnecessary white space or similar syntax inconsistency.
+
+Quite many of the formatting errors can be automatically fixed on save if you have done setup in your VSCode or other IDE correctly.
+
+### Some Principles for Writing Styles
+
+- Reuse components, while preventing rewriting their existing .scss styles
+
+- Component inline styles should be avoided. This allows full control over component styles through variables.
+
+- Components styles should be recorded in their own .scss file directly in their own folder.
+
+- Use globally defined tokens and mixins to enable colors, spacing, etc. rather than introducing hard-to-maintain local values.
+
+> If Stylelint throws an error, that you are using an unallowed attribute or value in your scss-file, there is always a mixin for that. For example `color`, `background-color` and `font-size` are not allowed. When using mixins for these we minimise the risk that workarounds and exceptions start to appear to our code base.
+
+- Avoid using style override with `!important`
+
+- Occasionally it is unconvenient to follow the rules of Stylelint. E. g. if you need to do CSS sibling selection, but SCSS syntax with Stylelint thinks you are not following the good practises. In these occasions it is acceptable to add an ignore rule for that line of styling.
