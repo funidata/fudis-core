@@ -31,7 +31,31 @@ export const AllIcons = () => `
   <span class="fudis-icon fudis-icon__size--md fudis-icon__color__primary fudis-icon__arrow-solid"></span>
   <span class="fudis-icon fudis-icon__size--lg fudis-icon__color__primary fudis-icon__arrow-solid"></span>
 
-    <span class="fudis-icon fudis-icon__size--sm fudis-icon__color__primary fudis-icon__check"></span>
-  <span class="fudis-icon fudis-icon__size--md fudis-icon__color__primary fudis-icon__arrow-check"></span>
-  <span class="fudis-icon fudis-icon__size--lg fudis-icon__color__primary fudis-icon__arrow-check"></span>
+  <span class="fudis-icon fudis-icon__size--sm fudis-icon__color__primary fudis-icon__check"></span>
+  <span class="fudis-icon fudis-icon__size--md fudis-icon__color__primary fudis-icon__check"></span>
+  <span class="fudis-icon fudis-icon__size--lg fudis-icon__color__primary fudis-icon__check"></span>
+
+  <span class="fudis-icon fudis-icon__size--sm fudis-icon__color__primary fudis-icon__brochure"></span>
+  <span class="fudis-icon fudis-icon__size--md fudis-icon__color__primary fudis-icon__brochure"></span>
+  <span class="fudis-icon fudis-icon__size--lg fudis-icon__color__primary fudis-icon__brochure"></span>
+
+  <span class="fudis-icon fudis-icon__size--sm fudis-icon__color__primary fudis-icon__check-indeterminate"></span>
+  <span class="fudis-icon fudis-icon__size--md fudis-icon__color__primary fudis-icon__check-indeterminate"></span>
+  <span class="fudis-icon fudis-icon__size--lg fudis-icon__color__primary fudis-icon__check-indeterminate"></span>
+
+  <span class="fudis-icon fudis-icon__size--sm fudis-icon__color__primary fudis-icon__calendar"></span>
+  <span class="fudis-icon fudis-icon__size--md fudis-icon__color__primary fudis-icon__calendar"></span>
+  <span class="fudis-icon fudis-icon__size--lg fudis-icon__color__primary fudis-icon__calendar"></span>
+
+  <span class="fudis-icon fudis-icon__size--sm fudis-icon__color__primary fudis-icon__bullets"></span>
+  <span class="fudis-icon fudis-icon__size--md fudis-icon__color__primary fudis-icon__bullets"></span>
+  <span class="fudis-icon fudis-icon__size--lg fudis-icon__color__primary fudis-icon__bullets"></span>
+
+  <span class="fudis-icon fudis-icon__size--sm fudis-icon__color__primary fudis-icon__back"></span>
+  <span class="fudis-icon fudis-icon__size--md fudis-icon__color__primary fudis-icon__back"></span>
+  <span class="fudis-icon fudis-icon__size--lg fudis-icon__color__primary fudis-icon__back"></span>
+
+  <span class="fudis-icon fudis-icon__size--sm fudis-icon__color__primary fudis-icon__change-log"></span>
+  <span class="fudis-icon fudis-icon__size--md fudis-icon__color__primary fudis-icon__change-log"></span>
+  <span class="fudis-icon fudis-icon__size--lg fudis-icon__color__primary fudis-icon__change-log"></span>
 `;
