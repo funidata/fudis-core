@@ -1,0 +1,80 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Documentation/Development/Practises/Project Structure" />
+
+# General Directory Structure
+
+**Table of Contents**
+
+1. [Core](#core)
+2. [Tests](#tests)
+3. [Scripts](#scripts)
+4. [Folder Structure Visualised](#folder-structure-visualised)
+
+<br />
+
+## Core
+
+<br />
+
+### Documentation
+
+Self-explaining main location of documentation for product developers and Fudis developers.
+
+### Assets
+
+Static asset files, like fonts, SVG icons and similar are located here.
+
+### Components
+
+The molecules of Fudis, the components. Each component folder should contain files related to that spesific component, such as Storybook stories, documentation and stylesheets.
+
+### Foundations
+
+**Foundations** section contains the atoms of Fudis DS. Foundations directory contains all project foundation design tokens and mixins. Including tokens and mixins for e. g. borders, breakpoints, colors, spacing and typography. If there is need for a style variable or mixin, which is used in multiple components, usually it should be defined under Foundations.
+
+### Scripts
+
+Scripts that target the core project are located here.
+
+<br />
+
+## Tests
+
+This directory contains visual regression tests and configurations for Playwright.
+
+<br />
+
+## Scripts
+
+Scripts that target the whole project structure are located here.
+
+<br />
+
+## Folder Structure Visualised
+
+Most relevant folders and files for Fudis development
+
+```
+fudis-core
+│
+└───scripts
+│
+└───tests
+│ │
+│ └───visual-regression
+│
+└───core
+│ │
+│ └───documentation
+│ │
+│ └───scripts
+│ │
+│ └───src
+│ │ │
+│ │ └───assets
+│ │ │
+│ │ └───components
+│ │ │
+│ │ └───foundations
+```
