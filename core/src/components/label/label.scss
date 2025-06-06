@@ -1,0 +1,33 @@
+@use '../../foundations/spacing/tokens.scss' as spacing;
+@use '../../foundations/typography/mixins.scss' as typography;
+@use '../../foundations/typography/tokens.scss' as typographyToken;
+@use '../../foundations/colors/mixins.scss' as colorMixin;
+
+.fudis-label {
+  @include colorMixin.text-color('gray-dark');
+  @include typography.text-field-label;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  &__content {
+    margin: spacing.$spacing-xxs 0;
+    min-height: spacing.$spacing-md;
+
+    &__text {
+      margin-right: spacing.$spacing-xs;
+    }
+
+    &__required {
+      @include typography.text-field-label;
+      @include colorMixin.text-color('gray-middle');
+
+      display: inline-block;
+      vertical-align: bottom;
+      text-transform: initial;
+      /* stylelint-disable-next-line property-disallowed-list */
+      font-size: typographyToken.$body-text-sm-font-size;
+    }
+  }
+}

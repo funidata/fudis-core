@@ -3,9 +3,9 @@
 @use 'sass:map';
 @use './../breakpoints/mixins.scss' as breakpoints;
 @use './../spacing/tokens.scss' as spacing;
-@use './../colors/mixins.scss' as colors;
+@use './../colors/mixins.scss' as colorMixin;
 @use './../focus/mixins.scss' as focus;
-@use './tokens.scss' as tokens;
+@use './tokens';
 
 // Body Text
 
@@ -130,7 +130,7 @@
 // Table caption
 
 @mixin table-caption {
-  @include colors.text-color('gray-dark');
+  @include colorMixin.text-color('gray-dark');
 
   text-transform: uppercase;
   line-height: tokens.$text-input-line-height;
@@ -243,7 +243,7 @@
 // Link component
 
 @mixin text-link {
-  @include colors.text-color('primary-dark');
+  @include colorMixin.text-color('primary-dark');
 
   display: inline-block;
   position: relative;
@@ -277,10 +277,19 @@
   font-weight: inherit;
 }
 
+// Tab component
+
+@mixin tab-text {
+  font-family: tokens.$font-family;
+  font-size: tokens.$body-text-md-font-size;
+  font-weight: tokens.$font-weight-medium;
+  text-wrap: nowrap;
+}
+
 // Empty state
 
 @mixin text-emptystate {
-  @include colors.text-color('gray-middle');
+  @include colorMixin.text-color('gray-middle');
 
   font-family: tokens.$font-family;
   font-size: tokens.$body-text-md-font-size;

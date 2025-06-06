@@ -1,10 +1,12 @@
 export default {
-  title: "Components/Button",
+  title: "Components/Button (WIP)",
   decorators: [
     (storyFn) =>
       `<div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-start;">${storyFn()}</div>`,
   ],
 };
+
+// TODO: Add icon button stories after icons are available
 
 export const Primary = () => `
   <button class="fudis-button fudis-button__primary fudis-button__size__medium">

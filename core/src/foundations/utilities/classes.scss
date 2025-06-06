@@ -1,7 +1,7 @@
-@use './mixins.scss' as mixins;
+@use './mixins';
 @use './../spacing/tokens.scss' as spacing;
 @use './../borders/mixins.scss' as border;
-@use './../colors/mixins.scss' as colors;
+@use './../colors/mixins.scss' as colorMixin;
 
 .fudis-visually-hidden {
   @include mixins.visually-hidden;
@@ -15,19 +15,15 @@
 
 .fudis-form-input {
   @include border.border('1px', 'solid', 'gray-middle');
-  @include colors.bg-color('white');
+  @include colorMixin.bg-color('white');
 
-  /* stylelint-disable-next-line selector-class-pattern */
-  &.ng-touched,
-  &--touched {
-    &[aria-invalid='true'] {
-      @include border.border('1px', 'solid', 'red');
-    }
+  &[aria-invalid='true'] {
+    @include border.border('1px', 'solid', 'red');
   }
 
   &[aria-disabled='true'] {
     @include border.border('1px', 'dashed', 'gray-middle');
-    @include colors.bg-color('gray-extra-light');
+    @include colorMixin.bg-color('gray-extra-light');
 
     cursor: default;
     pointer-events: none;

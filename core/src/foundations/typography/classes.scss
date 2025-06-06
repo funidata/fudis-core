@@ -1,10 +1,10 @@
 @use './mixins.scss' as typography;
-@use './../colors/mixins.scss' as colorMixins;
+@use './../colors/mixins.scss' as colorMixin;
 @use './../focus/mixins.scss' as focus;
 @use './../utilities/mixins.scss' as utilities;
 
 .fudis-heading {
-  @include colorMixins.text-color('gray-dark');
+  @include colorMixin.text-color('gray-dark');
 
   box-sizing: border-box;
   margin-top: 0;
@@ -61,7 +61,7 @@
 
 .fudis-body-text {
   @include utilities.box-reset;
-  @include colorMixins.text-color('gray-dark');
+  @include colorMixin.text-color('gray-dark');
 
   &__sm-regular {
     @include typography.body-text-sm-regular;
@@ -93,22 +93,6 @@
 
   &__center {
     text-align: center;
-  }
-}
-
-.fudis-link {
-  &__size {
-    &__inherit {
-      @include typography.link-inherit;
-    }
-
-    &__md {
-      @include typography.link-md;
-    }
-
-    &__lg {
-      @include typography.link-lg;
-    }
   }
 }
 

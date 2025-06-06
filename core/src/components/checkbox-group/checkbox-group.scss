@@ -1,0 +1,7 @@
+@use '../../foundations/spacing/tokens.scss' as spacing;
+
+.fudis-checkbox-group {
+  .fudis-fieldset-content {
+    margin-top: spacing.$spacing-none;
+  }
+}

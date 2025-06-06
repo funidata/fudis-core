@@ -1,0 +1,90 @@
+/* stylelint-disable selector-class-pattern */
+@use '../../foundations/spacing/tokens.scss' as spacing;
+@use '../../foundations/typography/mixins.scss' as typography;
+@use '../../foundations/typography/tokens.scss' as typographyTokens;
+@use '../../foundations/colors/mixins.scss' as colorMixin;
+@use '../../foundations/focus/mixins.scss' as focus;
+@use '../../foundations/borders/mixins.scss' as border;
+@use '../../foundations/utilities/mixins.scss' as utilities;
+
+.fudis-fieldset {
+  @include utilities.box-reset;
+  @include border.border-none;
+
+  display: grid;
+  grid-template-columns: 1fr;
+
+  &__legend {
+    @include utilities.box-reset;
+
+    display: contents;
+
+    &__main {
+      display: flex;
+      align-items: flex-end;
+
+      &:focus-visible {
+        @include focus.focus-generic;
+      }
+
+      &__text-content {
+        margin: spacing.$spacing-xxs 0;
+        min-height: spacing.$spacing-md;
+      }
+
+      &__text {
+        @include colorMixin.text-color('gray-dark');
+
+        margin-right: spacing.$spacing-xs;
+      }
+
+      &__required {
+        @include typography.text-field-label;
+        @include colorMixin.text-color('gray-middle');
+
+        display: inline-block;
+        vertical-align: bottom;
+        text-transform: initial;
+        /* stylelint-disable-next-line property-disallowed-list */
+        font-size: typographyTokens.$body-text-sm-font-size;
+      }
+
+      &__tooltip-button {
+        margin-top: auto;
+      }
+    }
+
+    &__sm {
+      @include typography.text-field-label;
+    }
+
+    &__md {
+      @include typography.heading-xs;
+
+      .fudis-fieldset__legend__main__text,
+      .fudis-fieldset__legend__main__required {
+        vertical-align: sub;
+      }
+    }
+
+    &--focused {
+      @include focus.focus-generic;
+    }
+  }
+
+  &__help-text {
+    margin-bottom: spacing.$spacing-xs;
+  }
+
+  &-content {
+    @include utilities.box-reset;
+    @include border.border-none;
+
+    display: flex;
+    flex-direction: column;
+    grid-column: 1/-1;
+    order: 4;
+    margin-top: spacing.$spacing-xs;
+    width: 100%;
+  }
+}
