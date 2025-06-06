@@ -60,7 +60,7 @@ jobs:
         run: docker run -t fudis-core npm run format:check
 
   vr-tests:
-    name: vr tests
+    name: VR tests
     needs:
       - build
     runs-on: ubuntu-22.04

@@ -12,7 +12,28 @@ const preview = {
       storySort: {
         order: [
           "Documentation",
-          ["Introduction", "Development", ["Tooling", ["Releases"]]],
+          [
+            "Introduction",
+            ["Introduction", "How to start using Fudis Core"],
+            "Development",
+            [
+              "Getting Started",
+              "Tooling",
+              [
+                "Git and GitHub Conventions",
+                "Releases",
+                "Testing Local Changes with Symlink",
+              ],
+              "Practises",
+              [
+                "Ways of Working",
+                "Project Structure",
+                "Naming Conventions",
+                "Testing",
+              ],
+            ],
+            "Information Security Management",
+          ],
           "Foundations",
           [
             "Introduction",

@@ -46,7 +46,7 @@ export const Aligned = () => `
   </p>
 `;
 
-export const Test = () => `
+export const PwAll = () => `
 <p class="fudis-body-text fudis-body-text__lg-regular">
 Large regular text
 </p>
