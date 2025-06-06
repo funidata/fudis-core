@@ -1,6 +1,6 @@
 @use '../../foundations/borders/mixins.scss' as border;
 @use '../../foundations/spacing/tokens.scss' as spacing;
-@use '../../foundations/colors/tokens.scss' as color;
+@use '../../foundations/colors/tokens.scss' as colors;
 @use '../../foundations/colors/mixins.scss' as colorMixin;
 @use '../../foundations/utilities/mixins.scss' as utilities;
 @use '../../foundations/focus/mixins.scss' as focus;
@@ -54,7 +54,7 @@
       &--invalid {
         @include border.border('1px', 'solid', 'red');
 
-        box-shadow: 0 0 0 spacing.$pixel-3 color.$color-red-light;
+        box-shadow: 0 0 0 spacing.$pixel-3 colors.$color-red-light;
       }
     }
 
