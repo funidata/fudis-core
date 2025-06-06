@@ -16,7 +16,7 @@ export const Large = () => `
   </a>
 `;
 
-export const Test = () => `
+export const PwAll = () => `
   <a href="" class="fudis-link fudis-link__size__md">
     I am a medium sized link
   </a>
