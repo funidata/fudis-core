@@ -15,7 +15,9 @@ In some projects you might have to do some additional configuration to enable sy
 
 ## Symlink with NPM
 
-1. Navigate to **core** directory and run `npm run build:dist:watch`. This starts up Nodemon daemon that builds the dist-folder every time you make changes to any scss-files.
+1. Navigate to **core** directory. There you have two options for creating the build.
+    - **Option 1**: Command for building the library that does not rebuild the library after changes to code: `npm run build:dist`.
+    - **Option 2**: If you want to develop and test at the same time, run `npm run build:dist:watch`. This starts up Nodemon daemon that builds the dist-folder every time you make changes to any scss-files.
 2. Go to the **core/dist** directory and run `npm link` that creates a global symlink to the Fudis Core package, making it available system-wide.
 3. Then navigate to your project where you want to link the Fudis core package. The directory that contains the node_modules folder containing the project dependencies is the correct place to execute linking. In this project directory run `npm link @funidata/fudis-core`
 4. When you want to unlink the package from your project, run the command `npm unlink @funidata/fudis-core`. This is done in the same directory in your consuming project, where you linked the package.
