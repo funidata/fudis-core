@@ -7,6 +7,10 @@
   justify-content: space-between;
   width: 100%;
 
+  &:not(:has(.fudis-guidance__errors)) {
+    margin-top: spacing.$spacing-xs;
+  }
+
   &__help-text {
     @include colorMixin.text-color('gray-dark');
     @include typography.body-text-sm-regular;
