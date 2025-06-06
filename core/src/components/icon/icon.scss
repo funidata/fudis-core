@@ -59,15 +59,15 @@
 
   &__size {
     &--lg {
-      --icon-size: calc(2rem / var(--fudis-rem-multiplier));
+      --icon-size: #{spacing.$spacing-lg};
     }
 
     &--md {
-      --icon-size: calc(1.5rem / var(--fudis-rem-multiplier));
+      --icon-size: #{spacing.$spacing-md};
     }
 
     &--sm {
-      --icon-size: calc(1rem / var(--fudis-rem-multiplier));
+      --icon-size: #{spacing.$spacing-sm};
     }
   }
 
