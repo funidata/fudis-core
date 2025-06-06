@@ -32,6 +32,7 @@ const preview = {
                 "Testing",
               ],
             ],
+            "Information Security Management",
           ],
           "Foundations",
           [
