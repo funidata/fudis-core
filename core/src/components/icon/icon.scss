@@ -4,11 +4,8 @@
 /* Only for internal use for this icon class */
 @mixin icon-mask-base() {
   content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  width: var(--icon-size);
+  height: var(--icon-size);
   background-color: currentColor;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
@@ -20,7 +17,6 @@
 
 .fudis-icon {
   box-sizing: border-box;
-  position: relative;
   display: inline-flex;
   align-items: center;
   transition: all 0.6s ease;
@@ -63,18 +59,15 @@
 
   &__size {
     &--lg {
-      width: spacing.$spacing-lg;
-      height: spacing.$spacing-lg;
+      --icon-size: calc(2rem / var(--fudis-rem-multiplier));
     }
 
     &--md {
-      width: spacing.$spacing-md;
-      height: spacing.$spacing-md;
+      --icon-size: calc(1.5rem / var(--fudis-rem-multiplier));
     }
 
     &--sm {
-      width: spacing.$spacing-sm;
-      height: spacing.$spacing-sm;
+      --icon-size: calc(1rem / var(--fudis-rem-multiplier));
     }
   }
 
