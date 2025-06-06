@@ -30,4 +30,8 @@ export const AllIcons = () => `
   <span class="fudis-icon fudis-icon__size--sm fudis-icon__color__primary fudis-icon__arrow-solid"></span>
   <span class="fudis-icon fudis-icon__size--md fudis-icon__color__primary fudis-icon__arrow-solid"></span>
   <span class="fudis-icon fudis-icon__size--lg fudis-icon__color__primary fudis-icon__arrow-solid"></span>
+
+    <span class="fudis-icon fudis-icon__size--sm fudis-icon__color__primary fudis-icon__check"></span>
+  <span class="fudis-icon fudis-icon__size--md fudis-icon__color__primary fudis-icon__arrow-check"></span>
+  <span class="fudis-icon fudis-icon__size--lg fudis-icon__color__primary fudis-icon__arrow-check"></span>
 `;
