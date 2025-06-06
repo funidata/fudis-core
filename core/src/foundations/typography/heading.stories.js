@@ -58,7 +58,7 @@ export const Aligned = () => `
   </h3>
 `;
 
-export const Test = () => `
+export const PwAll = () => `
   <h1 class="fudis-heading fudis-heading__variant__xxl">
     I am a level 1 heading, but I could be something else too!
   </h1>
