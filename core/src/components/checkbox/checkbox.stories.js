@@ -10,8 +10,8 @@ export const Default = () => `
         <!-- When focused: add fudis-checkbox__content__box--focused class down below -->
         <!-- When invalid: add fudis-checkbox__content__box--invalid down below -->
         <span class="fudis-checkbox__content__box">
-            <!-- When checked: render the icon below -->
-            <!-- <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__lg fudis-icon__check"></span> -->
+         <!-- When checked: render the icon below -->
+        <!-- <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__lg fudis-icon__check"></span> -->
         </span>
        </div>
        <span class="fudis-checkbox__content__label">Option</span>
