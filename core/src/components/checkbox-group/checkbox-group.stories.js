@@ -50,6 +50,22 @@ export const Default = () => `
           <span class="fudis-checkbox__content__label">Option 3</span>
         </div>
       </label>
+      <div id="fudis-guidance-id" class="fudis-guidance">
+        <div>
+          <!-- When invalid: add fudis-guidance__errors block or add a fudis-error-message block from below -->
+          <!-- <div class="fudis-guidance__errors">
+                  <span class="fudis-icon fudis-icon__color__red fudis-icon__lg fudis-icon__alert"></span>
+                  <div class="fudis-guidance__errors__list">
+                      <p class="fudis-error-message fudis-error-message__form-error">
+                          Validator error message
+                      </p>
+                  </div>
+               </div>
+          -->
+          <!-- When there is a need for guidance, add the fudis-guidance__help-text block from below -->
+          <!-- <p class="fudis-guidance__help-text">Guidance text</p> -->
+        </div>
+      </div>
     </div>
   </fieldset>
 `;
@@ -103,6 +119,22 @@ export const Required = () => `
           <span class="fudis-checkbox__content__label">Option 3</span>
         </div>
       </label>
+      <div id="fudis-guidance-id" class="fudis-guidance">
+        <div>
+          <!-- When invalid: add fudis-guidance__errors block or add a fudis-error-message block from below -->
+          <!-- <div class="fudis-guidance__errors">
+                  <span class="fudis-icon fudis-icon__color__red fudis-icon__lg fudis-icon__alert"></span>
+                  <div class="fudis-guidance__errors__list">
+                      <p class="fudis-error-message fudis-error-message__form-error">
+                          Validator error message
+                      </p>
+                  </div>
+               </div>
+          -->
+          <!-- When there is a need for guidance, add the fudis-guidance__help-text block from below -->
+          <!-- <p class="fudis-guidance__help-text">Guidance text</p> -->
+        </div>
+      </div>
     </div>
   </fieldset>
 `;
@@ -157,6 +189,17 @@ export const Guidance = () => `
       </label>
       <div id="fudis-guidance-id" class="fudis-guidance">
         <div id="fudis-fieldset-id_guidance">
+          <!-- When invalid: add fudis-guidance__errors block or add a fudis-error-message block from below -->
+          <!-- <div class="fudis-guidance__errors">
+                  <span class="fudis-icon fudis-icon__color__red fudis-icon__lg fudis-icon__alert"></span>
+                  <div class="fudis-guidance__errors__list">
+                      <p class="fudis-error-message fudis-error-message__form-error">
+                          Validator error message
+                      </p>
+                  </div>
+               </div>
+          -->
+          <!-- When there is no need for guidance, remove the fudis-guidance__help-text block from below -->
           <p class="fudis-guidance__help-text">Guidance text</p>
         </div>
       </div>
@@ -214,6 +257,7 @@ export const Invalid = () => `
       </label>
       <div id="fudis-guidance-id" class="fudis-guidance">
         <div id="fudis-fieldset-id_guidance">
+          <!-- When not invalid: remove fudis-guidance__errors block or remove a fudis-error-message block from below -->
           <div class="fudis-guidance__errors">
             <span class="fudis-icon fudis-icon__color__red fudis-icon__lg fudis-icon__alert"></span>
             <div class="fudis-guidance__errors__list">
@@ -222,6 +266,7 @@ export const Invalid = () => `
               </p>
             </div>
           </div>
+          <!-- When there is no need for guidance, remove the fudis-guidance__help-text block from below -->
           <p class="fudis-guidance__help-text">Guidance text</p>
         </div>
       </div>
