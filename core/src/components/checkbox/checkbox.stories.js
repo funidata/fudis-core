@@ -7,7 +7,12 @@ export const Default = () => `
     <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox" value="foo" />
     <div class="fudis-checkbox__content">
        <div class="fudis-checkbox__content-wrapper">
-        <span class="fudis-checkbox__content__box"></span>
+        <!-- When focused: add fudis-checkbox__content__box--focused class down below -->
+        <!-- When invalid: add fudis-checkbox__content__box--invalid down below -->
+        <span class="fudis-checkbox__content__box">
+            <!-- When checked: render the icon below -->
+            <!-- <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__size--lg fudis-icon__check"></span> -->
+        </span>
        </div>
        <span class="fudis-checkbox__content__label">Option</span>
     </div>
@@ -19,8 +24,10 @@ export const Selected = () => `
     <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox" value="foo" />
     <div class="fudis-checkbox__content">
        <div class="fudis-checkbox__content-wrapper">
+        <!-- When focused: add fudis-checkbox__content__box--focused class down below -->
+        <!-- When invalid: add fudis-checkbox__content__box--invalid down below -->
         <span class="fudis-checkbox__content__box">
-            <!-- When not checked, hide the icon below -->
+            <!-- When not checked: hide the icon below -->
             <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__size--lg fudis-icon__check"></span>
         </span>
        </div>
@@ -34,8 +41,9 @@ export const Focused = () => `
     <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox" value="foo" />
     <div class="fudis-checkbox__content">
        <div class="fudis-checkbox__content-wrapper">
+       <!-- When not focused: remove fudis-checkbox__content__box--focused class below -->
         <span class="fudis-checkbox__content__box fudis-checkbox__content__box--focused">
-            <!-- When checked, render the icon below -->
+            <!-- When checked: render the icon below -->
             <!-- <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__size--lg fudis-icon__check"></span> -->
         </span>
        </div>
@@ -50,7 +58,7 @@ export const Disabled = () => `
     <div class="fudis-checkbox__content">
        <div class="fudis-checkbox__content-wrapper">
         <span class="fudis-checkbox__content__box fudis-checkbox__content__box--disabled">
-            <!-- When checked, render the icon below -->
+            <!-- When checked: render the icon below -->
             <!-- <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__size--lg fudis-icon__check"></span> -->
         </span>
        </div>
@@ -64,8 +72,10 @@ export const Invalid = () => `
     <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox" value="foo" aria-invalid="true" />
     <div class="fudis-checkbox__content">
        <div class="fudis-checkbox__content-wrapper">
+        <!-- When focused: add fudis-checkbox__content__box--focused class down below -->
+        <!-- When not invalid: remove fudis-checkbox__content__box--invalid down below -->
         <span class="fudis-checkbox__content__box fudis-checkbox__content__box--invalid">
-            <!-- When checked, render the icon below -->
+            <!-- When checked: render the icon below -->
             <!-- <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__size--lg fudis-icon__check"></span> -->
         </span>
        </div>
