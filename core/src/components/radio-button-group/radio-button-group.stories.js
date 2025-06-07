@@ -1,8 +1,6 @@
 export default {
-  title: "Components/Radio Button Group (WIP)",
+  title: "Components/Radio Button Group",
 };
-
-// TODO: Should probably figure out interactive-friendly way so that one can choose/toggle between radio-buttons?
 
 export const Default = () => `
   <fieldset class="fudis-radio-button-group fudis-fieldset fudis-input-size__lg" id="fudis-fieldset-id">
@@ -21,6 +19,7 @@ export const Default = () => `
         <div class="fudis-radio-button__content">
           <div class="fudis-radio-button__content-wrapper">
             <div class="fudis-radio-button__content__control">
+                <!-- When not selected, hide the indicator below -->
               <span class="fudis-radio-button__content__control__indicator"></span>
             </div>
           </div>
@@ -31,7 +30,10 @@ export const Default = () => `
         <input type="radio" class="fudis-radio-button__input" name="fudis-fieldset-id" value="bar" />
         <div class="fudis-radio-button__content">
           <div class="fudis-radio-button__content-wrapper">
-            <div class="fudis-radio-button__content__control"></div>
+            <div class="fudis-radio-button__content__control">
+              <!-- When selected, render the indicator below -->
+              <!-- <span class="fudis-radio-button__content__control__indicator"></span> -->
+            </div>
           </div>
           <span class="fudis-radio-button__label">Option 2</span>
         </div>
@@ -40,7 +42,10 @@ export const Default = () => `
         <input type="radio" class="fudis-radio-button__input" name="fudis-fieldset-id" value="baz" />
         <div class="fudis-radio-button__content">
           <div class="fudis-radio-button__content-wrapper">
-            <div class="fudis-radio-button__content__control"></div>
+            <div class="fudis-radio-button__content__control">
+              <!-- When selected, render the indicator below -->
+              <!-- <span class="fudis-radio-button__content__control__indicator"></span> -->
+            </div>
           </div>
           <span class="fudis-radio-button__label">Option 3</span>
         </div>
@@ -66,7 +71,10 @@ export const Required = () => `
         <input type="radio" class="fudis-radio-button__input" name="fudis-fieldset-id" value="foo" />
         <div class="fudis-radio-button__content">
           <div class="fudis-radio-button__content-wrapper">
-            <div class="fudis-radio-button__content__control"></div>
+            <div class="fudis-radio-button__content__control">
+              <!-- When selected, render the indicator below -->
+              <!-- <span class="fudis-radio-button__content__control__indicator"></span> -->
+            </div>
           </div>
           <span class="fudis-radio-button__label">Option 1</span>
         </div>
@@ -75,7 +83,10 @@ export const Required = () => `
         <input type="radio" class="fudis-radio-button__input" name="fudis-fieldset-id" value="bar" />
         <div class="fudis-radio-button__content">
           <div class="fudis-radio-button__content-wrapper">
-            <div class="fudis-radio-button__content__control"></div>
+            <div class="fudis-radio-button__content__control">
+              <!-- When selected, render the indicator below -->
+              <!-- <span class="fudis-radio-button__content__control__indicator"></span> -->
+            </div>
           </div>
           <span class="fudis-radio-button__label">Option 2</span>
         </div>
@@ -84,7 +95,10 @@ export const Required = () => `
         <input type="radio" class="fudis-radio-button__input" name="fudis-fieldset-id" value="baz" />
         <div class="fudis-radio-button__content">
           <div class="fudis-radio-button__content-wrapper">
-            <div class="fudis-radio-button__content__control"></div>
+            <div class="fudis-radio-button__content__control">
+              <!-- When selected, render the indicator below -->
+              <!-- <span class="fudis-radio-button__content__control__indicator"></span> -->
+            </div>
           </div>
           <span class="fudis-radio-button__label">Option 3</span>
         </div>
@@ -109,7 +123,10 @@ export const Guidance = () => `
         <input type="radio" class="fudis-radio-button__input" aria-describedby="fudis-guidance-id" name="fudis-fieldset-id" value="foo" />
         <div class="fudis-radio-button__content">
           <div class="fudis-radio-button__content-wrapper">
-            <div class="fudis-radio-button__content__control"></div>
+            <div class="fudis-radio-button__content__control">
+              <!-- When selected, render the indicator below -->
+              <!-- <span class="fudis-radio-button__content__control__indicator"></span> -->
+            </div>
           </div>
           <span class="fudis-radio-button__label">Option 1</span>
         </div>
@@ -118,7 +135,10 @@ export const Guidance = () => `
         <input type="radio" class="fudis-radio-button__input" name="fudis-fieldset-id" value="bar" />
         <div class="fudis-radio-button__content">
           <div class="fudis-radio-button__content-wrapper">
-            <div class="fudis-radio-button__content__control"></div>
+            <div class="fudis-radio-button__content__control">
+              <!-- When selected, render the indicator below -->
+              <!-- <span class="fudis-radio-button__content__control__indicator"></span> -->
+            </div>
           </div>
           <span class="fudis-radio-button__label">Option 2</span>
         </div>
@@ -127,16 +147,16 @@ export const Guidance = () => `
         <input type="radio" class="fudis-radio-button__input" name="fudis-fieldset-id" value="baz" />
         <div class="fudis-radio-button__content">
           <div class="fudis-radio-button__content-wrapper">
-            <div class="fudis-radio-button__content__control"></div>
+            <div class="fudis-radio-button__content__control">
+              <!-- When selected, render the indicator below -->
+              <!-- <span class="fudis-radio-button__content__control__indicator"></span> -->
+            </div>
           </div>
           <span class="fudis-radio-button__label">Option 3</span>
         </div>
       </label>
       <div id="fudis-guidance-id" class="fudis-guidance">
         <div id="fudis-fieldset-id_guidance">
-          <div id="fudis-guidance-id-errors" class="fudis-guidance__errors">
-            <div class="fudis-guidance__errors__list"></div>
-          </div>
           <p class="fudis-guidance__help-text">Guidance text</p>
         </div>
       </div>
@@ -160,7 +180,10 @@ export const Invalid = () => `
         <input type="radio" class="fudis-radio-button__input" aria-invalid="true" aria-describedby="fudis-guidance-id" name="fudis-fieldset-id" value="foo" />
         <div class="fudis-radio-button__content">
           <div class="fudis-radio-button__content-wrapper">
-            <div class="fudis-radio-button__content__control fudis-radio-button__content__control--invalid"></div>
+            <div class="fudis-radio-button__content__control fudis-radio-button__content__control--invalid">
+              <!-- When selected, render the indicator below -->
+              <!-- <span class="fudis-radio-button__content__control__indicator"></span> -->
+            </div>
           </div>
           <span class="fudis-radio-button__label">Option 1</span>
         </div>
@@ -169,7 +192,10 @@ export const Invalid = () => `
         <input type="radio" class="fudis-radio-button__input" aria-invalid="true" name="fudis-fieldset-id" value="bar" />
         <div class="fudis-radio-button__content">
           <div class="fudis-radio-button__content-wrapper">
-            <div class="fudis-radio-button__content__control fudis-radio-button__content__control--invalid"></div>
+            <div class="fudis-radio-button__content__control fudis-radio-button__content__control--invalid">
+              <!-- When selected, render the indicator below -->
+              <!-- <span class="fudis-radio-button__content__control__indicator"></span> -->
+            </div>
           </div>
           <span class="fudis-radio-button__label">Option 2</span>
         </div>
@@ -178,14 +204,18 @@ export const Invalid = () => `
         <input type="radio" class="fudis-radio-button__input" aria-invalid="true" name="fudis-fieldset-id" value="baz" />
         <div class="fudis-radio-button__content">
           <div class="fudis-radio-button__content-wrapper">
-            <div class="fudis-radio-button__content__control fudis-radio-button__content__control--invalid"></div>
+            <div class="fudis-radio-button__content__control fudis-radio-button__content__control--invalid">
+              <!-- When selected, render the indicator below -->
+              <!-- <span class="fudis-radio-button__content__control__indicator"></span> -->
+            </div>
           </div>
           <span class="fudis-radio-button__label">Option 3</span>
         </div>
       </label>
       <div id="fudis-guidance-id" class="fudis-guidance">
         <div id="fudis-fieldset-id_guidance">
-          <div id="fudis-guidance-id-errors">
+          <div class="fudis-guidance__errors">
+            <span class="fudis-icon fudis-icon__color__red fudis-icon__size--lg fudis-icon__alert"></span>
             <div class="fudis-guidance__errors__list">
               <p class="fudis-error-message fudis-error-message__form-error">
                 Validator error message
