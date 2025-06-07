@@ -57,6 +57,7 @@ export const Disabled = () => `
     <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox" value="foo" aria-disabled="true" disabled />
     <div class="fudis-checkbox__content">
        <div class="fudis-checkbox__content-wrapper">
+        <!-- When not disabled: remove fudis-checkbox__content__box--disabled class down below -->
         <span class="fudis-checkbox__content__box fudis-checkbox__content__box--disabled">
             <!-- When checked: render the icon below -->
             <!-- <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__size--lg fudis-icon__check"></span> -->
