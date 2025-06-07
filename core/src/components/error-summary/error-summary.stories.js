@@ -1,12 +1,11 @@
 export default {
-  title: "Components/Error Summary (WIP)",
+  title: "Components/Error Summary",
 };
-
-// TODO: Add visual alert indicator to the title when icons are available
 
 export const Default = () => `
   <article class="fudis-notification fudis-notification__danger">
     <p class="fudis-visually-hidden">Attention</p>
+    <span class="fudis-icon fudis-icon__color__gray-dark fudis-icon__lg fudis-icon__alert"></span>
     <div class="fudis-notification__content">
       <h2 class="fudis-error-summary__title">
         The information is incomplete or incorrect. Please correct the following items:
