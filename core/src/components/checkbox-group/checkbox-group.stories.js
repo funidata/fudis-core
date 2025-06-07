@@ -1,8 +1,6 @@
 export default {
-  title: "Components/Checkbox Group (WIP)",
+  title: "Components/Checkbox Group",
 };
-
-// TODO: Add interaction, i.e. possibility to choose chckboxes when icons are available
 
 export const Default = () => `
   <fieldset class="fudis-checkbox-group fudis-fieldset fudis-input-size__lg">
@@ -159,9 +157,6 @@ export const Guidance = () => `
       </label>
       <div id="fudis-guidance-id" class="fudis-guidance">
         <div id="fudis-fieldset-id_guidance">
-          <div id="fudis-guidance-id-errors" class="fudis-guidance__errors">
-            <div class="fudis-guidance__errors__list"></div>
-          </div>
           <p class="fudis-guidance__help-text">Guidance text</p>
         </div>
       </div>
@@ -219,7 +214,8 @@ export const Invalid = () => `
       </label>
       <div id="fudis-guidance-id" class="fudis-guidance">
         <div id="fudis-fieldset-id_guidance">
-          <div id="fudis-guidance-id-errors">
+          <div class="fudis-guidance__errors">
+            <span class="fudis-icon fudis-icon__color__red fudis-icon__size--lg fudis-icon__alert"></span>
             <div class="fudis-guidance__errors__list">
               <p class="fudis-error-message fudis-error-message__form-error">
                 Validator error message

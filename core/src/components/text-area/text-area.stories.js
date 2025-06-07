@@ -12,9 +12,6 @@ export const Small = () => `
   <textarea id="fudis-text-area-id" class="fudis-form-input fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance"></textarea>
   <div id="fudis-guidance-id" class="fudis-guidance">
     <div id="fudis-text-area-id_guidance">
-      <div id="fudis-guidance-id-errors" class="fudis-guidance__errors">
-        <div class="fudis-guidance__errors__list"></div>
-      </div>
       <p class="fudis-guidance__help-text">Guidance text</p>
     </div>
   </div>
@@ -31,9 +28,6 @@ export const Medium = () => `
   <textarea id="fudis-text-area-id" class="fudis-form-input fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance"></textarea>
   <div id="fudis-guidance-id" class="fudis-guidance">
     <div id="fudis-text-area-id_guidance">
-      <div id="fudis-guidance-id-errors" class="fudis-guidance__errors">
-        <div class="fudis-guidance__errors__list"></div>
-      </div>
       <p class="fudis-guidance__help-text">Guidance text</p>
     </div>
   </div>
@@ -50,9 +44,6 @@ export const Large = () => `
   <textarea id="fudis-text-area-id" class="fudis-form-input fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance"></textarea>
   <div id="fudis-guidance-id" class="fudis-guidance">
     <div id="fudis-text-area-id_guidance">
-      <div id="fudis-guidance-id-errors" class="fudis-guidance__errors">
-        <div class="fudis-guidance__errors__list"></div>
-      </div>
       <p class="fudis-guidance__help-text">Guidance text</p>
     </div>
   </div>
@@ -69,9 +60,6 @@ export const Disabled = () => `
   <textarea id="fudis-text-area-id" class="fudis-form-input fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance" aria-disabled="true" disabled></textarea>
   <div id="fudis-guidance-id" class="fudis-guidance">
     <div id="fudis-text-area-id_guidance">
-      <div id="fudis-guidance-id-errors" class="fudis-guidance__errors">
-        <div class="fudis-guidance__errors__list"></div>
-      </div>
       <p class="fudis-guidance__help-text">Guidance text</p>
     </div>
   </div>
@@ -88,7 +76,8 @@ export const Invalid = () => `
   <textarea id="fudis-text-area-id" class="fudis-form-input fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance" aria-invalid="true"></textarea>
   <div id="fudis-guidance-id" class="fudis-guidance">
     <div id="fudis-text-area-id_guidance">
-      <div id="fudis-guidance-id-errors">
+      <div class="fudis-guidance__errors">
+      <span class="fudis-icon fudis-icon__color__red fudis-icon__size--lg fudis-icon__alert"></span>
         <div class="fudis-guidance__errors__list">
           <p class="fudis-error-message fudis-error-message__form-error">Validator error message</p>
         </div>
@@ -108,9 +97,6 @@ export const CharacterLimit = () => `
   <textarea id="fudis-text-area-id" class="fudis-form-input fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance"></textarea>
   <div id="fudis-guidance-id" class="fudis-guidance">
     <div id="fudis-text-area-id_guidance">
-      <div id="fudis-guidance-id-errors" class="fudis-guidance__errors">
-        <div class="fudis-guidance__errors__list"></div>
-      </div>
       <p class="fudis-guidance__help-text">Guidance text</p>
     </div>
     <small class="fudis-guidance__character-limit-indicator fudis-guidance__character-limit-indicator__lg">
@@ -132,9 +118,6 @@ export const Required = () => `
   <textarea id="fudis-text-area-id" class="fudis-form-input fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance"></textarea>
   <div id="fudis-guidance-id" class="fudis-guidance">
     <div id="fudis-text-area-id_guidance">
-      <div id="fudis-guidance-id-errors" class="fudis-guidance__errors">
-        <div class="fudis-guidance__errors__list"></div>
-      </div>
       <p class="fudis-guidance__help-text">Guidance text</p>
     </div>
   </div>
