@@ -82,6 +82,7 @@ export const Invalid = () => `
           <p class="fudis-error-message fudis-error-message__form-error">Validator error message</p>
         </div>
       </div>
+      <p class="fudis-guidance__help-text">Guidance text</p>
     </div>
   </div>
 </div>
