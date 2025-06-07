@@ -175,7 +175,7 @@ export const Icon_Button_Secondary = () => `
 `;
 
 export const Disabled = () => `
-    <!-- Adding aria-disabled="true" to any button variant applies the disabled look -->
+  <!-- Adding aria-disabled="true" to any button variant applies the disabled look -->
   <button aria-disabled="true" class="fudis-button fudis-button__primary fudis-button__size__medium">
     Disabled
   </button>
