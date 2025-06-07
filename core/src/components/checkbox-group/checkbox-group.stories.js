@@ -20,7 +20,7 @@ export const Default = () => `
           <div class="fudis-checkbox__content-wrapper">
             <span class="fudis-checkbox__content__box">
                 <!-- When not checked, hide the icon below -->
-                <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__size--lg fudis-icon__check"></span>
+                <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__lg fudis-icon__check"></span>
             </span>
           </div>
           <span class="fudis-checkbox__content__label">Option 1</span>
@@ -32,7 +32,7 @@ export const Default = () => `
           <div class="fudis-checkbox__content-wrapper">
             <span class="fudis-checkbox__content__box">
                 <!-- When checked, render the icon below -->
-                <!-- <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__size--lg fudis-icon__check"></span> -->
+                <!-- <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__lg fudis-icon__check"></span> -->
             </span>
           </div>
           <span class="fudis-checkbox__content__label">Option 2</span>
@@ -44,7 +44,7 @@ export const Default = () => `
           <div class="fudis-checkbox__content-wrapper">
             <span class="fudis-checkbox__content__box">
                 <!-- When checked, render the icon below -->
-                <!-- <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__size--lg fudis-icon__check"></span> -->
+                <!-- <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__lg fudis-icon__check"></span> -->
             </span>
           </div>
           <span class="fudis-checkbox__content__label">Option 3</span>
@@ -73,7 +73,7 @@ export const Required = () => `
           <div class="fudis-checkbox__content-wrapper">
             <span class="fudis-checkbox__content__box">
                 <!-- When not checked, hide the icon below -->
-                <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__size--lg fudis-icon__check"></span>
+                <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__lg fudis-icon__check"></span>
             </span>
           </div>
           <span class="fudis-checkbox__content__label">Option 1</span>
@@ -85,7 +85,7 @@ export const Required = () => `
           <div class="fudis-checkbox__content-wrapper">
             <span class="fudis-checkbox__content__box">
                 <!-- When checked, render the icon below -->
-                <!-- <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__size--lg fudis-icon__check"></span> -->
+                <!-- <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__lg fudis-icon__check"></span> -->
             </span>
           </div>
           <span class="fudis-checkbox__content__label">Option 2</span>
@@ -97,7 +97,7 @@ export const Required = () => `
           <div class="fudis-checkbox__content-wrapper">
             <span class="fudis-checkbox__content__box">
                 <!-- When checked, render the icon below -->
-                <!-- <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__size--lg fudis-icon__check"></span> -->
+                <!-- <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__lg fudis-icon__check"></span> -->
             </span>
           </div>
           <span class="fudis-checkbox__content__label">Option 3</span>
@@ -125,7 +125,7 @@ export const Guidance = () => `
           <div class="fudis-checkbox__content-wrapper">
             <span class="fudis-checkbox__content__box">
                 <!-- When not checked, hide the icon below -->
-                <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__size--lg fudis-icon__check"></span>
+                <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__lg fudis-icon__check"></span>
             </span>
           </div>
           <span class="fudis-checkbox__content__label">Option 1</span>
@@ -137,7 +137,7 @@ export const Guidance = () => `
           <div class="fudis-checkbox__content-wrapper">
             <span class="fudis-checkbox__content__box">
                 <!-- When checked, render the icon below -->
-                <!-- <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__size--lg fudis-icon__check"></span> -->
+                <!-- <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__lg fudis-icon__check"></span> -->
             </span>
           </div>
           <span class="fudis-checkbox__content__label">Option 2</span>
@@ -149,7 +149,7 @@ export const Guidance = () => `
           <div class="fudis-checkbox__content-wrapper">
             <span class="fudis-checkbox__content__box">
                 <!-- When checked, render the icon below -->
-                <!-- <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__size--lg fudis-icon__check"></span> -->
+                <!-- <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__lg fudis-icon__check"></span> -->
             </span>
           </div>
           <span class="fudis-checkbox__content__label">Option 3</span>
@@ -182,7 +182,7 @@ export const Invalid = () => `
           <div class="fudis-checkbox__content-wrapper">
             <span class="fudis-checkbox__content__box fudis-checkbox__content__box--invalid">
                 <!-- When checked, render the icon below -->
-                <!-- <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__size--lg fudis-icon__check"></span> -->
+                <!-- <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__lg fudis-icon__check"></span> -->
             </span>
           </div>
           <span class="fudis-checkbox__content__label">Option 1</span>
@@ -194,7 +194,7 @@ export const Invalid = () => `
           <div class="fudis-checkbox__content-wrapper">
             <span class="fudis-checkbox__content__box fudis-checkbox__content__box--invalid">
                 <!-- When checked, render the icon below -->
-                <!-- <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__size--lg fudis-icon__check"></span> -->
+                <!-- <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__lg fudis-icon__check"></span> -->
             </span>
           </div>
           <span class="fudis-checkbox__content__label">Option 2</span>
@@ -206,7 +206,7 @@ export const Invalid = () => `
           <div class="fudis-checkbox__content-wrapper">
             <span class="fudis-checkbox__content__box fudis-checkbox__content__box--invalid">
                 <!-- When checked, render the icon below -->
-                <!-- <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__size--lg fudis-icon__check"></span> -->
+                <!-- <span class="fudis-icon fudis-icon__color__gray-middle fudis-icon__lg fudis-icon__check"></span> -->
             </span>
           </div>
           <span class="fudis-checkbox__content__label">Option 3</span>
@@ -215,7 +215,7 @@ export const Invalid = () => `
       <div id="fudis-guidance-id" class="fudis-guidance">
         <div id="fudis-fieldset-id_guidance">
           <div class="fudis-guidance__errors">
-            <span class="fudis-icon fudis-icon__color__red fudis-icon__size--lg fudis-icon__alert"></span>
+            <span class="fudis-icon fudis-icon__color__red fudis-icon__lg fudis-icon__alert"></span>
             <div class="fudis-guidance__errors__list">
               <p class="fudis-error-message fudis-error-message__form-error">
                 Validator error message

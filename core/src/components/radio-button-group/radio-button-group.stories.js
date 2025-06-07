@@ -215,7 +215,7 @@ export const Invalid = () => `
       <div id="fudis-guidance-id" class="fudis-guidance">
         <div id="fudis-fieldset-id_guidance">
           <div class="fudis-guidance__errors">
-            <span class="fudis-icon fudis-icon__color__red fudis-icon__size--lg fudis-icon__alert"></span>
+            <span class="fudis-icon fudis-icon__color__red fudis-icon__lg fudis-icon__alert"></span>
             <div class="fudis-guidance__errors__list">
               <p class="fudis-error-message fudis-error-message__form-error">
                 Validator error message

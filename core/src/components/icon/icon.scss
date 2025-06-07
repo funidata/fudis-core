@@ -59,18 +59,16 @@
     }
   }
 
-  &__size {
-    &--lg {
-      --icon-size: #{spacing.$spacing-lg};
-    }
+  &__lg {
+    --icon-size: #{spacing.$spacing-lg};
+  }
 
-    &--md {
-      --icon-size: #{spacing.$spacing-md};
-    }
+  &__md {
+    --icon-size: #{spacing.$spacing-md};
+  }
 
-    &--sm {
-      --icon-size: #{spacing.$spacing-sm};
-    }
+  &__sm {
+    --icon-size: #{spacing.$spacing-sm};
   }
 
   &__rotate {
