@@ -7,7 +7,7 @@
   justify-content: space-between;
   width: 100%;
 
-  &:not(:has(.fudis-guidance__errors)) {
+  &:not(:has(&__errors)):has(&__help-text) {
     margin-top: spacing.$spacing-xs;
   }
 
