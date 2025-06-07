@@ -11,6 +11,11 @@
     margin-top: spacing.$spacing-xs;
   }
 
+  /* stylelint-disable no-descending-specificity */
+  &:not(:has(&__errors)) &__character-limit-indicator {
+    margin-top: 0;
+  }
+
   &__help-text {
     @include colorMixin.text-color('gray-dark');
     @include typography.body-text-sm-regular;
@@ -59,10 +64,6 @@
     &__float-right {
       margin-left: auto;
     }
-  }
-
-  &:not(:has(&__errors)) &__character-limit-indicator {
-    margin-top: 0;
   }
 }
 

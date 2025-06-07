@@ -4,6 +4,7 @@
 
 /* Only for internal use for this icon class */
 @mixin icon-mask-base() {
+  /* stylelint-disable property-disallowed-list */
   background-color: currentcolor;
   width: var(--icon-size);
   height: var(--icon-size);
