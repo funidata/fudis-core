@@ -63,6 +63,12 @@
     }
   }
 
+  &__label {
+    &--hidden {
+      padding: 0 spacing.$spacing-xs;
+    }
+  }
+
   &__icon {
     position: relative;
     width: spacing.$spacing-lg;
@@ -76,7 +82,7 @@
     }
   }
 
-  &:has(&__icon) {
+  &:has(&__icon):not(&__label--hidden) {
     padding-left: 0;
   }
 }
