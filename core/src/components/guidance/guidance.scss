@@ -59,6 +59,10 @@
     &__float-right {
       margin-left: auto;
     }
+
+    &:not(:has(.fudis-guidance__errors)) {
+      margin-top: 0;
+    }
   }
 }
 
