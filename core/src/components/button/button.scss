@@ -24,6 +24,10 @@
     @include focus.focus-generic;
   }
 
+  &:has(&__icon):not(&__label--hidden) {
+    padding-left: 0;
+  }
+
   &[aria-disabled='true'] {
     @include colorMixin.text-color('gray-dark');
     @include colorMixin.bg-color('gray-light');
@@ -80,9 +84,5 @@
       left: 50%;
       transform: translate(-50%, -50%);
     }
-  }
-
-  &:has(&__icon):not(&__label--hidden) {
-    padding-left: 0;
   }
 }

@@ -59,10 +59,10 @@
     &__float-right {
       margin-left: auto;
     }
+  }
 
-    &:not(:has(.fudis-guidance__errors)) {
-      margin-top: 0;
-    }
+  &:not(:has(&__errors)) &__character-limit-indicator {
+    margin-top: 0;
   }
 }
 
