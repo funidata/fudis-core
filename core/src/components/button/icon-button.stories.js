@@ -9,6 +9,7 @@ export default {
 export const Primary = () => `
   <button class="fudis-button fudis-button__label--hidden fudis-button__primary fudis-button__size__icon-only">
     <div class="fudis-button__icon">
+        <!-- Add an icon variant of your choice and color here. -->
         <span class="fudis-button__icon__component fudis-icon fudis-icon__color__white fudis-icon__lg fudis-icon__search"></span>
     </div>
   </button>
@@ -17,6 +18,7 @@ export const Primary = () => `
 export const Secondary = () => `
   <button class="fudis-button fudis-button__label--hidden fudis-button__secondary fudis-button__size__icon-only">
     <div class="fudis-button__icon">
+        <!-- Add an icon variant of your choice and color here. -->
         <span class="fudis-button__icon__component fudis-icon fudis-icon__color__primary fudis-icon__lg fudis-icon__search"></span>
     </div>
   </button>
@@ -25,6 +27,7 @@ export const Secondary = () => `
 export const Tertiary = () => `
   <button class="fudis-button fudis-button__label--hidden fudis-button__tertiary fudis-button__size__icon-only">
     <div class="fudis-button__icon">
+        <!-- Add an icon variant of your choice and color here. -->
         <span class="fudis-button__icon__component fudis-icon fudis-icon__color__primary fudis-icon__lg fudis-icon__search"></span>
     </div>
   </button>
@@ -34,6 +37,7 @@ export const Disabled = () => `
   <!-- Adding aria-disabled="true" to any button variant applies the disabled look -->
   <button aria-disabled="true" class="fudis-button fudis-button__label--hidden fudis-button__primary fudis-button__size__icon-only">
     <div class="fudis-button__icon">
+        <!-- Add an icon variant of your choice and color here. -->
         <span class="fudis-button__icon__component fudis-icon fudis-icon__color__white fudis-icon__lg fudis-icon__search"></span>
     </div>
   </button>
