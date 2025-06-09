@@ -28,6 +28,10 @@
     padding-left: 0;
   }
 
+  &[aria-disabled='true'] &__icon__component {
+    @include colorMixin.text-color('gray-dark');
+  }
+
   &[aria-disabled='true'] {
     @include colorMixin.text-color('gray-dark');
     @include colorMixin.bg-color('gray-light');

@@ -30,6 +30,7 @@ const preview = {
             "Alert",
             "Badge",
             "Button",
+            "Icon Button",
             "Checkbox",
             "Checkbox Group",
             "Error Summary",
