@@ -1,5 +1,5 @@
 export default {
-  title: "Components/Link",
+  title: "Components/Link (WIP)",
 };
 
 // TODO: Add external link stories after icons are available
