@@ -53,3 +53,7 @@ Fudis table caption
 Generating commitable screenshots should be done by running `npm run test:vr` which will spin up a Docker container and run all Playwright tests. You can use NPM's argument syntax to append filenames (full or partial) to this command to run only matching test files, e.g. `npm run test:vr -- badge` would only run tests with _"badge"_ in the filename.
 
 Playwright will fail any test that does not have a matching screenshot and generate a baseline screenshot for that test at the same time. After this expected failure, you can run the test again to verify that everything works. It is probably a good idea to take a quick look at the generated images, too. When all looks good, the images should be committed into version control along with the test file itself.
+
+### Tests in CI/CD
+
+Visual regression tests are run as a part of the suite in CI/CD. The pipeline will essentially generate new screenshots, compare them against the committed screenshots, and fail for any differences or missing images. Playwright's test report will always be saved as an artifact for each test run. If there are test failures, also the screenshots (baseline, actual, and diff) will be saved. These can be accessed on the job run page in GitHub.
