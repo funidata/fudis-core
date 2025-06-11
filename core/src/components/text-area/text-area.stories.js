@@ -183,3 +183,108 @@ export const Required = () => `
   </div>
 </div>
 `;
+
+export const PwAll = () => `
+<div class="fudis-text-area fudis-input-size__sm">
+  <label class="fudis-label" for="fudis-text-area-id">
+    <span class="fudis-label__content">
+      <span class="fudis-label__content__text">Text area label</span>
+    </span>
+  </label>
+  <textarea id="fudis-text-area-id" class="fudis-form-input fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance"></textarea>
+  <div id="fudis-guidance-id" class="fudis-guidance">
+    <div id="fudis-text-area-id_guidance">
+      <p class="fudis-guidance__help-text">Guidance text</p>
+    </div>
+  </div>
+</div>
+<div class="fudis-text-area fudis-input-size__md">
+  <label class="fudis-label" for="fudis-text-area-id">
+    <span class="fudis-label__content">
+      <span class="fudis-label__content__text">Text area label</span>
+    </span>
+  </label>
+  <textarea id="fudis-text-area-id" class="fudis-form-input fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance"></textarea>
+  <div id="fudis-guidance-id" class="fudis-guidance">
+    <div id="fudis-text-area-id_guidance">
+      <p class="fudis-guidance__help-text">Guidance text</p>
+    </div>
+  </div>
+</div>
+<div class="fudis-text-area fudis-input-size__lg">
+  <label class="fudis-label" for="fudis-text-area-id">
+    <span class="fudis-label__content">
+      <span class="fudis-label__content__text">Text area label</span>
+    </span>
+  </label>
+  <textarea id="fudis-text-area-id" class="fudis-form-input fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance"></textarea>
+  <div id="fudis-guidance-id" class="fudis-guidance">
+    <div id="fudis-text-area-id_guidance">
+      <p class="fudis-guidance__help-text">Guidance text</p>
+    </div>
+  </div>
+</div>
+<div class="fudis-text-area fudis-input-size__lg">
+  <label class="fudis-label" for="fudis-text-area-id">
+    <span class="fudis-label__content">
+      <span class="fudis-label__content__text">Text area label</span>
+    </span>
+  </label>
+  <textarea id="fudis-text-area-id" class="fudis-form-input fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance" aria-disabled="true" disabled></textarea>
+  <div id="fudis-guidance-id" class="fudis-guidance">
+    <div id="fudis-text-area-id_guidance">
+      <p class="fudis-guidance__help-text">Guidance text</p>
+    </div>
+  </div>
+</div>
+<div class="fudis-text-area fudis-input-size__lg">
+  <label class="fudis-label" for="fudis-text-area-id">
+    <span class="fudis-label__content">
+      <span class="fudis-label__content__text">Text area label</span>
+    </span>
+  </label>
+  <textarea id="fudis-text-area-id" class="fudis-form-input fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance" aria-invalid="true"></textarea>
+  <div id="fudis-guidance-id" class="fudis-guidance">
+    <div id="fudis-text-area-id_guidance">
+      <div class="fudis-guidance__errors">
+      <span class="fudis-icon fudis-icon__color__red fudis-icon__lg fudis-icon__alert"></span>
+        <div class="fudis-guidance__errors__list">
+          <p class="fudis-error-message fudis-error-message__form-error">Validator error message</p>
+        </div>
+      </div>
+      <p class="fudis-guidance__help-text">Guidance text</p>
+    </div>
+  </div>
+</div>
+<div class="fudis-text-area fudis-input-size__lg">
+  <label class="fudis-label" for="fudis-text-area-id">
+    <span class="fudis-label__content">
+      <span class="fudis-label__content__text">Text area label</span>
+    </span>
+  </label>
+  <textarea id="fudis-text-area-id" class="fudis-form-input fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance"></textarea>
+  <div id="fudis-guidance-id" class="fudis-guidance">
+    <div id="fudis-text-area-id_guidance">
+      <p class="fudis-guidance__help-text">Guidance text</p>
+    </div>
+    <small class="fudis-guidance__character-limit-indicator fudis-guidance__character-limit-indicator__lg">
+      0/100
+      <span class="fudis-visually-hidden">characters used</span>
+    </small>
+  </div>
+</div>
+<div class="fudis-text-area fudis-input-size__lg">
+  <label class="fudis-label" for="fudis-text-area-id">
+    <span class="fudis-label__content">
+      <span class="fudis-label__content__text">Text area label</span>
+      <span class="fudis-label__content__required">(Required)</span>
+    </span>
+  </label>
+  <textarea id="fudis-text-area-id" class="fudis-form-input fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance"></textarea>
+  <div id="fudis-guidance-id" class="fudis-guidance">
+    <div id="fudis-text-area-id_guidance">
+      <p class="fudis-guidance__help-text">Guidance text</p>
+    </div>
+  </div>
+</div>
+`
