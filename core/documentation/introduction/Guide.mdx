@@ -1,0 +1,119 @@
+import { Meta, Unstyled } from "@storybook/blocks";
+import { Source } from "@storybook/addon-docs/blocks";
+
+<Meta title="Documentation/Introduction/How to start using Fudis Core" />
+
+# 1. How to Start Using Fudis Core in Your Application
+
+**Table of Contents**
+
+1. [Install Fudis Core](#1-install-fudis-core)
+2. [Import Core Styles](#2-import-core-styles)
+3. [Define Application's Root Styles](#3-define-applications-root-styles)
+4. [Download fonts](#4-download-fonts)
+
+## 1. Install Fudis Core
+
+Fudis Core is available as an [NPM package](https://www.npmjs.com/package/@funidata/fudis-core).
+
+Install it to your project using npm:
+
+<Source code={`npm i @funidata/fudis-core`} />
+
+## 2. Import Core Styles
+
+The core styles must be imported to your application's styles for them to work properly.
+
+The recommended way is to add the following lines to your project's root SCSS style file, which is often named styles.scss or index.scss or similar:
+
+<Source code={`@use '@funidata/fudis-core' as core;`} />
+
+## 3. Define Application's Root Styles
+
+Fudis Core uses CSS variables to define "theming" of your application. Setting following variables define your Application's primary colors and rem base value, which Fudis Core then refers to in component styling.
+
+### Set Primary Colors
+
+<Source
+  code={`
+:root {
+	--fudis-color-primary-light: #hex;
+	--fudis-color-primary: #hex;
+	--fudis-color-primary-dark: #hex;
+	--fudis-color-primary-extra-dark: #hex;
+}`}
+/>
+
+You can read more about colors from the [Colors documentation](/docs/foundations-colors--docs).
+
+### Set Rem Base Value
+
+By default, Fudis Core rem values follow 8px base values. When having default browser CSS font-size of 100%, 1 rem equals 2 \* 8px = 16px. To apply this to your application, add to the root CSS style file:
+
+<Source
+  code={`
+:root {
+  --fudis-rem-multiplier: 1;
+}`}
+/>
+
+If application uses other rem base value by setting font-size to e. g. 62.5% . Adjust --fudis-rem-multiplier accordingly.
+
+<Source code={`
+html {
+ 	font-size: 62.5%; // this sets 1rem to equal 10px
+}
+
+:root {
+--fudis-rem-multiplier: 0.625;
+}`} />
+
+## 4. Download fonts
+
+Fudis is using **Fira Sans** font with weights **300, 400, 500 and 600**. The application is responsible for loading the required fonts. You can download the fonts from here or acquire them elsewhere.
+
+<Unstyled>
+  <a
+    href="./downloads/fonts.zip"
+    download
+    style={{
+      color: "var(--fudis-color-primary)",
+      fontFamily: "Nunito Sans",
+    }}
+  >
+    Download All Fonts (ZIP)
+  </a>
+</Unstyled>
+
+When you have aquired the fonts, declare the fonts in a separate stylesheet or in your root stylesheet:
+
+<Source code={`
+@font-face {
+font-family: 'Fira Sans';
+src: url('path-to-font-file');
+font-weight: 300;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'Fira Sans';
+src: url('path-to-font-file');
+font-weight: 400;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'Fira Sans';
+src: url('path-to-font-file');
+font-weight: 500;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'Fira Sans';
+src: url('path-to-font-file');
+font-weight: 600;
+font-style: normal;
+}`} />
+
+You can read more about typography from the [Typography documentation](/docs/foundations-typography--docs).

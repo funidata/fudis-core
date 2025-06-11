@@ -1,0 +1,59 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Documentation/Development/Practises/Testing" />
+
+# Testing
+
+## Visual Regression Tests
+
+Visual regression tests are employed to detect unwanted changes on pixel-level. These are implemented with Playwright's screenshot comparison feature and are run against multiple browsers and viewport sizes.
+
+See [Getting Started - Development](/docs/documentation-development-getting-started--docs#development) for a quick reference of VR testing commands.
+
+### Developing VR Tests
+
+Firstly, it should be noted that generating the screenshots that are committed into version control MUST BE generated with the Docker image provided in `tests/Dockerfile`. Failing to do so will result in machine-specific differences in the screenshots when the tests are run in CI/CD and in consequent false positive test failures.
+
+However, the Playwright UI (run directly on host machine) should be leveraged when writing VR tests. It offers better error messages, stack traces, and overall UX. You can launch the UI with `npm run test:ui`. As our team generally uses Apple hardware, PNG files ending in _"-darwin"_ have been ignored in Git as to not be accidentally committed. When using the UI on macOS, such screenshots will be generated but they are safe to ignore. The screenshots that are generated inside the container end with _"-linux"_.
+
+The actual test code looks something like this:
+
+```typescript
+import { expect, test } from "@playwright/test";
+
+test("visual regression for Miscellaneous", async ({ page }) => {
+  await page.goto(
+    "/iframe.html?globals=&id=components-typography-miscellaneous--pw-all&viewMode=story",
+  );
+  await expect(page).toHaveScreenshot("miscellaneous.png", { fullPage: true });
+});
+```
+
+It is possible to call `PageAssertions.toHaveScreenshot` multiple times in a single test. Without arguments, this will result in sequentially numbered screenshot filenames. You can also give this method a string ending in _".png"_ as an argument if you wish to name the generated files explicitly.
+
+There are explicit Storybook stories written only for visual regression tests. These are hidden from the UI, but still accessible by url. These stories have to include the word pw at the beginning of the name, e. g:
+
+```typescript
+export const PwAll = () => `
+<p class="fudis-text-emptystate">
+Fudis empty state text
+</p>
+<p class="fudis-table-caption">
+Fudis table caption
+</p>
+`;
+```
+
+#### Resources
+
+- [Playwright documentation](https://playwright.dev/docs)
+
+### Generating Commitable Screenshots
+
+Generating commitable screenshots should be done by running `npm run test:vr` which will spin up a Docker container and run all Playwright tests. You can use NPM's argument syntax to append filenames (full or partial) to this command to run only matching test files, e.g. `npm run test:vr -- badge` would only run tests with _"badge"_ in the filename.
+
+Playwright will fail any test that does not have a matching screenshot and generate a baseline screenshot for that test at the same time. After this expected failure, you can run the test again to verify that everything works. It is probably a good idea to take a quick look at the generated images, too. When all looks good, the images should be committed into version control along with the test file itself.
+
+### Tests in CI/CD
+
+Visual regression tests are run as a part of the suite in CI/CD. The pipeline will essentially generate new screenshots, compare them against the committed screenshots, and fail for any differences or missing images. Playwright's test report will always be saved as an artifact for each test run. If there are test failures, also the screenshots (baseline, actual, and diff) will be saved. These can be accessed on the job run page in GitHub.

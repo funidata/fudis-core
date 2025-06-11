@@ -117,7 +117,7 @@ export const Disabled = () => `
   </button>
 `;
 
-export const Test = () => `
+export const PwAll = () => `
   <button class="fudis-button fudis-button__primary fudis-button__size__medium">
     Primary
   </button>

@@ -1,0 +1,137 @@
+import { Meta } from "@storybook/blocks";
+import { Source } from "@storybook/addon-docs/blocks";
+
+<Meta title="Documentation/Development/Getting Started" />
+
+# Getting Started
+
+Setting up your local development environment according to these instructions is highly recommended for a smooth and uniform development experience accross the team (and 3rd parties, too).
+
+**Table of Contents**
+
+1. [Requirements](#requirements)
+2. [Set Up Local Repository](#set-up-local-repository)
+3. [Install Dependencies](#install-dependencies)
+4. [Development](#development)
+5. [Format and lint](#format-and-lint)
+6. [Additional command reference](#additional-command-reference)
+
+## Requirements
+
+- MacOS or Linux
+- Git
+- Docker
+  - Any fairly recent version should work. Originally developed with Docker Engine v28.
+- Node.js
+  - For just running Storybook locally, any version will do as the containers will internally use correct versions anyway. If you plan to do anything else, using the version specified in .nvmrc is highly recommended (v20.17.0 at the time of writing this doc).
+  - In general, using NVM and setting your terminal to automatically switch Node.js versions based on .nvmrc files is highly recommended.
+- NPM
+  - Any fairly recent version should work. Originally developed with v11.
+
+## Set Up Local Repository
+
+Clone the upstream repository to your machine:
+
+<Source code={`git@github.com:funidata/fudis-core.git`} />
+
+If you do not have write access and are not working for Funidata, you need to first fork our repository to your own account and use that for development.
+
+## Install Dependencies
+
+To install project dependencies, in the **root** directory run:
+
+<Source code={`npm ci`} />
+
+## Development
+
+The development is done in the Storybook environment. Fudis Core uses the html/vite-version. You can read more about storybook from the [official Storybook site](https://storybook.js.org/).
+
+Testing is done by Playwright, and it is used mainly for snapshot-testing.
+
+### With containers
+
+Make sure Docker daemon is running, then in the **root** directory run:
+
+<Source code={`npm run start:storybook`} />
+
+The First startup takes a while as Docker fetches and builds the necessary image. Once complete, Storybook is accessible at [http://localhost:6007](http://localhost:6007).
+
+#### Testing
+
+To run all tests, run the next command in the **root** directory:
+
+<Source code={`npm run test`} />
+
+If you want to run a single test, add the spec file prefix in the run command. For example:
+
+<Source code={`npm run test -- button`} />
+
+If you want to update snapshots, run:
+
+<Source code={`npm run test -- -u`} />
+
+### Without Containers
+
+To start storybook, navigate to **core** directory and run:
+
+<Source code={`npm run start`} />
+
+#### Testing
+
+To run tests, navigate to **tests** directory.
+
+**Important!** When running tests locally without a container, the snapshots might differ from the base images, if your operating system is not Linux-based. For example, if you have a mac, the playwright tests fail first, because there are no darwin images generated. However, on the second run the tests should run smoothly. Only Linux-based images are kept in the remote code repository, as the tests are run in Ubuntu container in the pipeline.
+
+To run all tests, use the command:
+
+<Source code={`npm run test`} />
+
+If you want to run a single test, add the spec file prefix in the run command. For example:
+
+<Source code={`npm run test -- button`} />
+
+To run tests by using the Playwright UI, use the command:
+
+<Source code={`npm run test:ui`} />
+
+## Format and Lint
+
+### Format
+
+To format code, in the **root** directory run:
+
+<Source code={`npm run format`} />
+
+To check formatting, run:
+
+<Source code={`npm run format:check`} />
+
+### Lint
+
+To lint styles, in the **root** directory run:
+
+<Source code={`npm run stylelint`} />
+
+## Additional command reference
+
+Here are some other commands that are useful in development.
+
+#### Build storybook
+
+To build the deployable version of Storybook, in the **core** directory run:
+
+<Source code={`npm run build:storybook`} />
+
+This creates a **storybook-static** folder under the **core** directory.
+
+#### Build Fudis Core
+
+To build the distributable package, in the **core** folder run:
+
+<Source code={`npm run build:dist`} />
+
+This creates a **dist** folder under the **core** directory.
+
+If you want to develop Core so, that the dist folder is updated every time you make changes (for example when using `npm link`), you can run the command:
+
+<Source code={`npm run build:dist:watch`} />
