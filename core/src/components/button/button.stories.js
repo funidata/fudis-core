@@ -121,22 +121,64 @@ export const PwAll = () => `
   <button class="fudis-button fudis-button__primary fudis-button__size__medium">
     Primary
   </button>
-   <button class="fudis-button fudis-button__secondary fudis-button__size__medium">
+  <button class="fudis-button fudis-button__primary fudis-button__size__medium">
+    <div class="fudis-button__icon">
+        <span class="fudis-button__icon__component fudis-icon fudis-icon__color__white fudis-icon__lg fudis-icon__search"></span>
+    </div>
+    Primary
+  </button>
+  <button class="fudis-button fudis-button__secondary fudis-button__size__medium">
+    Secondary
+  </button>
+  <button class="fudis-button fudis-button__secondary fudis-button__size__medium">
+     <div class="fudis-button__icon">
+        <span class="fudis-button__icon__component fudis-icon fudis-icon__color__primary fudis-icon__lg fudis-icon__search"></span>
+     </div>
     Secondary
   </button>
   <button class="fudis-button fudis-button__tertiary fudis-button__size__medium">
     Tertiary
   </button>
+  <button class="fudis-button fudis-button__tertiary fudis-button__size__medium">
+    <div class="fudis-button__icon">
+      <span class="fudis-button__icon__component fudis-icon fudis-icon__color__primary fudis-icon__lg fudis-icon__search"></span>
+    </div>
+    Tertiary
+  </button>
   <button class="fudis-button fudis-button__primary fudis-button__size__small">
+    Primary Small
+  </button>
+  <button class="fudis-button fudis-button__primary fudis-button__size__small">
+    <div class="fudis-button__icon">
+      <span class="fudis-button__icon__component fudis-icon fudis-icon__color__white fudis-icon__lg fudis-icon__search"></span>
+    </div>
     Primary Small
   </button>
   <button class="fudis-button fudis-button__secondary fudis-button__size__small">
     Secondary Small
   </button>
+  <button class="fudis-button fudis-button__secondary fudis-button__size__small">
+    <div class="fudis-button__icon">
+      <span class="fudis-button__icon__component fudis-icon fudis-icon__color__primary fudis-icon__lg fudis-icon__search"></span>
+    </div>
+    Secondary Small
+  </button>
   <button class="fudis-button fudis-button__tertiary fudis-button__size__small">
     Tertiary Small
   </button>
+  <button class="fudis-button fudis-button__tertiary fudis-button__size__small">
+    <div class="fudis-button__icon">
+      <span class="fudis-button__icon__component fudis-icon fudis-icon__color__primary fudis-icon__lg fudis-icon__search"></span>
+    </div>
+    Tertiary Small
+  </button>
   <button aria-disabled="true" class="fudis-button fudis-button__primary fudis-button__size__medium">
-    Disabled
+    Primary
+  </button>
+  <button aria-disabled="true" class="fudis-button fudis-button__primary fudis-button__size__medium">
+    <div class="fudis-button__icon">
+        <span class="fudis-button__icon__component fudis-icon fudis-icon__color__white fudis-icon__lg fudis-icon__search"></span>
+    </div>
+    Primary
   </button>
 `;
