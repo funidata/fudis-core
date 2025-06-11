@@ -246,3 +246,133 @@ export const NumberInput = () => `
   </div>
 </div>
 `;
+
+export const PwAll = () => `
+<div class="fudis-text-input fudis-input-size__xs">
+  <label class="fudis-label" for="fudis-text-input-id">
+    <span class="fudis-label__content">
+      <span class="fudis-label__content__text">Label</span>
+    </span>
+  </label>
+  <input id="fudis-text-input-id" class="fudis-form-input fudis-text-input__input" type="text" aria-describedby="fudis-text-input-id_guidance"></input>
+  <div id="fudis-guidance-id" class="fudis-guidance">
+    <div id="fudis-text-input-id_guidance">
+      <p class="fudis-guidance__help-text">Guidance text</p>
+    </div>
+  </div>
+</div>
+<div class="fudis-text-input fudis-input-size__sm">
+  <label class="fudis-label" for="fudis-text-input-id">
+    <span class="fudis-label__content">
+      <span class="fudis-label__content__text">Text input label</span>
+    </span>
+  </label>
+  <input id="fudis-text-input-id" class="fudis-form-input fudis-text-input__input" type="text" aria-describedby="fudis-text-input-id_guidance"></input>
+  <div id="fudis-guidance-id" class="fudis-guidance">
+    <div id="fudis-text-input-id_guidance">
+      <p class="fudis-guidance__help-text">Guidance text</p>
+    </div>
+  </div>
+</div>
+<div class="fudis-text-input fudis-input-size__md">
+  <label class="fudis-label" for="fudis-text-input-id">
+    <span class="fudis-label__content">
+      <span class="fudis-label__content__text">Text input label</span>
+    </span>
+  </label>
+  <input id="fudis-text-input-id" class="fudis-form-input fudis-text-input__input" type="text" aria-describedby="fudis-text-input-id_guidance"></input>
+  <div id="fudis-guidance-id" class="fudis-guidance">
+    <div id="fudis-text-input-id_guidance">
+      <p class="fudis-guidance__help-text">Guidance text</p>
+    </div>
+  </div>
+</div>
+<div class="fudis-text-input fudis-input-size__lg">
+  <label class="fudis-label" for="fudis-text-input-id">
+    <span class="fudis-label__content">
+      <span class="fudis-label__content__text">Text input label</span>
+    </span>
+  </label>
+  <input id="fudis-text-input-id" class="fudis-form-input fudis-text-input__input" type="text" aria-describedby="fudis-text-input-id_guidance"></input>
+  <div id="fudis-guidance-id" class="fudis-guidance">
+    <div id="fudis-text-input-id_guidance">
+      <p class="fudis-guidance__help-text">Guidance text</p>
+    </div>
+  </div>
+</div>
+<div class="fudis-text-input fudis-input-size__md">
+  <label class="fudis-label" for="fudis-text-input-id">
+    <span class="fudis-label__content">
+      <span class="fudis-label__content__text">Text input label</span>
+    </span>
+  </label>
+  <input id="fudis-text-input-id" class="fudis-form-input fudis-text-input__input" type="text" aria-describedby="fudis-text-input-id_guidance" aria-disabled="true" disabled></input>
+  <div id="fudis-guidance-id" class="fudis-guidance">
+    <div id="fudis-text-input-id_guidance">
+      <p class="fudis-guidance__help-text">Guidance text</p>
+    </div>
+  </div>
+</div>
+<div class="fudis-text-input fudis-input-size__md">
+  <label class="fudis-label" for="fudis-text-input-id">
+    <span class="fudis-label__content">
+      <span class="fudis-label__content__text">Text input label</span>
+    </span>
+  </label>
+  <input id="fudis-text-input-id" class="fudis-form-input fudis-text-input__input" type="text" aria-describedby="fudis-text-input-id_guidance" aria-invalid="true"></input>
+  <div class="fudis-guidance">
+    <div id="fudis-text-input-id_guidance">
+      <div class="fudis-guidance__errors">
+        <span class="fudis-icon fudis-icon__color__red fudis-icon__lg fudis-icon__alert"></span>
+        <div class="fudis-guidance__errors__list">
+          <p class="fudis-error-message fudis-error-message__form-error">Validator error message</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="fudis-text-input fudis-input-size__md">
+  <label class="fudis-label" for="fudis-text-input-id">
+    <span class="fudis-label__content">
+      <span class="fudis-label__content__text">Text input label</span>
+    </span>
+  </label>
+  <input id="fudis-text-input-id" class="fudis-form-input fudis-text-input__input" type="text" aria-describedby="fudis-text-input-id_guidance"></input>
+  <div id="fudis-guidance-id" class="fudis-guidance">
+    <div id="fudis-text-input-id_guidance">
+      <p class="fudis-guidance__help-text">Guidance text</p>
+    </div>
+    <small class="fudis-guidance__character-limit-indicator fudis-guidance__character-limit-indicator__md">
+      0/20
+      <span class="fudis-visually-hidden">characters used</span>
+    </small>
+  </div>
+</div>
+<div class="fudis-text-input fudis-input-size__md">
+  <label class="fudis-label" for="fudis-text-input-id">
+    <span class="fudis-label__content">
+      <span class="fudis-label__content__text">Text input label</span>
+      <span class="fudis-label__content__required">(Required)</span>
+    </span>
+  </label>
+  <input id="fudis-text-input-id" class="fudis-form-input fudis-text-input__input" type="text" aria-describedby="fudis-text-input-id_guidance"></input>
+  <div id="fudis-guidance-id" class="fudis-guidance">
+    <div id="fudis-text-input-id_guidance">
+      <p class="fudis-guidance__help-text">Guidance text</p>
+    </div>
+  </div>
+</div>
+<div class="fudis-text-input fudis-input-size__sm">
+  <label class="fudis-label" for="fudis-text-input-id">
+    <span class="fudis-label__content">
+      <span class="fudis-label__content__text">Number input label</span>
+    </span>
+  </label>
+  <input id="fudis-text-input-id" class="fudis-form-input fudis-text-input__input" type="number" aria-describedby="fudis-text-input-id_guidance"></input>
+  <div id="fudis-guidance-id" class="fudis-guidance">
+    <div id="fudis-text-input-id_guidance">
+      <p class="fudis-guidance__help-text">Guidance text</p>
+    </div>
+  </div>
+</div>
+`
