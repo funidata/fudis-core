@@ -6,6 +6,19 @@ export default {
   ],
 };
 
+export const IconColors = () => `
+  <!-- Available colors for all icons -->
+  <!-- Element with white icon has dark background color for demonstrative purposes -->
+  <span class="fudis-icon fudis-icon__lg fudis-icon__color__red fudis-icon__check"></span>
+  <span class="fudis-icon fudis-icon__lg fudis-icon__color__yellow fudis-icon__check"></span>
+  <span class="fudis-icon fudis-icon__lg fudis-icon__color__green fudis-icon__check"></span>
+  <span class="fudis-icon fudis-icon__lg fudis-icon__color__primary fudis-icon__check"></span>
+  <span class="fudis-icon fudis-icon__lg fudis-icon__color__primary-dark fudis-icon__check"></span>
+  <span class="fudis-icon fudis-icon__lg fudis-icon__color__white fudis-icon__check" style="background-color: #3b3b3b"></span>
+  <span class="fudis-icon fudis-icon__lg fudis-icon__color__gray-light fudis-icon__check"></span>
+  <span class="fudis-icon fudis-icon__lg fudis-icon__color__gray-dark fudis-icon__check"></span>
+`;
+
 export const AllIcons = () => `
   <span class="fudis-icon fudis-icon__sm fudis-icon__color__primary fudis-icon__achievement"></span>
   <span class="fudis-icon fudis-icon__md fudis-icon__color__primary fudis-icon__achievement"></span>
