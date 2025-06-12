@@ -31,3 +31,21 @@ export const Success = () => `
     Success
   </span>
 `;
+
+export const PwAll = () => `
+  <span class="fudis-badge fudis-badge__accent">
+    Accent
+  </span>
+  <span class="fudis-badge fudis-badge__danger">
+    Danger
+  </span>
+  <span class="fudis-badge fudis-badge__primary">
+    Primary
+  </span>
+  <span class="fudis-badge fudis-badge__secondary">
+    Secondary
+  </span>
+  <span class="fudis-badge fudis-badge__success">
+    Success
+  </span>
+`;
