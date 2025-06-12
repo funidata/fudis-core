@@ -97,4 +97,4 @@ export const PwAll = () => `
       </p>
     </div>
   </div>
-`
+`;

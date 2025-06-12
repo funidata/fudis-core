@@ -68,4 +68,4 @@ export const PwAll = () => `
       Tab content
     </p>
   </div>
-`
+`;

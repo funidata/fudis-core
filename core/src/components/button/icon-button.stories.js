@@ -170,4 +170,4 @@ export const PwAll = () => `
         <span class="fudis-button__icon__component fudis-icon fudis-icon__color__white fudis-icon__lg fudis-icon__search"></span>
     </div>
   </button>
-`
+`;

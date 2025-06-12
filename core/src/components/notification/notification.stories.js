@@ -71,4 +71,4 @@ export const PwAll = () => `
       <p class="fudis-body-text fudis-body-text__md-regular">Warning</p>
     </div>
   </article>
-`
+`;

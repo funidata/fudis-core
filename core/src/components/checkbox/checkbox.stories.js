@@ -133,4 +133,4 @@ export const PwAll = () => `
        <span class="fudis-checkbox__content__label">Option</span>
     </div>
   </label>
-`
+`;

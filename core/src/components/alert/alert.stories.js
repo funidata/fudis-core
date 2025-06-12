@@ -63,4 +63,4 @@ export const PwAll = () => `
         <span class="fudis-icon fudis-icon__color__gray-dark fudis-icon__lg fudis-icon__close"></span>
     </button>
   </div>
-`
+`;

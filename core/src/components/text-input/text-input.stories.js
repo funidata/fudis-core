@@ -375,4 +375,4 @@ export const PwAll = () => `
     </div>
   </div>
 </div>
-`
+`;
