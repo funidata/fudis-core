@@ -8,6 +8,7 @@
 # List projects to update here by their folder name.
 projects=(
   "core"
+  "tests"
 )
 
 new_version=$1
