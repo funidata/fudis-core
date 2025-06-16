@@ -87,7 +87,7 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Parse library version number
-        run: echo "VERSION=$(npm pkg get version | tr -d '\"')" >> "$GITHUB_ENV"
+        run: echo "VERSION=$(npm pkg get version | jq -r '.[]')" >> "$GITHUB_ENV"
       - name: Install dependencies
         run: npm ci
       - name: Build docs
