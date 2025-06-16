@@ -1,6 +1,6 @@
 {
   "name": "tests",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": "true",
   "scripts": {
     "test": "npx playwright test",
