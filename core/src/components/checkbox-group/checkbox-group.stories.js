@@ -6,11 +6,8 @@ export const Default = () => `
   <fieldset class="fudis-checkbox-group fudis-fieldset fudis-input-size__lg">
     <legend class="fudis-fieldset__legend">
       <div class="fudis-fieldset__legend__main fudis-fieldset__legend__sm">
-        <div class="fudis-fieldset__legend__main__text-content">
-          <span class="fudis-fieldset__legend__main__text">
-            Legend
-          </span>
-        </div>
+        <div class="fudis-fieldset__legend__main__text-content"><span class="fudis-fieldset__legend__main__text">Legend</span>
+      </div>
       </div>
     </legend>
     <div class="fudis-fieldset-content">
@@ -75,10 +72,7 @@ export const Required = () => `
     <legend class="fudis-fieldset__legend">
       <div class="fudis-fieldset__legend__main fudis-fieldset__legend__sm">
         <div class="fudis-fieldset__legend__main__text-content">
-          <span class="fudis-fieldset__legend__main__text">
-            Legend
-          </span>
-          <span class="fudis-fieldset__legend__main__required">(Required)</span>
+          <span class="fudis-fieldset__legend__main__text">Legend<span class="fudis-fieldset__legend__main__space"></span><span class="fudis-fieldset__legend__main__required">(Required)</span></span>
         </div>
       </div>
     </legend>
@@ -144,9 +138,7 @@ export const Guidance = () => `
     <legend class="fudis-fieldset__legend">
       <div class="fudis-fieldset__legend__main fudis-fieldset__legend__sm">
         <div class="fudis-fieldset__legend__main__text-content">
-          <span class="fudis-fieldset__legend__main__text">
-            Legend
-          </span>
+            <span class="fudis-fieldset__legend__main__text">Legend</span>
         </div>
       </div>
     </legend>
@@ -212,9 +204,7 @@ export const Invalid = () => `
     <legend class="fudis-fieldset__legend">
       <div class="fudis-fieldset__legend__main fudis-fieldset__legend__sm">
         <div class="fudis-fieldset__legend__main__text-content">
-          <span class="fudis-fieldset__legend__main__text">
-            Legend
-          </span>
+            <span class="fudis-fieldset__legend__main__text">Legend</span>
         </div>
       </div>
     </legend>
@@ -279,9 +269,7 @@ export const PwAll = () => `
     <legend class="fudis-fieldset__legend">
       <div class="fudis-fieldset__legend__main fudis-fieldset__legend__sm">
         <div class="fudis-fieldset__legend__main__text-content">
-          <span class="fudis-fieldset__legend__main__text">
-            Legend
-          </span>
+            <span class="fudis-fieldset__legend__main__text">Legend</span>
         </div>
       </div>
     </legend>
@@ -322,10 +310,7 @@ export const PwAll = () => `
     <legend class="fudis-fieldset__legend">
       <div class="fudis-fieldset__legend__main fudis-fieldset__legend__sm">
         <div class="fudis-fieldset__legend__main__text-content">
-          <span class="fudis-fieldset__legend__main__text">
-            Legend
-          </span>
-          <span class="fudis-fieldset__legend__main__required">(Required)</span>
+            <span class="fudis-fieldset__legend__main__text">Legend<span class="fudis-fieldset__legend__main__space"></span><span class="fudis-fieldset__legend__main__required">(Required)</span></span>
         </div>
       </div>
     </legend>
@@ -366,9 +351,7 @@ export const PwAll = () => `
     <legend class="fudis-fieldset__legend">
       <div class="fudis-fieldset__legend__main fudis-fieldset__legend__sm">
         <div class="fudis-fieldset__legend__main__text-content">
-          <span class="fudis-fieldset__legend__main__text">
-            Legend
-          </span>
+            <span class="fudis-fieldset__legend__main__text">Legend</span>
         </div>
       </div>
     </legend>
@@ -414,9 +397,7 @@ export const PwAll = () => `
     <legend class="fudis-fieldset__legend">
       <div class="fudis-fieldset__legend__main fudis-fieldset__legend__sm">
         <div class="fudis-fieldset__legend__main__text-content">
-          <span class="fudis-fieldset__legend__main__text">
-            Legend
-          </span>
+            <span class="fudis-fieldset__legend__main__text">Legend</span>
         </div>
       </div>
     </legend>
