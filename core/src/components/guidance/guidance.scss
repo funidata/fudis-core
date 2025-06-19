@@ -7,15 +7,6 @@
   justify-content: space-between;
   width: 100%;
 
-  &:not(:has(&__errors)):has(&__help-text) {
-    margin-top: spacing.$spacing-xs;
-  }
-
-  /* stylelint-disable no-descending-specificity */
-  &:not(:has(&__errors)) &__character-limit-indicator {
-    margin-top: 0;
-  }
-
   &__help-text {
     @include colorMixin.text-color('gray-dark');
     @include typography.body-text-sm-regular;
