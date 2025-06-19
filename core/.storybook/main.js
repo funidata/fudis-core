@@ -24,7 +24,7 @@ export const addons = [
   },
   "@storybook/addon-storysource",
   "@storybook/addon-a11y",
-  "@whitespace/storybook-addon-html"
+  "@whitespace/storybook-addon-html",
 ];
 
 export const framework = {
