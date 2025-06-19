@@ -22,7 +22,6 @@ export const addons = [
       actions: false,
     },
   },
-  "@storybook/addon-storysource",
   "@storybook/addon-a11y",
   "@whitespace/storybook-addon-html",
 ];
