@@ -12,18 +12,10 @@ export const ExtraSmall = () => `
   </label>
   <input id="fudis-text-input-id" class="fudis-form-input fudis-text-input__input" type="text" aria-describedby="fudis-text-input-id_guidance"></input>
   <div id="fudis-guidance-id" class="fudis-guidance">
-    <div id="fudis-text-input-id_guidance">
-      <!-- When invalid: add fudis-guidance__errors block or a single fudis-error-message block from below -->
-      <!-- <div class="fudis-guidance__errors">
-              <span class="fudis-icon fudis-icon__color__red fudis-icon__lg fudis-icon__alert"></span>
-              <div class="fudis-guidance__errors__list">
-                  <p class="fudis-error-message fudis-error-message__form-error">
-                      Validator error message
-                  </p>
-              </div>
-           </div>
-      -->
-      <!-- When no need for guidance, remove the fudis-guidance__help-text block -->
+    <div>
+      <div class="fudis-guidance__errors">
+        <div class="fudis-guidance__errors__list"></div>
+      </div>
       <p class="fudis-guidance__help-text">Guidance text</p>
     </div>
   </div>
@@ -41,17 +33,9 @@ export const Small = () => `
   <input id="fudis-text-input-id" class="fudis-form-input fudis-text-input__input" type="text" aria-describedby="fudis-text-input-id_guidance"></input>
   <div id="fudis-guidance-id" class="fudis-guidance">
     <div id="fudis-text-input-id_guidance">
-      <!-- When invalid: add fudis-guidance__errors block or a single fudis-error-message block from below -->
-      <!-- <div class="fudis-guidance__errors">
-              <span class="fudis-icon fudis-icon__color__red fudis-icon__lg fudis-icon__alert"></span>
-              <div class="fudis-guidance__errors__list">
-                  <p class="fudis-error-message fudis-error-message__form-error">
-                      Validator error message
-                  </p>
-              </div>
-           </div>
-      -->
-      <!-- When no need for guidance, remove the fudis-guidance__help-text block -->
+      <div class="fudis-guidance__errors">
+        <div class="fudis-guidance__errors__list"></div>
+      </div>
       <p class="fudis-guidance__help-text">Guidance text</p>
     </div>
   </div>
@@ -69,17 +53,9 @@ export const Medium = () => `
   <input id="fudis-text-input-id" class="fudis-form-input fudis-text-input__input" type="text" aria-describedby="fudis-text-input-id_guidance"></input>
   <div id="fudis-guidance-id" class="fudis-guidance">
     <div id="fudis-text-input-id_guidance">
-      <!-- When invalid: add fudis-guidance__errors block or a single fudis-error-message block from below -->
-      <!-- <div class="fudis-guidance__errors">
-              <span class="fudis-icon fudis-icon__color__red fudis-icon__lg fudis-icon__alert"></span>
-              <div class="fudis-guidance__errors__list">
-                  <p class="fudis-error-message fudis-error-message__form-error">
-                      Validator error message
-                  </p>
-              </div>
-           </div>
-      -->
-      <!-- When no need for guidance, remove the fudis-guidance__help-text block -->
+      <div class="fudis-guidance__errors">
+        <div class="fudis-guidance__errors__list"></div>
+      </div>
       <p class="fudis-guidance__help-text">Guidance text</p>
     </div>
   </div>
@@ -97,17 +73,9 @@ export const Large = () => `
   <input id="fudis-text-input-id" class="fudis-form-input fudis-text-input__input" type="text" aria-describedby="fudis-text-input-id_guidance"></input>
   <div id="fudis-guidance-id" class="fudis-guidance">
     <div id="fudis-text-input-id_guidance">
-      <!-- When invalid: add fudis-guidance__errors block or a single fudis-error-message block from below -->
-      <!-- <div class="fudis-guidance__errors">
-              <span class="fudis-icon fudis-icon__color__red fudis-icon__lg fudis-icon__alert"></span>
-              <div class="fudis-guidance__errors__list">
-                  <p class="fudis-error-message fudis-error-message__form-error">
-                      Validator error message
-                  </p>
-              </div>
-           </div>
-      -->
-      <!-- When no need for guidance, remove the fudis-guidance__help-text block -->
+      <div class="fudis-guidance__errors">
+        <div class="fudis-guidance__errors__list"></div>
+      </div>
       <p class="fudis-guidance__help-text">Guidance text</p>
     </div>
   </div>
@@ -125,7 +93,9 @@ export const Disabled = () => `
   <input id="fudis-text-input-id" class="fudis-form-input fudis-text-input__input" type="text" aria-describedby="fudis-text-input-id_guidance" aria-disabled="true" disabled></input>
   <div id="fudis-guidance-id" class="fudis-guidance">
     <div id="fudis-text-input-id_guidance">
-      <!-- When no need for guidance, remove the fudis-guidance__help-text block -->
+      <div class="fudis-guidance__errors">
+        <div class="fudis-guidance__errors__list"></div>
+      </div>
       <p class="fudis-guidance__help-text">Guidance text</p>
     </div>
   </div>
@@ -150,8 +120,6 @@ export const Invalid = () => `
           <p class="fudis-error-message fudis-error-message__form-error">Validator error message</p>
         </div>
       </div>
-      <!-- When there is a need for guidance, add the fudis-guidance__help-text block from below -->
-      <!-- <p class="fudis-guidance__help-text">Guidance text</p> -->
     </div>
   </div>
 </div>
@@ -168,17 +136,9 @@ export const CharacterLimit = () => `
   <input id="fudis-text-input-id" class="fudis-form-input fudis-text-input__input" type="text" aria-describedby="fudis-text-input-id_guidance"></input>
   <div id="fudis-guidance-id" class="fudis-guidance">
     <div id="fudis-text-input-id_guidance">
-      <!-- When invalid: add fudis-guidance__errors block or a single fudis-error-message block from below -->
-      <!-- <div class="fudis-guidance__errors">
-              <span class="fudis-icon fudis-icon__color__red fudis-icon__lg fudis-icon__alert"></span>
-              <div class="fudis-guidance__errors__list">
-                  <p class="fudis-error-message fudis-error-message__form-error">
-                      Validator error message
-                  </p>
-              </div>
-           </div>
-      -->
-      <!-- When no need for guidance, remove the fudis-guidance__help-text block -->
+      <div class="fudis-guidance__errors">
+        <div class="fudis-guidance__errors__list"></div>
+      </div>
       <p class="fudis-guidance__help-text">Guidance text</p>
     </div>
     <!-- When no need for character limit indicator, remove the small element from below -->
@@ -202,17 +162,9 @@ export const Required = () => `
   <input id="fudis-text-input-id" class="fudis-form-input fudis-text-input__input" type="text" aria-describedby="fudis-text-input-id_guidance"></input>
   <div id="fudis-guidance-id" class="fudis-guidance">
     <div id="fudis-text-input-id_guidance">
-      <!-- When invalid: add fudis-guidance__errors block or a single fudis-error-message block from below -->
-      <!-- <div class="fudis-guidance__errors">
-              <span class="fudis-icon fudis-icon__color__red fudis-icon__lg fudis-icon__alert"></span>
-              <div class="fudis-guidance__errors__list">
-                  <p class="fudis-error-message fudis-error-message__form-error">
-                      Validator error message
-                  </p>
-              </div>
-           </div>
-      -->
-      <!-- When no need for guidance, remove the fudis-guidance__help-text block -->
+      <div class="fudis-guidance__errors">
+        <div class="fudis-guidance__errors__list"></div>
+      </div>
       <p class="fudis-guidance__help-text">Guidance text</p>
     </div>
   </div>
@@ -230,17 +182,9 @@ export const NumberInput = () => `
   <input id="fudis-text-input-id" class="fudis-form-input fudis-text-input__input" type="number" aria-describedby="fudis-text-input-id_guidance"></input>
   <div id="fudis-guidance-id" class="fudis-guidance">
     <div id="fudis-text-input-id_guidance">
-        <!-- When invalid: add fudis-guidance__errors block or a single fudis-error-message block from below -->
-        <!-- <div class="fudis-guidance__errors">
-                <span class="fudis-icon fudis-icon__color__red fudis-icon__lg fudis-icon__alert"></span>
-                <div class="fudis-guidance__errors__list">
-                    <p class="fudis-error-message fudis-error-message__form-error">
-                        Validator error message
-                    </p>
-                </div>
-             </div>
-        -->
-        <!-- When no need for guidance, remove the fudis-guidance__help-text block -->
+      <div class="fudis-guidance__errors">
+        <div class="fudis-guidance__errors__list"></div>
+      </div>
       <p class="fudis-guidance__help-text">Guidance text</p>
     </div>
   </div>
@@ -257,6 +201,9 @@ export const PwAll = () => `
   <input id="fudis-text-input-id" class="fudis-form-input fudis-text-input__input" type="text" aria-describedby="fudis-text-input-id_guidance"></input>
   <div id="fudis-guidance-id" class="fudis-guidance">
     <div id="fudis-text-input-id_guidance">
+      <div class="fudis-guidance__errors">
+        <div class="fudis-guidance__errors__list"></div>
+      </div>
       <p class="fudis-guidance__help-text">Guidance text</p>
     </div>
   </div>
@@ -270,6 +217,9 @@ export const PwAll = () => `
   <input id="fudis-text-input-id" class="fudis-form-input fudis-text-input__input" type="text" aria-describedby="fudis-text-input-id_guidance"></input>
   <div id="fudis-guidance-id" class="fudis-guidance">
     <div id="fudis-text-input-id_guidance">
+      <div class="fudis-guidance__errors">
+        <div class="fudis-guidance__errors__list"></div>
+      </div>
       <p class="fudis-guidance__help-text">Guidance text</p>
     </div>
   </div>
@@ -283,6 +233,9 @@ export const PwAll = () => `
   <input id="fudis-text-input-id" class="fudis-form-input fudis-text-input__input" type="text" aria-describedby="fudis-text-input-id_guidance"></input>
   <div id="fudis-guidance-id" class="fudis-guidance">
     <div id="fudis-text-input-id_guidance">
+      <div class="fudis-guidance__errors">
+        <div class="fudis-guidance__errors__list"></div>
+      </div>
       <p class="fudis-guidance__help-text">Guidance text</p>
     </div>
   </div>
@@ -296,6 +249,9 @@ export const PwAll = () => `
   <input id="fudis-text-input-id" class="fudis-form-input fudis-text-input__input" type="text" aria-describedby="fudis-text-input-id_guidance"></input>
   <div id="fudis-guidance-id" class="fudis-guidance">
     <div id="fudis-text-input-id_guidance">
+      <div class="fudis-guidance__errors">
+        <div class="fudis-guidance__errors__list"></div>
+      </div>
       <p class="fudis-guidance__help-text">Guidance text</p>
     </div>
   </div>
@@ -309,6 +265,9 @@ export const PwAll = () => `
   <input id="fudis-text-input-id" class="fudis-form-input fudis-text-input__input" type="text" aria-describedby="fudis-text-input-id_guidance" aria-disabled="true" disabled></input>
   <div id="fudis-guidance-id" class="fudis-guidance">
     <div id="fudis-text-input-id_guidance">
+      <div class="fudis-guidance__errors">
+        <div class="fudis-guidance__errors__list"></div>
+      </div>
       <p class="fudis-guidance__help-text">Guidance text</p>
     </div>
   </div>
@@ -358,6 +317,9 @@ export const PwAll = () => `
   <input id="fudis-text-input-id" class="fudis-form-input fudis-text-input__input" type="text" aria-describedby="fudis-text-input-id_guidance"></input>
   <div id="fudis-guidance-id" class="fudis-guidance">
     <div id="fudis-text-input-id_guidance">
+      <div class="fudis-guidance__errors">
+        <div class="fudis-guidance__errors__list"></div>
+      </div>
       <p class="fudis-guidance__help-text">Guidance text</p>
     </div>
   </div>
@@ -371,6 +333,9 @@ export const PwAll = () => `
   <input id="fudis-text-input-id" class="fudis-form-input fudis-text-input__input" type="number" aria-describedby="fudis-text-input-id_guidance"></input>
   <div id="fudis-guidance-id" class="fudis-guidance">
     <div id="fudis-text-input-id_guidance">
+      <div class="fudis-guidance__errors">
+        <div class="fudis-guidance__errors__list"></div>
+      </div>
       <p class="fudis-guidance__help-text">Guidance text</p>
     </div>
   </div>
