@@ -1,6 +1,9 @@
 @use '../../foundations/spacing/tokens.scss' as spacing;
+@use '../../foundations/utilities/mixins.scss' as utilityMixin;
 
 .fudis-checkbox-group {
+  @include utilityMixin.box-reset;
+
   .fudis-fieldset-content {
     margin-top: spacing.$spacing-none;
   }
