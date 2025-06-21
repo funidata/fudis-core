@@ -13,6 +13,7 @@
 
   display: grid;
   grid-template-columns: 1fr;
+  align-items: baseline;
 
   &__legend {
     @include utilities.box-reset;
@@ -21,13 +22,14 @@
 
     &__main {
       display: flex;
-      align-items: flex-end;
+      align-items: baseline;
 
       &:focus-visible {
         @include focus.focus-generic;
       }
 
       &__text-content {
+        display: inline-block;
         margin: spacing.$spacing-xxs 0;
         min-height: spacing.$spacing-md;
       }
@@ -35,7 +37,15 @@
       &__text {
         @include colorMixin.text-color('gray-dark');
 
-        margin-right: spacing.$spacing-xs;
+        display: inline-block;
+        margin-right: spacing.$spacing-xxs;
+        white-space: break-spaces;
+      }
+
+      &__space {
+        &::before {
+          content: '  ';
+        }
       }
 
       &__required {
@@ -43,14 +53,13 @@
         @include colorMixin.text-color('gray-middle');
 
         display: inline-block;
-        vertical-align: bottom;
         text-transform: initial;
         /* stylelint-disable-next-line property-disallowed-list */
         font-size: typographyTokens.$body-text-sm-font-size;
       }
 
       &__tooltip-button {
-        margin-top: auto;
+        align-self: flex-end;
       }
     }
 

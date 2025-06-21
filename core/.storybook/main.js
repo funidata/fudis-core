@@ -18,12 +18,12 @@ export const addons = [
   {
     name: "@storybook/addon-essentials",
     options: {
-      controls: false,
+      controls: true,
       actions: false,
     },
   },
-  "@storybook/addon-storysource",
   "@storybook/addon-a11y",
+  "@whitespace/storybook-addon-html",
 ];
 
 export const framework = {
