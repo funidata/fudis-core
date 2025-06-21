@@ -6,15 +6,14 @@ export const createLabel = (label, forId, required) => {
 
   if (required) {
     labelElement.innerHTML = `
-    <span class="fudis-label__content">
-      <span class="fudis-label__content__text">${label}</span>
-      <span class="fudis-label__content__required">(Required)</span>
-    </span>`;
+    <div class="fudis-label__content">
+        <span class="fudis-label__content__text">${label}<span class="fudis-label__content__space"></span><span class="fudis-label__content__required">(Required)</span></span>
+    </div>`;
   } else {
     labelElement.innerHTML = `
-    <span class="fudis-label__content">
+    <div class="fudis-label__content">
       <span class="fudis-label__content__text">${label}</span>
-    </span>`;
+    </div>`;
   }
 
   return labelElement;
@@ -31,15 +30,13 @@ export const createLegend = (label, required) => {
   if (!required) {
     legendInnerElement.innerHTML = `
     <div class="fudis-fieldset__legend__main__text-content">
-      <span class="fudis-fieldset__legend__main__text">
-      ${label}
-      </span>
+      <span class="fudis-fieldset__legend__main__text">${label}<span class="fudis-fieldset__legend__main__space"></span><span class="fudis-fieldset__legend__main__required">(Required)</span></span>
     </div>`;
   } else {
     legendInnerElement.innerHTML = `
     <div class="fudis-fieldset__legend__main__text-content">
       <span class="fudis-fieldset__legend__main__text">
-        Legend
+        ${label}
       </span>
       <span class="fudis-fieldset__legend__main__required">(Required)</span>
     </div>`;
