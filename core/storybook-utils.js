@@ -27,7 +27,7 @@ export const createLegend = (label, required) => {
   const legendInnerElement = document.createElement("div");
   legendInnerElement.className = `fudis-fieldset__legend__main fudis-fieldset__legend__sm`;
 
-  if (!required) {
+  if (required) {
     legendInnerElement.innerHTML = `
     <div class="fudis-fieldset__legend__main__text-content">
       <span class="fudis-fieldset__legend__main__text">${label}<span class="fudis-fieldset__legend__main__space"></span><span class="fudis-fieldset__legend__main__required">(Required)</span></span>
@@ -35,10 +35,7 @@ export const createLegend = (label, required) => {
   } else {
     legendInnerElement.innerHTML = `
     <div class="fudis-fieldset__legend__main__text-content">
-      <span class="fudis-fieldset__legend__main__text">
-        ${label}
-      </span>
-      <span class="fudis-fieldset__legend__main__required">(Required)</span>
+      <span class="fudis-fieldset__legend__main__text">${label}</span>
     </div>`;
   }
   legendElement.appendChild(legendInnerElement);
