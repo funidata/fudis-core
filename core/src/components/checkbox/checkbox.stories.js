@@ -27,7 +27,8 @@ export default {
 };
 
 const Template = ({ label, selected, focused, disabled, invalid }) => {
-  return createCheckbox(label, selected, invalid, disabled, focused).outerHTML;
+  return createCheckbox(label, selected, invalid, disabled, focused, false)
+    .outerHTML;
 };
 
 let defaultValues = {

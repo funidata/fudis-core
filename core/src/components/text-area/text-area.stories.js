@@ -52,7 +52,7 @@ const Template = ({
 
   const inputElement = document.createElement("textarea");
   inputElement.id = "fudis-text-area-id";
-  inputElement.ariaDescription = "fudis_guidance-id";
+  inputElement.setAttribute("aria-describedby", "fudis-guidance-id");
   inputElement.className = "fudis-form-input fudis-text-area__input";
   inputElement.disabled = disabled;
   inputElement.ariaDisabled = disabled;
@@ -73,7 +73,7 @@ const Template = ({
 };
 
 let defaultValues = {
-  label: "label",
+  label: "Label",
   size: "md",
   guidanceText: "Guidance text",
   disabled: false,
@@ -92,6 +92,7 @@ export const PwAll = () => {
     { size: "md", guidanceText: "" },
     { size: "lg", guidanceText: "" },
     // Text input variants
+    { size: "md", required: true },
     { size: "md" },
     { size: "md", guidanceText: "", errorMessage: "Validator error message" },
     { size: "md", errorMessage: "Validator error message" },

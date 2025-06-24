@@ -74,6 +74,7 @@ const Template = ({
     !!errorMessage,
     disabled,
     focused,
+    true,
   );
   const checkboxElement2 = createCheckbox(
     "Option 2",
@@ -81,6 +82,7 @@ const Template = ({
     !!errorMessage,
     disabled,
     false,
+    true,
   );
   const checkboxElement3 = createCheckbox(
     "Option 3",
@@ -88,6 +90,7 @@ const Template = ({
     !!errorMessage,
     disabled,
     false,
+    true,
   );
 
   fieldsetElement.appendChild(legendElement);
@@ -104,7 +107,7 @@ const Template = ({
 };
 
 let defaultValues = {
-  label: "label",
+  label: "Label",
   size: "md",
   guidanceText: "Guidance text",
   selected: false,
@@ -125,6 +128,7 @@ export const PwAll = () => {
     { size: "md", guidanceText: "" },
     { size: "lg", guidanceText: "" },
     // Variants
+    { size: "md", required: true, guidanceText: "" },
     { size: "md", selected: true, guidanceText: "" },
     { size: "md", focused: true, guidanceText: "" },
     { size: "md" },

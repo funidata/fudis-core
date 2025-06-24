@@ -23,7 +23,7 @@ export default {
 };
 
 const Template = ({ label, selected, disabled, invalid }) => {
-  return createRadioButton(label, selected, invalid, disabled).outerHTML;
+  return createRadioButton(label, selected, invalid, disabled, false).outerHTML;
 };
 
 let defaultValues = {

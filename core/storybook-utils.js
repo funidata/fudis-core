@@ -53,7 +53,7 @@ export const createGuidance = (
   guidanceElement.className = "fudis-guidance";
 
   const guidanceInnerElement = document.createElement("div");
-  guidanceInnerElement.id = "fudis_guidance-id";
+  guidanceInnerElement.id = "fudis-guidance-id";
 
   const guidanceInnerErrorsElement = document.createElement("div");
   guidanceInnerErrorsElement.className = "fudis-guidance__errors";
@@ -83,7 +83,7 @@ export const createGuidance = (
     let numberLimitElement;
 
     if (isCharacterLimit) {
-      if (guidanceText || errorMessage) {
+      if (!guidanceText && !errorMessage) {
         const errorsListElement = document.createElement("div");
         errorsListElement.className = "fudis-guidance__errors__list";
         guidanceInnerElement.appendChild(errorsListElement);
@@ -102,7 +102,13 @@ export const createGuidance = (
 };
 
 /** Radio Button */
-export const createRadioButton = (label, selected, invalid, disabled) => {
+export const createRadioButton = (
+  label,
+  selected,
+  invalid,
+  disabled,
+  hasAriaDescribedBy,
+) => {
   const radioButtonContainer = document.createElement("label");
   radioButtonContainer.className = "fudis-radio-button";
 
@@ -112,6 +118,9 @@ export const createRadioButton = (label, selected, invalid, disabled) => {
   inputElement.value = "foo";
   inputElement.ariaInvalid = invalid;
   inputElement.ariaDisabled = disabled;
+  inputElement.name = "fudis-radio-button";
+  if (hasAriaDescribedBy)
+    inputElement.setAttribute("aria-describedby", "fudis-guidance-id");
 
   const labelElement = document.createElement("span");
   labelElement.className = "fudis-radio-button__label";
@@ -152,7 +161,14 @@ export const createRadioButton = (label, selected, invalid, disabled) => {
 };
 
 /** Checkbox */
-export const createCheckbox = (label, selected, invalid, disabled, focused) => {
+export const createCheckbox = (
+  label,
+  selected,
+  invalid,
+  disabled,
+  focused,
+  hasAriaDescribedBy,
+) => {
   const checkboxContainer = document.createElement("label");
   checkboxContainer.className = "fudis-checkbox";
 
@@ -162,6 +178,8 @@ export const createCheckbox = (label, selected, invalid, disabled, focused) => {
   inputElement.value = "foo";
   inputElement.ariaInvalid = invalid;
   inputElement.ariaDisabled = disabled;
+  if (hasAriaDescribedBy)
+    inputElement.setAttribute("aria-describedby", "fudis-guidance-id");
 
   const checkboxContentElement = document.createElement("div");
   checkboxContentElement.className = "fudis-checkbox__content";
@@ -201,6 +219,7 @@ export const createCheckbox = (label, selected, invalid, disabled, focused) => {
   checkboxContentWrapperElement.appendChild(checkboxContentWrapperBoxElement);
   checkboxContentElement.appendChild(checkboxContentWrapperElement);
   checkboxContentElement.appendChild(checkBoxContentLabelElement);
+  checkboxContainer.appendChild(inputElement);
   checkboxContainer.appendChild(checkboxContentElement);
 
   return checkboxContainer;

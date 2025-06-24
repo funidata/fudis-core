@@ -1,6 +1,5 @@
 import {
   createGuidance,
-  createLabel,
   createLegend,
   createRadioButton,
 } from "../../../storybook-utils";
@@ -69,18 +68,21 @@ const Template = ({
     selected,
     !!errorMessage,
     disabled,
+    true,
   );
   const radioButtonElement2 = createRadioButton(
     "Option 2",
     false,
     !!errorMessage,
     disabled,
+    true,
   );
   const radioButtonElement3 = createRadioButton(
     "Option 3",
     false,
     !!errorMessage,
     disabled,
+    true,
   );
 
   fieldsetElement.appendChild(legendElement);
@@ -97,7 +99,7 @@ const Template = ({
 };
 
 let defaultValues = {
-  label: "label",
+  label: "Label",
   size: "md",
   guidanceText: "Guidance text",
   selected: false,
@@ -118,6 +120,7 @@ export const PwAll = () => {
     { size: "lg", guidanceText: "" },
     // Variants
     { size: "md", selected: true, guidanceText: "" },
+    { size: "lg", required: true, guidanceText: "" },
     { size: "md" },
     { size: "md", guidanceText: "", errorMessage: "Validator error message" },
     { size: "md", errorMessage: "Validator error message" },
