@@ -38,13 +38,16 @@
         @include colorMixin.text-color('gray-dark');
 
         display: inline-block;
-        margin-right: spacing.$spacing-xxs;
         white-space: break-spaces;
       }
 
       &__space {
+        display: inline-block;
+        margin-left: spacing.$spacing-xs;
+        width: 0;
+
         &::before {
-          content: '  ';
+          content: ' ';
         }
       }
 
@@ -58,7 +61,7 @@
         font-size: typographyTokens.$body-text-sm-font-size;
       }
 
-      &__tooltip-button {
+      &__popover-button {
         align-self: flex-end;
       }
     }
