@@ -75,14 +75,14 @@ const Template = ({
     false,
     !!errorMessage,
     disabled,
-    true,
+    false,
   );
   const radioButtonElement3 = createRadioButton(
     "Option 3",
     false,
     !!errorMessage,
     disabled,
-    true,
+    false,
   );
 
   fieldsetElement.appendChild(legendElement);
@@ -120,7 +120,7 @@ export const PwAll = () => {
     { size: "lg", guidanceText: "" },
     // Variants
     { size: "md", selected: true, guidanceText: "" },
-    { size: "lg", required: true, guidanceText: "" },
+    { size: "md", required: true, guidanceText: "" },
     { size: "md" },
     { size: "md", guidanceText: "", errorMessage: "Validator error message" },
     { size: "md", errorMessage: "Validator error message" },

@@ -82,7 +82,7 @@ const Template = ({
     !!errorMessage,
     disabled,
     false,
-    true,
+    false,
   );
   const checkboxElement3 = createCheckbox(
     "Option 3",
@@ -90,7 +90,7 @@ const Template = ({
     !!errorMessage,
     disabled,
     false,
-    true,
+    false,
   );
 
   fieldsetElement.appendChild(legendElement);
