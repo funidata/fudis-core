@@ -1,466 +1,151 @@
+import {
+  createCheckbox,
+  createGuidance,
+  createLegend,
+} from "../../../storybook-utils";
+
 export default {
   title: "Components/Checkbox Group",
+  argTypes: {
+    label: {
+      name: "Label",
+      control: { type: "text" },
+    },
+    size: {
+      name: "Size",
+      control: { type: "select" },
+      options: ["xs", "sm", "md", "lg"],
+    },
+    guidanceText: {
+      name: "Guidance text",
+      control: { type: "text" },
+    },
+    selected: {
+      name: "Selected",
+      control: { type: "boolean" },
+    },
+    focused: {
+      name: "Focused",
+      control: { type: "boolean" },
+    },
+    required: {
+      name: "Required",
+      control: { type: "boolean" },
+    },
+    disabled: {
+      name: "Disabled",
+      control: { type: "boolean" },
+    },
+    errorMessage: {
+      name: "Error message",
+      control: { type: "text" },
+    },
+  },
 };
 
-export const Default = () => `
-  <fieldset class="fudis-checkbox-group fudis-fieldset fudis-input-size__lg">
-    <legend class="fudis-fieldset__legend">
-      <div class="fudis-fieldset__legend__main fudis-fieldset__legend__sm">
-        <div class="fudis-fieldset__legend__main__text-content">
-          <span class="fudis-fieldset__legend__main__text">
-            Legend
-          </span>
-        </div>
-      </div>
-    </legend>
-    <div class="fudis-fieldset-content">
-      <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox-1" value="foo" />
-        <div class="fudis-checkbox__content">
-          <div class="fudis-checkbox__content-wrapper">
-            <span class="fudis-checkbox__content__box">
-                <!-- When not checked, hide the icon below -->
-                <span class="fudis-icon fudis-icon__color__gray-dark fudis-icon__lg fudis-icon__check"></span>
-            </span>
-          </div>
-          <span class="fudis-checkbox__content__label">Option 1</span>
-        </div>
-      </label>
-      <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox-2" value="bar" />
-        <div class="fudis-checkbox__content">
-          <div class="fudis-checkbox__content-wrapper">
-            <span class="fudis-checkbox__content__box">
-                <!-- When checked, render the icon below -->
-                <!-- <span class="fudis-icon fudis-icon__color__gray-dark fudis-icon__lg fudis-icon__check"></span> -->
-            </span>
-          </div>
-          <span class="fudis-checkbox__content__label">Option 2</span>
-        </div>
-      </label>
-      <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox-3" value="baz" />
-        <div class="fudis-checkbox__content">
-          <div class="fudis-checkbox__content-wrapper">
-            <span class="fudis-checkbox__content__box">
-                <!-- When checked, render the icon below -->
-                <!-- <span class="fudis-icon fudis-icon__color__gray-dark fudis-icon__lg fudis-icon__check"></span> -->
-            </span>
-          </div>
-          <span class="fudis-checkbox__content__label">Option 3</span>
-        </div>
-      </label>
-      <div id="fudis-guidance-id" class="fudis-guidance">
-        <div>
-          <!-- When invalid: add fudis-guidance__errors block or add a fudis-error-message block from below -->
-          <!-- <div class="fudis-guidance__errors">
-                  <span class="fudis-icon fudis-icon__color__red fudis-icon__lg fudis-icon__alert"></span>
-                  <div class="fudis-guidance__errors__list">
-                      <p class="fudis-error-message fudis-error-message__form-error">
-                          Validator error message
-                      </p>
-                  </div>
-               </div>
-          -->
-          <!-- When there is a need for guidance, add the fudis-guidance__help-text block from below -->
-          <!-- <p class="fudis-guidance__help-text">Guidance text</p> -->
-        </div>
-      </div>
-    </div>
-  </fieldset>
-`;
+const Template = ({
+  label,
+  required,
+  size,
+  guidanceText,
+  disabled,
+  errorMessage,
+  selected,
+  focused,
+}) => {
+  const fieldsetElement = document.createElement("fieldset");
+  fieldsetElement.className = `fudis-checkbox-group fudis-fieldset fudis-input-size__${size}`;
 
-export const Required = () => `
-  <fieldset class="fudis-checkbox-group fudis-fieldset fudis-input-size__lg">
-    <legend class="fudis-fieldset__legend">
-      <div class="fudis-fieldset__legend__main fudis-fieldset__legend__sm">
-        <div class="fudis-fieldset__legend__main__text-content">
-          <span class="fudis-fieldset__legend__main__text">
-            Legend
-          </span>
-          <span class="fudis-fieldset__legend__main__required">(Required)</span>
-        </div>
-      </div>
-    </legend>
-    <div class="fudis-fieldset-content">
-      <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox-1" value="foo" />
-        <div class="fudis-checkbox__content">
-          <div class="fudis-checkbox__content-wrapper">
-            <span class="fudis-checkbox__content__box">
-                <!-- When not checked, hide the icon below -->
-                <span class="fudis-icon fudis-icon__color__gray-dark fudis-icon__lg fudis-icon__check"></span>
-            </span>
-          </div>
-          <span class="fudis-checkbox__content__label">Option 1</span>
-        </div>
-      </label>
-      <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox-2" value="bar" />
-        <div class="fudis-checkbox__content">
-          <div class="fudis-checkbox__content-wrapper">
-            <span class="fudis-checkbox__content__box">
-                <!-- When checked, render the icon below -->
-                <!-- <span class="fudis-icon fudis-icon__color__gray-dark fudis-icon__lg fudis-icon__check"></span> -->
-            </span>
-          </div>
-          <span class="fudis-checkbox__content__label">Option 2</span>
-        </div>
-      </label>
-      <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox-3" value="baz" />
-        <div class="fudis-checkbox__content">
-          <div class="fudis-checkbox__content-wrapper">
-            <span class="fudis-checkbox__content__box">
-                <!-- When checked, render the icon below -->
-                <!-- <span class="fudis-icon fudis-icon__color__gray-dark fudis-icon__lg fudis-icon__check"></span> -->
-            </span>
-          </div>
-          <span class="fudis-checkbox__content__label">Option 3</span>
-        </div>
-      </label>
-      <div id="fudis-guidance-id" class="fudis-guidance">
-        <div>
-          <!-- When invalid: add fudis-guidance__errors block or add a fudis-error-message block from below -->
-          <!-- <div class="fudis-guidance__errors">
-                  <span class="fudis-icon fudis-icon__color__red fudis-icon__lg fudis-icon__alert"></span>
-                  <div class="fudis-guidance__errors__list">
-                      <p class="fudis-error-message fudis-error-message__form-error">
-                          Validator error message
-                      </p>
-                  </div>
-               </div>
-          -->
-          <!-- When there is a need for guidance, add the fudis-guidance__help-text block from below -->
-          <!-- <p class="fudis-guidance__help-text">Guidance text</p> -->
-        </div>
-      </div>
-    </div>
-  </fieldset>
-`;
+  const legendElement = createLegend(label, required);
 
-export const Guidance = () => `
-  <fieldset class="fudis-checkbox-group fudis-fieldset fudis-input-size__lg">
-    <legend class="fudis-fieldset__legend">
-      <div class="fudis-fieldset__legend__main fudis-fieldset__legend__sm">
-        <div class="fudis-fieldset__legend__main__text-content">
-          <span class="fudis-fieldset__legend__main__text">
-            Legend
-          </span>
-        </div>
-      </div>
-    </legend>
-    <div id="fudis-fieldset-id" class="fudis-fieldset-content">
-      <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox-1" value="foo" aria-describedby="fudis-guidance-id" />
-        <div class="fudis-checkbox__content">
-          <div class="fudis-checkbox__content-wrapper">
-            <span class="fudis-checkbox__content__box">
-                <!-- When not checked, hide the icon below -->
-                <span class="fudis-icon fudis-icon__color__gray-dark fudis-icon__lg fudis-icon__check"></span>
-            </span>
-          </div>
-          <span class="fudis-checkbox__content__label">Option 1</span>
-        </div>
-      </label>
-      <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox-2" value="bar" />
-        <div class="fudis-checkbox__content">
-          <div class="fudis-checkbox__content-wrapper">
-            <span class="fudis-checkbox__content__box">
-                <!-- When checked, render the icon below -->
-                <!-- <span class="fudis-icon fudis-icon__color__gray-dark fudis-icon__lg fudis-icon__check"></span> -->
-            </span>
-          </div>
-          <span class="fudis-checkbox__content__label">Option 2</span>
-        </div>
-      </label>
-      <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox-3" value="baz" />
-        <div class="fudis-checkbox__content">
-          <div class="fudis-checkbox__content-wrapper">
-            <span class="fudis-checkbox__content__box">
-                <!-- When checked, render the icon below -->
-                <!-- <span class="fudis-icon fudis-icon__color__gray-dark fudis-icon__lg fudis-icon__check"></span> -->
-            </span>
-          </div>
-          <span class="fudis-checkbox__content__label">Option 3</span>
-        </div>
-      </label>
-      <div id="fudis-guidance-id" class="fudis-guidance">
-        <div id="fudis-fieldset-id_guidance">
-          <!-- When invalid: add fudis-guidance__errors block or add a fudis-error-message block from below -->
-          <!-- <div class="fudis-guidance__errors">
-                  <span class="fudis-icon fudis-icon__color__red fudis-icon__lg fudis-icon__alert"></span>
-                  <div class="fudis-guidance__errors__list">
-                      <p class="fudis-error-message fudis-error-message__form-error">
-                          Validator error message
-                      </p>
-                  </div>
-               </div>
-          -->
-          <!-- When there is no need for guidance, remove the fudis-guidance__help-text block from below -->
-          <p class="fudis-guidance__help-text">Guidance text</p>
-        </div>
-      </div>
-    </div>
-  </fieldset>
-`;
+  const fieldsetContentElement = document.createElement("div");
+  fieldsetContentElement.className = "fudis-fieldset-content";
 
-export const Invalid = () => `
-  <fieldset class="fudis-checkbox-group fudis-fieldset fudis-input-size__lg">
-    <legend class="fudis-fieldset__legend">
-      <div class="fudis-fieldset__legend__main fudis-fieldset__legend__sm">
-        <div class="fudis-fieldset__legend__main__text-content">
-          <span class="fudis-fieldset__legend__main__text">
-            Legend
-          </span>
-        </div>
-      </div>
-    </legend>
-    <div id="fudis-fieldset-id" class="fudis-fieldset-content">
-      <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input" aria-invalid="true" name="fudis-checkbox-1" value="foo" aria-describedby="fudis-guidance-id" />
-        <div class="fudis-checkbox__content">
-          <div class="fudis-checkbox__content-wrapper">
-            <span class="fudis-checkbox__content__box fudis-checkbox__content__box--invalid">
-                <!-- When checked, render the icon below -->
-                <!-- <span class="fudis-icon fudis-icon__color__gray-dark fudis-icon__lg fudis-icon__check"></span> -->
-            </span>
-          </div>
-          <span class="fudis-checkbox__content__label">Option 1</span>
-        </div>
-      </label>
-      <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input" aria-invalid="true" name="fudis-checkbox-2" value="bar" />
-        <div class="fudis-checkbox__content">
-          <div class="fudis-checkbox__content-wrapper">
-            <span class="fudis-checkbox__content__box fudis-checkbox__content__box--invalid">
-                <!-- When checked, render the icon below -->
-                <!-- <span class="fudis-icon fudis-icon__color__gray-dark fudis-icon__lg fudis-icon__check"></span> -->
-            </span>
-          </div>
-          <span class="fudis-checkbox__content__label">Option 2</span>
-        </div>
-      </label>
-      <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input" aria-invalid="true" name="fudis-checkbox-3" value="baz" />
-        <div class="fudis-checkbox__content">
-          <div class="fudis-checkbox__content-wrapper">
-            <span class="fudis-checkbox__content__box fudis-checkbox__content__box--invalid">
-                <!-- When checked, render the icon below -->
-                <!-- <span class="fudis-icon fudis-icon__color__gray-dark fudis-icon__lg fudis-icon__check"></span> -->
-            </span>
-          </div>
-          <span class="fudis-checkbox__content__label">Option 3</span>
-        </div>
-      </label>
-      <div id="fudis-guidance-id" class="fudis-guidance">
-        <div id="fudis-fieldset-id_guidance">
-          <!-- When not invalid: remove fudis-guidance__errors block or remove a fudis-error-message block from below -->
-          <div class="fudis-guidance__errors">
-            <span class="fudis-icon fudis-icon__color__red fudis-icon__lg fudis-icon__alert"></span>
-            <div class="fudis-guidance__errors__list">
-              <p class="fudis-error-message fudis-error-message__form-error">
-                Validator error message
-              </p>
-            </div>
-          </div>
-          <!-- When there is no need for guidance, remove the fudis-guidance__help-text block from below -->
-          <p class="fudis-guidance__help-text">Guidance text</p>
-        </div>
-      </div>
-    </div>
-  </fieldset>
-`;
+  const guidanceElement = createGuidance(
+    size,
+    errorMessage,
+    guidanceText,
+    false,
+  );
 
-export const PwAll = () => `
-  <fieldset class="fudis-checkbox-group fudis-fieldset fudis-input-size__lg">
-    <legend class="fudis-fieldset__legend">
-      <div class="fudis-fieldset__legend__main fudis-fieldset__legend__sm">
-        <div class="fudis-fieldset__legend__main__text-content">
-          <span class="fudis-fieldset__legend__main__text">
-            Legend
-          </span>
-        </div>
-      </div>
-    </legend>
-    <div class="fudis-fieldset-content">
-      <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox-1" value="foo" />
-        <div class="fudis-checkbox__content">
-          <div class="fudis-checkbox__content-wrapper">
-            <span class="fudis-checkbox__content__box">
-                <span class="fudis-icon fudis-icon__color__gray-dark fudis-icon__lg fudis-icon__check"></span>
-            </span>
-          </div>
-          <span class="fudis-checkbox__content__label">Option 1</span>
-        </div>
-      </label>
-      <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox-2" value="bar" />
-        <div class="fudis-checkbox__content">
-          <div class="fudis-checkbox__content-wrapper">
-            <span class="fudis-checkbox__content__box"></span>
-          </div>
-          <span class="fudis-checkbox__content__label">Option 2</span>
-        </div>
-      </label>
-      <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox-3" value="baz" />
-        <div class="fudis-checkbox__content">
-          <div class="fudis-checkbox__content-wrapper">
-            <span class="fudis-checkbox__content__box"></span>
-          </div>
-          <span class="fudis-checkbox__content__label">Option 3</span>
-        </div>
-      </label>
-    </div>
-  </fieldset>
+  const checkboxElement1 = createCheckbox(
+    "Option 1",
+    selected,
+    !!errorMessage,
+    disabled,
+    focused,
+    true,
+  );
+  const checkboxElement2 = createCheckbox(
+    "Option 2",
+    false,
+    !!errorMessage,
+    disabled,
+    false,
+    false,
+  );
+  const checkboxElement3 = createCheckbox(
+    "Option 3",
+    false,
+    !!errorMessage,
+    disabled,
+    false,
+    false,
+  );
 
-  <fieldset class="fudis-checkbox-group fudis-fieldset fudis-input-size__lg">
-    <legend class="fudis-fieldset__legend">
-      <div class="fudis-fieldset__legend__main fudis-fieldset__legend__sm">
-        <div class="fudis-fieldset__legend__main__text-content">
-          <span class="fudis-fieldset__legend__main__text">
-            Legend
-          </span>
-          <span class="fudis-fieldset__legend__main__required">(Required)</span>
-        </div>
-      </div>
-    </legend>
-    <div class="fudis-fieldset-content">
-      <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox-1" value="foo" />
-        <div class="fudis-checkbox__content">
-          <div class="fudis-checkbox__content-wrapper">
-            <span class="fudis-checkbox__content__box">
-                <span class="fudis-icon fudis-icon__color__gray-dark fudis-icon__lg fudis-icon__check"></span>
-            </span>
-          </div>
-          <span class="fudis-checkbox__content__label">Option 1</span>
-        </div>
-      </label>
-      <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox-2" value="bar" />
-        <div class="fudis-checkbox__content">
-          <div class="fudis-checkbox__content-wrapper">
-            <span class="fudis-checkbox__content__box"></span>
-          </div>
-          <span class="fudis-checkbox__content__label">Option 2</span>
-        </div>
-      </label>
-      <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox-3" value="baz" />
-        <div class="fudis-checkbox__content">
-          <div class="fudis-checkbox__content-wrapper">
-            <span class="fudis-checkbox__content__box"></span>
-          </div>
-          <span class="fudis-checkbox__content__label">Option 3</span>
-        </div>
-      </label>
-    </div>
-  </fieldset>
+  fieldsetElement.appendChild(legendElement);
 
-  <fieldset class="fudis-checkbox-group fudis-fieldset fudis-input-size__lg">
-    <legend class="fudis-fieldset__legend">
-      <div class="fudis-fieldset__legend__main fudis-fieldset__legend__sm">
-        <div class="fudis-fieldset__legend__main__text-content">
-          <span class="fudis-fieldset__legend__main__text">
-            Legend
-          </span>
-        </div>
-      </div>
-    </legend>
-    <div id="fudis-fieldset-id" class="fudis-fieldset-content">
-      <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox-1" value="foo" aria-describedby="fudis-guidance-id" />
-        <div class="fudis-checkbox__content">
-          <div class="fudis-checkbox__content-wrapper">
-            <span class="fudis-checkbox__content__box">
-                <span class="fudis-icon fudis-icon__color__gray-dark fudis-icon__lg fudis-icon__check"></span>
-            </span>
-          </div>
-          <span class="fudis-checkbox__content__label">Option 1</span>
-        </div>
-      </label>
-      <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox-2" value="bar" />
-        <div class="fudis-checkbox__content">
-          <div class="fudis-checkbox__content-wrapper">
-            <span class="fudis-checkbox__content__box"></span>
-          </div>
-          <span class="fudis-checkbox__content__label">Option 2</span>
-        </div>
-      </label>
-      <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input" name="fudis-checkbox-3" value="baz" />
-        <div class="fudis-checkbox__content">
-          <div class="fudis-checkbox__content-wrapper">
-            <span class="fudis-checkbox__content__box"></span>
-          </div>
-          <span class="fudis-checkbox__content__label">Option 3</span>
-        </div>
-      </label>
-      <div id="fudis-guidance-id" class="fudis-guidance">
-        <div id="fudis-fieldset-id_guidance">
-          <p class="fudis-guidance__help-text">Guidance text</p>
-        </div>
-      </div>
-    </div>
-  </fieldset>
+  fieldsetContentElement.appendChild(checkboxElement1);
+  fieldsetContentElement.appendChild(checkboxElement2);
+  fieldsetContentElement.appendChild(checkboxElement3);
 
-  <fieldset class="fudis-checkbox-group fudis-fieldset fudis-input-size__lg">
-    <legend class="fudis-fieldset__legend">
-      <div class="fudis-fieldset__legend__main fudis-fieldset__legend__sm">
-        <div class="fudis-fieldset__legend__main__text-content">
-          <span class="fudis-fieldset__legend__main__text">
-            Legend
-          </span>
-        </div>
-      </div>
-    </legend>
-    <div id="fudis-fieldset-id" class="fudis-fieldset-content">
-      <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input" aria-invalid="true" name="fudis-checkbox-1" value="foo" aria-describedby="fudis-guidance-id" />
-        <div class="fudis-checkbox__content">
-          <div class="fudis-checkbox__content-wrapper">
-            <span class="fudis-checkbox__content__box fudis-checkbox__content__box--invalid"></span>
-          </div>
-          <span class="fudis-checkbox__content__label">Option 1</span>
-        </div>
-      </label>
-      <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input" aria-invalid="true" name="fudis-checkbox-2" value="bar" />
-        <div class="fudis-checkbox__content">
-          <div class="fudis-checkbox__content-wrapper">
-            <span class="fudis-checkbox__content__box fudis-checkbox__content__box--invalid"></span>
-          </div>
-          <span class="fudis-checkbox__content__label">Option 2</span>
-        </div>
-      </label>
-      <label class="fudis-checkbox">
-        <input type="checkbox" class="fudis-checkbox__input" aria-invalid="true" name="fudis-checkbox-3" value="baz" />
-        <div class="fudis-checkbox__content">
-          <div class="fudis-checkbox__content-wrapper">
-            <span class="fudis-checkbox__content__box fudis-checkbox__content__box--invalid"></span>
-          </div>
-          <span class="fudis-checkbox__content__label">Option 3</span>
-        </div>
-      </label>
-      <div id="fudis-guidance-id" class="fudis-guidance">
-        <div id="fudis-fieldset-id_guidance">
-          <div class="fudis-guidance__errors">
-            <span class="fudis-icon fudis-icon__color__red fudis-icon__lg fudis-icon__alert"></span>
-            <div class="fudis-guidance__errors__list">
-              <p class="fudis-error-message fudis-error-message__form-error">
-                Validator error message
-              </p>
-            </div>
-          </div>
-          <p class="fudis-guidance__help-text">Guidance text</p>
-        </div>
-      </div>
-    </div>
-  </fieldset>
-`;
+  if (guidanceElement) fieldsetContentElement.appendChild(guidanceElement);
+
+  fieldsetElement.appendChild(fieldsetContentElement);
+
+  return fieldsetElement;
+};
+
+let defaultValues = {
+  label: "Label",
+  size: "md",
+  guidanceText: "Guidance text",
+  selected: false,
+  focused: false,
+  disabled: false,
+  required: false,
+  errorMessage: "",
+};
+
+export const CheckboxGroup = Template.bind({});
+CheckboxGroup.args = defaultValues;
+
+export const PwAll = () => {
+  const configurations = [
+    // Sizes
+    { size: "xs", guidanceText: "" },
+    { size: "sm", guidanceText: "" },
+    { size: "md", guidanceText: "" },
+    { size: "lg", guidanceText: "" },
+    // Variants
+    { size: "md", required: true, guidanceText: "" },
+    { size: "md", selected: true, guidanceText: "" },
+    { size: "md", focused: true, guidanceText: "" },
+    { size: "md" },
+    { size: "md", guidanceText: "", errorMessage: "Validator error message" },
+    { size: "md", errorMessage: "Validator error message" },
+    // Disabled
+    { size: "md", disabled: true },
+  ];
+
+  return configurations
+    .map((config) => {
+      const element = Template({
+        ...defaultValues,
+        ...config,
+      });
+
+      return element.outerHTML;
+    })
+    .join("<br/>");
+};

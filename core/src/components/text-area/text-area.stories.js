@@ -1,290 +1,127 @@
+import { createGuidance, createLabel } from "../../../storybook-utils";
+
 export default {
   title: "Components/Text Area",
+  argTypes: {
+    label: {
+      name: "Label",
+      control: { type: "text" },
+    },
+    size: {
+      name: "Size",
+      control: { type: "select" },
+      options: ["xs", "sm", "md", "lg"],
+    },
+    required: {
+      name: "Required",
+      control: { type: "boolean" },
+    },
+    guidanceText: {
+      name: "Guidance text",
+      control: { type: "text" },
+    },
+    disabled: {
+      name: "Disabled",
+      control: { type: "boolean" },
+    },
+    errorMessage: {
+      name: "Error message",
+      control: { type: "text" },
+      if: { arg: "disabled", eq: false },
+    },
+    characterLimit: {
+      name: "Character limit",
+      control: { type: "boolean" },
+    },
+  },
 };
 
-export const Small = () => `
-<div class="fudis-text-area fudis-input-size__sm">
-  <label class="fudis-label" for="fudis-text-area-id">
-    <span class="fudis-label__content">
-      <span class="fudis-label__content__text">Text area label</span>
-    </span>
-  </label>
-  <textarea id="fudis-text-area-id" class="fudis-form-input fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance"></textarea>
-  <div id="fudis-guidance-id" class="fudis-guidance">
-    <div id="fudis-text-area-id_guidance">
-      <!-- When invalid: add fudis-guidance__errors block or add a fudis-error-message block from below -->
-      <!-- <div class="fudis-guidance__errors">
-              <span class="fudis-icon fudis-icon__color__red fudis-icon__lg fudis-icon__alert"></span>
-              <div class="fudis-guidance__errors__list">
-                  <p class="fudis-error-message fudis-error-message__form-error">
-                      Validator error message
-                  </p>
-              </div>
-           </div>
-      -->
-      <!-- When there is no need for guidance, remove the fudis-guidance__help-text block from below -->
-      <p class="fudis-guidance__help-text">Guidance text</p>
-    </div>
-  </div>
-</div>
-`;
+const Template = ({
+  label,
+  size,
+  required,
+  guidanceText,
+  errorMessage,
+  disabled,
+  characterLimit,
+}) => {
+  const inputContainer = document.createElement("div");
+  inputContainer.className = `fudis-text-area fudis-input-size__${size}`;
 
-export const Medium = () => `
-<div class="fudis-text-area fudis-input-size__md">
-  <label class="fudis-label" for="fudis-text-area-id">
-    <span class="fudis-label__content">
-      <span class="fudis-label__content__text">Text area label</span>
-    </span>
-  </label>
-  <textarea id="fudis-text-area-id" class="fudis-form-input fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance"></textarea>
-  <div id="fudis-guidance-id" class="fudis-guidance">
-    <div id="fudis-text-area-id_guidance">
-      <!-- When invalid: add fudis-guidance__errors block or add a fudis-error-message block from below -->
-      <!-- <div class="fudis-guidance__errors">
-              <span class="fudis-icon fudis-icon__color__red fudis-icon__lg fudis-icon__alert"></span>
-              <div class="fudis-guidance__errors__list">
-                  <p class="fudis-error-message fudis-error-message__form-error">
-                      Validator error message
-                  </p>
-              </div>
-           </div>
-      -->
-      <!-- When there is no need for guidance, remove the fudis-guidance__help-text block from below -->
-      <p class="fudis-guidance__help-text">Guidance text</p>
-    </div>
-  </div>
-</div>
-`;
+  const labelElement = createLabel(label, "fudis-text-area-id", required);
 
-export const Large = () => `
-<div class="fudis-text-area fudis-input-size__lg">
-  <label class="fudis-label" for="fudis-text-area-id">
-    <span class="fudis-label__content">
-      <span class="fudis-label__content__text">Text area label</span>
-    </span>
-  </label>
-  <textarea id="fudis-text-area-id" class="fudis-form-input fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance"></textarea>
-  <div id="fudis-guidance-id" class="fudis-guidance">
-    <div id="fudis-text-area-id_guidance">
-      <!-- When invalid: add fudis-guidance__errors block or add a fudis-error-message block from below -->
-      <!-- <div class="fudis-guidance__errors">
-              <span class="fudis-icon fudis-icon__color__red fudis-icon__lg fudis-icon__alert"></span>
-              <div class="fudis-guidance__errors__list">
-                  <p class="fudis-error-message fudis-error-message__form-error">
-                      Validator error message
-                  </p>
-              </div>
-           </div>
-      -->
-      <!-- When there is no need for guidance, remove the fudis-guidance__help-text block from below -->
-      <p class="fudis-guidance__help-text">Guidance text</p>
-    </div>
-  </div>
-</div>
-`;
+  const inputElement = document.createElement("textarea");
+  inputElement.id = "fudis-text-area-id";
+  inputElement.setAttribute("aria-describedby", "fudis-guidance-id");
+  inputElement.className = "fudis-form-input fudis-text-area__input";
+  inputElement.disabled = disabled;
+  inputElement.ariaDisabled = disabled;
+  inputElement.ariaInvalid = !!errorMessage;
 
-export const Disabled = () => `
-<div class="fudis-text-area fudis-input-size__lg">
-  <label class="fudis-label" for="fudis-text-area-id">
-    <span class="fudis-label__content">
-      <span class="fudis-label__content__text">Text area label</span>
-    </span>
-  </label>
-  <!-- Disable the text area by adding aria-label="disabled" and disabled attributes -->
-  <textarea id="fudis-text-area-id" class="fudis-form-input fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance" aria-disabled="true" disabled></textarea>
-  <div id="fudis-guidance-id" class="fudis-guidance">
-    <div id="fudis-text-area-id_guidance">
-      <!-- When there is no need for guidance, remove the fudis-guidance__help-text block from below -->
-      <p class="fudis-guidance__help-text">Guidance text</p>
-    </div>
-  </div>
-</div>
-`;
+  inputContainer.appendChild(labelElement);
+  inputContainer.appendChild(inputElement);
 
-export const Invalid = () => `
-<div class="fudis-text-area fudis-input-size__lg">
-  <label class="fudis-label" for="fudis-text-area-id">
-    <span class="fudis-label__content">
-      <span class="fudis-label__content__text">Text area label</span>
-    </span>
-  </label>
-  <textarea id="fudis-text-area-id" class="fudis-form-input fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance" aria-invalid="true"></textarea>
-  <div id="fudis-guidance-id" class="fudis-guidance">
-    <div id="fudis-text-area-id_guidance">
-      <!-- When not invalid: remove fudis-guidance__errors block or remove a fudis-error-message block from below -->
-      <div class="fudis-guidance__errors">
-      <span class="fudis-icon fudis-icon__color__red fudis-icon__lg fudis-icon__alert"></span>
-        <div class="fudis-guidance__errors__list">
-          <p class="fudis-error-message fudis-error-message__form-error">Validator error message</p>
-        </div>
-      </div>
-      <!-- When there is no need for guidance, remove the fudis-guidance__help-text block from below -->
-      <p class="fudis-guidance__help-text">Guidance text</p>
-    </div>
-  </div>
-</div>
-`;
+  let guidanceElement = createGuidance(
+    size,
+    errorMessage,
+    guidanceText,
+    characterLimit,
+  );
+  if (guidanceElement) inputContainer.appendChild(guidanceElement);
 
-export const CharacterLimit = () => `
-<div class="fudis-text-area fudis-input-size__lg">
-  <label class="fudis-label" for="fudis-text-area-id">
-    <span class="fudis-label__content">
-      <span class="fudis-label__content__text">Text area label</span>
-    </span>
-  </label>
-  <textarea id="fudis-text-area-id" class="fudis-form-input fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance"></textarea>
-  <div id="fudis-guidance-id" class="fudis-guidance">
-    <div id="fudis-text-area-id_guidance">
-      <!-- When invalid: add fudis-guidance__errors block or add a fudis-error-message block from below -->
-      <!-- <div class="fudis-guidance__errors">
-              <span class="fudis-icon fudis-icon__color__red fudis-icon__lg fudis-icon__alert"></span>
-              <div class="fudis-guidance__errors__list">
-                  <p class="fudis-error-message fudis-error-message__form-error">
-                      Validator error message
-                  </p>
-              </div>
-           </div>
-      -->
-      <!-- When there is no need for guidance, remove the fudis-guidance__help-text block from below -->
-      <p class="fudis-guidance__help-text">Guidance text</p>
-    </div>
-    <small class="fudis-guidance__character-limit-indicator fudis-guidance__character-limit-indicator__lg">
-      0/100
-      <span class="fudis-visually-hidden">characters used</span>
-    </small>
-  </div>
-</div>
-`;
+  return inputContainer;
+};
 
-export const Required = () => `
-<div class="fudis-text-area fudis-input-size__lg">
-  <label class="fudis-label" for="fudis-text-area-id">
-    <span class="fudis-label__content">
-      <span class="fudis-label__content__text">Text area label</span>
-      <span class="fudis-label__content__required">(Required)</span>
-    </span>
-  </label>
-  <textarea id="fudis-text-area-id" class="fudis-form-input fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance"></textarea>
-  <div id="fudis-guidance-id" class="fudis-guidance">
-    <div id="fudis-text-area-id_guidance">
-      <!-- When invalid: add fudis-guidance__errors block or add a fudis-error-message block from below -->
-      <!-- <div class="fudis-guidance__errors">
-              <span class="fudis-icon fudis-icon__color__red fudis-icon__lg fudis-icon__alert"></span>
-              <div class="fudis-guidance__errors__list">
-                  <p class="fudis-error-message fudis-error-message__form-error">
-                      Validator error message
-                  </p>
-              </div>
-           </div>
-      -->
-      <!-- When there is no need for guidance, remove the fudis-guidance__help-text block from below -->
-      <p class="fudis-guidance__help-text">Guidance text</p>
-    </div>
-  </div>
-</div>
-`;
+let defaultValues = {
+  label: "Label",
+  size: "md",
+  guidanceText: "Guidance text",
+  disabled: false,
+  required: false,
+  characterLimit: false,
+  errorMessage: "",
+};
 
-export const PwAll = () => `
-<div class="fudis-text-area fudis-input-size__sm">
-  <label class="fudis-label" for="fudis-text-area-id">
-    <span class="fudis-label__content">
-      <span class="fudis-label__content__text">Text area label</span>
-    </span>
-  </label>
-  <textarea id="fudis-text-area-id" class="fudis-form-input fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance"></textarea>
-  <div id="fudis-guidance-id" class="fudis-guidance">
-    <div id="fudis-text-area-id_guidance">
-      <p class="fudis-guidance__help-text">Guidance text</p>
-    </div>
-  </div>
-</div>
-<div class="fudis-text-area fudis-input-size__md">
-  <label class="fudis-label" for="fudis-text-area-id">
-    <span class="fudis-label__content">
-      <span class="fudis-label__content__text">Text area label</span>
-    </span>
-  </label>
-  <textarea id="fudis-text-area-id" class="fudis-form-input fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance"></textarea>
-  <div id="fudis-guidance-id" class="fudis-guidance">
-    <div id="fudis-text-area-id_guidance">
-      <p class="fudis-guidance__help-text">Guidance text</p>
-    </div>
-  </div>
-</div>
-<div class="fudis-text-area fudis-input-size__lg">
-  <label class="fudis-label" for="fudis-text-area-id">
-    <span class="fudis-label__content">
-      <span class="fudis-label__content__text">Text area label</span>
-    </span>
-  </label>
-  <textarea id="fudis-text-area-id" class="fudis-form-input fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance"></textarea>
-  <div id="fudis-guidance-id" class="fudis-guidance">
-    <div id="fudis-text-area-id_guidance">
-      <p class="fudis-guidance__help-text">Guidance text</p>
-    </div>
-  </div>
-</div>
-<div class="fudis-text-area fudis-input-size__lg">
-  <label class="fudis-label" for="fudis-text-area-id">
-    <span class="fudis-label__content">
-      <span class="fudis-label__content__text">Text area label</span>
-    </span>
-  </label>
-  <textarea id="fudis-text-area-id" class="fudis-form-input fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance" aria-disabled="true" disabled></textarea>
-  <div id="fudis-guidance-id" class="fudis-guidance">
-    <div id="fudis-text-area-id_guidance">
-      <p class="fudis-guidance__help-text">Guidance text</p>
-    </div>
-  </div>
-</div>
-<div class="fudis-text-area fudis-input-size__lg">
-  <label class="fudis-label" for="fudis-text-area-id">
-    <span class="fudis-label__content">
-      <span class="fudis-label__content__text">Text area label</span>
-    </span>
-  </label>
-  <textarea id="fudis-text-area-id" class="fudis-form-input fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance" aria-invalid="true"></textarea>
-  <div id="fudis-guidance-id" class="fudis-guidance">
-    <div id="fudis-text-area-id_guidance">
-      <div class="fudis-guidance__errors">
-      <span class="fudis-icon fudis-icon__color__red fudis-icon__lg fudis-icon__alert"></span>
-        <div class="fudis-guidance__errors__list">
-          <p class="fudis-error-message fudis-error-message__form-error">Validator error message</p>
-        </div>
-      </div>
-      <p class="fudis-guidance__help-text">Guidance text</p>
-    </div>
-  </div>
-</div>
-<div class="fudis-text-area fudis-input-size__lg">
-  <label class="fudis-label" for="fudis-text-area-id">
-    <span class="fudis-label__content">
-      <span class="fudis-label__content__text">Text area label</span>
-    </span>
-  </label>
-  <textarea id="fudis-text-area-id" class="fudis-form-input fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance"></textarea>
-  <div id="fudis-guidance-id" class="fudis-guidance">
-    <div id="fudis-text-area-id_guidance">
-      <p class="fudis-guidance__help-text">Guidance text</p>
-    </div>
-    <small class="fudis-guidance__character-limit-indicator fudis-guidance__character-limit-indicator__lg">
-      0/100
-      <span class="fudis-visually-hidden">characters used</span>
-    </small>
-  </div>
-</div>
-<div class="fudis-text-area fudis-input-size__lg">
-  <label class="fudis-label" for="fudis-text-area-id">
-    <span class="fudis-label__content">
-      <span class="fudis-label__content__text">Text area label</span>
-      <span class="fudis-label__content__required">(Required)</span>
-    </span>
-  </label>
-  <textarea id="fudis-text-area-id" class="fudis-form-input fudis-text-area__input" aria-describedby="fudis-text-area-id_guidance"></textarea>
-  <div id="fudis-guidance-id" class="fudis-guidance">
-    <div id="fudis-text-area-id_guidance">
-      <p class="fudis-guidance__help-text">Guidance text</p>
-    </div>
-  </div>
-</div>
-`;
+export const TextArea = Template.bind({});
+TextArea.args = defaultValues;
+
+export const PwAll = () => {
+  const configurations = [
+    { size: "xs", guidanceText: "" },
+    { size: "sm", guidanceText: "" },
+    { size: "md", guidanceText: "" },
+    { size: "lg", guidanceText: "" },
+    // Text input variants
+    { size: "md", required: true },
+    { size: "md" },
+    { size: "md", guidanceText: "", errorMessage: "Validator error message" },
+    { size: "md", errorMessage: "Validator error message" },
+    // Text input variants with Character limit
+    { size: "md", characterLimit: true, guidanceText: "" },
+    {
+      size: "md",
+      characterLimit: true,
+      guidanceText: "",
+      errorMessage: "Validator error message",
+    },
+    { size: "md", characterLimit: true },
+    {
+      size: "md",
+      characterLimit: true,
+      errorMessage: "Validator error message",
+    },
+    // Disabled
+    { size: "md", guidanceText: "", disabled: true },
+  ];
+
+  return configurations
+    .map((config) => {
+      const element = Template({
+        ...defaultValues,
+        ...config,
+      });
+
+      return element.outerHTML;
+    })
+    .join("<br/>");
+};
