@@ -7,7 +7,6 @@
 @use '../../foundations/typography/mixins.scss' as typographyMixin;
 
 .fudis-tab-navigation-bar {
-  display: inline-block;
   position: relative;
 
   &__wrapper {
