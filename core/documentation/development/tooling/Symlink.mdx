@@ -30,5 +30,6 @@ These instructions are for Yarn v4. If you are using any other version, please c
 
 1. Navigate to **core** directory. There you have two options for creating the build.
    - **Option 1**: Command for building the library that does not rebuild the library after changes to code: `npm run build:dist`.
-   - **Option 2**: If you want to develop and test at the same time, run `npm run build:dist:watch`. This starts up Nodemon daemon that builds the dist-folder every time you make changes to any scss-files.2. Navigate to your project where you want to use the Fudis Core-package. The directory that contains the node_modules folder containing the project dependencies is the correct place to execute linking.
-2. In this project directory run `yarn add @funidata/fudis-core@portal:./{your-path-to-core-directory}/core/dist`
+   - **Option 2**: If you want to develop and test at the same time, run `npm run build:dist:watch`. This starts up Nodemon daemon that builds the dist-folder every time you make changes to any scss-files.
+2. Navigate to your project where you want to use the Fudis Core-package. The directory that contains the node_modules folder containing the project dependencies is the correct place to execute linking.
+3. In this project directory run `yarn add @funidata/fudis-core@link:./{your-path-to-core-directory}/core/dist`
