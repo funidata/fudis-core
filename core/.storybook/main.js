@@ -35,6 +35,9 @@ export function previewHead(head) {
   return `
     ${head}
     <style>
+    /*
+    * These styles are intended for Storybook use only
+    */
       .sbdocs .full-width-bg {
         margin-top: -4rem;
         width: 100vw;
@@ -58,11 +61,18 @@ export function previewHead(head) {
       .version-badges {
         .fudis-badge {
           margin-right: 5px;
+          background-color: transparent;
+          border: none;
+          padding: 0;
         }
 
         a.sbdocs {
           color: #484848;
+          font-family: 'Fira Sans', sans-serif;
           font-size: 12px;
+          background-color: #daedff;
+          border: 1px solid #1076db;
+          padding: 1px 3px;
         }
 
         p {
