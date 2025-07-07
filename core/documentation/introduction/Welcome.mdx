@@ -1,4 +1,5 @@
 import { Meta } from "@storybook/blocks";
+import json from "../../../package.json";
 
 <Meta title="Documentation/Introduction/Welcome" />
 
@@ -7,8 +8,14 @@ import { Meta } from "@storybook/blocks";
 
 </div>
 
-[![NPM Package](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Ffunidata%2Ffudis-core%2Frefs%2Fheads%2Fmain%2Fpackage.json&query=%24.version&label=npm&color=%23674EB7)](https://www.npmjs.com/package/@funidata/fudis-core)
-[![Core GitHub](https://img.shields.io/badge/Core-GitHub-%234BBEC8?logo=github&logoColor=white)](https://github.com/funidata/fudis-core)
+<div class="version-badges">
+  <span class="fudis-badge fudis-badge__primary">
+    [NPM v{json.version}](https://www.npmjs.com/package/@funidata/fudis-core)
+  </span>
+  <span class="fudis-badge fudis-badge__primary">
+    [Core Github](https://github.com/funidata/fudis-core)
+  </span>
+</div>
 
 Fudis Core is a style library which provides design assets, such as design tokens and mixins, as well as individual component styles.
 

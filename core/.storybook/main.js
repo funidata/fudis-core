@@ -55,6 +55,20 @@ export function previewHead(head) {
           }
 
       }
+      .version-badges {
+        .fudis-badge {
+          margin-right: 5px;
+        }
+
+        a.sbdocs {
+          color: #484848;
+          font-size: 12px;
+        }
+
+        p {
+        margin: 0;
+        }
+      }
     </style>
   `;
 }
