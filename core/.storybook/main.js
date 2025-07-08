@@ -61,18 +61,17 @@ export function previewHead(head) {
       .welcome-page-wrapper {
           display: flex;
           align-items: center;
-      }
-      .css-qa4clq {
-          .welcome-page-link {
+
+        .fudis-link {
           display: flex;
           align-items: center;
           width: fit-content;
-          font-family: 'Fira Sans', sans-serif;
-          font-size: 14px;
-          color: #1d65b8;
-          text-decoration: underline solid;
           margin-right: 8px;
-        }
+
+          .fudis-icon {
+          color: #1d65b8;
+          }
+      }
       }
     </style>
   `;
