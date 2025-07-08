@@ -58,25 +58,20 @@ export function previewHead(head) {
           }
 
       }
-      .version-badges {
-        .fudis-badge {
-          margin-right: 5px;
-          background-color: transparent;
-          border: none;
-          padding: 0;
-        }
-
-        a.sbdocs {
-          color: #484848;
+      .welcome-page-wrapper {
+          display: flex;
+          align-items: center;
+      }
+      .css-qa4clq {
+          .welcome-page-link {
+          display: flex;
+          align-items: center;
+          width: fit-content;
           font-family: 'Fira Sans', sans-serif;
-          font-size: 12px;
-          background-color: #daedff;
-          border: 1px solid #1076db;
-          padding: 1px 3px;
-        }
-
-        p {
-        margin: 0;
+          font-size: 14px;
+          color: #1d65b8;
+          text-decoration: underline solid;
+          margin-right: 8px;
         }
       }
     </style>
