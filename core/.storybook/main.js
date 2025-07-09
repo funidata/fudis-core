@@ -43,7 +43,7 @@ export function previewHead(head) {
         width: 100vw;
         height: 20rem;
         margin-left: calc(-50vw + 50%);
-        background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('/assets/fudis-core-bg.svg');
+        background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('./assets/fudis-core-bg.svg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
