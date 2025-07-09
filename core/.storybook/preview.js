@@ -14,7 +14,7 @@ const preview = {
           "Documentation",
           [
             "Introduction",
-            ["Introduction", "How to start using Fudis Core"],
+            ["Welcome", "How to start using Fudis Core"],
             "Development",
             [
               "Getting Started",
@@ -31,8 +31,8 @@ const preview = {
                 "Naming Conventions",
                 "Testing",
               ],
+              "Information Security Management",
             ],
-            "Information Security Management",
           ],
           "Foundations",
           [

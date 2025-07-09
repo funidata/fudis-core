@@ -8,7 +8,7 @@ addons.setConfig({
   theme: create({
     base: "light",
     brandTitle: "Core style library for Fudis",
-    brandUrl: "https://github.com/funidata/fudis-core",
+    brandUrl: "/index.html",
     brandImage: "./assets/fudis-logo-regular-black.svg",
     brandTarget: "_self",
   }),
