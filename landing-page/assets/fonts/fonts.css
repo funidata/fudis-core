@@ -2,24 +2,24 @@
 
 /* Light */
 @font-face {
-  font-family: 'Plaax Ney Light';
-  src: url('./Plaax\ -\ 26-Ney-Light-205TF.woff2');
+  font-family: "Plaax Ney Light";
+  src: url("./Plaax\ -\ 26-Ney-Light-205TF.woff2");
 }
 
 /* Regular */
 @font-face {
-  font-family: 'Plaax Ney Regular';
-  src: url('./Plaax\ -\ 36-Ney-Regular-205TF.woff2');
+  font-family: "Plaax Ney Regular";
+  src: url("./Plaax\ -\ 36-Ney-Regular-205TF.woff2");
 }
 
 /* Bold */
 @font-face {
-  font-family: 'Plaax Ney Bold';
-  src: url('./Plaax\ -\ 46-Ney-Bold-205TF.woff2');
+  font-family: "Plaax Ney Bold";
+  src: url("./Plaax\ -\ 46-Ney-Bold-205TF.woff2");
 }
 
 /* Heavy */
 @font-face {
-  font-family: 'Plaax Ney Heavy';
-  src: url('./Plaax\ -\ 56-Ney-Heavy-205TF.woff2');
+  font-family: "Plaax Ney Heavy";
+  src: url("./Plaax\ -\ 56-Ney-Heavy-205TF.woff2");
 }
