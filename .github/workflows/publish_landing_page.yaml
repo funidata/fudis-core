@@ -1,5 +1,8 @@
 name: Publish Fudis Design System landing page
 
+permissions:
+  contents: read
+
 on:
   push:
     branches:
