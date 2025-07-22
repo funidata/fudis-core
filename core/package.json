@@ -4,8 +4,21 @@
   "description": "Core styles and foundations for Fudis Design System",
   "files": [
     "src",
-    "./_index.scss"
+    "./_index.scss",
+    "./_foundations.scss",
+    "./_styles.scss"
   ],
+  "exports": {
+    "./foundations": {
+      "sass": "./_foundations.scss"
+    },
+    "./styles": {
+      "sass": "./_styles.scss"
+    },
+    ".": {
+      "sass": "./_index.scss"
+    }
+  },
   "scripts": {
     "start": "storybook dev -p 6007",
     "build:storybook": "storybook build",
