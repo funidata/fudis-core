@@ -7,12 +7,16 @@ DIST_DIR="./dist"
 
 mkdir -p "$DIST_DIR"
 
+npm run build:css
+
 find "$PROJECT_ROOT" \
   -path "$PROJECT_ROOT/.storybook" -prune -o \
   -path "$PROJECT_ROOT/storybook-static" -prune -o \
   -path "$PROJECT_ROOT/node_modules" -prune -o \
+  -path "$PROJECT_ROOT/src/components" -prune -o \
+  -path "$PROJECT_ROOT/_styles.scss" -prune -o \
   -path "$DIST_DIR" -prune -o \
-  \( -name "*.scss" \) -type f -print | while read -r file; do
+  \( -name "*.scss" ! -name "classes.scss" \) -type f -print | while read -r file; do
     rel_path="${file#"$PROJECT_ROOT"/}"
     target_dir="$DIST_DIR/$(dirname "$rel_path")"
     mkdir -p "$target_dir"
