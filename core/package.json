@@ -4,7 +4,7 @@
   "description": "Core styles and foundations for Fudis Design System",
   "files": [
     "src",
-    "./_foundations.scss",
+    "./_index.scss",
     "./styles.css"
   ],
   "scripts": {

@@ -1,5 +1,5 @@
 @use "./../dist/styles.css";
-@use './../dist/foundations' as core;
+@use './../dist/index' as core;
 
 :root {
   --fudis-rem-multiplier: 1;
