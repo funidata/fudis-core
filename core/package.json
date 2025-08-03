@@ -5,13 +5,12 @@
   "files": [
     "src",
     "./_index.scss",
-    "./styles.css"
+    "./_styles.css"
   ],
   "scripts": {
-    "start": "npm run build:dist && storybook dev -p 6007",
-    "build:storybook": "npm run build:dist && storybook build",
+    "start": "storybook dev -p 6007",
+    "build:storybook": "storybook build",
     "build:dist": "scripts/copy-files.sh",
-    "build:css": "sass _styles.scss dist/styles.css --style=compressed",
     "build:dist:watch": "nodemon --watch src --watch _index.scss --ext scss --exec \"npm run build:dist\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
