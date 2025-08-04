@@ -1,4 +1,4 @@
-name: Delete branch documentation
+name: Delete branch landing page
 
 on: delete
 

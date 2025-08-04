@@ -2,8 +2,6 @@ name: Publish landing page from PR
 
 on:
   push:
-    paths:
-      - "landing-page/**"
     branches-ignore:
       - main
       - "release-**"
