@@ -21,7 +21,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Delete landing page from S3 bucket
         run: aws s3 rm s3://${{ vars.AWS_S3_BUCKET_NAME }}/landing-page/branch/${{ github.event.ref }} --recursive
-      - name: Deactivate deployment
+      - name: Deactivate landing page deployment
         uses: bobheadxi/deployments@648679e8e4915b27893bd7dbc35cb504dc915bc8
         with:
           step: deactivate-env

@@ -5,15 +5,15 @@ permissions:
   deployments: write
 on:
   push:
-    # paths:
-      # - "landing-page/**"
+    #paths:
+      #- "landing-page/**"
     branches-ignore:
       - main
       - "release-**"
 
 jobs:
   publish:
-    name: Publish docs to AWS
+    name: Publish PR landing page to AWS
     runs-on: ubuntu-22.04
     steps:
       - name: Start landing page deployment
@@ -30,7 +30,7 @@ jobs:
           aws-region: ${{ vars.AWS_REGION }}
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      - name: Copy docs to S3 bucket
+      - name: Copy landing page to S3 bucket
         run: aws s3 sync landing-page s3://${{ vars.AWS_S3_BUCKET_NAME }}/landing-page/branch/${{ github.ref_name }} --delete --cache-control max-age=5
       - name: Finish landing page deployment
         uses: bobheadxi/deployments@648679e8e4915b27893bd7dbc35cb504dc915bc8

@@ -1,10 +1,10 @@
-name: Delete branch documentation
+name: Delete branch Storybook documentation
 
 on: delete
 
 jobs:
   delete-docs:
-    name: Delete documentation
+    name: Delete Storybook documentation deployment
     if: github.event.ref_type == 'branch'
     runs-on: ubuntu-22.04
     permissions:
@@ -16,11 +16,11 @@ jobs:
           aws-region: ${{ vars.AWS_REGION }}
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      - name: Delete docs from S3 bucket
+      - name: Delete Storybook docs from S3 bucket
         run: aws s3 rm s3://${{ vars.AWS_S3_BUCKET_NAME }}/core/branch/${{ github.event.ref }} --recursive
-      - name: Deactivate deployment
+      - name: Deactivate Storybook deployment
         uses: bobheadxi/deployments@648679e8e4915b27893bd7dbc35cb504dc915bc8
         with:
           step: deactivate-env
-          env: Documentation for branch ${{ github.event.ref }}
+          env: Storybook documentation for branch ${{ github.event.ref }}
           desc: Environment was pruned
