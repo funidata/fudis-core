@@ -5,6 +5,8 @@ permissions:
   deployments: write
 on:
   push:
+    # paths:
+      # - "landing-page/**"
     branches-ignore:
       - main
       - "release-**"
@@ -14,12 +16,12 @@ jobs:
     name: Publish docs to AWS
     runs-on: ubuntu-22.04
     steps:
-      - name: Start deployment
+      - name: Start landing page deployment
         uses: bobheadxi/deployments@648679e8e4915b27893bd7dbc35cb504dc915bc8
         id: deployment
         with:
           step: start
-          env: Documentation for branch ${{ github.ref_name }}
+          env: Landing page for branch ${{ github.ref_name }}
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Configure AWS credentials
@@ -30,7 +32,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Copy docs to S3 bucket
         run: aws s3 sync landing-page s3://${{ vars.AWS_S3_BUCKET_NAME }}/landing-page/branch/${{ github.ref_name }} --delete --cache-control max-age=5
-      - name: Finish deployment
+      - name: Finish landing page deployment
         uses: bobheadxi/deployments@648679e8e4915b27893bd7dbc35cb504dc915bc8
         if: always()
         with:

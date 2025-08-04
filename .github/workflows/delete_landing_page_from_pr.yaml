@@ -6,8 +6,8 @@ permissions:
 on: delete
 
 jobs:
-  delete-docs:
-    name: Delete documentation
+  delete-landing-page-deployment:
+    name: Delete landing page deployment
     if: github.event.ref_type == 'branch'
     runs-on: ubuntu-22.04
     permissions:
@@ -19,11 +19,11 @@ jobs:
           aws-region: ${{ vars.AWS_REGION }}
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      - name: Delete docs from S3 bucket
+      - name: Delete landing page from S3 bucket
         run: aws s3 rm s3://${{ vars.AWS_S3_BUCKET_NAME }}/landing-page/branch/${{ github.event.ref }} --recursive
       - name: Deactivate deployment
         uses: bobheadxi/deployments@648679e8e4915b27893bd7dbc35cb504dc915bc8
         with:
           step: deactivate-env
-          env: Documentation for branch ${{ github.event.ref }}
+          env: Landing page for branch ${{ github.event.ref }}
           desc: Environment was pruned
