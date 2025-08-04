@@ -22,6 +22,6 @@ jobs:
           aws-region: ${{ vars.AWS_REGION }}
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      - name: Upload index.html to S3
+      - name: Upload landing page to S3
         run: |
-          aws s3 cp landing-page/index.html s3://${{ vars.AWS_S3_BUCKET_NAME }} --cache-control max-age=5
+          aws s3 cp landing-page s3://${{ vars.AWS_S3_BUCKET_NAME }}/landing-page --cache-control max-age=5
