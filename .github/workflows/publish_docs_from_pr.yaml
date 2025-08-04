@@ -1,5 +1,8 @@
 name: Publish Storybook documentation from PR
 
+permissions:
+  contents: read
+  deployments: write
 on:
   # Must be run for pushes to associate deployment with PR. Otherwise docs link is not shown.
   push:
