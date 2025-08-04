@@ -1,5 +1,6 @@
 name: Delete branch landing page
-
+permissions:
+  contents: read
 on: delete
 
 jobs:
