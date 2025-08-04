@@ -5,8 +5,8 @@ permissions:
   deployments: write
 on:
   push:
-    #paths:
-      #- "landing-page/**"
+    paths:
+      - "landing-page/**"
     branches-ignore:
       - main
       - "release-**"
