@@ -1,5 +1,8 @@
 name: Publish landing page from PR
 
+permissions:
+  contents: read
+  deployments: write
 on:
   push:
     branches-ignore:
