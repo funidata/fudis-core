@@ -4,7 +4,8 @@
   "description": "Core styles and foundations for Fudis Design System",
   "files": [
     "src",
-    "./_index.scss"
+    "./_index.scss",
+    "./_styles.scss"
   ],
   "scripts": {
     "start": "storybook dev -p 6007",
