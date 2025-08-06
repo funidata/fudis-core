@@ -1,66 +1,51 @@
 export default {
   title: "Components/Alert",
+  argTypes: {
+    label: {
+      name: "Label",
+      control: { type: "text" },
+    },
+    variant: {
+      options: ['warning', 'danger', 'success', 'info'],
+      control: { type: 'radio' },
+    }
+  }
 };
 
-export const Danger = () => `
-  <div class="fudis-alert fudis-alert__danger">
-    <p class="fudis-body-text fudis-body-text__center fudis-body-text__lg-regular fudis-alert__text">Danger</p>
-    <button class="fudis-alert__close fudis-alert__close__danger" aria-label="Danger, close">
-        <span class="fudis-icon fudis-icon__color__white fudis-icon__lg fudis-icon__close"></span>
-    </button>
-  </div>
-`;
+const Template = ({
+  label,
+  variant,
+}) => {
+    const alertDiv = document.createElement('div');
+    alertDiv.className = `fudis-alert fudis-alert__${variant}`;
 
-export const Info = () => `
-  <div class="fudis-alert fudis-alert__info">
-    <p class="fudis-body-text fudis-body-text__center fudis-body-text__lg-regular fudis-alert__text">Info</p>
-    <button class="fudis-alert__close fudis-alert__close__info" aria-label="Info, close">
-        <span class="fudis-icon fudis-icon__color__white fudis-icon__lg fudis-icon__close"></span>
-    </button>
-  </div>
-`;
+    const alertText = document.createElement('p');
+    alertText.className = 'fudis-body-text fudis-body-text__center fudis-body-text__lg-regular fudis-alert__text';
+    alertText.textContent = label;
 
-export const Success = () => `
-  <div class="fudis-alert fudis-alert__success">
-    <p class="fudis-body-text fudis-body-text__center fudis-body-text__lg-regular fudis-alert__text">Success</p>
-    <button class="fudis-alert__close fudis-alert__close__success" aria-label="Success, close">
-        <span class="fudis-icon fudis-icon__color__white fudis-icon__lg fudis-icon__close"></span>
-    </button>
-  </div>
-`;
+    const alertCloseButton = document.createElement('button');
+    alertCloseButton.className = `fudis-alert__close fudis-alert__close__${variant}`;
+    alertCloseButton.setAttribute('aria-label', `${variant.charAt(0).toUpperCase() + variant.slice(1)}, close`);
 
-export const Warning = () => `
-  <div class="fudis-alert fudis-alert__warning">
-    <p class="fudis-body-text fudis-body-text__center fudis-body-text__lg-regular fudis-alert__text">Warning</p>
-    <button class="fudis-alert__close fudis-alert__close__warning" aria-label="Warning, close">
-        <span class="fudis-icon fudis-icon__color__gray-dark fudis-icon__lg fudis-icon__close"></span>
-    </button>
-  </div>
-`;
+    const alertIcon = document.createElement('span');
 
-export const PwAll = () => `
-  <div class="fudis-alert fudis-alert__danger">
-    <p class="fudis-body-text fudis-body-text__center fudis-body-text__lg-regular fudis-alert__text">Danger</p>
-    <button class="fudis-alert__close fudis-alert__close__danger" aria-label="Danger, close">
-        <span class="fudis-icon fudis-icon__color__white fudis-icon__lg fudis-icon__close"></span>
-    </button>
-  </div>
-  <div class="fudis-alert fudis-alert__info">
-    <p class="fudis-body-text fudis-body-text__center fudis-body-text__lg-regular fudis-alert__text">Info</p>
-    <button class="fudis-alert__close fudis-alert__close__info" aria-label="Info, close">
-        <span class="fudis-icon fudis-icon__color__white fudis-icon__lg fudis-icon__close"></span>
-    </button>
-  </div>
-  <div class="fudis-alert fudis-alert__success">
-    <p class="fudis-body-text fudis-body-text__center fudis-body-text__lg-regular fudis-alert__text">Success</p>
-    <button class="fudis-alert__close fudis-alert__close__success" aria-label="Success, close">
-        <span class="fudis-icon fudis-icon__color__white fudis-icon__lg fudis-icon__close"></span>
-    </button>
-  </div>
-  <div class="fudis-alert fudis-alert__warning">
-    <p class="fudis-body-text fudis-body-text__center fudis-body-text__lg-regular fudis-alert__text">Warning</p>
-    <button class="fudis-alert__close fudis-alert__close__warning" aria-label="Warning, close">
-        <span class="fudis-icon fudis-icon__color__gray-dark fudis-icon__lg fudis-icon__close"></span>
-    </button>
-  </div>
-`;
+    const iconColor = variant === 'warning' 
+  ? 'fudis-icon__color__gray-dark' 
+  : 'fudis-icon__color__white';
+
+    alertIcon.className = `fudis-icon ${iconColor} fudis-icon__lg fudis-icon__close`;;
+
+    alertCloseButton.appendChild(alertIcon);
+    alertDiv.appendChild(alertText);
+    alertDiv.appendChild(alertCloseButton);
+
+    return alertDiv;
+}
+
+let defaultValues = {
+  label: "Alert",
+  variant: 'danger',
+};
+
+export const Alert = Template.bind({});
+Alert.args = defaultValues;
