@@ -5,10 +5,18 @@
 /* stylelint-disable color-no-hex */
 @import "./../assets/fonts/fonts.css";
 
+*:focus {
+  outline: 2px dashed #484848;
+  outline-offset: 1px;
+  box-shadow: 0 0 0 4px #FFFFFF;
+}
+
 body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  letter-spacing: 0.2px;
+  color: #484848;
 }
 
 /* Main content max-width based on breakpoints */
@@ -78,7 +86,7 @@ body {
   }
 
   .header-info {
-    font-size: 14px !important;
+    font-size: 18px !important;
   }
 }
 
@@ -99,6 +107,7 @@ body {
 
 .main-info {
   margin-bottom: 4rem;
+  line-height: 30px;
   font-family: "Plaax Ney Regular", sans-serif;
   font-size: 20px;
 }
@@ -110,11 +119,11 @@ body {
   }
 
   .main-heading {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .main-info {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
@@ -138,7 +147,7 @@ body {
 }
 
 .card {
-  border: 1px solid #000000;
+  border: 1px solid #484848;
   border-radius: 1rem;
   padding: 2rem;
 }
@@ -174,14 +183,17 @@ body {
 .card-link {
   display: flex;
   align-items: center;
-  border: 2px solid #000000;
+  border: 2px solid #484848;
   border-radius: 2px;
   padding-right: 0.5rem;
   width: max-content;
   text-transform: uppercase;
   text-decoration: none;
-  color: #000000;
   font-family: "Plaax Ney Regular", sans-serif;
+}
+
+.card-link:visited, .card-link:hover, .card-link:active {
+  color: inherit;
 }
 
 .visually-hidden {
@@ -232,12 +244,13 @@ body {
 .footer-heading {
   text-transform: uppercase;
   font-family: "Plaax Ney Bold", sans-serif;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .footer-info {
+  line-height: 27px;
   font-family: "Plaax Ney Bold", sans-serif;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .footer-link {
@@ -245,7 +258,19 @@ body {
   align-items: center;
 }
 
+.footer-link:visited, .footer-link:hover, .footer-link:active {
+  color: inherit;
+}
+
 @media screen and (width <= 48em) {
+  .footer-heading {
+    font-size: 18px;
+  }
+
+  .footer-info {
+    font-size: 16px;
+  }
+
   .footer-container {
     justify-content: normal;
     padding-left: 2rem;
