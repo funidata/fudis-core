@@ -1,184 +1,118 @@
 export default {
   title: "Components/Button",
-  decorators: [
-    (storyFn) =>
-      `<div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-start;">${storyFn()}</div>`,
-  ],
+  argTypes: {
+    label: {
+      name: "label",
+      control: { type: "text" },
+    },
+    variant: {
+      options: ["primary", "secondary", "tertiary"],
+      control: { type: "radio" },
+    },
+    size: {
+      options: ["small", "medium"],
+      control: { type: "select" },
+    },
+    disabled: {
+      name: "disabled",
+      control: { type: "boolean" },
+    },
+  },
 };
 
-export const Primary = () => `
-  <!-- With text -->
-  <button class="fudis-button fudis-button__primary fudis-button__size__medium">
-    Primary
-  </button>
+const Template = ({ label, variant, size, disabled }) => {
+  const button = document.createElement("button");
+  button.className = `fudis-button fudis-button__${variant} fudis-button__size__${size}`;
+  button.textContent = label;
+  button.setAttribute("aria-disabled", disabled);
 
-  <!-- With text and icon -->
-  <button class="fudis-button fudis-button__primary fudis-button__size__medium">
-    <div class="fudis-button__icon">
-        <!-- Add an icon variant of your choice and color here. -->
-        <span class="fudis-button__icon__component fudis-icon fudis-icon__color__white fudis-icon__lg fudis-icon__search"></span>
-    </div>
-    Primary
-  </button>
-`;
+  return button;
+};
 
-export const Secondary = () => `
-  <!-- With text -->
-  <button class="fudis-button fudis-button__secondary fudis-button__size__medium">
-    Secondary
-  </button>
+const iconTemplate = ({ label, variant, size, disabled }) => {
+  const button = document.createElement("button");
+  button.className = `fudis-button fudis-button__${variant} fudis-button__size__${size}`;
+  button.setAttribute("aria-disabled", disabled);
 
-  <!-- With text and icon -->
-  <button class="fudis-button fudis-button__secondary fudis-button__size__medium">
-     <div class="fudis-button__icon">
-        <!-- Add an icon variant of your choice and color here. -->
-        <span class="fudis-button__icon__component fudis-icon fudis-icon__color__primary fudis-icon__lg fudis-icon__search"></span>
-     </div>
-    Secondary
-  </button>
-`;
+  const iconWrapper = document.createElement("div");
+  iconWrapper.className = "fudis-button__icon";
 
-export const Tertiary = () => `
-  <!-- With text -->
-  <button class="fudis-button fudis-button__tertiary fudis-button__size__medium">
-    Tertiary
-  </button>
+  const buttonIcon = document.createElement("span");
 
-  <!-- With text and icon -->
-  <button class="fudis-button fudis-button__tertiary fudis-button__size__medium">
-    <div class="fudis-button__icon">
-      <!-- Add an icon variant of your choice and color here.-->
-      <span class="fudis-button__icon__component fudis-icon fudis-icon__color__primary fudis-icon__lg fudis-icon__search"></span>
-    </div>
-    Tertiary
-  </button>
-`;
+  const iconColor =
+    variant === "primary"
+      ? "fudis-icon__color__white"
+      : "fudis-icon__color__primary";
 
-export const Primary_Small = () => `
-  <!-- With text -->
-  <button class="fudis-button fudis-button__primary fudis-button__size__small">
-    Primary Small
-  </button>
+  buttonIcon.className = `fudis-button__icon__component fudis-icon ${iconColor} fudis-icon__lg fudis-icon__search`;
 
-  <!-- With text and icon -->
-  <button class="fudis-button fudis-button__primary fudis-button__size__small">
-    <div class="fudis-button__icon">
-      <!-- Add an icon of your choice and color here. -->
-      <span class="fudis-button__icon__component fudis-icon fudis-icon__color__white fudis-icon__lg fudis-icon__search"></span>
-    </div>
-    Primary Small
-  </button>
-`;
+  iconWrapper.appendChild(buttonIcon);
+  button.appendChild(iconWrapper);
+  button.appendChild(document.createTextNode(label));
 
-export const Secondary_Small = () => `
-  <!-- With text -->
-  <button class="fudis-button fudis-button__secondary fudis-button__size__small">
-    Secondary Small
-  </button>
+  return button;
+};
 
-  <!-- With text and icon -->
-  <button class="fudis-button fudis-button__secondary fudis-button__size__small">
-    <div class="fudis-button__icon">
-      <!-- Add an icon of your choice and color here. -->
-      <span class="fudis-button__icon__component fudis-icon fudis-icon__color__primary fudis-icon__lg fudis-icon__search"></span>
-    </div>
-    Secondary Small
-  </button>
-`;
+let defaultValues = {
+  label: "Button",
+  variant: "primary",
+  size: "medium",
+  disabled: false,
+};
 
-export const Tertiary_Small = () => `
-  <!-- With text -->
-  <button class="fudis-button fudis-button__tertiary fudis-button__size__small">
-    Tertiary Small
-  </button>
+export const Button = Template.bind({});
+Button.args = defaultValues;
 
-  <!-- With text and icon -->
-  <button class="fudis-button fudis-button__tertiary fudis-button__size__small">
-    <div class="fudis-button__icon">
-      <!-- Add an icon of your choice and color here. -->
-      <span class="fudis-button__icon__component fudis-icon fudis-icon__color__primary fudis-icon__lg fudis-icon__search"></span>
-    </div>
-    Tertiary Small
-  </button>
-`;
+export const WithIcon = iconTemplate.bind({});
+WithIcon.argTypes = defaultValues;
 
-export const Disabled = () => `
-  <!-- Adding aria-disabled="true" to any button variant applies the disabled look -->
-  <button aria-disabled="true" class="fudis-button fudis-button__primary fudis-button__size__medium">
-    Primary
-  </button>
+export const PwAll = () => {
+  const configurations = [
+    { label: "Primary", variant: "primary", size: "medium", disabled: false },
+    { label: "Primary", variant: "primary", size: "small", disabled: false },
+    {
+      label: "Secondary",
+      variant: "secondary",
+      size: "medium",
+      disabled: false,
+    },
+    {
+      label: "Secondary",
+      variant: "secondary",
+      size: "small",
+      disabled: false,
+    },
+    { label: "Tertiary", variant: "tertiary", size: "medium", disabled: false },
+    { label: "Tertiary", variant: "tertiary", size: "small", disabled: false },
+    { label: "Disabled", variant: "primary", size: "medium", disabled: true },
+    { label: "Disabled", variant: "primary", size: "small", disabled: true },
+  ];
 
-  <button aria-disabled="true" class="fudis-button fudis-button__primary fudis-button__size__medium">
-    <div class="fudis-button__icon">
-        <!-- Add an icon variant of your choice and color here. -->
-        <span class="fudis-button__icon__component fudis-icon fudis-icon__color__white fudis-icon__lg fudis-icon__search"></span>
-    </div>
-    Primary
-  </button>
-`;
+  const buttonsContainer = document.createElement("div");
+  buttonsContainer.style.display = "flex";
+  buttonsContainer.style.gap = "12px";
+  buttonsContainer.style.flexWrap = "wrap";
+  buttonsContainer.style.alignItems = "baseline";
 
-export const PwAll = () => `
-  <button class="fudis-button fudis-button__primary fudis-button__size__medium">
-    Primary
-  </button>
-  <button class="fudis-button fudis-button__primary fudis-button__size__medium">
-    <div class="fudis-button__icon">
-        <span class="fudis-button__icon__component fudis-icon fudis-icon__color__white fudis-icon__lg fudis-icon__search"></span>
-    </div>
-    Primary
-  </button>
-  <button class="fudis-button fudis-button__secondary fudis-button__size__medium">
-    Secondary
-  </button>
-  <button class="fudis-button fudis-button__secondary fudis-button__size__medium">
-     <div class="fudis-button__icon">
-        <span class="fudis-button__icon__component fudis-icon fudis-icon__color__primary fudis-icon__lg fudis-icon__search"></span>
-     </div>
-    Secondary
-  </button>
-  <button class="fudis-button fudis-button__tertiary fudis-button__size__medium">
-    Tertiary
-  </button>
-  <button class="fudis-button fudis-button__tertiary fudis-button__size__medium">
-    <div class="fudis-button__icon">
-      <span class="fudis-button__icon__component fudis-icon fudis-icon__color__primary fudis-icon__lg fudis-icon__search"></span>
-    </div>
-    Tertiary
-  </button>
-  <button class="fudis-button fudis-button__primary fudis-button__size__small">
-    Primary Small
-  </button>
-  <button class="fudis-button fudis-button__primary fudis-button__size__small">
-    <div class="fudis-button__icon">
-      <span class="fudis-button__icon__component fudis-icon fudis-icon__color__white fudis-icon__lg fudis-icon__search"></span>
-    </div>
-    Primary Small
-  </button>
-  <button class="fudis-button fudis-button__secondary fudis-button__size__small">
-    Secondary Small
-  </button>
-  <button class="fudis-button fudis-button__secondary fudis-button__size__small">
-    <div class="fudis-button__icon">
-      <span class="fudis-button__icon__component fudis-icon fudis-icon__color__primary fudis-icon__lg fudis-icon__search"></span>
-    </div>
-    Secondary Small
-  </button>
-  <button class="fudis-button fudis-button__tertiary fudis-button__size__small">
-    Tertiary Small
-  </button>
-  <button class="fudis-button fudis-button__tertiary fudis-button__size__small">
-    <div class="fudis-button__icon">
-      <span class="fudis-button__icon__component fudis-icon fudis-icon__color__primary fudis-icon__lg fudis-icon__search"></span>
-    </div>
-    Tertiary Small
-  </button>
-  <button aria-disabled="true" class="fudis-button fudis-button__primary fudis-button__size__medium">
-    Primary
-  </button>
-  <button aria-disabled="true" class="fudis-button fudis-button__primary fudis-button__size__medium">
-    <div class="fudis-button__icon">
-        <span class="fudis-button__icon__component fudis-icon fudis-icon__color__white fudis-icon__lg fudis-icon__search"></span>
-    </div>
-    Primary
-  </button>
-`;
+  configurations.forEach((config) => {
+    const buttons = Template({
+      ...defaultValues,
+      ...config,
+    });
+
+    const buttonsWithIcon = iconTemplate({
+      ...defaultValues,
+      ...config,
+    });
+
+    const buttonGroup = document.createElement("div");
+    buttonGroup.style.marginBottom = "1rem";
+
+    buttonGroup.appendChild(buttons);
+    buttonGroup.appendChild(document.createTextNode(" "));
+    buttonGroup.appendChild(buttonsWithIcon);
+
+    buttonsContainer.appendChild(buttonGroup);
+  });
+  return buttonsContainer;
+};
