@@ -192,6 +192,7 @@ body {
   font-family: "Plaax Ney Regular", sans-serif;
 }
 
+.card-link,
 .card-link:visited,
 .card-link:hover,
 .card-link:active {
@@ -255,11 +256,16 @@ body {
   font-size: 18px;
 }
 
+.footer-email {
+  text-decoration: none;
+}
+
 .footer-link {
   display: flex;
   align-items: center;
 }
 
+.footer-link,
 .footer-link:visited,
 .footer-link:hover,
 .footer-link:active {
