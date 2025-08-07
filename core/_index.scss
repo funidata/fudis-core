@@ -1,9 +1,5 @@
 /**
-* Export all Core SCSS files here
-*/
-
-/**
-* Assets and Foundations
+* Foundations
 */
 @forward './src/foundations/borders/tokens';
 @forward './src/foundations/breakpoints/tokens';
@@ -20,33 +16,5 @@
 @forward './src/foundations/grid/mixins';
 @forward './src/foundations/spacing/mixins';
 @forward './src/foundations/typography/mixins';
-@forward './src/foundations/typography/classes';
 @forward './src/foundations/utilities/mixins';
 @forward './src/foundations/z-index/mixins';
-@forward './src/foundations/spacing/classes';
-@forward './src/foundations/utilities/classes';
-
-/**
-* Component styles
-*/
-@forward './src/components/alert/alert';
-@forward './src/components/button/button';
-@forward './src/components/badge/badge';
-@forward './src/components/checkbox/checkbox';
-@forward './src/components/checkbox-group/checkbox-group';
-@forward './src/components/error-summary/error-summary';
-@forward './src/components/fieldset/fieldset';
-@forward './src/components/guidance/guidance';
-@forward './src/components/horizontal-rule/horizontal-rule';
-@forward './src/components/icon/icon';
-@forward './src/components/label/label';
-@forward './src/components/link/link';
-@forward './src/components/loading-spinner/loading-spinner';
-@forward './src/components/notification/notification';
-@forward './src/components/popover/popover';
-@forward './src/components/radio-button/radio-button';
-@forward './src/components/radio-button-group/radio-button-group';
-@forward './src/components/tab-navigation/tab-navigation';
-@forward './src/components/text-area/text-area';
-@forward './src/components/text-input/text-input';
-@forward './src/components/validator-error-message/validator-error-message';
