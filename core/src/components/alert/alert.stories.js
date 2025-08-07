@@ -2,7 +2,7 @@ export default {
   title: "Components/Alert",
   argTypes: {
     message: {
-      name: "Alert",
+      name: "message",
       control: { type: "text" },
     },
     variant: {
