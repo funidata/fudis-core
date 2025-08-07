@@ -29,7 +29,7 @@ const Template = ({ label, variant, size, disabled }) => {
   return button;
 };
 
-const iconTemplate = ({ label, variant, size, disabled }) => {
+const IconTemplate = ({ label, variant, size, disabled }) => {
   const button = document.createElement("button");
   button.className = `fudis-button fudis-button__${variant} fudis-button__size__${size}`;
   button.setAttribute("aria-disabled", disabled);
@@ -63,8 +63,8 @@ let defaultValues = {
 export const Button = Template.bind({});
 Button.args = defaultValues;
 
-export const WithIcon = iconTemplate.bind({});
-WithIcon.argTypes = defaultValues;
+export const WithIcon = IconTemplate.bind({});
+WithIcon.args = defaultValues;
 
 export const PwAll = () => {
   const configurations = [
@@ -100,7 +100,7 @@ export const PwAll = () => {
       ...config,
     });
 
-    const buttonsWithIcon = iconTemplate({
+    const buttonsWithIcon = IconTemplate({
       ...defaultValues,
       ...config,
     });
