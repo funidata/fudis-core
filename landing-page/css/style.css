@@ -8,7 +8,7 @@
 *:focus {
   outline: 2px dashed #484848;
   outline-offset: 1px;
-  box-shadow: 0 0 0 4px #FFFFFF;
+  box-shadow: 0 0 0 4px #ffffff;
 }
 
 body {
@@ -192,7 +192,9 @@ body {
   font-family: "Plaax Ney Regular", sans-serif;
 }
 
-.card-link:visited, .card-link:hover, .card-link:active {
+.card-link:visited,
+.card-link:hover,
+.card-link:active {
   color: inherit;
 }
 
@@ -258,7 +260,9 @@ body {
   align-items: center;
 }
 
-.footer-link:visited, .footer-link:hover, .footer-link:active {
+.footer-link:visited,
+.footer-link:hover,
+.footer-link:active {
   color: inherit;
 }
 
