@@ -9,7 +9,7 @@ test("visual regression for Icon", async ({ page }) => {
 
 test("visual regression for Icon colors", async ({ page }) => {
   await page.goto(
-    "/iframe.html?globals=&args=&id=components-icon-wip--icon-colors&viewMode=story",
+    "/iframe.html?globals=&args=&id=components-icon-wip--pw-icon-colors&viewMode=story",
   );
   await expect(page).toHaveScreenshot("icon-color.png", { fullPage: true });
 });

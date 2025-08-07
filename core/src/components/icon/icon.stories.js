@@ -63,35 +63,6 @@ let defaultValues = {
 export const Icon = Template.bind({});
 Icon.args = defaultValues;
 
-export const IconColors = () => {
-  const colors = [
-    "red",
-    "yellow",
-    "green",
-    "primary",
-    "primary-dark",
-    "white",
-    "gray-light",
-    "gray-dark",
-  ];
-
-  const iconContainer = document.createElement("div");
-
-  colors.forEach((color) => {
-    const iconElement = Template({
-      icon: "check",
-      color,
-      size: "lg",
-    });
-    iconContainer.appendChild(iconElement);
-    iconContainer.style.display = "grid";
-    iconContainer.style.gap = "12px";
-    iconContainer.style.gridTemplateColumns = "repeat(3, 30px)";
-    iconContainer.style.alignItems = "center";
-  });
-  return iconContainer;
-};
-
 export const AllIcons = () => {
   const icons = [
     "achievement",
@@ -135,5 +106,34 @@ export const AllIcons = () => {
     });
   });
 
+  return iconContainer;
+};
+
+export const pwIconColors = () => {
+  const colors = [
+    "red",
+    "yellow",
+    "green",
+    "primary",
+    "primary-dark",
+    "white",
+    "gray-light",
+    "gray-dark",
+  ];
+
+  const iconContainer = document.createElement("div");
+
+  colors.forEach((color) => {
+    const iconElement = Template({
+      icon: "check",
+      color,
+      size: "lg",
+    });
+    iconContainer.appendChild(iconElement);
+    iconContainer.style.display = "grid";
+    iconContainer.style.gap = "12px";
+    iconContainer.style.gridTemplateColumns = "repeat(3, 30px)";
+    iconContainer.style.alignItems = "center";
+  });
   return iconContainer;
 };
