@@ -1,98 +1,139 @@
 export default {
   title: "Components/Icon (WIP)",
-  decorators: [
-    (storyFn) =>
-      `<div style="display: grid; gap: 12px; grid-template-columns: 30px 30px 30px; align-items: center;">${storyFn()}</div>`,
-  ],
+  argTypes: {
+    icon: {
+      options: [
+        "achievement",
+        "alert",
+        "archive",
+        "arrow-big",
+        "arrow-dashed",
+        "arrow-solid",
+        "check",
+        "brochure",
+        "check-indeterminate",
+        "calendar",
+        "bullets",
+        "back",
+        "change-log",
+        "search",
+        "new-tab",
+        "close",
+        "exclamation-mark-circle",
+        "checkmark-circle",
+        "info-circle",
+      ],
+      control: { type: "select" },
+    },
+    color: {
+      options: [
+        "red",
+        "yellow",
+        "green",
+        "primary",
+        "primary-dark",
+        "white",
+        "gray-light",
+        "gray-dark",
+      ],
+      control: { type: "select" },
+    },
+    size: {
+      options: ["sm", "md", "lg"],
+      control: { type: "select" },
+    },
+  },
 };
 
-export const IconColors = () => `
-  <!-- Available colors for all icons -->
-  <!-- Element with white icon has dark background color for demonstrative purposes -->
-  <span class="fudis-icon fudis-icon__lg fudis-icon__color__red fudis-icon__check"></span>
-  <span class="fudis-icon fudis-icon__lg fudis-icon__color__yellow fudis-icon__check"></span>
-  <span class="fudis-icon fudis-icon__lg fudis-icon__color__green fudis-icon__check"></span>
-  <span class="fudis-icon fudis-icon__lg fudis-icon__color__primary fudis-icon__check"></span>
-  <span class="fudis-icon fudis-icon__lg fudis-icon__color__primary-dark fudis-icon__check"></span>
-  <span class="fudis-icon fudis-icon__lg fudis-icon__color__white fudis-icon__check" style="background-color: #3b3b3b"></span>
-  <span class="fudis-icon fudis-icon__lg fudis-icon__color__gray-light fudis-icon__check"></span>
-  <span class="fudis-icon fudis-icon__lg fudis-icon__color__gray-dark fudis-icon__check"></span>
-`;
+const Template = ({ icon, color, size }) => {
+  const iconSpan = document.createElement("span");
+  iconSpan.className = `fudis-icon fudis-icon__${size} fudis-icon__color__${color} fudis-icon__${icon}`;
 
-export const AllIcons = () => `
-  <span class="fudis-icon fudis-icon__sm fudis-icon__color__primary fudis-icon__achievement"></span>
-  <span class="fudis-icon fudis-icon__md fudis-icon__color__primary fudis-icon__achievement"></span>
-  <span class="fudis-icon fudis-icon__lg fudis-icon__color__primary fudis-icon__achievement"></span>
+  if (color === "white") iconSpan.style.backgroundColor = "#3b3b3b";
 
-  <span class="fudis-icon fudis-icon__sm fudis-icon__color__primary fudis-icon__alert"></span>
-  <span class="fudis-icon fudis-icon__md fudis-icon__color__primary fudis-icon__alert"></span>
-  <span class="fudis-icon fudis-icon__lg fudis-icon__color__primary fudis-icon__alert"></span>
+  return iconSpan;
+};
 
-  <span class="fudis-icon fudis-icon__sm fudis-icon__color__primary fudis-icon__archive"></span>
-  <span class="fudis-icon fudis-icon__md fudis-icon__color__primary fudis-icon__archive"></span>
-  <span class="fudis-icon fudis-icon__lg fudis-icon__color__primary fudis-icon__archive"></span>
+let defaultValues = {
+  icon: "check",
+  size: "lg",
+  color: "primary",
+};
 
-  <span class="fudis-icon fudis-icon__sm fudis-icon__color__primary fudis-icon__arrow-big"></span>
-  <span class="fudis-icon fudis-icon__md fudis-icon__color__primary fudis-icon__arrow-big"></span>
-  <span class="fudis-icon fudis-icon__lg fudis-icon__color__primary fudis-icon__arrow-big"></span>
+export const Icon = Template.bind({});
+Icon.args = defaultValues;
 
-  <span class="fudis-icon fudis-icon__sm fudis-icon__color__primary fudis-icon__arrow-dashed"></span>
-  <span class="fudis-icon fudis-icon__md fudis-icon__color__primary fudis-icon__arrow-dashed"></span>
-  <span class="fudis-icon fudis-icon__lg fudis-icon__color__primary fudis-icon__arrow-dashed"></span>
+export const IconColors = () => {
+  const colors = [
+    "red",
+    "yellow",
+    "green",
+    "primary",
+    "primary-dark",
+    "white",
+    "gray-light",
+    "gray-dark",
+  ];
 
-  <span class="fudis-icon fudis-icon__sm fudis-icon__color__primary fudis-icon__arrow-solid"></span>
-  <span class="fudis-icon fudis-icon__md fudis-icon__color__primary fudis-icon__arrow-solid"></span>
-  <span class="fudis-icon fudis-icon__lg fudis-icon__color__primary fudis-icon__arrow-solid"></span>
+  const iconContainer = document.createElement("div");
 
-  <span class="fudis-icon fudis-icon__sm fudis-icon__color__primary fudis-icon__check"></span>
-  <span class="fudis-icon fudis-icon__md fudis-icon__color__primary fudis-icon__check"></span>
-  <span class="fudis-icon fudis-icon__lg fudis-icon__color__primary fudis-icon__check"></span>
+  colors.forEach((color) => {
+    const iconElement = Template({
+      icon: "check",
+      color,
+      size: "lg",
+    });
+    iconContainer.appendChild(iconElement);
+    iconContainer.style.display = "grid";
+    iconContainer.style.gap = "12px";
+    iconContainer.style.gridTemplateColumns = "repeat(3, 30px)";
+    iconContainer.style.alignItems = "center";
+  });
+  return iconContainer;
+};
 
-  <span class="fudis-icon fudis-icon__sm fudis-icon__color__primary fudis-icon__brochure"></span>
-  <span class="fudis-icon fudis-icon__md fudis-icon__color__primary fudis-icon__brochure"></span>
-  <span class="fudis-icon fudis-icon__lg fudis-icon__color__primary fudis-icon__brochure"></span>
+export const AllIcons = () => {
+  const icons = [
+    "achievement",
+    "alert",
+    "archive",
+    "arrow-big",
+    "arrow-dashed",
+    "arrow-solid",
+    "check",
+    "brochure",
+    "check-indeterminate",
+    "calendar",
+    "bullets",
+    "back",
+    "change-log",
+    "search",
+    "new-tab",
+    "close",
+    "exclamation-mark-circle",
+    "checkmark-circle",
+    "info-circle",
+  ];
 
-  <span class="fudis-icon fudis-icon__sm fudis-icon__color__primary fudis-icon__check-indeterminate"></span>
-  <span class="fudis-icon fudis-icon__md fudis-icon__color__primary fudis-icon__check-indeterminate"></span>
-  <span class="fudis-icon fudis-icon__lg fudis-icon__color__primary fudis-icon__check-indeterminate"></span>
+  const sizes = ["sm", "md", "lg"];
 
-  <span class="fudis-icon fudis-icon__sm fudis-icon__color__primary fudis-icon__calendar"></span>
-  <span class="fudis-icon fudis-icon__md fudis-icon__color__primary fudis-icon__calendar"></span>
-  <span class="fudis-icon fudis-icon__lg fudis-icon__color__primary fudis-icon__calendar"></span>
+  const iconContainer = document.createElement("div");
+  iconContainer.style.display = "grid";
+  iconContainer.style.gap = "12px";
+  iconContainer.style.gridTemplateColumns = "repeat(3, 30px)";
+  iconContainer.style.alignItems = "center";
 
-  <span class="fudis-icon fudis-icon__sm fudis-icon__color__primary fudis-icon__bullets"></span>
-  <span class="fudis-icon fudis-icon__md fudis-icon__color__primary fudis-icon__bullets"></span>
-  <span class="fudis-icon fudis-icon__lg fudis-icon__color__primary fudis-icon__bullets"></span>
+  icons.forEach((icon) => {
+    sizes.forEach((size) => {
+      const iconElement = Template({
+        icon,
+        color: "primary",
+        size,
+      });
 
-  <span class="fudis-icon fudis-icon__sm fudis-icon__color__primary fudis-icon__back"></span>
-  <span class="fudis-icon fudis-icon__md fudis-icon__color__primary fudis-icon__back"></span>
-  <span class="fudis-icon fudis-icon__lg fudis-icon__color__primary fudis-icon__back"></span>
+      iconContainer.appendChild(iconElement);
+    });
+  });
 
-  <span class="fudis-icon fudis-icon__sm fudis-icon__color__primary fudis-icon__change-log"></span>
-  <span class="fudis-icon fudis-icon__md fudis-icon__color__primary fudis-icon__change-log"></span>
-  <span class="fudis-icon fudis-icon__lg fudis-icon__color__primary fudis-icon__change-log"></span>
-
-  <span class="fudis-icon fudis-icon__sm fudis-icon__color__primary fudis-icon__search"></span>
-  <span class="fudis-icon fudis-icon__md fudis-icon__color__primary fudis-icon__search"></span>
-  <span class="fudis-icon fudis-icon__lg fudis-icon__color__primary fudis-icon__search"></span>
-
-  <span class="fudis-icon fudis-icon__sm fudis-icon__color__primary fudis-icon__new-tab"></span>
-  <span class="fudis-icon fudis-icon__md fudis-icon__color__primary fudis-icon__new-tab"></span>
-  <span class="fudis-icon fudis-icon__lg fudis-icon__color__primary fudis-icon__new-tab"></span>
-
-  <span class="fudis-icon fudis-icon__sm fudis-icon__color__primary fudis-icon__close"></span>
-  <span class="fudis-icon fudis-icon__md fudis-icon__color__primary fudis-icon__close"></span>
-  <span class="fudis-icon fudis-icon__lg fudis-icon__color__primary fudis-icon__close"></span>
-
-  <span class="fudis-icon fudis-icon__sm fudis-icon__color__primary fudis-icon__exclamation-mark-circle"></span>
-  <span class="fudis-icon fudis-icon__md fudis-icon__color__primary fudis-icon__exclamation-mark-circle"></span>
-  <span class="fudis-icon fudis-icon__lg fudis-icon__color__primary fudis-icon__exclamation-mark-circle"></span>
-
-  <span class="fudis-icon fudis-icon__sm fudis-icon__color__primary fudis-icon__checkmark-circle"></span>
-  <span class="fudis-icon fudis-icon__md fudis-icon__color__primary fudis-icon__checkmark-circle"></span>
-  <span class="fudis-icon fudis-icon__lg fudis-icon__color__primary fudis-icon__checkmark-circle"></span>
-
-  <span class="fudis-icon fudis-icon__sm fudis-icon__color__primary fudis-icon__info-circle"></span>
-  <span class="fudis-icon fudis-icon__md fudis-icon__color__primary fudis-icon__info-circle"></span>
-  <span class="fudis-icon fudis-icon__lg fudis-icon__color__primary fudis-icon__info-circle"></span>
-`;
+  return iconContainer;
+};
