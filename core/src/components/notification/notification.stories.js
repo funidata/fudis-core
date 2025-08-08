@@ -1,74 +1,81 @@
 export default {
   title: "Components/Notification",
+  argTypes: {
+    message: {
+      name: "message",
+      control: { type: "text" },
+    },
+    variant: {
+      options: ["danger", "info", "success", "warning"],
+      control: { type: "radio" },
+    },
+  },
 };
 
-export const Danger = () => `
-  <article class="fudis-notification fudis-notification__danger">
-    <p class="fudis-visually-hidden">Attention</p>
-    <span class="fudis-icon fudis-icon__color__gray-dark fudis-icon__lg fudis-icon__alert"></span>
-    <div class="fudis-notification__content">
-      <p class="fudis-body-text fudis-body-text__md-regular">Danger</p>
-    </div>
-  </article>
-`;
+function getIcon(variant) {
+  const iconOptions = {
+    danger: "alert",
+    info: "info-circle",
+    success: "checkmark-circle",
+    warning: "exclamation-mark-circle",
+  };
 
-export const Info = () => `
-  <article class="fudis-notification fudis-notification__info">
-    <p class="fudis-visually-hidden">Attention</p>
-    <span class="fudis-icon fudis-icon__color__gray-dark fudis-icon__lg fudis-icon__info-circle"></span>
-    <div class="fudis-notification__content">
-      <p class="fudis-body-text fudis-body-text__md-regular">Info</p>
-    </div>
-  </article>
-`;
+  return iconOptions[variant] || "info-circle";
+}
 
-export const Success = () => `
-  <article class="fudis-notification fudis-notification__success">
-    <p class="fudis-visually-hidden">Attention</p>
-    <span class="fudis-icon fudis-icon__color__gray-dark fudis-icon__lg fudis-icon__checkmark-circle"></span>
-    <div class="fudis-notification__content">
-      <p class="fudis-body-text fudis-body-text__md-regular">Success</p>
-    </div>
-  </article>
-`;
+const Template = ({ message, variant }) => {
+  const iconName = getIcon(variant);
 
-export const Warning = () => `
-  <article class="fudis-notification fudis-notification__warning">
-    <p class="fudis-visually-hidden">Attention</p>
-    <span class="fudis-icon fudis-icon__color__gray-dark fudis-icon__lg fudis-icon__exclamation-mark-circle"></span>
-    <div class="fudis-notification__content">
-      <p class="fudis-body-text fudis-body-text__md-regular">Warning</p>
-    </div>
-  </article>
-`;
+  const notification = document.createElement("article");
+  notification.className = `fudis-notification fudis-notification__${variant}`;
 
-export const PwAll = () => `
-  <article class="fudis-notification fudis-notification__danger">
-    <p class="fudis-visually-hidden">Attention</p>
-    <span class="fudis-icon fudis-icon__color__gray-dark fudis-icon__lg fudis-icon__alert"></span>
-    <div class="fudis-notification__content">
-      <p class="fudis-body-text fudis-body-text__md-regular">Danger</p>
-    </div>
-  </article>
-  <article class="fudis-notification fudis-notification__info">
-    <p class="fudis-visually-hidden">Attention</p>
-    <span class="fudis-icon fudis-icon__color__gray-dark fudis-icon__lg fudis-icon__info-circle"></span>
-    <div class="fudis-notification__content">
-      <p class="fudis-body-text fudis-body-text__md-regular">Info</p>
-    </div>
-  </article>
-  <article class="fudis-notification fudis-notification__success">
-    <p class="fudis-visually-hidden">Attention</p>
-    <span class="fudis-icon fudis-icon__color__gray-dark fudis-icon__lg fudis-icon__checkmark-circle"></span>
-    <div class="fudis-notification__content">
-      <p class="fudis-body-text fudis-body-text__md-regular">Success</p>
-    </div>
-  </article>
-  <article class="fudis-notification fudis-notification__warning">
-    <p class="fudis-visually-hidden">Attention</p>
-    <span class="fudis-icon fudis-icon__color__gray-dark fudis-icon__lg fudis-icon__exclamation-mark-circle"></span>
-    <div class="fudis-notification__content">
-      <p class="fudis-body-text fudis-body-text__md-regular">Warning</p>
-    </div>
-  </article>
-`;
+  const hiddenText = document.createElement("p");
+  hiddenText.className = "fudis-visually-hidden";
+  hiddenText.textContent = "Attention";
+
+  const icon = document.createElement("span");
+  icon.className = `fudis-icon fudis-icon__color__gray-dark fudis-icon__lg fudis-icon__${iconName}`;
+
+  const content = document.createElement("div");
+  content.className = "fudis-notification__content";
+
+  const text = document.createElement("p");
+  text.className = "fudis-body-text fudis-body-text__md-regular";
+  text.textContent = message;
+
+  content.appendChild(text);
+
+  notification.appendChild(hiddenText);
+  notification.appendChild(icon);
+  notification.appendChild(content);
+
+  return notification;
+};
+
+let defaultValues = {
+  variant: "danger",
+  message: "This is a notification",
+};
+
+export const Notification = Template.bind({});
+Notification.args = defaultValues;
+
+export const PwAll = () => {
+  const configurations = [
+    { message: "Danger", variant: "danger" },
+    { message: "Info", variant: "info" },
+    { message: "Success", variant: "success" },
+    { message: "Warning", variant: "warning" },
+  ];
+
+  return configurations
+    .map((config) => {
+      const element = Template({
+        ...defaultValues,
+        ...config,
+      });
+
+      return element.outerHTML;
+    })
+    .join("");
+};
