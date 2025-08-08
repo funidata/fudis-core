@@ -1,92 +1,99 @@
 export default {
   title: "Components/Typography/Heading",
+  argTypes: {
+    align: {
+      options: ["left", "right", "center"],
+      control: { type: "radio" },
+    },
+    level: {
+      options: [1, 2, 3, 4, 5, 6],
+      control: { type: "select" },
+    },
+    variant: {
+      options: ["xxs", "xs", "sm", "md", "lg", "xl", "xxl"],
+      control: { type: "select" },
+    },
+  },
 };
 
-export const DoubleExtraLarge = () => `
-  <h1 class="fudis-heading fudis-heading__variant__xxl">
-    I am a level 1 heading, but I could be something else too!
-  </h1>
- `;
+const Template = ({ variant, align, level, message }) => {
+  const heading = document.createElement(`h${level}`);
+  heading.className = `fudis-heading fudis-heading__align__${align} fudis-heading__variant__${variant}`;
+  heading.textContent = message;
 
-export const ExtraLarge = () => `
-  <h2 class="fudis-heading fudis-heading__variant__xl">
-    I am a level 2 heading, but I could be something else too!
-  </h2>
- `;
+  return heading;
+};
 
-export const Large = () => `
-  <h3 class="fudis-heading fudis-heading__variant__lg">
-    I am a level 3 heading, but I could be something else too!
-  </h3>
-`;
+let defaultValues = {
+  align: "left",
+  level: 1,
+  message: "I am a heading element, but I could be something else too!",
+  variant: "xxl",
+};
 
-export const Medium = () => `
-  <h4 class="fudis-heading fudis-heading__variant__md">
-    I am a level 4 heading, but I could be something else too!
-  </h4>
-`;
+export const Heading = Template.bind({});
+Heading.args = defaultValues;
 
-export const Small = () => `
-  <h5 class="fudis-heading fudis-heading__variant__sm">
-    I am a level 5 heading, but I could be something else too!
-  </h5>
-`;
+export const PwAll = () => {
+  const configurations = [
+    {
+      level: 1,
+      message: "I am a level 1 heading, but I could be something else too!",
+      variant: "xxl",
+    },
+    {
+      level: 2,
+      message: "I am a level 2 heading, but I could be something else too!",
+      variant: "xl",
+    },
+    {
+      level: 3,
+      message: "I am a level 3 heading, but I could be something else too!",
+      variant: "lg",
+    },
+    {
+      level: 4,
+      message: "I am a level 4 heading, but I could be something else too!",
+      variant: "md",
+    },
+    {
+      level: 5,
+      message: "I am a level 5 heading, but I could be something else too!",
+      variant: "sm",
+    },
+    {
+      level: 6,
+      message: "I am a level 6 heading, but I could be something else too!",
+      variant: "xs",
+    },
+    {
+      level: 6,
+      message: "I am a level 6 heading, but I could be something else too!",
+      variant: "xxs",
+    },
+    { align: "left", level: 3, message: "Heading aligned left", variant: "lg" },
+    {
+      align: "center",
+      level: 3,
+      message: "Heading aligned center",
+      variant: "lg",
+    },
+    {
+      align: "right",
+      level: 3,
+      message: "Heading aligned right",
+      variant: "lg",
+    },
+  ];
 
-export const ExtraSmall = () => `
-  <h6 class="fudis-heading fudis-heading__variant__xs">
-    I am a level 6 heading, but I could be something else too!
-  </h6>
-`;
+  return configurations
+    .map((config) => {
+      const element = Template({
+        ...defaultValues,
+        ...config,
+      });
 
-export const DoubleExtraSmall = () => `
-  <h6 class="fudis-heading fudis-heading__variant__xxs">
-    I am a level 6 heading, but I could be something else too!
-  </h6>
-`;
-
-export const Aligned = () => `
-  <h3 class="fudis-heading fudis-heading__align__left fudis-heading__variant__lg">
-    Heading aligned left
-  </h3>
-
-  <h3 class="fudis-heading fudis-heading__align__center fudis-heading__variant__lg">
-    Heading aligned center
-  </h3>
-
-  <h3 class="fudis-heading fudis-heading__align__right fudis-heading__variant__lg">
-    Heading aligned right
-  </h3>
-`;
-
-export const PwAll = () => `
-  <h1 class="fudis-heading fudis-heading__variant__xxl">
-    I am a level 1 heading, but I could be something else too!
-  </h1>
-  <h2 class="fudis-heading fudis-heading__variant__xl">
-    I am a level 2 heading, but I could be something else too!
-  </h2>
-  <h3 class="fudis-heading fudis-heading__variant__lg">
-    I am a level 3 heading, but I could be something else too!
-  </h3>
-  <h4 class="fudis-heading fudis-heading__variant__md">
-    I am a level 4 heading, but I could be something else too!
-  </h4>
-  <h5 class="fudis-heading fudis-heading__variant__sm">
-    I am a level 5 heading, but I could be something else too!
-  </h5>
-  <h6 class="fudis-heading fudis-heading__variant__xs">
-    I am a level 6 heading, but I could be something else too!
-  </h6>
-  <h6 class="fudis-heading fudis-heading__variant__xxs">
-    I am a level 6 heading, but I could be something else too!
-  </h6>
-  <h3 class="fudis-heading fudis-heading__align__left fudis-heading__variant__lg">
-    Heading aligned left
-  </h3>
-  <h3 class="fudis-heading fudis-heading__align__center fudis-heading__variant__lg">
-    Heading aligned center
-  </h3>
-  <h3 class="fudis-heading fudis-heading__align__right fudis-heading__variant__lg">
-    Heading aligned right
-  </h3>
-`;
+      return element.outerHTML;
+    })
+    .join("");
+};

@@ -1,6 +1,10 @@
 export default {
   title: "Components/Typography/BodyText",
   argTypes: {
+    align: {
+      options: ["left", "right", "center"],
+      control: { type: "radio" },
+    },
     variant: {
       options: [
         "sm-regular",
@@ -10,10 +14,6 @@ export default {
         "lg-light",
       ],
       control: { type: "select" },
-    },
-    align: {
-      options: ["left", "right", "center"],
-      control: { type: "radio" },
     },
   },
 };
