@@ -91,8 +91,8 @@ let defaultValues = {
   errorMessage: "",
 };
 
-export const TextInput = Template.bind({});
-TextInput.args = defaultValues;
+export const Example = Template.bind({});
+Example.args = defaultValues;
 
 export const PwAll = () => {
   const configurations = [

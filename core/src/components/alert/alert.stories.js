@@ -49,8 +49,8 @@ let defaultValues = {
   variant: "danger",
 };
 
-export const Alert = Template.bind({});
-Alert.args = defaultValues;
+export const Example = Template.bind({});
+Example.args = defaultValues;
 
 export const PwAll = () => {
   const configurations = [

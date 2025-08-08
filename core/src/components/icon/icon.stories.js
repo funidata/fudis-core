@@ -60,8 +60,8 @@ let defaultValues = {
   color: "primary",
 };
 
-export const Icon = Template.bind({});
-Icon.args = defaultValues;
+export const Example = Template.bind({});
+Example.args = defaultValues;
 
 export const AllIcons = () => {
   const icons = [

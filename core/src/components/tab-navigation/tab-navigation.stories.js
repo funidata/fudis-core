@@ -64,8 +64,8 @@ const Template = ({ variant }) => {
   return container;
 };
 
-export const TabNavigation = Template.bind({});
-TabNavigation.args = {
+export const Example = Template.bind({});
+Example.args = {
   variant: "primary",
 };
 

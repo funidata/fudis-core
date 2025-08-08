@@ -57,8 +57,8 @@ let defaultValues = {
   message: "This is a notification",
 };
 
-export const Notification = Template.bind({});
-Notification.args = defaultValues;
+export const Example = Template.bind({});
+Example.args = defaultValues;
 
 export const PwAll = () => {
   const configurations = [

@@ -32,8 +32,8 @@ let defaultValues = {
   message: "The quick brown fox jumps over the lazy dog.",
 };
 
-export const BodyText = Template.bind({});
-BodyText.args = defaultValues;
+export const Example = Template.bind({});
+Example.args = defaultValues;
 
 export const PwAll = () => {
   const configurations = [

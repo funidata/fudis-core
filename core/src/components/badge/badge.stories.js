@@ -25,8 +25,8 @@ let defaultValues = {
   variant: "accent",
 };
 
-export const Badge = Template.bind({});
-Badge.args = defaultValues;
+export const Example = Template.bind({});
+Example.args = defaultValues;
 
 export const PwAll = () => {
   const configurations = [

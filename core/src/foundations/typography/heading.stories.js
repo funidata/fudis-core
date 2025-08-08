@@ -31,8 +31,8 @@ let defaultValues = {
   variant: "xxl",
 };
 
-export const Heading = Template.bind({});
-Heading.args = defaultValues;
+export const Example = Template.bind({});
+Example.args = defaultValues;
 
 export const PwAll = () => {
   const configurations = [

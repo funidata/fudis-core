@@ -47,8 +47,8 @@ const Template = ({ size }) => {
   return spinnerWrapper;
 };
 
-export const Spinner = Template.bind({});
-Spinner.args = {
+export const Example = Template.bind({});
+Example.args = {
   size: "sm",
 };
 

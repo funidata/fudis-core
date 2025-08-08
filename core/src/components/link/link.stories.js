@@ -28,8 +28,8 @@ let defaultValues = {
   title: "I am a link",
 };
 
-export const Link = Template.bind({});
-Link.args = defaultValues;
+export const Example = Template.bind({});
+Example.args = defaultValues;
 
 export const PwAll = () => {
   const configurations = [

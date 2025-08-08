@@ -60,8 +60,8 @@ let defaultValues = {
   disabled: false,
 };
 
-export const Button = Template.bind({});
-Button.args = defaultValues;
+export const Example = Template.bind({});
+Example.args = defaultValues;
 
 export const WithIcon = IconTemplate.bind({});
 WithIcon.args = defaultValues;
