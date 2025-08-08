@@ -1,10 +1,6 @@
 export default {
   title: "Components/Notification",
   argTypes: {
-    message: {
-      name: "message",
-      control: { type: "text" },
-    },
     variant: {
       options: ["danger", "info", "success", "warning"],
       control: { type: "radio" },

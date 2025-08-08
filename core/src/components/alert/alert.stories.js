@@ -1,10 +1,6 @@
 export default {
   title: "Components/Alert",
   argTypes: {
-    message: {
-      name: "message",
-      control: { type: "text" },
-    },
     variant: {
       options: ["warning", "danger", "success", "info"],
       control: { type: "radio" },

@@ -1,10 +1,6 @@
 export default {
   title: "Components/Badge",
   argTypes: {
-    content: {
-      name: "content",
-      control: { type: "text" },
-    },
     variant: {
       options: ["accent", "danger", "primary", "secondary", "success"],
       control: { type: "radio" },
@@ -12,16 +8,16 @@ export default {
   },
 };
 
-const Template = ({ content, variant }) => {
+const Template = ({ message, variant }) => {
   const badgeDiv = document.createElement("div");
   badgeDiv.className = `fudis-badge fudis-badge__${variant}`;
-  badgeDiv.textContent = content;
+  badgeDiv.textContent = message;
 
   return badgeDiv;
 };
 
 let defaultValues = {
-  content: "Badge",
+  message: "Badge",
   variant: "accent",
 };
 
@@ -30,11 +26,11 @@ Example.args = defaultValues;
 
 export const PwAll = () => {
   const configurations = [
-    { content: "Accent", variant: "accent" },
-    { content: "Danger", variant: "danger" },
-    { content: "Primary", variant: "primary" },
-    { content: "Secondary", variant: "secondary" },
-    { content: "Success", variant: "success" },
+    { message: "Accent", variant: "accent" },
+    { message: "Danger", variant: "danger" },
+    { message: "Primary", variant: "primary" },
+    { message: "Secondary", variant: "secondary" },
+    { message: "Success", variant: "success" },
   ];
 
   return configurations
