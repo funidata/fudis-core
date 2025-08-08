@@ -37,11 +37,11 @@ const Template = ({ size }) => {
 
   content.innerHTML = createSpinnerSVG(size);
 
-  const p = document.createElement("p");
-  p.className = `fudis-body-text fudis-body-text__center ${size === "sm" ? "fudis-body-text__md-regular" : "fudis-body-text__lg-regular"}`;
-  p.textContent = "Loading";
+  const spinnerText = document.createElement("p");
+  spinnerText.className = `fudis-body-text fudis-body-text__center ${size === "sm" ? "fudis-body-text__md-regular" : "fudis-body-text__lg-regular"}`;
+  spinnerText.textContent = "Loading";
 
-  content.appendChild(p);
+  content.appendChild(spinnerText);
   spinnerWrapper.appendChild(content);
 
   return spinnerWrapper;

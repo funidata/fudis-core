@@ -12,7 +12,7 @@ export default {
 // Also we should think how interactive examples have to be, e.g. now Storybook user can't navigate betweem tabs
 
 const Template = ({ variant }) => {
-const navBar = document.createElement("div");
+  const navBar = document.createElement("div");
   navBar.className = "fudis-tab-navigation-bar";
   navBar.setAttribute("role", "tablist");
 
@@ -51,7 +51,8 @@ const navBar = document.createElement("div");
   panel.style.marginTop = "1rem";
 
   const panelContent = document.createElement("p");
-  panelContent.className = "fudis-body-text fudis-body-text__left fudis-body-text__md-regular fudis-body-text__default";
+  panelContent.className =
+    "fudis-body-text fudis-body-text__left fudis-body-text__md-regular fudis-body-text__default";
   panelContent.textContent = "Tab content";
 
   panel.appendChild(panelContent);
@@ -65,7 +66,7 @@ const navBar = document.createElement("div");
 
 export const TabNavigation = Template.bind({});
 TabNavigation.args = {
-  variant: "primary"
+  variant: "primary",
 };
 
 export const PwAll = () => {
