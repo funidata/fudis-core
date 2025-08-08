@@ -24,4 +24,4 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Upload landing page to S3
         run: |
-          aws s3 cp landing-page s3://${{ vars.AWS_S3_BUCKET_NAME }}/landing-page --cache-control max-age=5
+          aws s3 sync landing-page s3://${{ vars.AWS_S3_BUCKET_NAME }}/landing-page --cache-control max-age=5
