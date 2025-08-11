@@ -24,7 +24,7 @@ const Template = ({ label, variant, size, disabled }) => {
   const button = document.createElement("button");
   button.className = `fudis-button fudis-button__${variant} fudis-button__size__${size}`;
   button.textContent = label;
-  button.setAttribute("aria-disabled", disabled);
+  if (disabled) button.setAttribute("aria-disabled", disabled);
 
   return button;
 };
@@ -32,7 +32,7 @@ const Template = ({ label, variant, size, disabled }) => {
 const IconTemplate = ({ label, variant, size, disabled }) => {
   const button = document.createElement("button");
   button.className = `fudis-button fudis-button__${variant} fudis-button__size__${size}`;
-  button.setAttribute("aria-disabled", disabled);
+  if (disabled) button.setAttribute("aria-disabled", disabled);
 
   const iconWrapper = document.createElement("div");
   iconWrapper.className = "fudis-button__icon";

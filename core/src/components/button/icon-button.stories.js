@@ -19,7 +19,8 @@ export default {
 const Template = ({ variant, size, disabled }) => {
   const button = document.createElement("button");
   button.className = `fudis-button fudis-button__label--hidden fudis-button__${variant} fudis-button__size__${size}`;
-  button.setAttribute("aria-disabled", disabled);
+  button.setAttribute("aria-label", "Search");
+  if (disabled) button.setAttribute("aria-disabled", disabled);
 
   const iconWrapper = document.createElement("div");
   iconWrapper.className = "fudis-button__icon";

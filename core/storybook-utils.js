@@ -116,8 +116,8 @@ export const createRadioButton = (
   inputElement.className = "fudis-radio-button__input";
   inputElement.type = "radio";
   inputElement.value = "foo";
-  inputElement.ariaInvalid = invalid;
-  inputElement.ariaDisabled = disabled;
+  if (invalid) inputElement.ariaInvalid = invalid;
+  if (disabled) inputElement.ariaDisabled = disabled;
   inputElement.name = "fudis-radio-button";
   if (hasAriaDescribedBy)
     inputElement.setAttribute("aria-describedby", "fudis-guidance-id");
@@ -176,8 +176,8 @@ export const createCheckbox = (
   inputElement.className = "fudis-checkbox__input";
   inputElement.type = "checkbox";
   inputElement.value = "foo";
-  inputElement.ariaInvalid = invalid;
-  inputElement.ariaDisabled = disabled;
+  if (invalid) inputElement.ariaInvalid = invalid;
+  if (disabled) inputElement.ariaDisabled = disabled;
   if (hasAriaDescribedBy)
     inputElement.setAttribute("aria-describedby", "fudis-guidance-id");
 
