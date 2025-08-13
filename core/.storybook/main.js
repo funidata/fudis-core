@@ -1,4 +1,4 @@
-import { mergeConfig } from 'vite';
+import { mergeConfig } from "vite";
 import pkg from "../package.json";
 
 export const stories = [
@@ -40,7 +40,7 @@ export function viteFinal(config) {
       __PKG_VERSION__: JSON.stringify(pkg.version),
     },
   });
-};
+}
 
 export function previewHead(head) {
   return `
