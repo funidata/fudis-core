@@ -1,5 +1,8 @@
-name: Publish documentation from PR
+name: Publish Storybook documentation from PR
 
+permissions:
+  contents: read
+  deployments: write
 on:
   # Must be run for pushes to associate deployment with PR. Otherwise docs link is not shown.
   push:
@@ -11,18 +14,18 @@ on:
 
 jobs:
   publish:
-    name: Publish docs to AWS
+    name: Publish PR Storybook docs to AWS
     runs-on: ubuntu-22.04
     defaults:
       run:
         working-directory: core
     steps:
-      - name: Start deployment
+      - name: Start Storybook deployment
         uses: bobheadxi/deployments@648679e8e4915b27893bd7dbc35cb504dc915bc8
         id: deployment
         with:
           step: start
-          env: Documentation for branch ${{ github.ref_name }}
+          env: Storybook documentation for branch ${{ github.ref_name }}
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Set up Node.js
@@ -37,9 +40,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Install dependencies
         run: npm ci
-      - name: Build docs
+      - name: Build Storybook docs
         run: npm run build:storybook
-      - name: Copy docs to S3 bucket
+      - name: Copy storybook docs to S3 bucket
         run: aws s3 sync storybook-static s3://${{ vars.AWS_S3_BUCKET_NAME }}/core/branch/${{ github.ref_name }} --delete --cache-control max-age=5
       - name: Finish deployment
         uses: bobheadxi/deployments@648679e8e4915b27893bd7dbc35cb504dc915bc8
