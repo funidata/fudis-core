@@ -9,19 +9,20 @@ export default {
         "arrow-big",
         "arrow-dashed",
         "arrow-solid",
-        "check",
-        "brochure",
-        "check-indeterminate",
-        "calendar",
-        "bullets",
         "back",
+        "brochure",
+        "bullets",
+        "calendar",
         "change-log",
-        "search",
-        "new-tab",
+        "check",
+        "check-indeterminate",
+        "checkmark-circle",
+        "chevron",
         "close",
         "exclamation-mark-circle",
-        "checkmark-circle",
         "info-circle",
+        "new-tab",
+        "search",
       ],
       control: { type: "select" },
     },
@@ -38,6 +39,10 @@ export default {
       ],
       control: { type: "select" },
     },
+    rotate: {
+      options: ["none", "ccw-90", "cw-90", "flip-180"],
+      control: { type: "select" },
+    },
     size: {
       options: ["sm", "md", "lg"],
       control: { type: "select" },
@@ -45,9 +50,18 @@ export default {
   },
 };
 
-const Template = ({ icon, color, size }) => {
+const Template = ({ icon, color, rotate, size }) => {
   const iconSpan = document.createElement("span");
-  iconSpan.className = `fudis-icon fudis-icon__${size} fudis-icon__color__${color} fudis-icon__${icon}`;
+
+  iconSpan.className = [
+    "fudis-icon",
+    `fudis-icon__${size}`,
+    `fudis-icon__color__${color}`,
+    `fudis-icon__${icon}`,
+    rotate !== "none" && `fudis-icon__rotate__${rotate}`,
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   if (color === "white") iconSpan.style.backgroundColor = "#3b3b3b";
 
@@ -58,6 +72,7 @@ let defaultValues = {
   icon: "check",
   size: "lg",
   color: "primary",
+  rotate: "none",
 };
 
 export const Example = Template.bind({});
@@ -71,19 +86,20 @@ export const AllIcons = () => {
     "arrow-big",
     "arrow-dashed",
     "arrow-solid",
-    "check",
-    "brochure",
-    "check-indeterminate",
-    "calendar",
-    "bullets",
     "back",
+    "brochure",
+    "bullets",
+    "calendar",
     "change-log",
-    "search",
-    "new-tab",
+    "check",
+    "check-indeterminate",
+    "checkmark-circle",
+    "chevron",
     "close",
     "exclamation-mark-circle",
-    "checkmark-circle",
     "info-circle",
+    "new-tab",
+    "search",
   ];
 
   const sizes = ["sm", "md", "lg"];
@@ -100,6 +116,7 @@ export const AllIcons = () => {
         icon,
         color: "primary",
         size,
+        rotate: "none",
       });
 
       iconContainer.appendChild(iconElement);
@@ -128,6 +145,7 @@ export const pwIconColors = () => {
       icon: "check",
       color,
       size: "lg",
+      rotate: "none",
     });
     iconContainer.appendChild(iconElement);
     iconContainer.style.display = "grid";

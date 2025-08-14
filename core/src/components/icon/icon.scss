@@ -196,6 +196,14 @@
     }
   }
 
+  &__chevron {
+    &::after {
+      @include icon-mask-base;
+
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath fill='%23000' fill-rule='evenodd' clip-rule='evenodd' d='M13.414 10.133a.61.61 0 0 0-.434 1.044L17.818 16l-4.838 4.822a.61.61 0 0 0 .434 1.045c.157 0 .315-.061.434-.18l5.102-5.085a.848.848 0 0 0 0-1.204l-5.102-5.085a.618.618 0 0 0-.434-.18'/%3E%3C/svg%3E");
+    }
+  }
+
   &__close {
     &::after {
       @include icon-mask-base;
