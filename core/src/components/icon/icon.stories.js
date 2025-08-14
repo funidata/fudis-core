@@ -1,42 +1,102 @@
+const icons = [
+  "achievement",
+  "alert",
+  "archive",
+  "arrow-big",
+  "arrow-dashed",
+  "arrow-solid",
+  "back",
+  "brochure",
+  "bullets",
+  "calendar",
+  "change-log",
+  "check",
+  "checkmark-circle",
+  "chevron",
+  "chevron-ring",
+  "clock",
+  "close",
+  "close-big",
+  "code",
+  "decrease-indent",
+  "delete",
+  "dot",
+  "edit",
+  "editor",
+  "exclamation-mark-circle",
+  "eye",
+  "eye-blind",
+  "fail",
+  "hourglass",
+  "increase-indent",
+  "info",
+  "info-circle",
+  "junction",
+  "link",
+  "list-add",
+  "list-minus",
+  "lock",
+  "lock-open",
+  "magic-wand",
+  "mail",
+  "menu",
+  "message",
+  "minus",
+  "new-tab",
+  "notebook",
+  "notification",
+  "numbering",
+  "paperclip",
+  "pdf",
+  "people",
+  "person",
+  "picker",
+  "pin",
+  "place",
+  "plus",
+  "print",
+  "question-mark",
+  "required",
+  "ring-close",
+  "ring-plus",
+  "rosette",
+  "rule",
+  "search",
+  "seats",
+  "settings",
+  "shopping-cart",
+  "sorter",
+  "star",
+  "switch",
+  "three-dots",
+  "waiting-approval",
+  "waiting-decline",
+  "zoom-in",
+  "zoom-out",
+];
+
+const sizes = ["sm", "md", "lg"];
+
+const colors = [
+  "red",
+  "yellow",
+  "green",
+  "primary",
+  "primary-dark",
+  "white",
+  "gray-light",
+  "gray-dark",
+];
+
 export default {
   title: "Components/Icon (WIP)",
   argTypes: {
     icon: {
-      options: [
-        "achievement",
-        "alert",
-        "archive",
-        "arrow-big",
-        "arrow-dashed",
-        "arrow-solid",
-        "back",
-        "brochure",
-        "bullets",
-        "calendar",
-        "change-log",
-        "check",
-        "check-indeterminate",
-        "checkmark-circle",
-        "chevron",
-        "close",
-        "exclamation-mark-circle",
-        "info-circle",
-        "new-tab",
-        "search",
-      ],
+      options: icons,
       control: { type: "select" },
     },
     color: {
-      options: [
-        "red",
-        "yellow",
-        "green",
-        "primary",
-        "primary-dark",
-        "white",
-        "gray-light",
-        "gray-dark",
-      ],
+      options: colors,
       control: { type: "select" },
     },
     rotate: {
@@ -44,7 +104,7 @@ export default {
       control: { type: "select" },
     },
     size: {
-      options: ["sm", "md", "lg"],
+      options: sizes,
       control: { type: "select" },
     },
   },
@@ -79,31 +139,6 @@ export const Example = Template.bind({});
 Example.args = defaultValues;
 
 export const AllIcons = () => {
-  const icons = [
-    "achievement",
-    "alert",
-    "archive",
-    "arrow-big",
-    "arrow-dashed",
-    "arrow-solid",
-    "back",
-    "brochure",
-    "bullets",
-    "calendar",
-    "change-log",
-    "check",
-    "check-indeterminate",
-    "checkmark-circle",
-    "chevron",
-    "close",
-    "exclamation-mark-circle",
-    "info-circle",
-    "new-tab",
-    "search",
-  ];
-
-  const sizes = ["sm", "md", "lg"];
-
   const iconContainer = document.createElement("div");
   iconContainer.style.display = "grid";
   iconContainer.style.gap = "12px";
@@ -127,17 +162,6 @@ export const AllIcons = () => {
 };
 
 export const pwIconColors = () => {
-  const colors = [
-    "red",
-    "yellow",
-    "green",
-    "primary",
-    "primary-dark",
-    "white",
-    "gray-light",
-    "gray-dark",
-  ];
-
   const iconContainer = document.createElement("div");
 
   colors.forEach((color) => {
