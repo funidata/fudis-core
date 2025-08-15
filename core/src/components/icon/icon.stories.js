@@ -88,6 +88,15 @@ const colors = [
   "gray-dark",
 ];
 
+function responsiveGrid(screenWidth, iconContainer) {
+  if (screenWidth.matches) {
+    iconContainer.style.gridTemplateColumns = "120px repeat(3, 35px)";
+  } else {
+    iconContainer.style.gridTemplateColumns =
+      "120px repeat(3, 35px) 120px repeat(3, 35px) 120px repeat(3, 35px)";
+  }
+}
+
 export default {
   title: "Components/Icon (WIP)",
   argTypes: {
@@ -139,13 +148,27 @@ export const Example = Template.bind({});
 Example.args = defaultValues;
 
 export const AllIcons = () => {
+  let screenWidth = window.matchMedia("(max-width: 830px)");
+
   const iconContainer = document.createElement("div");
   iconContainer.style.display = "grid";
   iconContainer.style.gap = "12px";
-  iconContainer.style.gridTemplateColumns = "repeat(3, 30px)";
   iconContainer.style.alignItems = "center";
+  iconContainer.style.justifyItems = "start";
+
+  responsiveGrid(screenWidth, iconContainer);
+
+  screenWidth.addEventListener("change", function () {
+    responsiveGrid(screenWidth, iconContainer);
+  });
 
   icons.forEach((icon) => {
+    const iconName = document.createElement("p");
+    iconName.textContent = icon;
+    iconName.className = "fudis-body-text fudis-body-text__md-regular";
+
+    iconContainer.appendChild(iconName);
+
     sizes.forEach((size) => {
       const iconElement = Template({
         icon,
