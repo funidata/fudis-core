@@ -88,6 +88,8 @@ const colors = [
   "gray-dark",
 ];
 
+const directions = ["none", "ccw-90", "cw-90", "flip-180"];
+
 function responsiveGrid(screenWidth, iconContainer) {
   if (screenWidth.matches) {
     iconContainer.style.gridTemplateColumns = "120px repeat(3, 35px)";
@@ -109,7 +111,7 @@ export default {
       control: { type: "select" },
     },
     rotate: {
-      options: ["none", "ccw-90", "cw-90", "flip-180"],
+      options: directions,
       control: { type: "select" },
     },
     size: {
@@ -200,5 +202,24 @@ export const pwIconColors = () => {
     iconContainer.style.gridTemplateColumns = "repeat(3, 30px)";
     iconContainer.style.alignItems = "center";
   });
+  return iconContainer;
+};
+
+export const pwIconRotate = () => {
+  const iconContainer = document.createElement("div");
+
+  directions.forEach((rotate) => {
+    const iconElement = Template({
+      icon: "arrow-big",
+      color: "gray-dark",
+      size: "lg",
+      rotate,
+    });
+    iconContainer.appendChild(iconElement);
+    iconContainer.style.display = "grid";
+    iconContainer.style.gap = "12px";
+    iconContainer.style.gridTemplateColumns = "repeat(4, 30px)";
+  });
+
   return iconContainer;
 };
