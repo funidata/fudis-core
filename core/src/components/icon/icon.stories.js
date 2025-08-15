@@ -1,6 +1,7 @@
 const icons = [
   "achievement",
   "alert",
+  "alert-fill",
   "archive",
   "arrow-big",
   "arrow-dashed",
@@ -14,6 +15,7 @@ const icons = [
   "checkmark-circle",
   "chevron",
   "chevron-ring",
+  "chevron-ring-fill",
   "clock",
   "close",
   "close-big",
@@ -24,6 +26,7 @@ const icons = [
   "edit",
   "editor",
   "exclamation-mark-circle",
+  "exclamation-mark-circle-fill",
   "eye",
   "eye-blind",
   "fail",
@@ -31,6 +34,7 @@ const icons = [
   "increase-indent",
   "info",
   "info-circle",
+  "info-circle-fill",
   "junction",
   "link",
   "list-add",
@@ -42,6 +46,7 @@ const icons = [
   "menu",
   "message",
   "minus",
+  "minus-ring-fill",
   "new-tab",
   "notebook",
   "notification",
@@ -53,12 +58,15 @@ const icons = [
   "picker",
   "pin",
   "place",
+  "place-ring-fill",
   "plus",
   "print",
   "question-mark",
   "required",
   "ring-close",
+  "ring-close-fill",
   "ring-plus",
+  "ring-plus-fill",
   "rosette",
   "rule",
   "search",
@@ -100,7 +108,7 @@ function responsiveGrid(screenWidth, iconContainer) {
 }
 
 export default {
-  title: "Components/Icon (WIP)",
+  title: "Components/Icon",
   argTypes: {
     icon: {
       options: icons,
