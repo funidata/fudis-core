@@ -56,7 +56,7 @@ const preview = {
             "Checkbox Group",
             "Error Summary",
             "Horizontal Rule",
-            "Icon (WIP)",
+            "Icon",
             "Link (WIP)",
             "Loading Spinner",
             "Notification",
