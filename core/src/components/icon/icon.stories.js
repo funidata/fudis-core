@@ -131,11 +131,12 @@ export default {
 
 const Template = ({ icon, color, rotate, size }) => {
   const iconSpan = document.createElement("span");
+  const isFillIcon = /-fill$/.test(icon);
 
   iconSpan.className = [
     "fudis-icon",
     `fudis-icon__${size}`,
-    `fudis-icon__color__${color}`,
+    isFillIcon ? `` : `fudis-icon__color__${color}`,
     `fudis-icon__${icon}`,
     rotate !== "none" && `fudis-icon__rotate__${rotate}`,
   ]
