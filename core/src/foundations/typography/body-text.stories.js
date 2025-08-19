@@ -1,74 +1,74 @@
 export default {
   title: "Components/Typography/BodyText",
+  argTypes: {
+    align: {
+      options: ["none", "left", "right", "center"],
+      control: { type: "radio" },
+    },
+    variant: {
+      options: [
+        "sm-regular",
+        "md-regular",
+        "lg-regular",
+        "md-light",
+        "lg-light",
+      ],
+      control: { type: "select" },
+    },
+  },
 };
 
-export const LargeRegular = () => `
-  <p class="fudis-body-text fudis-body-text__lg-regular">
-    Large regular text
-  </p>
-`;
+const Template = ({ variant, align, message }) => {
+  const bodyText = document.createElement("p");
+  bodyText.className = [
+    "fudis-body-text",
+    `fudis-body-text__${variant}`,
+    align !== "none" && `fudis-body-text__${align}`,
+  ]
+    .filter(Boolean)
+    .join(" ");
+  bodyText.textContent = message;
 
-export const LargeLight = () => `
-  <p class="fudis-body-text fudis-body-text__lg-light">
-    Large light text
-  </p>
-`;
+  return bodyText;
+};
 
-export const MediumRegular = () => `
-  <p class="fudis-body-text fudis-body-text__md-regular">
-    Medium regular text
-  </p>
-`;
+let defaultValues = {
+  variant: "md-regular",
+  align: "left",
+  message: "The quick brown fox jumps over the lazy dog.",
+};
 
-export const MediumLight = () => `
-  <p class="fudis-body-text fudis-body-text__md-light">
-    Medium light text
-  </p>
-`;
+export const Example = Template.bind({});
+Example.args = defaultValues;
 
-export const SmallRegular = () => `
-  <p class="fudis-body-text fudis-body-text__sm-regular">
-    Small regular text
-  </p>
-`;
+export const PwAll = () => {
+  const configurations = [
+    { variant: "lg-regular", message: "Large regular text" },
+    { variant: "lg-light", message: "Large light text" },
+    { variant: "md-regular", message: "Medium regular text" },
+    { variant: "md-light", message: "Medium light text" },
+    { variant: "sm-regular", message: "Small regular text" },
+    { variant: "md-regular", message: "Medium regular text aligned left" },
+    {
+      variant: "md-regular",
+      message: "Medium regular text aligned center",
+      align: "center",
+    },
+    {
+      variant: "md-regular",
+      message: "Medium regular text aligned right",
+      align: "right",
+    },
+  ];
 
-export const Aligned = () => `
-  <p class="fudis-body-text fudis-body-text__md-regular fudis-body-text__left">
-    Medium regular text aligned left
-  </p>
+  return configurations
+    .map((config) => {
+      const element = Template({
+        ...defaultValues,
+        ...config,
+      });
 
-  <p class="fudis-body-text fudis-body-text__md-regular fudis-body-text__center">
-    Medium regular text aligned center
-  </p>
-
-  <p class="fudis-body-text fudis-body-text__md-regular fudis-body-text__right">
-    Medium regular text aligned right
-  </p>
-`;
-
-export const PwAll = () => `
-<p class="fudis-body-text fudis-body-text__lg-regular">
-Large regular text
-</p>
-<p class="fudis-body-text fudis-body-text__lg-light">
-Large light text
-</p>
-<p class="fudis-body-text fudis-body-text__md-regular">
-Medium regular text
-</p>
-<p class="fudis-body-text fudis-body-text__md-light">
-Medium light text
-</p>
-<p class="fudis-body-text fudis-body-text__sm-regular">
-Small regular text
-</p>
-<p class="fudis-body-text fudis-body-text__md-regular fudis-body-text__left">
-Medium regular text aligned left
-</p>
-<p class="fudis-body-text fudis-body-text__md-regular fudis-body-text__center">
-Medium regular text aligned center
-</p>
-<p class="fudis-body-text fudis-body-text__md-regular fudis-body-text__right">
-Medium regular text aligned right
-</p>
-`;
+      return element.outerHTML;
+    })
+    .join("");
+};

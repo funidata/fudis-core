@@ -1,5 +1,4 @@
 import { Meta, Unstyled } from "@storybook/blocks";
-import pkg from "../../../package.json";
 
 <Meta title="Documentation/Introduction/Welcome" />
 
@@ -15,13 +14,13 @@ import pkg from "../../../package.json";
       target="_blank"
       aria-labelledby="npm-link"
     >
-      NPM v{pkg.version}{" "}
+      NPM v{__PKG_VERSION__}
       <span
         class="fudis-icon fudis-icon__lg fudis-icon__color__primary fudis-icon__new-tab"
         aria-hidden="true"
       ></span>
       <span class="fudis-visually-hidden" id="npm-link">
-        NPM v{pkg.version}, (opens in a new tab)
+        NPM v{__PKG_VERSION__}, (opens in a new tab)
       </span>
     </a>
     <a

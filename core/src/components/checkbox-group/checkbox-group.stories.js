@@ -117,8 +117,8 @@ let defaultValues = {
   errorMessage: "",
 };
 
-export const CheckboxGroup = Template.bind({});
-CheckboxGroup.args = defaultValues;
+export const Example = Template.bind({});
+Example.args = defaultValues;
 
 export const PwAll = () => {
   const configurations = [
