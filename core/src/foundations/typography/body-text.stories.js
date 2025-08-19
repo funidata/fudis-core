@@ -2,7 +2,7 @@ export default {
   title: "Components/Typography/BodyText",
   argTypes: {
     align: {
-      options: ["left", "right", "center"],
+      options: ["none", "left", "right", "center"],
       control: { type: "radio" },
     },
     variant: {
@@ -20,7 +20,13 @@ export default {
 
 const Template = ({ variant, align, message }) => {
   const bodyText = document.createElement("p");
-  bodyText.className = `fudis-body-text fudis-body-text__${variant} fudis-body-text__${align}`;
+  bodyText.className = [
+    "fudis-body-text",
+    `fudis-body-text__${variant}`,
+    align !== "none" && `fudis-body-text__${align}`,
+  ]
+    .filter(Boolean)
+    .join(" ");
   bodyText.textContent = message;
 
   return bodyText;
