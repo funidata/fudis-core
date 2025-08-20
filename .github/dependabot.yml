@@ -8,9 +8,37 @@ updates:
     directory: "/"
     schedule:
       interval: weekly
+    groups:
+      linting:
+        patterns:
+          - "prettier"
+          - "stylelint"
+
+  - package-ecosystem: npm
+    directory: "/core"
+    schedule:
+      interval: weekly
+    groups:
+      storybook:
+        patterns:
+          - "@storybook*"
+      other:
+        patterns:
+          - "*"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+
+  - package-ecosystem: npm
+    directory: "/tests"
+    schedule:
+      interval: weekly
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: github-actions
-    directory: "/"
+    directory: "/.github"
     schedule:
       interval: weekly
 
@@ -18,6 +46,13 @@ updates:
     directory: "/"
     schedule:
       interval: weekly
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-major"]
+
+  - package-ecosystem: docker
+    directory: "/tests"
+    schedule:
+      interval: weekly
+
+  - package-ecosystem: docker
+    directory: "/core"
+    schedule:
+      interval: weekly
