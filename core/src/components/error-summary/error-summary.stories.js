@@ -2,7 +2,7 @@ export default {
   title: "Components/Error Summary",
 };
 
-export const Default = () => `
+export const Example = () => `
   <article class="fudis-notification fudis-notification__danger">
     <p class="fudis-visually-hidden">Attention</p>
     <span class="fudis-icon fudis-icon__color__gray-dark fudis-icon__lg fudis-icon__alert"></span>

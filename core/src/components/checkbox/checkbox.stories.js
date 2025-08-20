@@ -39,8 +39,8 @@ let defaultValues = {
   disabled: false,
 };
 
-export const Checkbox = Template.bind({});
-Checkbox.args = defaultValues;
+export const Example = Template.bind({});
+Example.args = defaultValues;
 
 export const PwAll = () => {
   const configurations = [

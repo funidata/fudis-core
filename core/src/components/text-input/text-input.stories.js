@@ -62,9 +62,11 @@ const Template = ({
   inputElement.setAttribute("aria-describedby", "fudis-guidance-id");
   inputElement.type = variant;
   inputElement.className = "fudis-form-input fudis-text-input__input";
-  inputElement.disabled = disabled;
-  inputElement.ariaDisabled = disabled;
-  inputElement.ariaInvalid = !!errorMessage;
+  if (disabled) {
+    inputElement.disabled = disabled;
+    inputElement.ariaDisabled = disabled;
+  }
+  if (!!errorMessage) inputElement.ariaInvalid = !!errorMessage;
 
   inputContainer.appendChild(labelElement);
   inputContainer.appendChild(inputElement);
@@ -91,8 +93,8 @@ let defaultValues = {
   errorMessage: "",
 };
 
-export const TextInput = Template.bind({});
-TextInput.args = defaultValues;
+export const Example = Template.bind({});
+Example.args = defaultValues;
 
 export const PwAll = () => {
   const configurations = [

@@ -108,8 +108,8 @@ let defaultValues = {
   errorMessage: "",
 };
 
-export const RadioButtonGroup = Template.bind({});
-RadioButtonGroup.args = defaultValues;
+export const Example = Template.bind({});
+Example.args = defaultValues;
 
 export const PwAll = () => {
   const configurations = [

@@ -1,51 +1,46 @@
 export default {
   title: "Components/Badge",
+  argTypes: {
+    variant: {
+      options: ["accent", "danger", "primary", "secondary", "success"],
+      control: { type: "radio" },
+    },
+  },
 };
 
-export const Accent = () => `
-  <span class="fudis-badge fudis-badge__accent">
-    Accent
-  </span>
-`;
+const Template = ({ message, variant }) => {
+  const badgeDiv = document.createElement("div");
+  badgeDiv.className = `fudis-badge fudis-badge__${variant}`;
+  badgeDiv.textContent = message;
 
-export const Danger = () => `
-  <span class="fudis-badge fudis-badge__danger">
-    Danger
-  </span>
-`;
+  return badgeDiv;
+};
 
-export const Primary = () => `
-  <span class="fudis-badge fudis-badge__primary">
-    Primary
-  </span>
-`;
+let defaultValues = {
+  message: "Badge",
+  variant: "accent",
+};
 
-export const Secondary = () => `
-  <span class="fudis-badge fudis-badge__secondary">
-    Secondary
-  </span>
-`;
+export const Example = Template.bind({});
+Example.args = defaultValues;
 
-export const Success = () => `
-  <span class="fudis-badge fudis-badge__success">
-    Success
-  </span>
-`;
+export const PwAll = () => {
+  const configurations = [
+    { message: "Accent", variant: "accent" },
+    { message: "Danger", variant: "danger" },
+    { message: "Primary", variant: "primary" },
+    { message: "Secondary", variant: "secondary" },
+    { message: "Success", variant: "success" },
+  ];
 
-export const PwAll = () => `
-  <span class="fudis-badge fudis-badge__accent">
-    Accent
-  </span>
-  <span class="fudis-badge fudis-badge__danger">
-    Danger
-  </span>
-  <span class="fudis-badge fudis-badge__primary">
-    Primary
-  </span>
-  <span class="fudis-badge fudis-badge__secondary">
-    Secondary
-  </span>
-  <span class="fudis-badge fudis-badge__success">
-    Success
-  </span>
-`;
+  return configurations
+    .map((config) => {
+      const element = Template({
+        ...defaultValues,
+        ...config,
+      });
+
+      return element.outerHTML;
+    })
+    .join("&nbsp;");
+};

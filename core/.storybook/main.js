@@ -1,3 +1,6 @@
+import { mergeConfig } from "vite";
+import pkg from "../package.json";
+
 export const stories = [
   "../src/**/*.mdx",
   "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
@@ -30,6 +33,14 @@ export const framework = {
   name: "@storybook/html-vite",
   options: {},
 };
+
+export function viteFinal(config) {
+  return mergeConfig(config, {
+    define: {
+      __PKG_VERSION__: JSON.stringify(pkg.version),
+    },
+  });
+}
 
 export function previewHead(head) {
   return `

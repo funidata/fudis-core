@@ -16,7 +16,7 @@ body {
   margin: 0;
   padding: 0;
   letter-spacing: 0.2px;
-  color: #484848;
+  color: #000000;
 }
 
 /* Main content max-width based on breakpoints */
@@ -264,6 +264,12 @@ body {
 .footer-link {
   display: flex;
   align-items: center;
+}
+
+.footer-link-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 .footer-link,
