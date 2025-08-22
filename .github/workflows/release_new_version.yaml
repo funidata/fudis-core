@@ -107,3 +107,5 @@ jobs:
           </head>
           </html>" > /tmp/index.html
           aws s3 cp /tmp/index.html s3://${{ vars.AWS_S3_BUCKET_NAME }}/core --cache-control max-age=5
+          aws s3 cp /tmp/index.html s3://${{ vars.AWS_S3_BUCKET_NAME }}/core/index.html --cache-control max-age=5
+          aws s3 cp /tmp/index.html s3://${{ vars.AWS_S3_BUCKET_NAME }}/core/v/index.html --cache-control max-age=5
