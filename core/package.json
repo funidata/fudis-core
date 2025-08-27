@@ -39,7 +39,7 @@
     "@storybook/test": "^8.6.12",
     "@whitespace/storybook-addon-html": "^7.0.0",
     "nodemon": "^3.1.10",
-    "sass-embedded": "^1.86.3",
+    "sass-embedded": "^1.91.0",
     "storybook": "^8.6.12"
   }
 }
