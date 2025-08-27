@@ -1,0 +1,43 @@
+# Following Core package ecosystems that are updated by Dependabot. Excluding all major package updates handled by a developer.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+updates:
+  - package-ecosystem: npm
+    directories:
+      - "/"
+      - "/core"
+      - "/tests"
+    schedule:
+      interval: weekly
+    groups:
+      linting:
+        patterns:
+          - "prettier"
+          - "stylelint"
+      storybook:
+        patterns:
+          - "@storybook*"
+      other:
+        patterns:
+          - "*"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+
+  - package-ecosystem: github-actions
+    directory: "/.github"
+    schedule:
+      interval: weekly
+
+  - package-ecosystem: docker
+    directories:
+      - "/"
+      - "/tests"
+      - "/core"
+    schedule:
+      interval: weekly
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
