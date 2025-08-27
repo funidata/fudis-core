@@ -5,7 +5,10 @@
 version: 2
 updates:
   - package-ecosystem: npm
-    directory: "/"
+    directories:
+      - "/"
+      - "/core"
+      - "/tests"
     schedule:
       interval: weekly
     groups:
@@ -13,15 +16,6 @@ updates:
         patterns:
           - "prettier"
           - "stylelint"
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-major"]
-
-  - package-ecosystem: npm
-    directory: "/core"
-    schedule:
-      interval: weekly
-    groups:
       storybook:
         patterns:
           - "@storybook*"
@@ -32,37 +26,16 @@ updates:
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
 
-  - package-ecosystem: npm
-    directory: "/tests"
-    schedule:
-      interval: weekly
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-major"]
-
   - package-ecosystem: github-actions
     directory: "/.github"
     schedule:
       interval: weekly
 
   - package-ecosystem: docker
-    directory: "/"
-    schedule:
-      interval: weekly
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-major"]
-
-  - package-ecosystem: docker
-    directory: "/tests"
-    schedule:
-      interval: weekly
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-major"]
-
-  - package-ecosystem: docker
-    directory: "/core"
+    directories:
+      - "/"
+      - "/tests"
+      - "/core"
     schedule:
       interval: weekly
     ignore:
