@@ -1,43 +1,85 @@
 export default {
-	title: "Components/Description List",
-	argTypes: {
-		variant: {
-			options: ['regular', 'compact'],
-			control: { type: 'radio' },
-		},
-	},
+  title: "Components/Description List",
+  argTypes: {
+    variant: {
+      options: ["regular", "compact"],
+      control: { type: "radio" },
+    },
+  },
 };
 
 const html = String.raw;
 
-const Template = ({variant}) => {
+const DL_configuration = {
+  regular: {
+    gridStyles: "row-gap: 1rem; column-gap: 2rem",
+    colon: "",
+    parenthesis_open: "",
+    parenthesis_closed: "",
+  },
+  compact: {
+    gridStyles: "row-gap: 0; column-gap: 1.5rem",
+    colon: html`<span class="fudis-dl-item-term__compact__colon">:</span>`,
+    parenthesis_open: html`<span
+      class="fudis-dl-item-details__compact__parenthesis"
+      >(</span
+    >`,
+    parenthesis_closed: html`<span
+      class="fudis-dl-item-details__compact__parenthesis"
+      >)</span
+    >`,
+  },
+};
 
-	const gridStyles = variant === "compact" ? "row-gap: 0; gap: 1,5rem" : "row-gap: 1rem; gap: 2rem";
-	const colon = variant === "compact" ? `<span class="'fudis-dl-item-term__compact__colon'">&colon;</span>` : "";
-
-	return html`
-	<dl class="fudis-dl" style="display: grid; grid-template-columns: repeat(2, 1fr); place-items: stretch; ${gridStyles}">
-		<div class="fudis-dl-item">
-			<dt class="fudis-dl-item-term__${variant}">First name${colon}</dt>
-			<dd class="fudis-dl-item-details__${variant}">Rex</dd>
-		</div>
-
-		<div class="fudis-dl-item">
-			<dt class="fudis-dl-item-term__${variant}">Last name${colon}</dt>
-			<dd class="fudis-dl-item-details__${variant}">Dangerwest</dd>
-		</div>
-
-		<div class="fudis-dl-item">
-			<dt class="fudis-dl-item-term__${variant}">Alias${colon}</dt>
-			<dd class="fudis-dl-item-details__${variant}">Radical Emmet Xtreme</dd>
-		</div>
-	</dl>
-`
+function getVariantStyles(variant = "regular") {
+  return DL_configuration[variant] ?? DL_configuration.regular;
 }
+
+const Template = ({ variant }) => {
+  const { gridStyles, colon, parenthesis_open, parenthesis_closed } =
+    getVariantStyles(variant);
+
+  return html`
+    <dl
+      class="fudis-dl"
+      style="display: grid; grid-template-columns: repeat(2, 1fr); place-items: stretch; ${gridStyles}"
+    >
+      <div class="fudis-dl-item">
+        <dt class="fudis-dl-item-term__${variant}">First name${colon}</dt>
+        <dd class="fudis-dl-item-details__${variant}">Rex</dd>
+      </div>
+
+      <div class="fudis-dl-item">
+        <dt class="fudis-dl-item-term__${variant}">Last name${colon}</dt>
+        <dd class="fudis-dl-item-details__${variant}">Dangerwest</dd>
+      </div>
+
+      <div class="fudis-dl-item">
+        <dt class="fudis-dl-item-term__${variant}">Alias${colon}</dt>
+        <dd class="fudis-dl-item-details__${variant}">Radical Emmet Xtreme</dd>
+      </div>
+
+      <div class="fudis-dl-item">
+        <dt class="fudis-dl-item-term__${variant}">Voice actor${colon}</dt>
+        <dd class="fudis-dl-item-details__${variant}">Chris Pratt</dd>
+      </div>
+
+      <div class="fudis-dl-item">
+        <dt class="fudis-dl-item-term__${variant}">Enemy${colon}</dt>
+        <dd class="fudis-dl-item-details__${variant}">
+          <span class="fudis-dl-item-details__${variant}__sub-heading">
+            Archenemy
+          </span>
+          ${parenthesis_open}Emmet Brickowski${parenthesis_closed}
+        </dd>
+      </div>
+    </dl>
+  `;
+};
 
 let defaultValues = {
-	variant: "regular",
-}
+  variant: "regular",
+};
 
 export const Example = Template.bind({});
 Example.args = defaultValues;
