@@ -1,0 +1,24 @@
+@use '../../foundations/utilities/mixins.scss' as utilities;
+@use '../../foundations/typography/mixins.scss' as typography;
+@use '../../foundations/spacing/tokens.scss' as spacing;
+
+.fudis-breadcrumbs {
+  @include typography.body-text-md-regular;
+  @include utilities.box-reset;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: spacing.$spacing-md;
+  list-style: none;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    min-height: spacing.$spacing-lg;
+
+    &-link {
+      @include typography.link-inherit;
+    }
+  }
+}
