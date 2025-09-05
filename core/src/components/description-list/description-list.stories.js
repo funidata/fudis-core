@@ -20,20 +20,15 @@ const DL_configuration = {
   },
   compact: {
     gridStyles: "row-gap: 0; column-gap: 1.5rem",
-    colon: html`<span class="fudis-dl-item-term__compact__colon"
-      >&colon;</span
-    >`,
-    parenthesis_open: html`<span
-      class="fudis-dl-item-details__compact__parenthesis"
+    colon: html`<span class="f-dl-item-term__compact__colon">&colon;</span>`,
+    parenthesis_open: html`<span class="f-dl-item-details__compact__parenthesis"
       >&#40;</span
     >`,
     parenthesis_closed: html`<span
-      class="fudis-dl-item-details__compact__parenthesis"
+      class="f-dl-item-details__compact__parenthesis"
       >&#41;</span
     >`,
-    comma: html`<span class="fudis-dl-item-details__compact__comma"
-      >&comma;</span
-    >`,
+    comma: html`<span class="f-dl-item-details__compact__comma">&comma;</span>`,
   },
 };
 
@@ -92,3 +87,12 @@ let defaultValues = {
 
 export const Example = Template.bind({});
 Example.args = defaultValues;
+
+export const PwAll = () => {
+  return html`
+    <div style="display: flex; gap: 2rem; flex-direction: column;">
+      <div>${Template({ variant: "regular" })}</div>
+      <div>${Template({ variant: "compact" })}</div>
+    </div>
+  `;
+};
