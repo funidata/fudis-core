@@ -16,17 +16,23 @@ const DL_configuration = {
     colon: "",
     parenthesis_open: "",
     parenthesis_closed: "",
+    comma: "",
   },
   compact: {
     gridStyles: "row-gap: 0; column-gap: 1.5rem",
-    colon: html`<span class="fudis-dl-item-term__compact__colon">:</span>`,
+    colon: html`<span class="fudis-dl-item-term__compact__colon"
+      >&colon;</span
+    >`,
     parenthesis_open: html`<span
       class="fudis-dl-item-details__compact__parenthesis"
-      >(</span
+      >&#40;</span
     >`,
     parenthesis_closed: html`<span
       class="fudis-dl-item-details__compact__parenthesis"
-      >)</span
+      >&#41;</span
+    >`,
+    comma: html`<span class="fudis-dl-item-details__compact__comma"
+      >&comma;</span
     >`,
   },
 };
@@ -36,7 +42,7 @@ function getVariantStyles(variant = "regular") {
 }
 
 const Template = ({ variant }) => {
-  const { gridStyles, colon, parenthesis_open, parenthesis_closed } =
+  const { gridStyles, colon, parenthesis_open, parenthesis_closed, comma } =
     getVariantStyles(variant);
 
   return html`
@@ -70,8 +76,11 @@ const Template = ({ variant }) => {
           <span class="fudis-dl-item-details__${variant}__sub-heading">
             Archenemy
           </span>
-          ${parenthesis_open}Emmet Brickowski${parenthesis_closed}
+          ${parenthesis_open}Emmet Brickowski${parenthesis_closed}${comma}
         </dd>
+        <dd class="fudis-dl-item-details__${variant}">Lucy${comma}</dd>
+        <dd class="fudis-dl-item-details__${variant}">Unikitty${comma}</dd>
+        <dd class="fudis-dl-item-details__${variant}">Benny</dd>
       </div>
     </dl>
   `;
