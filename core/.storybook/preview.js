@@ -50,6 +50,7 @@ const preview = {
           [
             "Alert",
             "Badge",
+            "Breadcrumbs",
             "Button",
             "Button, icon only",
             "Checkbox",
