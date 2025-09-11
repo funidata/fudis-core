@@ -1,5 +1,5 @@
 export default {
-  title: "Components/Link (WIP)",
+  title: "Components/Link",
   argTypes: {
     size: {
       options: ["md", "lg"],
@@ -9,16 +9,30 @@ export default {
       name: "title",
       control: { type: "text" },
     },
+    external: {
+      name: "external",
+      control: { type: "boolean" },
+    },
   },
 };
 
-// TODO: Add external link stories after icons are available
-
-const Template = ({ size, title }) => {
+const Template = ({ size, title, external }) => {
   const link = document.createElement("a");
-  link.setAttribute("href", "");
-  link.className = `fudis-link fudis-link__size__${size}`;
   link.textContent = title;
+  const icon = document.createElement("span");
+
+  if (external) {
+    link.href = "www.example.com";
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.className = `fudis-link__external fudis-link__size__${size}`;
+    icon.className =
+      "fudis-link__external__icon fudis-icon fudis-icon__lg fudis-icon__color__primary_dark fudis-icon__new-tab";
+    link.appendChild(icon);
+  } else {
+    link.href = "";
+    link.className = `fudis-link fudis-link__size__${size}`;
+  }
 
   return link;
 };
@@ -26,6 +40,7 @@ const Template = ({ size, title }) => {
 let defaultValues = {
   size: "md",
   title: "I am a link",
+  external: false,
 };
 
 export const Example = Template.bind({});
@@ -35,6 +50,16 @@ export const PwAll = () => {
   const configurations = [
     { size: "md", title: "I am a medium sized link" },
     { size: "lg", title: "I am a large sized link" },
+    {
+      size: "md",
+      title: "I am a medium sized link that opens in a new tab",
+      external: true,
+    },
+    {
+      size: "lg",
+      title: "I am a large sized link that opens in a new tab",
+      external: true,
+    },
   ];
 
   return configurations
@@ -46,5 +71,5 @@ export const PwAll = () => {
 
       return element.outerHTML;
     })
-    .join(" ");
+    .join("<br/>");
 };

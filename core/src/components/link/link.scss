@@ -15,4 +15,15 @@
       @include typography.link-lg;
     }
   }
+
+  &__external {
+    padding-right: spacing.$spacing-lg;
+
+    &__icon {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+  }
 }
