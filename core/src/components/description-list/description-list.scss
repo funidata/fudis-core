@@ -1,0 +1,95 @@
+@use '../../foundations/colors/mixins' as colorMixin;
+@use '../../foundations/spacing/tokens.scss' as spacing;
+@use '../../foundations/typography/mixins' as typography;
+@use '../../foundations/typography/tokens.scss' as typographyTokens;
+@use '../../foundations/utilities/mixins.scss' as utilities;
+
+.fudis-dl {
+  @include utilities.box-reset;
+
+  .fudis-dl-item {
+    @include utilities.box-reset;
+
+    display: block;
+    min-height: spacing.$spacing-md;
+  }
+
+  .fudis-dl-item-term {
+    &__regular {
+      @include typography.description-list-key-typography;
+      @include colorMixin.text-color('gray-dark');
+
+      display: flex;
+      align-items: flex-start;
+      margin: spacing.$spacing-xxs 0;
+      min-height: spacing.$spacing-md;
+    }
+
+    &__compact {
+      @include typography.description-list-compact-key-typography;
+      @include colorMixin.text-color('gray-dark');
+
+      display: inline-block;
+      position: relative;
+      padding-left: spacing.$spacing-xs;
+
+      &::before {
+        @include colorMixin.bg-color('gray-middle');
+
+        display: inline-block;
+        position: absolute;
+        top: spacing.$pixel-2;
+        left: 0;
+        width: spacing.$pixel-1;
+        height: 80%;
+        content: '';
+      }
+
+      &__colon {
+        font-weight: typographyTokens.$font-weight-light;
+      }
+    }
+  }
+
+  .fudis-dl-item-details {
+    &__regular {
+      @include typography.description-list-value-typography;
+      @include colorMixin.text-color('gray-dark');
+
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      min-height: spacing.$spacing-sm;
+
+      &__parenthesis {
+        display: none;
+      }
+
+      &__sub-heading {
+        @include colorMixin.text-color('gray-dark');
+        @include typography.description-list-value-typography;
+
+        margin-top: 0;
+        margin-bottom: spacing.$spacing-xxs;
+        font-weight: typographyTokens.$font-weight-regular;
+      }
+    }
+
+    &__compact {
+      @include typography.description-list-compact-value-typography;
+      @include colorMixin.text-color('gray-dark');
+
+      display: inline-block;
+      margin-left: 0;
+      padding-left: spacing.$spacing-xxs;
+
+      &__parenthesis {
+        display: initial;
+      }
+
+      &__sub-heading {
+        @include utilities.box-reset;
+      }
+    }
+  }
+}

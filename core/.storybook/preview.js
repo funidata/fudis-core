@@ -55,6 +55,7 @@ const preview = {
             "Button, icon only",
             "Checkbox",
             "Checkbox Group",
+            "Description List",
             "Error Summary",
             "Horizontal Rule",
             "Icon",
