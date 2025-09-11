@@ -20,18 +20,24 @@ const DL_configuration = {
   },
   compact: {
     gridStyles: "row-gap: 0; column-gap: 1.5rem",
-    colon: html`<span class="fudis-dl-item-term__compact__colon"
+    colon: html`<span
+      class="fudis-dl-item-term__compact__colon"
+      aria-hidden="true"
       >&colon;</span
     >`,
     parenthesis_open: html`<span
       class="fudis-dl-item-details__compact__parenthesis"
+      aria-hidden="true"
       >&#40;</span
     >`,
     parenthesis_closed: html`<span
       class="fudis-dl-item-details__compact__parenthesis"
+      aria-hidden="true"
       >&#41;</span
     >`,
-    comma: html`<span class="fudis-dl-item-details__compact__comma"
+    comma: html`<span
+      class="fudis-dl-item-details__compact__comma"
+      aria-hidden="true"
       >&comma;</span
     >`,
   },
@@ -51,36 +57,63 @@ const Template = ({ variant }) => {
       style="display: grid; grid-template-columns: repeat(2, 1fr); place-items: stretch; ${gridStyles}"
     >
       <div class="fudis-dl-item">
-        <dt class="fudis-dl-item-term__${variant}">First name${colon}</dt>
-        <dd class="fudis-dl-item-details__${variant}">Rex</dd>
+        <dt class="fudis-dl-item-term__${variant}">Name${colon}</dt>
+        <dd class="fudis-dl-item-details__${variant}">Alex Morgan</dd>
       </div>
 
       <div class="fudis-dl-item">
-        <dt class="fudis-dl-item-term__${variant}">Last name${colon}</dt>
-        <dd class="fudis-dl-item-details__${variant}">Dangerwest</dd>
+        <dt class="fudis-dl-item-term__${variant}">University${colon}</dt>
+        <dd class="fudis-dl-item-details__${variant}">
+          Northbridge International University
+        </dd>
       </div>
 
       <div class="fudis-dl-item">
-        <dt class="fudis-dl-item-term__${variant}">Alias${colon}</dt>
-        <dd class="fudis-dl-item-details__${variant}">Radical Emmet Xtreme</dd>
+        <dt class="fudis-dl-item-term__${variant}">Faculty${colon}</dt>
+        <dd class="fudis-dl-item-details__${variant}">
+          Faculty of Social Sciences
+        </dd>
       </div>
 
       <div class="fudis-dl-item">
-        <dt class="fudis-dl-item-term__${variant}">Voice actor${colon}</dt>
-        <dd class="fudis-dl-item-details__${variant}">Chris Pratt</dd>
+        <dt class="fudis-dl-item-term__${variant}">Degree${colon}</dt>
+        <dd class="fudis-dl-item-details__${variant}">
+          Bachelor of Arts (B.A.) in International Relations
+        </dd>
       </div>
 
       <div class="fudis-dl-item">
-        <dt class="fudis-dl-item-term__${variant}">Enemy${colon}</dt>
+        <dt class="fudis-dl-item-term__${variant}">Study Fields${colon}</dt>
+        <dd class="fudis-dl-item-details__${variant}">Political Science</dd>
+        <dd class="fudis-dl-item-details__${variant}">Economics</dd>
+        <dd class="fudis-dl-item-details__${variant}">History</dd>
+        <dd class="fudis-dl-item-details__${variant}">Sociology</dd>
+      </div>
+
+      <div class="fudis-dl-item">
+        <dt class="fudis-dl-item-term__${variant}">Courses${colon}</dt>
         <dd class="fudis-dl-item-details__${variant}">
           <span class="fudis-dl-item-details__${variant}__sub-heading">
-            Archenemy
+            Minor Study
           </span>
-          ${parenthesis_open}Emmet Brickowski${parenthesis_closed}${comma}
+          ${parenthesis_open}International Law and
+          Organizations${parenthesis_closed}${comma}
         </dd>
-        <dd class="fudis-dl-item-details__${variant}">Lucy${comma}</dd>
-        <dd class="fudis-dl-item-details__${variant}">Unikitty${comma}</dd>
-        <dd class="fudis-dl-item-details__${variant}">Benny</dd>
+        <dd class="fudis-dl-item-details__${variant}">
+          Introduction to Political Theory${comma}
+        </dd>
+        <dd class="fudis-dl-item-details__${variant}">
+          Comparative Government Systems${comma}
+        </dd>
+        <dd class="fudis-dl-item-details__${variant}">
+          Global Economic Development
+        </dd>
+        <dd class="fudis-dl-item-details__${variant}">
+          Research Methods in Social Sciences
+        </dd>
+        <dd class="fudis-dl-item-details__${variant}">
+          Public Policy Analysis
+        </dd>
       </div>
     </dl>
   `;
