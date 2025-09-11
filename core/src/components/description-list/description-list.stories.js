@@ -84,9 +84,11 @@ const Template = ({ variant }) => {
 
       <div class="fudis-dl-item">
         <dt class="fudis-dl-item-term__${variant}">Study Fields${colon}</dt>
-        <dd class="fudis-dl-item-details__${variant}">Political Science</dd>
-        <dd class="fudis-dl-item-details__${variant}">Economics</dd>
-        <dd class="fudis-dl-item-details__${variant}">History</dd>
+        <dd class="fudis-dl-item-details__${variant}">
+          Political Science${comma}
+        </dd>
+        <dd class="fudis-dl-item-details__${variant}">Economics${comma}</dd>
+        <dd class="fudis-dl-item-details__${variant}">History${comma}</dd>
         <dd class="fudis-dl-item-details__${variant}">Sociology</dd>
       </div>
 
@@ -94,7 +96,7 @@ const Template = ({ variant }) => {
         <dt class="fudis-dl-item-term__${variant}">Courses${colon}</dt>
         <dd class="fudis-dl-item-details__${variant}">
           <span class="fudis-dl-item-details__${variant}__sub-heading">
-            Minor Study
+            Minor Study${comma}
           </span>
           ${parenthesis_open}International Law and
           Organizations${parenthesis_closed}${comma}
@@ -106,10 +108,10 @@ const Template = ({ variant }) => {
           Comparative Government Systems${comma}
         </dd>
         <dd class="fudis-dl-item-details__${variant}">
-          Global Economic Development
+          Global Economic Development${comma}
         </dd>
         <dd class="fudis-dl-item-details__${variant}">
-          Research Methods in Social Sciences
+          Research Methods in Social Sciences${comma}
         </dd>
         <dd class="fudis-dl-item-details__${variant}">
           Public Policy Analysis
