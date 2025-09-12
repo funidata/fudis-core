@@ -1,5 +1,3 @@
-import { createElement } from "react";
-
 export default {
   title: "Components/Tab Navigation",
   argTypes: {
