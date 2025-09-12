@@ -25,6 +25,7 @@ const Template = ({ size, title, external }) => {
     link.href = "www.example.com";
     link.target = "_blank";
     link.rel = "noopener noreferrer";
+    link.ariaLabel = title + ", Opens in a new tab";
     link.className = `fudis-link__external fudis-link__size__${size}`;
     icon.className =
       "fudis-link__external__icon fudis-icon fudis-icon__lg fudis-icon__color__primary_dark fudis-icon__new-tab";
