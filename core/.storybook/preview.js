@@ -59,7 +59,7 @@ const preview = {
             "Error Summary",
             "Horizontal Rule",
             "Icon",
-            "Link (WIP)",
+            "Link",
             "Loading Spinner",
             "Notification",
             "Popover",
