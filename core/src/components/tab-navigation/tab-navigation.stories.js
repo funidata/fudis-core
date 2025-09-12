@@ -1,20 +1,55 @@
 export default {
-  title: "Components/Tab Navigation (WIP)",
+  title: "Components/Tab Navigation",
   argTypes: {
     variant: {
       options: ["primary", "secondary"],
       control: { type: "radio" },
     },
+    scrollView: {
+      name: "ScrollView",
+      control: { type: "boolean" },
+    },
   },
 };
 
-// TODO: Add content scroll indicators (if they are considered necessary) after icons are available.
-// Also we should think how interactive examples have to be, e.g. now Storybook user can't navigate betweem tabs
+function createNavButtons(scrollView) {
+  if (!scrollView) return null;
 
-const Template = ({ variant }) => {
+  const classes = "fudis-tab-navigation-bar__button-container";
+  const buttonClasses = "fudis-tab-navigation-bar__button-container__button";
+
+  const makeButtonContainer = (side, iconRotate = "") => {
+    const container = document.createElement("div");
+    container.className = `${classes} ${classes}--${side}`;
+
+    const button = document.createElement("button");
+    button.className = `${buttonClasses} ${buttonClasses}--${side}`;
+    button.ariaHidden = "true";
+    button.tabIndex = "-1";
+
+    const icon = document.createElement("span");
+    icon.className = `${buttonClasses}__icon fudis-icon fudis-icon__lg fudis-icon__chevron-ring-fill ${iconRotate}`;
+    button.appendChild(icon);
+
+    container.appendChild(button);
+    return container;
+  };
+
+  const leftButtonContainer = makeButtonContainer(
+    "left",
+    "fudis-icon__rotate__flip-180",
+  );
+  const rightButtonContainer = makeButtonContainer("right");
+
+  return { leftButtonContainer, rightButtonContainer };
+}
+
+const Template = ({ variant, scrollView }) => {
   const navBar = document.createElement("div");
   navBar.className = "fudis-tab-navigation-bar";
   navBar.setAttribute("role", "tablist");
+
+  const navButtons = createNavButtons(scrollView);
 
   const wrapper = document.createElement("div");
   wrapper.className = `fudis-tab-navigation-bar__wrapper fudis-tab-navigation-bar__wrapper--${variant}`;
@@ -22,7 +57,7 @@ const Template = ({ variant }) => {
   const tabContainer = document.createElement("div");
   tabContainer.className = `fudis-tab-navigation-bar__wrapper__tab-container fudis-tab-navigation-bar__wrapper__tab-container--${variant}`;
 
-  const tabs = ["Tab 1", "Tab 2", "Tab 3"];
+  const tabs = ["Tab 1", "Tab 2", "Tab 3", "Tab 4", "Tab 5"];
 
   tabs.forEach((label, index) => {
     const button = document.createElement("button");
@@ -42,7 +77,12 @@ const Template = ({ variant }) => {
   });
 
   wrapper.appendChild(tabContainer);
-  navBar.appendChild(wrapper);
+
+  const tabContent = navButtons
+    ? [navButtons.leftButtonContainer, wrapper, navButtons.rightButtonContainer]
+    : [wrapper];
+
+  tabContent.forEach((element) => navBar.appendChild(element));
 
   const panel = document.createElement("div");
   panel.setAttribute("role", "tabpanel");
@@ -67,18 +107,23 @@ const Template = ({ variant }) => {
 export const Example = Template.bind({});
 Example.args = {
   variant: "primary",
+  scrollView: false,
 };
 
 export const PwAll = () => {
   const variants = ["primary", "secondary"];
+  const scrollViews = [false, true];
 
   const tabWrapper = document.createElement("div");
 
   variants.forEach((variant) => {
-    const navTabElement = Template({
-      variant,
+    scrollViews.forEach((scrollView) => {
+      const navTabElement = Template({
+        variant,
+        scrollView,
+      });
+      tabWrapper.appendChild(navTabElement);
     });
-    tabWrapper.appendChild(navTabElement);
   });
   return tabWrapper;
 };

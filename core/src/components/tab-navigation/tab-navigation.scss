@@ -9,6 +9,55 @@
 .fudis-tab-navigation-bar {
   position: relative;
 
+  &__button-container {
+    @include colorMixin.bg-color('white');
+
+    &--right {
+      display: flex;
+      position: absolute;
+      top: 0;
+      right: 0;
+      align-items: flex-start;
+      justify-content: flex-end;
+      width: spacing.$spacing-xl;
+      height: spacing.$tab-navigation-button-height;
+    }
+
+    &--left {
+      display: flex;
+      position: absolute;
+      top: 0;
+      left: 0;
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: spacing.$spacing-xl;
+      height: spacing.$tab-navigation-button-height;
+    }
+
+    &__button {
+      @include colorMixin.bg-color('white');
+
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      border-style: none;
+      cursor: pointer;
+      padding: 0;
+
+      &:focus {
+        @include focus.focus-generic;
+      }
+
+      &--right {
+        right: 0;
+      }
+
+      &--left {
+        left: 0;
+      }
+    }
+  }
+
   &__wrapper {
     &--primary {
       border-bottom: solid spacing.$pixel-1 color.$color-gray-dark;
