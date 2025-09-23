@@ -1,0 +1,36 @@
+@use '../../foundations/colors/mixins.scss' as colorMixin;
+@use '../../foundations/colors/tokens.scss' as color;
+@use '../../foundations/spacing/tokens.scss' as spacing;
+
+.fudis-study-realisation-box {
+  &__heading {
+    @include colorMixin.bg-color('white');
+
+    padding: spacing.$spacing-xxs spacing.$spacing-xs;
+  }
+
+  &__content {
+    @include colorMixin.bg-color('white');
+
+    display: flex;
+    align-items: center;
+    padding-right: spacing.$spacing-xs;
+  }
+
+  &__notification {
+    @include colorMixin.bg-color('gray-extra-light');
+
+    display: flex;
+    align-items: center;
+    border-top: spacing.$pixel-1 solid color.$color-gray-light;
+
+    &__action {
+      @include colorMixin.bg-color('gray-extra-light');
+
+      display: flex;
+      align-items: center;
+      border-top: spacing.$pixel-1 solid color.$color-gray-dark;
+      padding-right: spacing.$spacing-xs;
+    }
+  }
+}
