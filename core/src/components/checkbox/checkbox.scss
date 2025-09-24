@@ -52,6 +52,7 @@
 
     &__box {
       @include borders.border('1px', 'solid', 'gray-middle');
+      @include colorMixins.bg-color('white');
 
       display: flex;
       position: absolute;

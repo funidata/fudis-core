@@ -43,6 +43,7 @@ $radio-indicator-size: calc(0.75rem / var(--fudis-rem-multiplier));
 
     &__control {
       @include border.border('1px', 'solid', 'gray-middle');
+      @include colorMixin.bg-color('white');
 
       display: inline-flex;
       top: 0;
