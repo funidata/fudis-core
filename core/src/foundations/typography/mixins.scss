@@ -132,11 +132,10 @@
 @mixin table-caption {
   @include colorMixin.text-color('gray-dark');
 
-  text-transform: uppercase;
-  line-height: tokens.$text-input-line-height;
+  line-height: tokens.$table-caption-line-height;
   font-family: tokens.$font-family;
-  font-size: tokens.$body-text-md-font-size;
-  font-weight: tokens.$font-weight-regular;
+  font-size: tokens.$heading-sm-font-size;
+  font-weight: tokens.$font-weight-medium;
 }
 
 // Other UI styles

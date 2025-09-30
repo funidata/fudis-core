@@ -125,6 +125,18 @@ export const body = {
   },
 };
 
+export const heading = {
+  type: {
+    primary: "Fira Sans",
+  },
+  weight: {
+    medium: "500",
+  },
+  size: {
+    sm: 18,
+  },
+};
+
 ## Body text
 
 **Weights:** 300 (light) 400 (regular)
@@ -248,12 +260,12 @@ The mixins for links are:
 Table caption is meant to be used with the corresponding `caption` HTML-element to provide the table an accessible description. You can implement this with a mixin that is documented on this page or with a class that is documented in the [Miscellaneous-section](/story/components-typography-miscellaneous--table-caption).
 
 <Typeset
-  fontSizes={[Number(body.size.md)]}
-  fontWeight={Number(body.weight.regular)}
+  fontSizes={[Number(heading.size.sm)]}
+  fontWeight={Number(heading.weight.medium)}
   sampleText={
-    <p style={{ textTransform: "uppercase" }}>Fudis table caption text</p>
+    <p style={{ color: "#484848" }}>Fudis table caption text</p>
   }
-  fontFamily={body.type.primary}
+  fontFamily={heading.type.primary}
 />
 
 ### Usage
