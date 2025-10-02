@@ -1,0 +1,152 @@
+@use '../../foundations/typography/mixins.scss' as typography;
+@use '../../foundations/spacing/tokens' as spacing;
+@use '../../foundations/colors/tokens' as color;
+
+.fudis-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  &__default {
+    &__caption {
+      @include typography.table-caption;
+
+      padding-bottom: spacing.$spacing-xs;
+      caption-side: top;
+      text-align: left;
+    }
+
+    &__header {
+      @include typography.table-header;
+
+      border-bottom: spacing.$pixel-2 solid color.$color-gray-light;
+      padding: spacing.$spacing-sm;
+      vertical-align: bottom;
+
+      &__align {
+        &__left {
+          text-align: left;
+        }
+
+        &__center {
+          text-align: center;
+        }
+
+        &__right {
+          text-align: right;
+        }
+      }
+    }
+
+    &__cell {
+      @include typography.body-text-lg-light;
+
+      border-bottom: spacing.$pixel-1 solid color.$color-gray-light;
+      padding: spacing.$spacing-sm;
+
+      &__align {
+        &__left {
+          text-align: left;
+        }
+
+        &__center {
+          text-align: center;
+        }
+
+        &__right {
+          text-align: right;
+        }
+      }
+
+      &__vertical-align {
+        &__top {
+          align-content: start;
+        }
+
+        &__center {
+          align-content: center;
+        }
+
+        &__bottom {
+          align-content: end;
+        }
+      }
+
+      /* Checkbox needs different padding-top since its clickable area expands out of visible component outlines */
+      &__checkbox {
+        padding-top: calc(spacing.$spacing-xs + spacing.$spacing-xxs);
+      }
+    }
+  }
+
+  &__mobile {
+    &__caption {
+      @include typography.table-caption;
+
+      padding-bottom: spacing.$spacing-xs;
+      caption-side: top;
+      text-align: left;
+    }
+
+    &__header {
+      @include typography.table-header;
+
+      border-bottom: spacing.$pixel-2 solid color.$color-gray-light;
+      padding: spacing.$spacing-xs;
+      vertical-align: bottom;
+
+      &__align {
+        &__left {
+          text-align: left;
+        }
+
+        &__center {
+          text-align: center;
+        }
+
+        &__right {
+          text-align: right;
+        }
+      }
+    }
+
+    &__cell {
+      @include typography.body-text-md-light;
+
+      border-bottom: spacing.$pixel-1 solid color.$color-gray-light;
+      padding: spacing.$spacing-xs;
+
+      &__align {
+        &__left {
+          text-align: left;
+        }
+
+        &__center {
+          text-align: center;
+        }
+
+        &__right {
+          text-align: right;
+        }
+      }
+
+      &__vertical-align {
+        &__top {
+          align-content: start;
+        }
+
+        &__center {
+          align-content: center;
+        }
+
+        &__bottom {
+          align-content: end;
+        }
+      }
+
+      /* Checkbox needs different padding-top since its clickable area expands out of visible component outlines */
+      &__checkbox {
+        padding-top: spacing.$spacing-xxs;
+      }
+    }
+  }
+}
