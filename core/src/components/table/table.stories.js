@@ -120,19 +120,7 @@ const SelectableTemplate = ({
             scope="col"
             class="fudis-table__header fudis-table__header__align__${alignHeader}"
           >
-            <label class="fudis-checkbox">
-              <input
-                class="fudis-checkbox__input"
-                type="checkbox"
-                value="foo"
-                aria-labelledby="table-caption-id"
-              />
-              <div class="fudis-checkbox__content">
-                <div class="fudis-checkbox__content-wrapper">
-                  <span class="fudis-checkbox__content__box"></span>
-                </div>
-              </div>
-            </label>
+            Select course
           </th>
           <th
             scope="col"
