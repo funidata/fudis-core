@@ -104,11 +104,7 @@ const Template = ({ alignHeader, alignCell, verticalAlignCell }) => {
   `;
 };
 
-const SelectableTemplate = ({
-  alignHeader,
-  alignCell,
-  verticalAlignCell,
-}) => {
+const SelectableTemplate = ({ alignHeader, alignCell, verticalAlignCell }) => {
   return html`
     <table class="fudis-table fudis-table">
       <caption id="table-caption-id" class="fudis-table__caption">
