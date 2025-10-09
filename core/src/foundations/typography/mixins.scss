@@ -148,6 +148,16 @@
   font-weight: tokens.$font-weight-regular;
 }
 
+@mixin table-cell-default {
+  @include colorMixin.text-color('gray-dark');
+  @include body-text-lg-light;
+}
+
+@mixin table-cell-mobile {
+  @include colorMixin.text-color('gray-dark');
+  @include body-text-md-light;
+}
+
 // Other UI styles
 
 // Text-input, text-area, dropdown, legend components
