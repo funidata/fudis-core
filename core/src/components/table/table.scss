@@ -1,0 +1,10 @@
+@use './table-mixins' as mixins;
+@use '../../foundations/breakpoints/mixins' as breakpoints;
+
+.fudis-table {
+  @include mixins.fudis-table-mobile;
+
+  @include breakpoints.breakpoint('md') {
+    @include mixins.fudis-table-default;
+  }
+}

@@ -127,16 +127,35 @@
   font-weight: tokens.$font-weight-bold;
 }
 
-// Table caption
+// Table styles
 
 @mixin table-caption {
   @include colorMixin.text-color('gray-dark');
 
+  line-height: tokens.$table-caption-line-height;
+  font-family: tokens.$font-family;
+  font-size: tokens.$heading-sm-font-size;
+  font-weight: tokens.$font-weight-medium;
+}
+
+@mixin table-header {
+  @include colorMixin.text-color('gray-dark');
+
   text-transform: uppercase;
-  line-height: tokens.$text-input-line-height;
+  line-height: tokens.$table-header-line-height;
   font-family: tokens.$font-family;
   font-size: tokens.$body-text-md-font-size;
   font-weight: tokens.$font-weight-regular;
+}
+
+@mixin table-cell-default {
+  @include colorMixin.text-color('gray-dark');
+  @include body-text-lg-light;
+}
+
+@mixin table-cell-mobile {
+  @include colorMixin.text-color('gray-dark');
+  @include body-text-md-light;
 }
 
 // Other UI styles
