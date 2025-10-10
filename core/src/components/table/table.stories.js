@@ -20,7 +20,7 @@ const html = String.raw;
 
 const Template = ({ alignHeader, alignCell, verticalAlignCell }) => {
   return html`
-    <table class="fudis-table fudis-table">
+    <table class="fudis-table">
       <caption class="fudis-table__caption">
         Course information
       </caption>
@@ -106,8 +106,8 @@ const Template = ({ alignHeader, alignCell, verticalAlignCell }) => {
 
 const SelectableTemplate = ({ alignHeader, alignCell, verticalAlignCell }) => {
   return html`
-    <table class="fudis-table fudis-table">
-      <caption id="table-caption-id" class="fudis-table__caption">
+    <table class="fudis-table">
+      <caption class="fudis-table__caption">
         Course selection
       </caption>
       <thead>
