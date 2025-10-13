@@ -21,6 +21,8 @@
     list-style: none;
 
     &__item {
+      @include typography.body-text-md-regular;
+
       position: relative;
       margin-left: spacing.$spacing-sm;
       padding-left: spacing.$spacing-xxs;
