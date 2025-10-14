@@ -11,6 +11,10 @@
   @include mixins.box-reset;
 }
 
+.fudis-dimmer {
+  @include mixins.dimmer;
+}
+
 // Invalid and disabled state styles for input elemenets
 
 .fudis-form-input {

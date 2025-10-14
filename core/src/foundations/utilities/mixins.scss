@@ -4,6 +4,7 @@
 @use './../typography/mixins.scss' as typography;
 @use './../borders/mixins.scss' as borders;
 @use './../focus/mixins.scss' as focus;
+@use './../colors/mixins.scss' as colorMixin;
 
 @mixin visually-hidden() {
   position: absolute;
@@ -24,6 +25,14 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+@mixin dimmer() {
+  @include colorMixin.bg-color('white');
+
+  // At least when overriding ngMaterial, opacity needs to be declared as !important
+  /* stylelint-disable-next-line declaration-no-important */
+  opacity: 0.95 !important;
 }
 
 @mixin text-input() {
