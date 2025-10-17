@@ -23,7 +23,10 @@ const Template = ({ variant, size, disabled }) => {
   if (disabled) button.setAttribute("aria-disabled", disabled);
 
   const iconWrapper = document.createElement("div");
-  iconWrapper.className = "fudis-button__icon";
+  iconWrapper.className =
+    size === "extra-small"
+      ? "fudis-button__icon"
+      : "fudis-button__icon fudis-ml-xs";
 
   const buttonIcon = document.createElement("span");
 

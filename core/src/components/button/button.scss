@@ -24,6 +24,10 @@
     @include focus.focus-generic;
   }
 
+  &:has(&__icon) {
+    padding-left: 0;
+  }
+
   &[aria-disabled='true'] &__icon__component {
     @include colorMixin.text-color('gray-dark');
   }
