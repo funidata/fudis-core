@@ -24,10 +24,6 @@
     @include focus.focus-generic;
   }
 
-  &:has(&__icon):not(&__label--hidden) {
-    padding-left: 0;
-  }
-
   &[aria-disabled='true'] &__icon__component {
     @include colorMixin.text-color('gray-dark');
   }
@@ -63,17 +59,11 @@
       min-height: spacing.$spacing-lg;
     }
 
-    &__icon-only {
+    &__extra-small {
       padding: 0;
       width: spacing.$spacing-lg;
       min-width: initial;
       min-height: spacing.$spacing-lg;
-    }
-  }
-
-  &__label {
-    &--hidden {
-      padding: 0 spacing.$spacing-xs;
     }
   }
 

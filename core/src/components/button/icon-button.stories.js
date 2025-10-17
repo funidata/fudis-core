@@ -6,7 +6,7 @@ export default {
       control: { type: "radio" },
     },
     size: {
-      options: ["small", "medium", "icon-only"],
+      options: ["small", "medium", "extra-small"],
       control: { type: "select" },
     },
     disabled: {
@@ -18,7 +18,7 @@ export default {
 
 const Template = ({ variant, size, disabled }) => {
   const button = document.createElement("button");
-  button.className = `fudis-button fudis-button__label--hidden fudis-button__${variant} fudis-button__size__${size}`;
+  button.className = `fudis-button fudis-button__${variant} fudis-button__size__${size}`;
   button.setAttribute("aria-label", "Search");
   if (disabled) button.setAttribute("aria-disabled", disabled);
 
@@ -51,12 +51,12 @@ Example.args = defaultValues;
 
 export const PwAll = () => {
   const configurations = [
-    { variant: "primary", size: "icon-only", disabled: false },
+    { variant: "primary", size: "extra-small", disabled: false },
     { variant: "primary", size: "medium", disabled: false },
     { variant: "primary", size: "small", disabled: false },
     {
       variant: "secondary",
-      size: "icon-only",
+      size: "extra-small",
       disabled: false,
     },
     {
@@ -69,10 +69,10 @@ export const PwAll = () => {
       size: "small",
       disabled: false,
     },
-    { variant: "tertiary", size: "icon-only", disabled: false },
+    { variant: "tertiary", size: "extra-small", disabled: false },
     { variant: "tertiary", size: "medium", disabled: false },
     { variant: "tertiary", size: "small", disabled: false },
-    { variant: "primary", size: "icon-only", disabled: true },
+    { variant: "primary", size: "extra-small", disabled: true },
     { variant: "primary", size: "medium", disabled: true },
     { variant: "primary", size: "small", disabled: true },
   ];
