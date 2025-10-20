@@ -24,7 +24,7 @@
     @include focus.focus-generic;
   }
 
-  &:has(&__icon):not(&__label--hidden) {
+  &:has(&__icon) {
     padding-left: 0;
   }
 
@@ -63,17 +63,11 @@
       min-height: spacing.$spacing-lg;
     }
 
-    &__icon-only {
+    &__extra-small {
       padding: 0;
       width: spacing.$spacing-lg;
       min-width: initial;
       min-height: spacing.$spacing-lg;
-    }
-  }
-
-  &__label {
-    &--hidden {
-      padding: 0 spacing.$spacing-xs;
     }
   }
 
