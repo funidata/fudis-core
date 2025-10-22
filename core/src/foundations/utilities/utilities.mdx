@@ -4,10 +4,46 @@ import { Meta } from "@storybook/blocks";
 
 # Utilities
 
-Load Core mixins and tokens to your SCSS file with:
+Load Core mixins and classes to your SCSS file with:
 
 ```
 @use "@funidata/fudis-core" as core;
+```
+
+## Box-reset
+
+Use this helper, if you want to reset your CSS-environment. This sets the box-sizing property to border-box as well as margin and padding to 0.
+
+Use as a mixin:
+
+```
+.my-element {
+  @include core.box-reset;
+}
+```
+
+Use as a class name:
+
+```
+<div class="fudis-box-reset">Now the browser accounts border and padding in the values you specify for an element's width and height.</div>
+```
+
+## Dimmer
+
+Use this helper in dialog and loading state backdrops. This sets the background color to white with 0.95 opacity value.
+
+Use as a mixin:
+
+```
+.my-element {
+  @include core.dimmer;
+}
+```
+
+Use as a class name:
+
+```
+<div class="fudis-dimmer">I am the backdrop element</div>
 ```
 
 ## Visually-hidden
@@ -26,22 +62,4 @@ Use as a class name:
 
 ```
 <div class="fudis-visually-hidden">You cannot see me!</div>
-```
-
-## Box-reset
-
-Use this helper, if you want to reset your CSS-enviroment. This sets the box-sizing property to border-box and sets margin and padding to 0.
-
-Use as a mixin:
-
-```
-.my-element {
-  @include core.box-reset;
-}
-```
-
-Use as a class name:
-
-```
-<div class="fudis-box-reset">Now the browser accounts border and padding in the values you specify for an element's width and height!</div>
 ```
