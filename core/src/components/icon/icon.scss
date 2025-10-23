@@ -82,15 +82,15 @@
 
   &__rotate {
     &__flip-180 {
-      transform: rotate(180deg);
+      transform: translate(-50%, -50%) rotate(180deg);
     }
 
     &__cw-90 {
-      transform: rotate(90deg);
+      transform: translate(-50%, -50%) rotate(90deg);
     }
 
     &__ccw-90 {
-      transform: rotate(-90deg);
+      transform: translate(-50%, -50%) rotate(-90deg);
     }
   }
 
