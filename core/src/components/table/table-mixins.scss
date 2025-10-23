@@ -34,6 +34,10 @@
         text-align: right;
       }
     }
+
+    &--active {
+      text-decoration: underline solid color.$color-gray-middle;
+    }
   }
 
   &__cell {
@@ -108,6 +112,10 @@
       &__right {
         text-align: right;
       }
+    }
+
+    &--active {
+      text-decoration: underline solid color.$color-gray-dark;
     }
   }
 
