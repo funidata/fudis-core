@@ -127,9 +127,9 @@
     }
 
     /* Checkbox needs different padding-top since its clickable area expands out of visible component outlines */
-    &__checkbox {
-      padding-top: calc(spacing.$spacing-xs + spacing.$spacing-xxs);
-    }
+    // &__checkbox {
+    //   padding-top: calc(spacing.$spacing-xs + spacing.$spacing-xxs);
+    // }
   }
 }
 
@@ -241,8 +241,8 @@
     }
 
     /* Checkbox needs different padding-top since its clickable area expands out of visible component outlines */
-    &__checkbox {
-      padding-top: spacing.$spacing-xxs;
-    }
+    // &__checkbox {
+    //   padding-top: spacing.$spacing-xxs;
+    // }
   }
 }
