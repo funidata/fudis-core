@@ -142,7 +142,6 @@
   @include colorMixin.text-color('gray-dark');
 
   text-transform: uppercase;
-  line-height: tokens.$table-header-line-height;
   font-family: tokens.$font-family;
   font-size: tokens.$body-text-md-font-size;
   font-weight: tokens.$font-weight-regular;
