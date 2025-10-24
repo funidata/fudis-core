@@ -19,7 +19,7 @@
 
     border-bottom: spacing.$pixel-2 solid color.$color-gray-light;
     padding: spacing.$spacing-sm;
-    vertical-align: bottom;
+    vertical-align: middle;
 
     &__align {
       &__left {
@@ -33,6 +33,20 @@
       &__right {
         text-align: right;
       }
+    }
+
+    &__button {
+      /* stylelint-disable-next-line selector-class-pattern */
+      & span.fudis-button__icon__component {
+        position: absolute;
+        top: 40%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+    }
+
+    &--sortable {
+      white-space: nowrap;
     }
 
     &--active {
@@ -98,7 +112,7 @@
 
     border-bottom: spacing.$pixel-2 solid color.$color-gray-light;
     padding: spacing.$spacing-xs;
-    vertical-align: bottom;
+    vertical-align: middle;
 
     &__align {
       &__left {
@@ -112,6 +126,20 @@
       &__right {
         text-align: right;
       }
+    }
+
+    &__button {
+      /* stylelint-disable-next-line selector-class-pattern */
+      & span.fudis-button__icon__component {
+        position: absolute;
+        top: 40%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+    }
+
+    &--sortable {
+      white-space: nowrap;
     }
 
     &--active {

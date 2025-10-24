@@ -74,12 +74,12 @@ const Template = ({ alignHeader, alignCell, verticalAlignCell, ariaSort }) => {
         <tr>
           <th
             scope="col"
-            class="fudis-table__header fudis-table__header__align__${alignHeader} ${activeSortableHeader}"
+            class="fudis-table__header fudis-table__header__align__${alignHeader} ${activeSortableHeader} fudis-table__header--sortable"
             ${ariaSortAttribute}
           >
             Code
             <button
-              class="fudis-button fudis-button__tertiary fudis-button__size__extra-small"
+              class="fudis-table__header__button fudis-button fudis-button__tertiary fudis-button__size__extra-small"
               aria-label="Sort column data alphabetically"
             >
               <div class="fudis-button__icon">
