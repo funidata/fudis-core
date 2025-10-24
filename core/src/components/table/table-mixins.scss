@@ -1,6 +1,23 @@
 @use '../../foundations/typography/mixins.scss' as typography;
 @use '../../foundations/spacing/tokens' as spacing;
 @use '../../foundations/colors/tokens' as color;
+@use '../../foundations/colors/mixins' as colorMixin;
+@use '../../foundations/borders/mixins' as border;
+@use '../../foundations/focus/mixins' as focus;
+@use '../../foundations/utilities/mixins' as utilities;
+
+@mixin fudis-table-header-button {
+  @include utilities.box-reset;
+  @include typography.table-header;
+  @include colorMixin.bg-color('transparent');
+  @include border.border-none;
+
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-left: spacing.$spacing-sm;
+  width: 100%;
+}
 
 @mixin fudis-table-default {
   width: 100%;
@@ -17,7 +34,6 @@
   &__header {
     @include typography.table-header;
 
-    border-bottom: spacing.$pixel-2 solid color.$color-gray-light;
     padding: spacing.$spacing-sm;
     vertical-align: middle;
 
@@ -35,22 +51,44 @@
       }
     }
 
-    &__button {
-      /* stylelint-disable-next-line selector-class-pattern */
-      & span.fudis-button__icon__component {
-        position: absolute;
-        top: 40%;
-        left: 0;
-        transform: translateY(-50%);
+    &-row {
+      border-bottom: spacing.$pixel-2 solid color.$color-gray-light;
+    }
+
+    &-button {
+      @include fudis-table-header-button;
+
+      &:focus {
+        @include focus.focus-generic;
       }
-    }
 
-    &--sortable {
-      white-space: nowrap;
-    }
+      &__icon {
+        &__rotate {
+          transform: rotate(180deg);
+        }
+      }
 
-    &--active {
-      text-decoration: underline solid color.$color-gray-middle;
+      &__align {
+        &__left {
+          justify-content: left;
+        }
+
+        &__center {
+          justify-content: center;
+        }
+
+        &__right {
+          justify-content: right;
+        }
+      }
+
+      &--sortable {
+        white-space: nowrap;
+      }
+
+      &--active {
+        text-decoration: underline solid color.$color-gray-middle;
+      }
     }
   }
 
@@ -110,7 +148,6 @@
   &__header {
     @include typography.table-header;
 
-    border-bottom: spacing.$pixel-2 solid color.$color-gray-light;
     padding: spacing.$spacing-xs;
     vertical-align: middle;
 
@@ -128,22 +165,44 @@
       }
     }
 
-    &__button {
-      /* stylelint-disable-next-line selector-class-pattern */
-      & span.fudis-button__icon__component {
-        position: absolute;
-        top: 40%;
-        left: 0;
-        transform: translateY(-50%);
+    &-row {
+      border-bottom: spacing.$pixel-2 solid color.$color-gray-light;
+    }
+
+    &-button {
+      @include fudis-table-header-button;
+
+      &:focus {
+        @include focus.focus-generic;
       }
-    }
 
-    &--sortable {
-      white-space: nowrap;
-    }
+      &__icon {
+        &__rotate {
+          transform: rotate(180deg);
+        }
+      }
 
-    &--active {
-      text-decoration: underline solid color.$color-gray-dark;
+      &__align {
+        &__left {
+          justify-content: left;
+        }
+
+        &__center {
+          justify-content: center;
+        }
+
+        &__right {
+          justify-content: right;
+        }
+      }
+
+      &--sortable {
+        white-space: nowrap;
+      }
+
+      &--active {
+        text-decoration: underline solid color.$color-gray-dark;
+      }
     }
   }
 

@@ -27,14 +27,15 @@ const Template = ({ alignHeader, alignCell, verticalAlignCell, ariaSort }) => {
   const ariaSortAttribute =
     ariaSort && ariaSort !== "none" ? `aria-sort="${ariaSort}"` : "";
 
-  // Add icon rotate class based on ariaSort control value
+  // Add icon rotate class based on ariaSort control value.
+  // Note/TODO: Couldn't use fudis-icon__rotate class since it broke the positioning, this implementation feels a bit of a hack.
   const rotateClass =
-    ariaSort === "descending" ? "fudis-icon__rotate__flip-180" : "";
+    ariaSort === "descending" ? "fudis-table__header-button__icon__rotate" : "";
 
   // Add active header class based on ariaSort control value, only currently sorted header should have this class
   const activeSortableHeader =
     (ariaSort === "descending") | (ariaSort === "ascending")
-      ? "fudis-table__header--active"
+      ? "fudis-table__header-button--active"
       : "";
 
   const courseData = [
@@ -71,22 +72,16 @@ const Template = ({ alignHeader, alignCell, verticalAlignCell, ariaSort }) => {
         Course information
       </caption>
       <thead>
-        <tr>
-          <th
-            scope="col"
-            class="fudis-table__header fudis-table__header__align__${alignHeader} ${activeSortableHeader} fudis-table__header--sortable"
-            ${ariaSortAttribute}
-          >
-            Code
+        <tr class="fudis-table__header-row">
+          <th scope="col" ${ariaSortAttribute}>
             <button
-              class="fudis-table__header__button fudis-button fudis-button__tertiary fudis-button__size__extra-small"
-              aria-label="Sort column data alphabetically"
+              class="fudis-table__header-button fudis-table__header-button__align__${alignHeader} fudis-table__header-button--sortable ${activeSortableHeader}"
+              type="button"
             >
-              <div class="fudis-button__icon">
-                <span
-                  class="fudis-button__icon__component fudis-icon fudis-icon__color__primary fudis-icon__lg fudis-icon__sorter ${rotateClass}"
-                ></span>
-              </div>
+              Code
+              <span
+                class="fudis-icon fudis-icon__color__primary fudis-icon__lg fudis-icon__sorter ${rotateClass}"
+              ></span>
             </button>
           </th>
           <th
