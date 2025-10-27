@@ -28,7 +28,6 @@ const Template = ({ alignHeader, alignCell, verticalAlignCell, ariaSort }) => {
     ariaSort && ariaSort !== "none" ? `aria-sort="${ariaSort}"` : "";
 
   // Add icon rotate class based on ariaSort control value.
-  // Note/TODO: Couldn't use fudis-icon__rotate class since it broke the positioning, this implementation feels a bit of a hack.
   const rotateClass =
     ariaSort === "descending" ? "fudis-icon__rotate__flip-180" : "";
 
