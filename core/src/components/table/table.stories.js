@@ -30,7 +30,7 @@ const Template = ({ alignHeader, alignCell, verticalAlignCell, ariaSort }) => {
   // Add icon rotate class based on ariaSort control value.
   // Note/TODO: Couldn't use fudis-icon__rotate class since it broke the positioning, this implementation feels a bit of a hack.
   const rotateClass =
-    ariaSort === "descending" ? "fudis-table__header-button__icon__rotate" : "";
+    ariaSort === "descending" ? "fudis-icon__rotate__flip-180" : "";
 
   // Add active header class based on ariaSort control value, only currently sorted header should have this class
   const activeSortableHeader =
