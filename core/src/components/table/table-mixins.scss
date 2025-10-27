@@ -62,12 +62,6 @@
         @include focus.focus-generic;
       }
 
-      &__icon {
-        &__rotate {
-          transform: rotate(180deg);
-        }
-      }
-
       &__align {
         &__left {
           justify-content: left;
