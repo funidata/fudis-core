@@ -12,12 +12,12 @@
   margin-bottom: spacing.$spacing-md;
   list-style: none;
 
-  &__item {
+  &-item {
     display: flex;
     align-items: center;
     min-height: spacing.$spacing-lg;
 
-    &-link {
+    & a {
       @include typography.link-inherit;
     }
   }

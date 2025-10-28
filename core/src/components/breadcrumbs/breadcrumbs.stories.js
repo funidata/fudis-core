@@ -5,19 +5,19 @@ export default {
 export const Example = () => `
 <nav aria-label="Breadcrumbs: Student information">
   <ul class="fudis-breadcrumbs">
-    <li class="fudis-breadcrumbs__item">
-      <a class="fudis-breadcrumbs__item-link" href="#">Home</a>
+    <li class="fudis-breadcrumbs-item">
+      <a href="#">Home</a>
       <span class="fudis-icon fudis-icon__lg fudis-icon__color__gray-dark fudis-icon__chevron"></span>
     </li>
-    <li class="fudis-breadcrumbs__item">
-      <a class="fudis-breadcrumbs__item-link" href="#">Profile</a>
+    <li class="fudis-breadcrumbs-item">
+      <a href="#">Profile</a>
       <span class="fudis-icon fudis-icon__lg fudis-icon__color__gray-dark fudis-icon__chevron"></span>
     </li>
-    <li class="fudis-breadcrumbs__item">
-      <a class="fudis-breadcrumbs__item-link" href="#">Study rights</a>
+    <li class="fudis-breadcrumbs-item">
+      <a href="#">Study rights</a>
       <span class="fudis-icon fudis-icon__lg fudis-icon__color__gray-dark fudis-icon__chevron"></span>
     </li>
-    <li class="fudis-breadcrumbs__item">
+    <li class="fudis-breadcrumbs-item">
       <p class="fudis-body-text fudis-body-text__md-regular" aria-current="page">Degree education</p>
     </li>
   </ul>
