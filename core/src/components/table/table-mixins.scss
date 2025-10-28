@@ -1,6 +1,22 @@
 @use '../../foundations/typography/mixins.scss' as typography;
 @use '../../foundations/spacing/tokens' as spacing;
 @use '../../foundations/colors/tokens' as color;
+@use '../../foundations/colors/mixins' as colorMixin;
+@use '../../foundations/borders/mixins' as border;
+@use '../../foundations/focus/mixins' as focus;
+@use '../../foundations/utilities/mixins' as utilities;
+
+@mixin fudis-table-header-button {
+  @include utilities.box-reset;
+  @include typography.table-header;
+  @include colorMixin.bg-color('transparent');
+  @include border.border-none;
+
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+}
 
 @mixin fudis-table-default {
   width: 100%;
@@ -17,9 +33,8 @@
   &__header {
     @include typography.table-header;
 
-    border-bottom: spacing.$pixel-2 solid color.$color-gray-light;
-    padding: spacing.$spacing-sm;
-    vertical-align: bottom;
+    padding: spacing.$spacing-xs spacing.$spacing-sm;
+    vertical-align: middle;
 
     &__align {
       &__left {
@@ -32,6 +47,40 @@
 
       &__right {
         text-align: right;
+      }
+    }
+
+    &-row {
+      border-bottom: spacing.$pixel-2 solid color.$color-gray-light;
+    }
+
+    &-button {
+      @include fudis-table-header-button;
+
+      &:focus {
+        @include focus.focus-generic;
+      }
+
+      &__align {
+        &__left {
+          justify-content: left;
+        }
+
+        &__center {
+          justify-content: center;
+        }
+
+        &__right {
+          justify-content: right;
+        }
+      }
+
+      &--sortable {
+        white-space: nowrap;
+      }
+
+      &--active {
+        text-decoration: underline solid color.$color-gray-middle;
       }
     }
   }
@@ -71,9 +120,9 @@
     }
 
     /* Checkbox needs different padding-top since its clickable area expands out of visible component outlines */
-    &__checkbox {
-      padding-top: calc(spacing.$spacing-xs + spacing.$spacing-xxs);
-    }
+    // &__checkbox {
+    //   padding-top: calc(spacing.$spacing-xs + spacing.$spacing-xxs);
+    // }
   }
 }
 
@@ -92,9 +141,8 @@
   &__header {
     @include typography.table-header;
 
-    border-bottom: spacing.$pixel-2 solid color.$color-gray-light;
-    padding: spacing.$spacing-xs;
-    vertical-align: bottom;
+    padding: spacing.$spacing-xxs spacing.$spacing-xs;
+    vertical-align: middle;
 
     &__align {
       &__left {
@@ -107,6 +155,40 @@
 
       &__right {
         text-align: right;
+      }
+    }
+
+    &-row {
+      border-bottom: spacing.$pixel-2 solid color.$color-gray-light;
+    }
+
+    &-button {
+      @include fudis-table-header-button;
+
+      &:focus {
+        @include focus.focus-generic;
+      }
+
+      &__align {
+        &__left {
+          justify-content: left;
+        }
+
+        &__center {
+          justify-content: center;
+        }
+
+        &__right {
+          justify-content: right;
+        }
+      }
+
+      &--sortable {
+        white-space: nowrap;
+      }
+
+      &--active {
+        text-decoration: underline solid color.$color-gray-dark;
       }
     }
   }
@@ -146,8 +228,8 @@
     }
 
     /* Checkbox needs different padding-top since its clickable area expands out of visible component outlines */
-    &__checkbox {
-      padding-top: spacing.$spacing-xxs;
-    }
+    // &__checkbox {
+    //   padding-top: spacing.$spacing-xxs;
+    // }
   }
 }
