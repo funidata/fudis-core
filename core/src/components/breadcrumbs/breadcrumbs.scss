@@ -17,7 +17,7 @@
     align-items: center;
     min-height: spacing.$spacing-lg;
 
-    & a {
+    a {
       @include typography.link-inherit;
     }
   }
