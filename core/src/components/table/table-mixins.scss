@@ -57,8 +57,6 @@
     &-button {
       @include fudis-table-header-button;
 
-      padding-left: spacing.$spacing-sm;
-
       &:focus {
         @include focus.focus-generic;
       }
@@ -166,8 +164,6 @@
 
     &-button {
       @include fudis-table-header-button;
-
-      padding-left: spacing.$spacing-xs;
 
       &:focus {
         @include focus.focus-generic;

@@ -72,7 +72,11 @@ const Template = ({ alignHeader, alignCell, verticalAlignCell, ariaSort }) => {
       </caption>
       <thead>
         <tr class="fudis-table__header-row">
-          <th scope="col" ${ariaSortAttribute}>
+          <th
+            scope="col"
+            class="fudis-table__header fudis-table__header__align__${alignHeader}"
+            ${ariaSortAttribute}
+          >
             <button
               class="fudis-table__header-button fudis-table__header-button__align__${alignHeader} fudis-table__header-button--sortable ${activeSortableHeader}"
               type="button"
