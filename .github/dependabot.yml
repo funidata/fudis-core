@@ -10,7 +10,7 @@ updates:
       - "/core"
       - "/tests"
     schedule:
-      interval: weekly
+      interval: monthly
     groups:
       linting:
         patterns:
@@ -29,7 +29,7 @@ updates:
   - package-ecosystem: github-actions
     directory: "/.github"
     schedule:
-      interval: weekly
+      interval: monthly
 
   - package-ecosystem: docker
     directories:
@@ -37,7 +37,7 @@ updates:
       - "/tests"
       - "/core"
     schedule:
-      interval: weekly
+      interval: monthly
     ignore:
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
