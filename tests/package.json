@@ -11,7 +11,7 @@
   "license": "CC-BY-NC-SA-4.0",
   "description": "Tests for Fudis Core",
   "devDependencies": {
-    "@playwright/test": "^1.52.0",
-    "@types/node": "^22.15.23"
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^22.18.13"
   }
 }
