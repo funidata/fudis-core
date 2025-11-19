@@ -28,7 +28,7 @@ const Template = ({ size, title, external }) => {
     link.ariaLabel = title + ", Opens in a new tab";
     link.className = `fudis-link__external fudis-link__size__${size}`;
     icon.className =
-      "fudis-link__external__icon fudis-icon fudis-icon__lg fudis-icon__color__primary_dark fudis-icon__new-tab";
+      "fudis-link__external__icon fudis-icon fudis-icon__lg fudis-icon__color__primary-dark fudis-icon__new-tab";
     link.appendChild(icon);
   } else {
     link.href = "";
