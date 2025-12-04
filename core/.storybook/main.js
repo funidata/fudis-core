@@ -78,10 +78,6 @@ export function previewHead(head) {
           align-items: center;
           width: fit-content;
           margin-right: 8px;
-
-          .fudis-icon {
-          color: #1d65b8;
-          }
       }
       }
     </style>
