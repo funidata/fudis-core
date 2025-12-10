@@ -6,6 +6,11 @@ on:
       - released
       - prereleased
 
+permissions:
+  # Permission to generate OIDC token
+  id-token: write
+  contents: read
+
 jobs:
   publish:
     name: Publish library to NPM
@@ -56,14 +61,10 @@ jobs:
         if: steps.check_latest.outputs.is-latest == 'true'
         run: npm publish --access public
         working-directory: core/dist
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Publish patch or pre-release
         if: steps.check_latest.outputs.is-latest == 'false'
         run: npm publish --access public --tag ${{ env.NPM_TAG }}
         working-directory: core/dist
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   publish-docs:
     name: Publish docs to AWS
