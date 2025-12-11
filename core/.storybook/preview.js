@@ -18,6 +18,7 @@ const preview = {
             "Development",
             [
               "Getting Started",
+              "How to Contribute",
               "Tooling",
               [
                 "Git and GitHub Conventions",
