@@ -59,11 +59,13 @@ jobs:
         working-directory: core
       - name: Publish latest
         if: steps.check_latest.outputs.is-latest == 'true'
-        run: npm publish --access public
+        # actions/setup-node automatically sets a placeholder NODE_AUTH_TOKEN that prevents npm from using OIDC. Explicitly set it to empty string to enable OIDC trusted publishing.
+        run: NODE_AUTH_TOKEN="" npm publish --access public
         working-directory: core/dist
       - name: Publish patch or pre-release
         if: steps.check_latest.outputs.is-latest == 'false'
-        run: npm publish --access public --tag ${{ env.NPM_TAG }}
+        # actions/setup-node automatically sets a placeholder NODE_AUTH_TOKEN that prevents npm from using OIDC. Explicitly set it to empty string to enable OIDC trusted publishing.
+        run: NODE_AUTH_TOKEN="" npm publish --access public --tag ${{ env.NPM_TAG }}
         working-directory: core/dist
 
   publish-docs:
