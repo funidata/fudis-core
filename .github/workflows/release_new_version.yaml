@@ -57,6 +57,9 @@ jobs:
       - name: Build fudis-core
         run: npm run build:dist
         working-directory: core
+        # npm 11.5.1 or later is required for OIDC support
+      - name: Upgrade npm for OIDC support
+        run: npm install -g npm@latest
       - name: Publish latest
         if: steps.check_latest.outputs.is-latest == 'true'
         # actions/setup-node automatically sets a placeholder NODE_AUTH_TOKEN that prevents npm from using OIDC. Explicitly set it to empty string to enable OIDC trusted publishing.
