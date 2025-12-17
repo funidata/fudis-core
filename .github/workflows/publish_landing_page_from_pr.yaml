@@ -23,7 +23,7 @@ jobs:
           step: start
           env: Landing page for branch ${{ github.ref_name }}
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
