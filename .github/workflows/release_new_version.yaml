@@ -14,15 +14,15 @@ permissions:
 jobs:
   publish:
     name: Publish library to NPM
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     outputs:
       set-as-latest: ${{ steps.check_latest.outputs.is-latest }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       # Recent Node.js is included in `ubuntu-latest` but `setup-node` is still required to setup NPM auth via token.
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version-file: .nvmrc
           # Specifying `registry-url` triggers `setup-node` to setup NPM authentication.
