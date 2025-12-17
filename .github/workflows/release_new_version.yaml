@@ -30,6 +30,7 @@ jobs:
           node-version-file: .nvmrc
           # Specifying `registry-url` triggers `setup-node` to setup NPM authentication.
           registry-url: https://registry.npmjs.org/
+          scope: funidata
       - name: Copy root README.md to library
         run: cp README.md core/README.md
       # - name: Check for latest version
@@ -62,7 +63,7 @@ jobs:
         working-directory: core
       - name: Publish latest
         # if: steps.check_latest.outputs.is-latest == 'true'
-        run: npm publish --loglevel verbose --access public
+        run: npm publish --loglevel verbose --access public --tag next
         working-directory: core/dist
       # - name: Publish patch or pre-release
       #   if: steps.check_latest.outputs.is-latest == 'false'
