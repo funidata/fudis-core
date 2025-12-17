@@ -16,7 +16,7 @@ on:
 jobs:
   publish:
     name: Publish PR Storybook docs to AWS
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     defaults:
       run:
         working-directory: core

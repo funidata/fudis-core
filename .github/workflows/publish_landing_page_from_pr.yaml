@@ -14,7 +14,7 @@ on:
 jobs:
   publish:
     name: Publish PR landing page to AWS
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Start landing page deployment
         uses: bobheadxi/deployments@648679e8e4915b27893bd7dbc35cb504dc915bc8

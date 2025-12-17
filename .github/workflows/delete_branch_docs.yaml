@@ -9,7 +9,7 @@ jobs:
   delete-docs:
     name: Delete Storybook documentation deployment
     if: github.event.ref_type == 'branch'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     permissions:
       deployments: write
     steps:
