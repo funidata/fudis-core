@@ -63,7 +63,8 @@ jobs:
         working-directory: core
       - name: Publish latest
         # if: steps.check_latest.outputs.is-latest == 'true'
-        run: npm publish --loglevel verbose --access public --tag next
+        # actions/setup-node automatically sets a placeholder NODE_AUTH_TOKEN that prevents npm from using OIDC. Explicitly set it to empty string to enable OIDC trusted publishing.
+        run: NODE_AUTH_TOKEN="" npm publish --loglevel verbose --access public --tag next
         working-directory: core/dist
       # - name: Publish patch or pre-release
       #   if: steps.check_latest.outputs.is-latest == 'false'
