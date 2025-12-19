@@ -23,7 +23,7 @@ const preview = {
               [
                 "Git and GitHub Conventions",
                 "Releases",
-                "Testing Local Changes with Symlink",
+                "Testing Local Changes in Application",
               ],
               "Practises",
               [
