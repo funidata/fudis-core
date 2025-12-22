@@ -19,7 +19,7 @@
     display: flex;
     transform: translateX(
       /* stylelint-disable unit-disallowed-list */
-        calc(-1 * calc(0.4rem / var(--fudis-rem-multiplier)))
+      calc(-1 * calc(0.4rem / var(--fudis-rem-multiplier)))
     );
     opacity: 0;
     height: spacing.$spacing-xs;
