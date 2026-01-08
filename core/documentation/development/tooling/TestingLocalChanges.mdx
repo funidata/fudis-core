@@ -24,8 +24,9 @@ In some projects you might have to do some additional configuration to enable sy
 2. Go to the **core/dist** directory and run `npm link` that creates a global symlink to the Fudis Core package, making it available system-wide.
 3. Then navigate to your project where you want to link the Fudis core package. The directory that contains the node_modules folder containing the project dependencies is the correct place to execute linking. In this project directory run `npm link @funidata/fudis-core`
 4. When you want to unlink the package from your project, run the command `npm unlink @funidata/fudis-core`. This is done in the same directory in your consuming project, where you linked the package.
+5. If you want to remove the global symlink, go back to the **core/dist** folder and run `npm unlink -g`
 
-## Yarn
+### Yarn
 
 These instructions are for Yarn v4. If you are using any other version, please check the corresponding documentation to see how symlinking is done.
 
