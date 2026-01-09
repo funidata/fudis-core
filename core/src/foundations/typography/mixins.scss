@@ -15,6 +15,11 @@
   font-family: tokens.$font-family;
   font-size: tokens.$body-text-lg-font-size;
   font-weight: tokens.$font-weight-light;
+
+  @include breakpoints.breakpoint-max('sm') {
+    line-height: tokens.$body-text-md-line-height;
+    font-size: tokens.$body-text-md-font-size;
+  }
 }
 
 @mixin body-text-lg-regular {
@@ -23,6 +28,11 @@
   font-family: tokens.$font-family;
   font-size: tokens.$body-text-lg-font-size;
   font-weight: tokens.$font-weight-regular;
+
+  @include breakpoints.breakpoint-max('sm') {
+    line-height: tokens.$body-text-md-line-height;
+    font-size: tokens.$body-text-md-font-size;
+  }
 }
 
 @mixin body-text-md-light {
