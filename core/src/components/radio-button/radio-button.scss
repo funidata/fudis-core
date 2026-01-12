@@ -13,7 +13,7 @@ $radio-indicator-size: calc(0.75rem / var(--fudis-rem-multiplier));
   @include typography.body-text-md-regular;
   @include colorMixin.text-color('gray-dark');
 
-  display: inline-flex;
+  display: flex;
   position: relative;
   align-items: center;
   margin-bottom: 0;

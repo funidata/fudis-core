@@ -51,5 +51,5 @@ export const PwAll = () => {
         ...config,
       });
     })
-    .join("<br/>");
+    .join("");
 };
