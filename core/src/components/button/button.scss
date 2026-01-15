@@ -63,7 +63,7 @@
     }
 
     &__medium {
-      padding: calc(spacing.$spacing-md/4);
+      padding: calc(spacing.$spacing-md/4) spacing.$spacing-xs;
       min-height: spacing.$spacing-lg;
     }
 
