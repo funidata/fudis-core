@@ -15,11 +15,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  text-align: left;
   cursor: pointer;
   padding: 0 spacing.$spacing-xs;
   min-width: spacing.$spacing-xxl;
   vertical-align: middle;
+  text-align: left;
 
   &:focus {
     @include focus.focus-generic;
@@ -57,16 +57,14 @@
 
   &__size {
     &__small {
-      min-height: spacing.$spacing-md;
       padding-top: spacing.$spacing-xxs;
       padding-bottom: spacing.$spacing-xxs;
-      padding-left: spacing.$spacing-xs;
-      padding-right: spacing.$spacing-xs;
+      min-height: spacing.$spacing-md;
     }
 
     &__medium {
-      min-height: spacing.$spacing-lg;
       padding: spacing.$spacing-xs;
+      min-height: spacing.$spacing-lg;
     }
 
     &__extra-small {
