@@ -57,13 +57,13 @@
 
   &__size {
     &__small {
-      padding-top: spacing.$spacing-xxs;
-      padding-bottom: spacing.$spacing-xxs;
+      padding-top: calc(spacing.$spacing-xxs/2);
+      padding-bottom: calc(spacing.$spacing-xxs/2);
       min-height: spacing.$spacing-md;
     }
 
     &__medium {
-      padding: spacing.$spacing-xs;
+      padding: calc(spacing.$spacing-md/4);
       min-height: spacing.$spacing-lg;
     }
 
