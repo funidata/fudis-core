@@ -15,6 +15,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  text-align: left;
   cursor: pointer;
   padding: 0 spacing.$spacing-xs;
   min-width: spacing.$spacing-xxl;
@@ -57,10 +58,15 @@
   &__size {
     &__small {
       min-height: spacing.$spacing-md;
+      padding-top: spacing.$spacing-xxs;
+      padding-bottom: spacing.$spacing-xxs;
+      padding-left: spacing.$spacing-xs;
+      padding-right: spacing.$spacing-xs;
     }
 
     &__medium {
       min-height: spacing.$spacing-lg;
+      padding: spacing.$spacing-xs;
     }
 
     &__extra-small {
