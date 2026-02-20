@@ -38,8 +38,8 @@
     "@storybook/html-vite": "^8.6.15",
     "@storybook/test": "^8.6.15",
     "@whitespace/storybook-addon-html": "^7.0.0",
-    "nodemon": "^3.1.11",
-    "sass-embedded": "^1.97.1",
-    "storybook": "^8.6.15"
+    "nodemon": "^3.1.13",
+    "sass-embedded": "^1.97.3",
+    "storybook": "^8.6.17"
   }
 }
