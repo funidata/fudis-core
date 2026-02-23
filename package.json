@@ -17,13 +17,13 @@
     "postversion": "git commit --amend -m \"Bump to version v$npm_package_version\""
   },
   "devDependencies": {
-    "prettier": "^3.7.4",
+    "prettier": "^3.8.1",
     "stylelint": "^16.26.1",
     "stylelint-config-concentric-order": "^5.2.1",
     "stylelint-config-standard-scss": "^14.0.0"
   },
   "dependencies": {
-    "@storybook/html": "^8.6.15",
+    "@storybook/html": "^8.6.17",
     "@types/node": "^25.0.3",
     "prettier-plugin-jsdoc": "^1.8.0"
   }
