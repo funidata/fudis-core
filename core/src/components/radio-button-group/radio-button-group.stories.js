@@ -14,7 +14,7 @@ export default {
     size: {
       name: "Size",
       control: { type: "select" },
-      options: ["xs", "sm", "md", "lg"],
+      options: ["xs", "sm", "md", "lg", "full-width"],
     },
     guidanceText: {
       name: "Guidance text",
@@ -118,6 +118,7 @@ export const PwAll = () => {
     { size: "sm", guidanceText: "" },
     { size: "md", guidanceText: "" },
     { size: "lg", guidanceText: "" },
+    { size: "full-width", guidanceText: "" },
     // Variants
     { size: "md", selected: true, guidanceText: "" },
     { size: "md", required: true, guidanceText: "" },
