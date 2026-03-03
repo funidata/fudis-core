@@ -10,7 +10,7 @@ export default {
     size: {
       name: "Size",
       control: { type: "select" },
-      options: ["xs", "sm", "md", "lg"],
+      options: ["xs", "sm", "md", "lg", "full-width"],
     },
     required: {
       name: "Required",
@@ -93,6 +93,7 @@ export const PwAll = () => {
     { size: "sm", guidanceText: "" },
     { size: "md", guidanceText: "" },
     { size: "lg", guidanceText: "" },
+    { size: "full-width", guidanceText: "" },
     // Text input variants
     { size: "md", required: true },
     { size: "md" },
