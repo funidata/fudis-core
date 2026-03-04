@@ -37,6 +37,9 @@ export function viteFinal(config) {
     define: {
       __PKG_VERSION__: JSON.stringify(pkg.version),
     },
+    server: {
+      allowedHosts: ["core-storybook"],
+    },
   });
 }
 
