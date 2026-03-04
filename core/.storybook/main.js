@@ -1,5 +1,9 @@
+import { createRequire } from "node:module";
+import { dirname, join } from "node:path";
 import { mergeConfig } from "vite";
 import pkg from "../package.json";
+
+const require = createRequire(import.meta.url);
 
 export const stories = [
   "../src/**/*.mdx",
@@ -18,19 +22,13 @@ export const staticDirs = [
 ];
 
 export const addons = [
-  {
-    name: "@storybook/addon-essentials",
-    options: {
-      controls: true,
-      actions: false,
-    },
-  },
-  "@storybook/addon-a11y",
-  "@whitespace/storybook-addon-html",
+  getAbsolutePath("@storybook/addon-a11y"),
+  getAbsolutePath("@whitespace/storybook-addon-html"),
+  getAbsolutePath("@storybook/addon-docs")
 ];
 
 export const framework = {
-  name: "@storybook/html-vite",
+  name: getAbsolutePath("@storybook/html-vite"),
   options: {},
 };
 
@@ -82,4 +80,13 @@ export function previewHead(head) {
       }
     </style>
   `;
+}
+
+export const features = {
+  controls: true,
+  actions: false
+};
+
+function getAbsolutePath(value) {
+  return dirname(require.resolve(join(value, "package.json")));
 }
