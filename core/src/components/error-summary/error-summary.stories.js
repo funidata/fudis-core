@@ -12,17 +12,17 @@ export const Example = () => `
       </h2>
       <ul class="fudis-error-summary__error-list">
         <li class="fudis-error-summary__error-list__item">
-          <a class="fudis-link fudis-link__size__md">
+          <a href="#" class="fudis-link fudis-link__size__md">
             Link to the invalid form component
           </a>
         </li>
         <li class="fudis-error-summary__error-list__item">
-          <a class="fudis-link fudis-link__size__md">
+          <a href="#" class="fudis-link fudis-link__size__md">
             Link to the invalid form component
           </a>
         </li>
         <li class="fudis-error-summary__error-list__item">
-          <a class="fudis-link fudis-link__size__md">
+          <a href="#" class="fudis-link fudis-link__size__md">
             Link to the invalid form component
           </a>
         </li>
