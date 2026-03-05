@@ -64,7 +64,7 @@
 @mixin heading-xxl {
   line-height: tokens.$heading-lg-line-height;
   font-family: tokens.$font-family;
-  font-size: 0.8rem;
+  font-size: tokens.$heading-xxl-font-size;
   font-weight: tokens.$font-weight-medium;
 
   @include breakpoints.breakpoint-max('sm') {
