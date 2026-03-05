@@ -24,7 +24,7 @@ export const staticDirs = [
 export const addons = [
   getAbsolutePath("@storybook/addon-a11y"),
   getAbsolutePath("@whitespace/storybook-addon-html"),
-  getAbsolutePath("@storybook/addon-docs")
+  getAbsolutePath("@storybook/addon-docs"),
 ];
 
 export const framework = {
@@ -87,7 +87,7 @@ export function previewHead(head) {
 
 export const features = {
   controls: true,
-  actions: false
+  actions: false,
 };
 
 function getAbsolutePath(value) {
