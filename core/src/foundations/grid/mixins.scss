@@ -23,8 +23,3 @@
     @error 'Unknown grid width of #{$width}. Accepted arguments are: "xxl", "xl", "lg", "md", "sm", "xs".';
   }
 }
-
-@mixin grid-xs-margins() {
-  margin-right: spacing.$spacing-sm;
-  margin-left: spacing.$spacing-sm;
-}
