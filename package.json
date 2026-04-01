@@ -19,11 +19,11 @@
   "devDependencies": {
     "prettier": "^3.8.1",
     "stylelint": "^16.26.1",
-    "stylelint-config-concentric-order": "^5.3.0",
+    "stylelint-config-concentric-order": "^5.5.0",
     "stylelint-config-standard-scss": "^14.0.0"
   },
   "dependencies": {
-    "@types/node": "^25.3.3",
+    "@types/node": "^25.5.0",
     "prettier-plugin-jsdoc": "^1.8.0"
   }
 }
