@@ -128,6 +128,8 @@ export const createRadioButton = (
 
   const contentElement = document.createElement("div");
   contentElement.className = "fudis-radio-button__content";
+  if (disabled)
+    contentElement.classList.add("fudis-radio-button__content--disabled");
 
   const contentWrapperElement = document.createElement("div");
   contentWrapperElement.className = "fudis-radio-button__content-wrapper";
@@ -183,6 +185,8 @@ export const createCheckbox = (
 
   const checkboxContentElement = document.createElement("div");
   checkboxContentElement.className = "fudis-checkbox__content";
+  if (disabled)
+    checkboxContentElement.classList.add("fudis-checkbox__content--disabled");
 
   const checkboxContentWrapperElement = document.createElement("div");
   checkboxContentWrapperElement.className = "fudis-checkbox__content-wrapper";
