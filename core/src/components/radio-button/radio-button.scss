@@ -17,7 +17,7 @@ $radio-indicator-size: calc(0.75rem / var(--fudis-rem-multiplier));
   position: relative;
   align-items: center;
   margin-bottom: 0;
-  width: auto;
+  width: fit-content;
   min-height: spacing.$spacing-lg;
 
   &__label {
