@@ -73,8 +73,7 @@
     &__md {
       @include typography.heading-xs;
 
-      .fudis-fieldset__legend__main__text,
-      .fudis-fieldset__legend__main__required {
+      .fudis-fieldset__legend__main__text {
         vertical-align: sub;
       }
     }
