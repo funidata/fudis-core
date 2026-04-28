@@ -31,7 +31,7 @@ Setting up your local development environment according to these instructions is
 
 Clone the upstream repository to your machine:
 
-<Source code={`git@github.com:funidata/fudis-core.git`} />
+<Source code={`git clone git@github.com:funidata/fudis-core.git`} />
 
 If you do not have write access and are not working for Funidata, you need to first fork our repository to your own account and use that for development.
 
@@ -54,6 +54,12 @@ Make sure Docker daemon is running, then in the **root** directory run:
 <Source code={`npm run start:storybook`} />
 
 The First startup takes a while as Docker fetches and builds the necessary image. Once complete, Storybook is accessible at [http://localhost:6007](http://localhost:6007).
+
+Once you are done, shut down the development environment with:
+
+<Source code={`npm stop`} />
+
+You can use `docker ps` to verify all containers are down (and to check their status if something is not working).
 
 #### Testing
 
