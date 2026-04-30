@@ -43,9 +43,10 @@ const preview = {
               "How to Contribute",
               "Tooling",
               [
+                "Setup VS Code",
+                "Testing Local Changes in Application",
                 "Git and GitHub Conventions",
                 "Releases",
-                "Testing Local Changes in Application",
               ],
               "Practises",
               [
