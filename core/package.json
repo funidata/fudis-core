@@ -7,6 +7,7 @@
     "./_index.scss",
     "./_styles.scss"
   ],
+  "type": "module",
   "scripts": {
     "start": "storybook dev -p 6007",
     "build:storybook": "storybook build",
