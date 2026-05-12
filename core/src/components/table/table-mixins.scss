@@ -14,8 +14,8 @@
 
   display: flex;
   align-items: center;
-  cursor: pointer;
   width: 100%;
+  cursor: pointer;
 }
 
 @mixin fudis-table-default {
@@ -50,6 +50,7 @@
       }
     }
 
+    /* stylelint-disable-next-line no-descending-specificity */
     &-row {
       border-bottom: spacing.$pixel-2 solid color.$color-gray-light;
     }
@@ -75,10 +76,12 @@
         }
       }
 
+      /* stylelint-disable-next-line no-descending-specificity */
       &--sortable {
         white-space: nowrap;
       }
 
+      /* stylelint-disable-next-line no-descending-specificity */
       &--active {
         text-decoration: underline solid color.$color-gray-middle;
       }
@@ -158,6 +161,7 @@
       }
     }
 
+    /* stylelint-disable-next-line no-descending-specificity */
     &-row {
       border-bottom: spacing.$pixel-2 solid color.$color-gray-light;
     }
@@ -183,10 +187,12 @@
         }
       }
 
+      /* stylelint-disable-next-line no-descending-specificity */
       &--sortable {
         white-space: nowrap;
       }
 
+      /* stylelint-disable-next-line no-descending-specificity */
       &--active {
         text-decoration: underline solid color.$color-gray-dark;
       }

@@ -82,6 +82,7 @@
       }
     }
 
+    /* stylelint-disable-next-line no-descending-specificity */
     &__label {
       position: relative;
       padding-right: spacing.$spacing-xs;
