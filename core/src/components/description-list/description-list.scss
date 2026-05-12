@@ -75,6 +75,7 @@
       }
     }
 
+    /* stylelint-disable-next-line no-descending-specificity */
     &__compact {
       @include typography.description-list-compact-value-typography;
       @include colorMixin.text-color('gray-dark');

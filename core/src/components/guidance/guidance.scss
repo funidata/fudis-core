@@ -21,12 +21,12 @@
       /* stylelint-disable unit-disallowed-list */
       calc(-1 * calc(0.4rem / var(--fudis-rem-multiplier)))
     );
-    opacity: 0;
-    height: spacing.$spacing-xs;
     animation-name: delay-appearance;
     animation-delay: 0.2s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+    opacity: 0;
+    height: spacing.$spacing-xs;
 
     &__list {
       min-height: spacing.$spacing-xs;
