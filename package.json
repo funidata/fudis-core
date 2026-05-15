@@ -8,7 +8,10 @@
   ],
   "scripts": {
     "start:storybook": "docker compose up --build -d core-storybook",
+    "test": "cd ngx-fudis && npm test",
     "test:vr": "docker compose run --service-ports core-vr npx playwright test",
+    "test:vr-report": "docker compose run --service-ports core-vr npx playwright show-report --host 0.0.0.0",
+    "test:ui": "find tests/visual-regression -name \\*-darwin.png -type f -delete && cd tests && npm run test:ui",
     "stop": "docker compose down",
     "stylelint": "stylelint '**/*.{css,scss}'",
     "format:check": "prettier --check .",
