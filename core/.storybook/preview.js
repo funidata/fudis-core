@@ -1,7 +1,29 @@
 import "./style.scss";
+import htmlAddonPreview from "@whitespace/storybook-addon-html/preview";
+import prettier from "prettier2/standalone";
+import prettierHtmlParser from "prettier2/parser-html";
+
+// the addon whitespace/storybook.addon-html version 8 does not format the HTML code correctly,
+// so we need to format it manually. This should be removed when the addon is updated to version 9,
+// also remove the dependency on prettier2 and prettier-plugin-jsdoc from package.json
+
+const formatHtml = (code) => {
+  try {
+    return prettier.format(code, {
+      parser: "html",
+      plugins: [prettierHtmlParser],
+    });
+  } catch (error) {
+    return code;
+  }
+};
 
 const preview = {
+  decorators: htmlAddonPreview.decorators,
   parameters: {
+    html: {
+      transform: formatHtml,
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
