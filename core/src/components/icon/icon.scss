@@ -3,14 +3,14 @@
 
 /* Only for internal use for this icon class */
 @mixin icon-mask-base() {
+  mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
   /* stylelint-disable property-disallowed-list */
   background-color: currentcolor;
   width: var(--icon-size);
   height: var(--icon-size);
   content: '';
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: contain;
 }
 
 /* Only for internal use in creating white background for large fill icons */

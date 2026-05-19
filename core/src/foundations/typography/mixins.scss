@@ -276,8 +276,8 @@
   display: inline-block;
   position: relative;
   text-decoration: underline;
-  font-family: tokens.$font-family;
   overflow-wrap: anywhere;
+  font-family: tokens.$font-family;
 
   &:focus {
     @include focus.focus-generic;
@@ -308,10 +308,10 @@
 // Tab component
 
 @mixin tab-text {
+  text-wrap: nowrap;
   font-family: tokens.$font-family;
   font-size: tokens.$body-text-md-font-size;
   font-weight: tokens.$font-weight-medium;
-  text-wrap: nowrap;
 }
 
 // Empty state
