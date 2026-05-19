@@ -41,8 +41,8 @@
       top: 50%;
       transform: translate(0, -50%);
       border-style: none;
-      cursor: pointer;
       padding: 0;
+      cursor: pointer;
 
       &:focus {
         @include focus.focus-generic;
@@ -102,10 +102,10 @@
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  cursor: pointer;
   padding-right: spacing.$spacing-sm;
   padding-left: spacing.$spacing-sm;
   text-decoration: none;
+  cursor: pointer;
 
   &:focus-visible {
     @include focus.focus-generic;

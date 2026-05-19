@@ -15,11 +15,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   padding: 0 spacing.$spacing-xs;
   min-width: spacing.$spacing-xxl;
   vertical-align: middle;
   text-align: left;
+  cursor: pointer;
 
   &:focus {
     @include focus.focus-generic;
