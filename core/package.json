@@ -40,5 +40,8 @@
     "prettier2": "npm:prettier@2.8.8",
     "sass-embedded": "^1.97.3",
     "storybook": "10.4.0"
+  },
+  "optionalDependencies": {
+    "@oxc-parser/binding-linux-x64-gnu": "0.127.0"
   }
 }
