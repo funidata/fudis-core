@@ -1,7 +1,7 @@
 import { createRequire } from "node:module";
 import { dirname, join } from "node:path";
 import { mergeConfig } from "vite";
-import pkg from "../package.json" with { type: "json"};
+import pkg from "../package.json" with { type: "json" };
 
 const require = createRequire(import.meta.url);
 
