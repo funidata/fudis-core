@@ -43,6 +43,7 @@
   },
   "optionalDependencies": {
     "@oxc-parser/binding-linux-x64-gnu": "0.127.0",
-    "@oxc-resolver/binding-linux-x64-gnu": "11.19.1"
+    "@oxc-resolver/binding-linux-x64-gnu": "11.19.1",
+    "@rolldown/binding-linux-x64-gnu": "1.0.1"
   }
 }
