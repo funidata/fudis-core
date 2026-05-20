@@ -5,6 +5,10 @@ import pkg from "../package.json" with { type: "json" };
 
 const require = createRequire(import.meta.url);
 
+export const core = {
+  allowedHosts: ["core-storybook", "localhost"],
+};
+
 export const stories = [
   "../src/**/*.mdx",
   "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
@@ -36,9 +40,6 @@ export function viteFinal(config) {
   return mergeConfig(config, {
     define: {
       __PKG_VERSION__: JSON.stringify(pkg.version),
-    },
-    server: {
-      allowedHosts: ["core-storybook"],
     },
   });
 }
