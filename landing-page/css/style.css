@@ -206,12 +206,12 @@ body {
   margin: -1px;
   outline: 0;
   border: 0;
+  clip-path: rect(0 0 0 0);
   padding: 0;
   width: 1px;
   height: 1px;
   overflow: hidden;
   white-space: nowrap;
-  clip: rect(0 0 0 0);
 }
 
 @media screen and (width <= 48em) {
