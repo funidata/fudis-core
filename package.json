@@ -1,6 +1,6 @@
 {
   "name": "@funidata/fudis-core",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "private": "true",
   "workspaces": [
     "core",
