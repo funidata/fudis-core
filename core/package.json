@@ -31,10 +31,6 @@
     "url": "https://github.com/funidata/fudis-core/issues"
   },
   "homepage": "https://github.com/funidata/fudis-core#readme",
-  "optionalDependencies": {
-    "@rolldown/binding-linux-x64-gnu": "^1.0.2",
-    "lightningcss-linux-x64-gnu": "1.32.0"
-  },
   "devDependencies": {
     "@storybook/addon-a11y": "10.4.0",
     "@storybook/addon-docs": "10.4.0",
