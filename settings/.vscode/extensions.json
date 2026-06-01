@@ -2,12 +2,7 @@
   "recommendations": [
     "esbenp.prettier-vscode",
     "stylelint.vscode-stylelint",
-    "formulahendry.auto-rename-tag",
-    "naumovs.color-highlight",
-    "unifiedjs.vscode-mdx",
-    "xyc.vscode-mdx-preview",
-    "nhoizey.gremlins",
     "deque-systems.vscode-axe-linter",
-    "tobermory.es6-string-html"
+    "unifiedjs.vscode-mdx"
   ]
 }
