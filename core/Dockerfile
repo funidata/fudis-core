@@ -1,4 +1,4 @@
-FROM node:24.14.0
+FROM node:24.16.0
 
 # Install dependencies.
 WORKDIR /usr/src/app
