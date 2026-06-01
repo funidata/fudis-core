@@ -62,10 +62,6 @@
       width: spacing.$checkbox-size;
       height: spacing.$checkbox-size;
 
-      &__icon .fudis-icon {
-        fill: colors.$color-gray-middle;
-      }
-
       &--focused {
         @include focus.focus-checkbox;
       }
