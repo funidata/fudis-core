@@ -1,8 +1,5 @@
 name: Publish Storybook documentation from PR
 
-permissions:
-  contents: read
-  deployments: write
 on:
   # Must be run for pushes to associate deployment with PR. Otherwise docs link is not shown.
   push:
@@ -17,6 +14,9 @@ jobs:
   publish:
     name: Publish PR Storybook docs to AWS
     runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      deployments: write
     defaults:
       run:
         working-directory: core
