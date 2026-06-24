@@ -32,9 +32,9 @@
   },
   "homepage": "https://github.com/funidata/fudis-core#readme",
   "devDependencies": {
-    "@storybook/addon-a11y": "10.4.0",
-    "@storybook/addon-docs": "10.4.0",
-    "@storybook/html-vite": "10.4.0",
+    "@storybook/addon-a11y": "10.4.6",
+    "@storybook/addon-docs": "10.4.6",
+    "@storybook/html-vite": "10.4.6",
     "@whitespace/storybook-addon-html": "^9.0.0",
     "nodemon": "^3.1.14",
     "prettier2": "npm:prettier@2.8.8",
