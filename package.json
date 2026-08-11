@@ -17,7 +17,7 @@
     "postversion": "git commit --amend -m \"Bump to version v$npm_package_version\""
   },
   "devDependencies": {
-    "@types/node": "^25.9.4",
+    "@types/node": "^25.9.5",
     "prettier": "^3.9.6",
     "prettier-plugin-jsdoc": "^1.8.1",
     "stylelint": "^17.14.1",
