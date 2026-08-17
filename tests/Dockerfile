@@ -1,4 +1,4 @@
-FROM node:24.19.0
+FROM mcr.microsoft.com/playwright:v1.62.1-noble
 
 WORKDIR /usr/src/app
 COPY . .
