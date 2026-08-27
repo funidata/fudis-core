@@ -75,6 +75,7 @@ const preview = {
           [
             "Alert",
             "Badge",
+            "Box",
             "Breadcrumbs",
             "Button",
             "Button, icon only",
