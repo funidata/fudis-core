@@ -61,6 +61,7 @@ const preview = {
             "Error Summary",
             "Horizontal Rule",
             "Icon",
+            "Language Badge",
             "Link",
             "Loading Spinner",
             "Notification",
