@@ -18,8 +18,8 @@
   },
   "devDependencies": {
     "@types/node": "^25.9.8",
-    "prettier": "^3.9.6",
-    "stylelint": "^17.14.1",
+    "prettier": "^3.9.9",
+    "stylelint": "^17.16.0",
     "stylelint-config-concentric-order": "^5.5.0",
     "stylelint-config-standard-scss": "^17.0.0"
   }
