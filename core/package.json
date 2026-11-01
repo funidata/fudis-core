@@ -37,8 +37,8 @@
     "@storybook/html-vite": "^10.6.3",
     "@whitespace/storybook-addon-html": "^9.0.0",
     "nodemon": "^3.1.14",
-    "sass-embedded": "^1.106.1",
-    "storybook": "^10.6.3",
+    "sass-embedded": "^1.107.0",
+    "storybook": "^10.6.5",
     "vite": "^8.3.5"
   }
 }
