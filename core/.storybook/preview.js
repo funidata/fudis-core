@@ -59,6 +59,7 @@ const preview = {
             "Checkbox Group",
             "Description List",
             "Error Summary",
+            "Highlight Container",
             "Horizontal Rule",
             "Icon",
             "Language Badge",
