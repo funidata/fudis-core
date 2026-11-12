@@ -15,6 +15,15 @@
   @include mixins.dimmer;
 }
 
+.fudis-highlight-container {
+  &__blue-light {
+    @include colorMixin.bg-color('blue-light');
+
+    border-radius: spacing.$spacing-xs;
+    padding: spacing.$spacing-sm;
+  }
+}
+
 // Invalid and disabled state styles for input elemenets
 
 .fudis-form-input {
